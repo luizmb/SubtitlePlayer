@@ -7,12 +7,32 @@ group.notify(queue: DispatchQueue.main) {
     exit(EXIT_SUCCESS)
 }
 
-/*
-file=/Volumes/SeagateHybric2T/Downloads/Subtitles/Game.Of.Thrones.S08E02.540p.WEB.srt
-file=/Volumes/SeagateHybric2T/Downloads/Subtitles/game.of.thrones.s08e02.720p.web.h264-memento.srt
-file=/Volumes/SeagateHybric2T/Downloads/Subtitles/Game.of.Thrones.S08E02.1080p.AMZN.WEB-DL.DDP5.1.H.264-GoT.srt
-file=/Volumes/SeagateHybric2T/Downloads/Subtitles/Game.of.Thrones.S08E02.1080p.WEB.x264-ADRENALiNE.srt
-*/
+//import OpenSubtitlesDownloader
+//_ = OpenSubtitleAPI
+//    .search(
+//        SearchParameters(
+//            query: "game of thrones",
+//            episode: 2,
+//            season: 8,
+//            language: .portugueseBrazil)
+//    )
+//    .run((URLSession.shared, UserAgent(rawValue: "TemporaryUserAgent")))
+//    .flatMapCompletable {
+//        OpenSubtitleAPI
+//            .download($0.first!.zipDownloadLink)
+//            .run((URLSession.shared, UserAgent(rawValue: "TemporaryUserAgent")))
+//            .map {
+//                let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//                try $0.write(to: paths[0].appendingPathComponent("bla.zip"), options: .withoutOverwriting)
+//            }
+//            .asCompletable()
+//    }
+//    .subscribe(onCompleted: {
+//        group.leave()
+//    }, onError: {
+//        print("\($0)")
+//        group.leave()
+//    })
 
 _ = Command
     .parse(Array(CommandLine.arguments.dropFirst()))
@@ -25,7 +45,6 @@ _ = Command
             group.leave()
         }
     )
-
 
 dispatchMain()
 
