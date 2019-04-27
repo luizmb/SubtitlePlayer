@@ -5,20 +5,20 @@ import SubtitlePlayer
 
 extension Command {
     static func play(with arguments: [PlayArgument]) -> Reader<Environment, Completable> {
-        return Reader { fileManager in
-            guard let file = arguments.compactMap({ $0.file }).first else { return .error(MissingArgument(argument: "file")) }
-            if let index = arguments.compactMap({ $0.line }).first {
-                return play(from: index, path: file).inject(fileManager.fileManager())
-            } else {
-                return playFromBeggining(path: file).inject(fileManager.fileManager())
-            }
-        }
+        guard let file = arguments.compactMap({ $0.file }).first else { return .pure(.error(MissingArgument(argument: "file"))) }
+
+        return arguments
+            .compactMap({ $0.line })
+            .first
+            .fold(
+                ifSome: { play(from: $0, path: file) },
+                ifNone: { playFromBeggining(path: file) }
+            ).contramap { $0.fileManager() }
     }
 
     static func playFromBeggining(path: String) -> Reader<FileManagerProtocol, Completable> {
-        return Reader { fileManager in
-            return player(for: path)
-                .inject(fileManager)
+        return player(for: path).map { subtitleStream in
+            subtitleStream
                 .asObservable()
                 .flatMap {
                     $0.playFromBeggining()
@@ -29,9 +29,8 @@ extension Command {
     }
 
     static func play(from index: Int, path: String) -> Reader<FileManagerProtocol, Completable> {
-        return Reader { fileManager in
-            return player(for: path)
-                .inject(fileManager)
+        return player(for: path).map { subtitleStream in
+            subtitleStream
                 .asObservable()
                 .flatMap {
                     $0.play(from: index)
@@ -43,12 +42,14 @@ extension Command {
 }
 
 private func openFile(path: String, encoding: String.Encoding = .isoLatin1) -> Reader<FileManagerProtocol, Single<Subtitle>> {
-    return Reader { fileManager in
-        guard let srt = Subtitle.from(filePath: path, encoding: encoding).inject(fileManager) else {
-            print("File not found: \(path)")
-            return .error(FileNotFoundError(path: path))
-        }
-        return .just(srt)
+    return Subtitle.from(filePath: path, encoding: encoding).map { maybeSubtitle in
+        maybeSubtitle.fold(
+            ifSome: Single<Subtitle>.just,
+            ifNone: {
+                print("File not found: \(path)")
+                return Single<Subtitle>.error(FileNotFoundError(path: path))
+            }
+        )
     }
 }
 

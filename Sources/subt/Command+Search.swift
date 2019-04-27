@@ -19,11 +19,11 @@ extension Command {
             tag: arguments.first(where: { $0.tag != nil }).flatMap(^\.tag)
         )
 
-        return OpenSubtitleAPI
-            .search(searchParameters)
-            .map { $0.do(onSuccess: printSearchResult) }
-            .map { $0.asCompletable() }
-            .contramap { ($0.urlSession(), $0.openSubtitlesUserAgent()) }
+        return OpenSubtitleAPI.search(searchParameters).map { searchPromise in
+            searchPromise
+                .do(onSuccess: printSearchResult)
+                .asCompletable()
+        }.contramap { ($0.urlSession(), $0.openSubtitlesUserAgent()) }
     }
 }
 
