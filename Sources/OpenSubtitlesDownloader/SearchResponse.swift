@@ -36,13 +36,13 @@ public struct SearchResponse: Decodable {
     public let movieYear: String
     public let movieImdbRating: String
     public let subFeatured: String
-    public let userNickName: String
+    public let userNickName: String?
     public let subTranslator: String
     public let iso639: String
     public let languageName: String
     public let subComments: String
     public let subHearingImpaired: String
-    public let userRank: String
+    public let userRank: String?
     public let seriesSeason: String
     public let seriesEpisode: String
     public let movieKind: String
@@ -52,7 +52,7 @@ public struct SearchResponse: Decodable {
     public let subAutoTranslation: String
     public let subForeignPartsOnly: String
     public let subFromTrusted: String
-    public let queryCached: Int
+    public let queryCached: Int?
     public let subTSGroupHash: String?
     public let subDownloadLink: URL
     public let zipDownloadLink: URL
@@ -119,5 +119,26 @@ public struct SearchResponse: Decodable {
         case subtitlesLink = "SubtitlesLink"
         case queryNumber = "QueryNumber"
         case score = "Score"
+    }
+}
+
+extension SearchResponse {
+    public var formattedSeriesString: String? {
+        guard !["", "0"].contains(seriesEpisode) && !["", "0"].contains(seriesSeason) else { return nil }
+        return "S\(seriesSeason.leading(char: "0", toLength: 2))E\(seriesEpisode.leading(char: "0", toLength: 2))"
+    }
+}
+
+extension String {
+    func leading(char: Character, toLength: Int) -> String {
+        let toAdd = toLength - count
+        guard toAdd > 0 else { return self }
+        return (Array(repeating: String(char), count: toAdd) + [self]).joined()
+    }
+
+    func trailing(char: Character, toLength: Int) -> String {
+        let toAdd = toLength - count
+        guard toAdd > 0 else { return self }
+        return ([self] + Array(repeating: String(char), count: toAdd)).joined()
     }
 }

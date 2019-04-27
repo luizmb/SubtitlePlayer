@@ -1,3 +1,4 @@
+import Common
 import Foundation
 
 public struct Subtitle {
@@ -21,10 +22,12 @@ public struct Subtitle {
 }
 
 extension Subtitle {
-    public static func from(filePath: String, encoding: String.Encoding) -> Subtitle? {
-        return FileManager()
-            .contents(atPath: filePath)
-            .flatMap { .from(data: $0, encoding: encoding) }
+    public static func from(filePath: String, encoding: String.Encoding) -> Reader<FileManagerProtocol, Subtitle?> {
+        return Reader { fileManager in
+            fileManager
+                .contents(atPath: filePath)
+                .flatMap { Subtitle.from(data: $0, encoding: encoding) }
+        }
     }
 
     public static func from(data: Data, encoding: String.Encoding) -> Subtitle? {
