@@ -11,20 +11,30 @@ Parse and play .srt subtitles in real-time
 
 ### Play file
 To play using natural time, run:
-```swift run subt play file=/path/to/subtitle.srt```
+```shell
+swift run subt play file=/path/to/subtitle.srt
+```
 
 To play from when you hear the first dialog, run:
-```swift run subt play file=/path/to/subtitle.srt from-line=0```
+```shell
+swift run subt play file=/path/to/subtitle.srt from-line=0
+```
 
 To play from a specific dialog (convenient for popcorn breaks), run:
-```swift run subt play file=/path/to/subtitle.srt from-line=42```
+```shell
+swift run subt play file=/path/to/subtitle.srt from-line=42
+```
 
 ### Search
 To search a movie subtitles, run:
-```swift run subt search query=lord\ of\ the\ rings language=pob```
+```shell
+swift run subt search query=lord\ of\ the\ rings language=pob
+```
 
 To search a TV show subtitles, run:
-```swift run subt search query=game\ of\ thrones season=8 episode=2 language=pob```
+```shell
+swift run subt search query=game\ of\ thrones season=8 episode=2 language=pob
+```
 
 Requires RxSwift and Swift 5
 
