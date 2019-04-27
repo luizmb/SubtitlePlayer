@@ -36,6 +36,17 @@ To search a TV show subtitles, run:
 swift run subt search query=game\ of\ thrones season=8 episode=2 language=pob
 ```
 
+### Download
+To download a subtitle file, run:
+```shell
+swift run subt download url=https://dl.opensubtitles.org/en/download/src-api/vrf-19b80c51/filead/1952845222.gz into=/Users/myuser/Downloads/got.srt
+```
+
+To download a subtitle file and play it immediately, run:
+```shell
+swift run subt download url=https://dl.opensubtitles.org/en/download/src-api/vrf-19b80c51/filead/1952845222.gz into=/Users/myuser/Downloads/got.srt play=true
+```
+
 ## Disclaimer
 
 Requires RxSwift and Swift 5
