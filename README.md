@@ -3,11 +3,28 @@
 Parse and play .srt subtitles in real-time
 
 ## Instructions
+
+### Basics
 1. Checkout repo
-2. Run `swift build`
-3. Run `swift run subt play file=/path/to/subtitle.srt` to play using natural time
-4. Run `swift run subt play file=/path/to/subtitle.srt from-line=0` to play from when you hear the first dialog
-5. Run `swift run subt play file=/path/to/subtitle.srt from-line=42` to play from a specific dialog (zero-based index). Convenient for popcorn breaks. :)
+2. Add your OpenSubtitles User-Agent (https://trac.opensubtitles.org/projects/opensubtitles/wiki/DevReadFirst) on `main.swift` (not needed for playing previously downloaded files)
+3. Run `swift build`
+
+### Play file
+To play using natural time, run:
+```swift run subt play file=/path/to/subtitle.srt```
+
+To play from when you hear the first dialog, run:
+```swift run subt play file=/path/to/subtitle.srt from-line=0```
+
+To play from a specific dialog (convenient for popcorn breaks), run:
+```swift run subt play file=/path/to/subtitle.srt from-line=42```
+
+### Search
+To search a movie subtitles, run:
+```swift run subt search query=lord\ of\ the\ rings language=pob```
+
+To search a TV show subtitles, run:
+```swift run subt search query=game\ of\ thrones season=8 episode=2 language=pob```
 
 Requires RxSwift and Swift 5
 
