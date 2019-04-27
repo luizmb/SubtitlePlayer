@@ -7,16 +7,16 @@ import SubtitlePlayer
 extension Command {
     static func search(with arguments: [SearchArgument]) -> Reader<Environment, Completable> {
         let searchParameters = SearchParameters(
-            imdb: arguments.first(where: { $0.imdb != nil }).flatMap(^\.imdb),
+            imdb: arguments.firstNonNil(^\.imdb),
             movieInfo: zip(
-                arguments.first(where: { $0.byteSize != nil }).flatMap(^\.byteSize),
-                arguments.first(where: { $0.hash != nil }).flatMap(^\.hash)
+                arguments.firstNonNil(^\.byteSize),
+                arguments.firstNonNil(^\.hash)
             ).flatMap(MovieInfo.init),
-            query: arguments.first(where: { $0.query != nil }).flatMap(^\.query),
-            episode: arguments.first(where: { $0.episode != nil }).flatMap(^\.episode),
-            season: arguments.first(where: { $0.season != nil }).flatMap(^\.season),
-            language: arguments.first(where: { $0.language != nil }).flatMap(^\.language) ?? .all,
-            tag: arguments.first(where: { $0.tag != nil }).flatMap(^\.tag)
+            query: arguments.firstNonNil(^\.query),
+            episode: arguments.firstNonNil(^\.episode),
+            season: arguments.firstNonNil(^\.season),
+            language: arguments.firstNonNil(^\.language) ?? .all,
+            tag: arguments.firstNonNil(^\.tag)
         )
 
         return OpenSubtitleAPI.search(searchParameters).map { searchPromise in
@@ -36,8 +36,9 @@ private func printSearchResult(searchResult: [SearchResponse]) {
                 Year:    \t\($0.movieYear)
                 Language:\t\($0.languageName)
                 Score:   \t\($0.score)
-                ID:      \t\($0.idSubtitle)
-                Link:    \t\($0.zipDownloadLink)
+                ID:      \t\($0.idSubtitleFile)
+                File:    \t\($0.subFileName)
+                Link:    \t\($0.subDownloadLink)
 
                 """
             }.joined(separator: "\n")

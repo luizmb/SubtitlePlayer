@@ -58,7 +58,7 @@ extension SearchParameters {
             tag
                 .flatMap(^\.urlEncoded?.prefixDashed)
                 .apply("tag")
-        ] as [String?]).compactMap { $0 }
+        ] as [String?]).compactMap(identity)
     }
 }
 

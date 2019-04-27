@@ -7,7 +7,8 @@ extension Environment {
         now: Date.init,
         urlSession: { URLSession.shared },
         openSubtitlesUserAgent: { UserAgent(rawValue: "TemporaryUserAgent") },
-        fileManager: FileManager.init
+        fileManager: FileManager.init,
+        gzip: { Gzip.self }
     )
 }
 
@@ -19,12 +20,12 @@ group.notify(queue: DispatchQueue.main) {
 
 _ = Command
     .parse(Array(CommandLine.arguments.dropFirst()))
-    .flatMap { $0.execute().inject(Environment.current) }
+    .asSingle
+    .flatMapCompletable { $0.execute().inject(Environment.current) }
     .subscribe(
-        onError: {
-            print("Error: \($0)")
-            group.leave()
-        }, onCompleted: {
+        onCompleted: group.leave,
+        onError: { error in
+            print("Main thing error: \(error)")
             group.leave()
         }
     )

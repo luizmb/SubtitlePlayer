@@ -12,6 +12,7 @@ public protocol FileManagerProtocol {
     func linkItem(at srcURL: URL, to dstURL: URL) throws
     func removeItem(at URL: URL) throws
     func createDirectory(at url: URL, withIntermediateDirectories createIntermediates: Bool, attributes: [FileAttributeKey : Any]?) throws
+    func createFile(atPath path: String, contents data: Data?, attributes attr: [FileAttributeKey : Any]?) -> Bool
 }
 
 public enum FileManagerError: Error {
@@ -22,6 +23,8 @@ public enum FileManagerError: Error {
     case folderNotFound(folderName: String, parent: URL?, childrenFoundOnParent: [URL])
     case fileCopyHasFailed(sourceFile: URL, destinationFile: URL, error: Error)
     case createFolderHasFailed(folder: URL, error: Error)
+    case fileAlreadyExists(path: String)
+    case fileCreationHasFailed(path: String)
 }
 
 extension FileManagerProtocol {
@@ -88,6 +91,16 @@ extension FileManagerProtocol {
         }).biMap(success: identity, failure: {
             FileManagerError.createFolderHasFailed(folder: folder, error: $0)
         })
+    }
+
+    public func save(_ data: Data, into path: String) -> Result<String, FileManagerError> {
+        if fileExists(atPath: path) {
+            return .failure(FileManagerError.fileAlreadyExists(path: path))
+        } else if createFile(atPath: path, contents: data, attributes: nil) {
+            return .success(path)
+        } else {
+            return .failure(FileManagerError.fileCreationHasFailed(path: path))
+        }
     }
 }
 

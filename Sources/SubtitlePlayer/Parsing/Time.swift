@@ -1,3 +1,4 @@
+import Common
 import Foundation
 
 public struct Time: Equatable {
@@ -74,7 +75,7 @@ extension Time: RawRepresentable {
             numberFormatter.string(from: hours as NSNumber),
             numberFormatter.string(from: minutes as NSNumber),
             seconds > 0 || milliseconds > 0 ? numberFormatter.string(from: seconds as NSNumber) : nil
-        ].compactMap { $0 }.joined(separator: ":") + (
+        ].compactMap(identity).joined(separator: ":") + (
             milliseconds > 0 ? ",\(milliseconds)" : ""
         )
 

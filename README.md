@@ -36,6 +36,8 @@ To search a TV show subtitles, run:
 swift run subt search query=game\ of\ thrones season=8 episode=2 language=pob
 ```
 
+## Disclaimer
+
 Requires RxSwift and Swift 5
 
 Framework should be able to run on iOS, macOS, watchOS, tvOS or Linux, however for now only the console app is implemented.

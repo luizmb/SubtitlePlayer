@@ -7,4 +7,5 @@ public struct Environment {
     public let urlSession: () -> URLSessionProtocol
     public let openSubtitlesUserAgent: () -> UserAgent
     public let fileManager: () -> FileManagerProtocol
+    public let gzip: () -> GzipProtocol.Type
 }

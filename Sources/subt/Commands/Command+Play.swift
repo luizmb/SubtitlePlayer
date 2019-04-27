@@ -5,24 +5,21 @@ import SubtitlePlayer
 
 extension Command {
     static func play(with arguments: [PlayArgument]) -> Reader<Environment, Completable> {
-        guard let file = arguments.compactMap({ $0.file }).first else { return .pure(.error(MissingArgument(argument: "file"))) }
+        guard let file = arguments.firstNonNil(^\.file) else { return .pure(.error(MissingArgument(argument: "file"))) }
 
         return arguments
-            .compactMap({ $0.line })
-            .first
+            .firstNonNil(^\.line)
             .fold(
-                ifSome: { play(from: $0, path: file) },
-                ifNone: { playFromBeggining(path: file) }
-            ).contramap { $0.fileManager() }
+                ifSome: partialApply(flip(play), file),
+                ifNone: lazy(playFromBeggining(path: file))
+            ).contramap(^\.fileManager >>> run)
     }
 
     static func playFromBeggining(path: String) -> Reader<FileManagerProtocol, Completable> {
         return player(for: path).map { subtitleStream in
             subtitleStream
                 .asObservable()
-                .flatMap {
-                    $0.playFromBeggining()
-                }
+                .flatMap { $0.playFromBeggining() }
                 .do(onNext: printLine)
                 .ignoreElements()
         }
@@ -32,9 +29,7 @@ extension Command {
         return player(for: path).map { subtitleStream in
             subtitleStream
                 .asObservable()
-                .flatMap {
-                    $0.play(from: index)
-                }
+                .flatMap { $0.play(from: index) }
                 .do(onNext: printLine)
                 .ignoreElements()
         }

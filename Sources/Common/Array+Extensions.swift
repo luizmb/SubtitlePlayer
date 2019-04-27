@@ -21,4 +21,8 @@ extension Array {
     private func inBounds(_ index: Int) -> Bool {
         return index < count && index >= 0
     }
+
+    public func firstNonNil<A>(_ lens: (Element) -> A?) -> A? {
+        return first(where: { lens($0) != nil }).flatMap(lens)
+    }
 }

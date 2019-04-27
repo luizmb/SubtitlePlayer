@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Reader<E, A> {
+public class Reader<E, A> {
     public let inject: (E) -> A
 
     public init(_ inject: @escaping (E) -> A) {

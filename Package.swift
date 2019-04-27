@@ -10,13 +10,14 @@ let package = Package(
         .library(name: "Common", targets: ["Common"])
     ],
     dependencies: [
-        .package(url: "https://github.com/ReactiveX/RxSwift.git", "4.0.0" ..< "5.0.0")
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", "4.0.0" ..< "5.0.0"),
+        .package(url: "https://github.com/1024jp/GzipSwift", .exact("5.0.0"))
     ],
     targets: [
-        .target(name: "Common", dependencies: []),
+        .target(name: "Common"),
         .target(name: "SubtitlePlayer", dependencies: ["Common", "RxSwift"]),
         .target(name: "OpenSubtitlesDownloader", dependencies: ["Common", "RxSwift"]),
-        .target(name: "subt", dependencies: ["Common", "SubtitlePlayer", "OpenSubtitlesDownloader"]),
+        .target(name: "subt", dependencies: ["Common", "SubtitlePlayer", "OpenSubtitlesDownloader", "Gzip"]),
         .testTarget(name: "CommonTests", dependencies: ["Common"]),
         .testTarget(name: "SubtitlePlayerTests", dependencies: ["SubtitlePlayer"]),
         .testTarget(name: "subtTests", dependencies: ["subt"])

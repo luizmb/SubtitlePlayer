@@ -20,6 +20,7 @@ public final class OpenSubtitleAPI {
 
     public static func download(_ url: URL) -> Reader<(URLSessionProtocol, UserAgent), Single<Data>> {
         return request(endpoint: .download(url))
+            .map { $0.debug() }
             .map { $0.map { $0.1 }.asSingle() }
     }
 }
