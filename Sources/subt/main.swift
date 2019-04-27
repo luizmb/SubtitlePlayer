@@ -24,8 +24,8 @@ _ = Command
     .flatMapCompletable { $0.execute().inject(Environment.current) }
     .subscribe(
         onCompleted: group.leave,
-        onError: { error in
-            print("Main thing error: \(error)")
+        onError: {
+            print("Error: \($0)")
             group.leave()
         }
     )
