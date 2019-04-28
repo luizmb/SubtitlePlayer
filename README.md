@@ -47,6 +47,12 @@ To download a subtitle file and play it immediately, run:
 swift run subt download url=https://dl.opensubtitles.org/en/download/src-api/vrf-19b80c51/filead/1952845222.gz into=/Users/myuser/Downloads/got.srt play=true
 ```
 
+### All Together
+To search a TV show, pick the best match and play from certain dialog, run:
+```
+swift run subt search query=game\ of\ thrones season=8 episode=2 language=pob play=0 from-line=3
+```
+
 ## Disclaimer
 
 Requires RxSwift and Swift 5

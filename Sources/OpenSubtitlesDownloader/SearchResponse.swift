@@ -34,7 +34,7 @@ public struct SearchResponse: Decodable {
     public let movieName: String
     public let movieNameEng: String?
     public let movieYear: String
-    public let movieImdbRating: String
+    public let movieImdbRating: String?
     public let subFeatured: String
     public let userNickName: String?
     public let subTranslator: String

@@ -22,4 +22,9 @@ public final class OpenSubtitleAPI {
         return request(endpoint: .download(url))
             .map { $0.map { $0.1 }.asSingle() }
     }
+
+    public static func download(subtitle: SearchResponse) -> Reader<(URLSessionProtocol, UserAgent), Single<Data>> {
+        return request(endpoint: .download(subtitle.subDownloadLink))
+            .map { $0.map { $0.1 }.asSingle() }
+    }
 }

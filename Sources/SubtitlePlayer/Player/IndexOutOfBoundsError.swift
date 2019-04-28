@@ -1,5 +1,8 @@
 import Foundation
 
 public struct IndexOutOfBoundsError: Error {
-    let providedIndex: Int
+    public let providedIndex: Int
+    public init(providedIndex: Int) {
+        self.providedIndex = providedIndex
+    }
 }

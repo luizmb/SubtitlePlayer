@@ -19,11 +19,57 @@ extension Command {
             tag: arguments.firstNonNil(^\.tag)
         )
 
-        return OpenSubtitleAPI.search(searchParameters).map { searchPromise in
-            searchPromise
-                .do(onSuccess: printSearchResult)
-                .asCompletable()
+        let initialLine = arguments.firstNonNil(^\.line)
+
+        return arguments
+            .firstNonNil(^\.play)
+            .fold(
+                ifSome: { searchAndPlay(parameters: searchParameters, playIndex: $0, initialLine: initialLine) },
+                ifNone: { searchOnly(parameters: searchParameters) }
+            )
+    }
+
+    static func searchOnly(parameters: SearchParameters) -> Reader<Environment, Completable> {
+        return OpenSubtitleAPI.search(parameters).map { searchPromise in
+            searchPromise.do(onSuccess: printSearchResult).asCompletable()
         }.contramap { ($0.urlSession(), $0.openSubtitlesUserAgent()) }
+    }
+
+    static func searchAndPlay(parameters: SearchParameters, playIndex: Int, initialLine: Int?) -> Reader<Environment, Completable> {
+        return Reader { environment in
+            return OpenSubtitleAPI
+                .search(parameters)
+                .inject((environment.urlSession(), environment.openSubtitlesUserAgent()))
+                .flatMap { (results: [SearchResponse]) -> Single<SearchResponse> in
+                    results[safe: playIndex]
+                        .toResult(orError: IndexOutOfBoundsError(providedIndex: playIndex))
+                        .asSingle
+                }
+                .flatMap { response in
+                    OpenSubtitleAPI
+                        .download(subtitle: response)
+                        .inject((environment.urlSession(), environment.openSubtitlesUserAgent()))
+                }
+                .flatMap {
+                    environment
+                        .gzip()
+                        .decompress($0)
+                        .asSingle
+                }
+                .flatMap {
+                    Subtitle
+                        .from(data: $0, encoding: .isoLatin1)
+                        .toResult(orError: InvalidSubtitleError())
+                        .asSingle
+
+                }
+                .flatMapCompletable { subtitle in
+                    initialLine.fold(
+                        ifSome: { index in Command.play(from: index, subtitle: subtitle) },
+                        ifNone: { Command.playFromBeggining(subtitle: subtitle) }
+                    )
+                }
+        }
     }
 }
 
@@ -43,4 +89,12 @@ private func printSearchResult(searchResult: [SearchResponse]) {
                 """
             }.joined(separator: "\n")
     )
+}
+
+private func downloadAndPlay(item: SearchResponse) -> Reader<Environment, Completable> {
+    return Command.download(with: [
+        .play(true),
+        .subtitleURL(item.subDownloadLink),
+        .destination("\(UUID().uuidString).tmp")
+    ])
 }

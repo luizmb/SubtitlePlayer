@@ -10,3 +10,6 @@ public struct UnknownCommand: Error {
 public struct MissingArgument: Error {
     let argument: String
 }
+
+public struct InvalidSubtitleError: Error {
+}

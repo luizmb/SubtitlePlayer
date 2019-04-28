@@ -34,6 +34,20 @@ extension Command {
                 .ignoreElements()
         }
     }
+
+    static func playFromBeggining(subtitle: Subtitle) -> Completable {
+        return SubtitlePlayer(subtitle: subtitle)
+            .playFromBeggining()
+            .do(onNext: printLine)
+            .ignoreElements()
+    }
+
+    static func play(from index: Int, subtitle: Subtitle) -> Completable {
+        return SubtitlePlayer(subtitle: subtitle)
+            .play(from: index)
+            .do(onNext: printLine)
+            .ignoreElements()
+    }
 }
 
 private func openFile(path: String, encoding: String.Encoding = .isoLatin1) -> Reader<FileManagerProtocol, Single<Subtitle>> {
