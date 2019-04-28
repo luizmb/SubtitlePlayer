@@ -6,8 +6,8 @@ import SubtitlePlayer
 
 extension Command {
     static func download(with arguments: [DownloadArgument]) -> Reader<Environment, Completable> {
-        guard let source = arguments.firstNonNil(^\.subtitleURL) else { return .pure(.error(MissingArgument(argument: "url"))) }
-        guard let destination = arguments.firstNonNil(^\.destination) else { return .pure(.error(MissingArgument(argument: "into"))) }
+        guard let source = arguments.firstNonNil(^\.subtitleURL) else { return .pure(.error(MissingArgumentError(argument: "url"))) }
+        guard let destination = arguments.firstNonNil(^\.destination) else { return .pure(.error(MissingArgumentError(argument: "into"))) }
         let play = arguments.firstNonNil(^\.play) ?? false
 
         return downloadFile(from: source)

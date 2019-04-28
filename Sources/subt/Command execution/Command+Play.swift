@@ -5,7 +5,7 @@ import SubtitlePlayer
 
 extension Command {
     static func play(with arguments: [PlayArgument]) -> Reader<Environment, Completable> {
-        guard let file = arguments.firstNonNil(^\.file) else { return .pure(.error(MissingArgument(argument: "file"))) }
+        guard let file = arguments.firstNonNil(^\.file) else { return .pure(.error(MissingArgumentError(argument: "file"))) }
         let firstLine = arguments.firstNonNil(^\.line) ?? 0
 
         return play(path: file, from: firstLine).contramap(^\.fileManager >>> run)

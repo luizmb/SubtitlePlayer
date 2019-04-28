@@ -1,5 +1,5 @@
-import OpenSubtitlesDownloader
 import Foundation
+import OpenSubtitlesDownloader
 
 enum SearchArgument {
     case query(String)
