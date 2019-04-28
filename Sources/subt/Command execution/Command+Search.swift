@@ -31,14 +31,18 @@ extension Command {
     }
 
     static func searchOnly(parameters: SearchParameters) -> Reader<Environment, Completable> {
+        let dependenciesResolver = { (env: Environment) in
+            (env.urlSession(), env.openSubtitlesUserAgent())
+        }
+
         return OpenSubtitlesManager.search(parameters).map { searchPromise in
             searchPromise.do(onSuccess: printSearchResult).asCompletable()
-        }.contramap { (urlSession: $0.urlSession(), userAgent: $0.openSubtitlesUserAgent()) }
+        }.contramap(dependenciesResolver)
     }
 
     static func searchAndPlay(parameters: SearchParameters, resultIndex: Int, encoding: String.Encoding, sequence: Int = 0) -> Reader<Environment, Completable> {
         let dependenciesResolver = { (env: Environment) in
-            (urlSession: env.urlSession(), userAgent: env.openSubtitlesUserAgent(), fileManager: env.fileManager(), gzip: env.gzip())
+            (env.urlSession(), env.openSubtitlesUserAgent(), env.fileManager(), env.gzip())
         }
 
         return OpenSubtitlesManager
