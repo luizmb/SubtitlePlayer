@@ -11,31 +11,18 @@ extension Command {
         return play(path: file, from: firstLine).contramap(^\.fileManager >>> run)
     }
 
-    static func play(path: String, from sequence: Int = 0) -> Reader<FileManagerProtocol, Completable> {
-        return player(for: path).map { subtitleStream in
-            subtitleStream
-                .asObservable()
-                .flatMap { $0.play(from: sequence) }
-                .do(onNext: printLine)
-                .ignoreElements()
-        }
+    static func play(path: String, encoding: String.Encoding = .isoLatin1, from sequence: Int = 0) -> Reader<FileManagerProtocol, Completable> {
+        return SubtitlePlayer
+            .play(filePath: path, encoding: encoding, from: sequence)
+            .map { $0.do(onNext: printLine).ignoreElements() }
     }
 
     static func play(subtitle: Subtitle, from sequence: Int = 0) -> Completable {
-        return SubtitlePlayer(subtitle: subtitle)
-            .play(from: sequence)
+        return SubtitlePlayer
+            .play(subtitle: subtitle, from: sequence)
             .do(onNext: printLine)
             .ignoreElements()
     }
-}
-
-private func player(for path: String, encoding: String.Encoding = .isoLatin1) -> Reader<FileManagerProtocol, Single<SubtitlePlayer>> {
-    return Subtitle.from(filePath: path, encoding: encoding).map { result in
-        result.fold(
-            ifSuccess: Single<Subtitle>.just,
-            ifFailure: { Single<Subtitle>.error($0) }
-        )
-    }.map { $0.map(SubtitlePlayer.init) }
 }
 
 private func printLine(lines: [Subtitle.Line]) {

@@ -5,11 +5,11 @@ import RxSwift
 public class SubtitlePlayer {
     private let subtitle: Subtitle
 
-    public init(subtitle: Subtitle) {
+    init(subtitle: Subtitle) {
         self.subtitle = subtitle
     }
 
-    public func play(from sequence: Int = 0) -> Observable<[Subtitle.Line]> {
+    func play(from sequence: Int = 0) -> Observable<[Subtitle.Line]> {
         return playEvents(from: sequence, lines: [.init(sequence: 0, start: .zero, end: .zero, text: "")] + subtitle.lines).scanSubtitle()
     }
 }
