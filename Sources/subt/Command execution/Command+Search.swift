@@ -30,36 +30,20 @@ extension Command {
     }
 
     static func searchOnly(parameters: SearchParameters) -> Reader<Environment, Completable> {
-        return OpenSubtitleAPI.search(parameters).map { searchPromise in
+        return OpenSubtitlesManager.search(parameters).map { searchPromise in
             searchPromise.do(onSuccess: printSearchResult).asCompletable()
-        }.contramap { ($0.urlSession(), $0.openSubtitlesUserAgent()) }
+        }.contramap { (urlSession: $0.urlSession(), userAgent: $0.openSubtitlesUserAgent()) }
     }
 
     static func searchAndPlay(parameters: SearchParameters, resultIndex: Int, encoding: String.Encoding = .isoLatin1, sequence: Int = 0) -> Reader<Environment, Completable> {
-        return Reader { environment in
-            return OpenSubtitleAPI
-                .search(parameters)
-                .inject((environment.urlSession(), environment.openSubtitlesUserAgent()))
-                .flatMap { (results: [SearchResponse]) -> Single<SearchResponse> in
-                    results
-                        .subtitle(at: resultIndex)
-                        .asSingle
-                }
-                .flatMap { response in
-                    OpenSubtitleAPI
-                        .download(subtitle: response)
-                        .inject((environment.urlSession(), environment.openSubtitlesUserAgent()))
-                }
-                .flatMap {
-                    environment
-                        .gzip()
-                        .decompress($0)
-                        .asSingle
-                }
-                .flatMapCompletable { data in
-                    Command.play(data: data, from: sequence)
-                }
+        let dependenciesResolver = { (env: Environment) in
+            (urlSession: env.urlSession(), userAgent: env.openSubtitlesUserAgent(), fileManager: env.fileManager(), gzip: env.gzip())
         }
+
+        return OpenSubtitlesManager
+            .searchDownloadUnzip(parameters, at: resultIndex)
+            .contramap(dependenciesResolver)
+            .map { $0.flatMapCompletable { Command.play(data: $0, from: sequence) } }
     }
 }
 
@@ -79,12 +63,4 @@ private func printSearchResult(searchResult: [SearchResponse]) {
                 """
             }.joined(separator: "\n")
     )
-}
-
-private func downloadAndPlay(item: SearchResponse) -> Reader<Environment, Completable> {
-    return Command.download(with: [
-        .play(true),
-        .subtitleURL(item.subDownloadLink),
-        .destination("\(UUID().uuidString).tmp")
-    ])
 }
