@@ -10,7 +10,7 @@ public typealias ReaderFileSystem<T> = Reader<(fileManager: FileManagerProtocol,
 
 extension OpenSubtitlesManager {
     public static func download(from sourceURL: URL) -> ReaderNetworking<Single<Data>> {
-        return OpenSubtitleAPI.download(sourceURL).contramap { ($0.urlSession, $0.userAgent) }
+        return OpenSubtitlesAPI.download(sourceURL).contramap { ($0.urlSession, $0.userAgent) }
     }
 
     public static func download(from sourceURL: URL, unzipInto destinationPath: String) -> ReaderFull<Single<String>> {
@@ -20,11 +20,11 @@ extension OpenSubtitlesManager {
     }
 
     public static func download(subtitle: SearchResponse) -> ReaderNetworking<Single<Data>> {
-        return OpenSubtitleAPI.download(subtitle: subtitle).contramap { ($0.urlSession, $0.userAgent) }
+        return OpenSubtitlesAPI.download(subtitle: subtitle).contramap { ($0.urlSession, $0.userAgent) }
     }
 
     public static func search(_ params: SearchParameters) -> ReaderNetworking<Single<[SearchResponse]>> {
-        return OpenSubtitleAPI.search(params).contramap { ($0.urlSession, $0.userAgent) }
+        return OpenSubtitlesAPI.search(params).contramap { ($0.urlSession, $0.userAgent) }
     }
 
     public static func search(_ params: SearchParameters, at index: Int) -> ReaderNetworking<Single<SearchResponse>> {

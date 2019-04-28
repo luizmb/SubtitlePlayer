@@ -2,7 +2,7 @@ import Common
 import Foundation
 import RxSwift
 
-public final class OpenSubtitleAPI {
+public final class OpenSubtitlesAPI {
     public static func request(endpoint: OpenSubtitleEndpoint) -> Reader<(URLSessionProtocol, UserAgent), Observable<(HTTPURLResponse, Data)>> {
         return Reader { (urlSession, userAgent) -> Observable<(HTTPURLResponse, Data)> in
             return urlSession
