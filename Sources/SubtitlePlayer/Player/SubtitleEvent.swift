@@ -1,8 +1,8 @@
 import Foundation
 
 public enum SubtitleEvent {
-    case entry(offset: Double, text: String)
-    case exit(offset: Double, text: String)
+    case entry(offset: Double, line: Subtitle.Line)
+    case exit(offset: Double, line: Subtitle.Line)
 }
 
 extension SubtitleEvent {
@@ -12,9 +12,9 @@ extension SubtitleEvent {
         }
     }
 
-    public var text: String {
+    public var line: Subtitle.Line {
         switch self {
-        case let .entry(_, text), let .exit(_, text): return text
+        case let .entry(_, line), let .exit(_, line): return line
         }
     }
 }

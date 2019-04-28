@@ -66,7 +66,7 @@ private func player(for path: String, encoding: String.Encoding = .isoLatin1) ->
     return openFile(path: path, encoding: encoding).map { $0.map(SubtitlePlayer.init) }
 }
 
-private func printLine(lines: [String]) {
+private func printLine(lines: [Subtitle.Line]) {
     print("\u{001B}[2J")
-    print(lines.joined(separator: "\n"))
+    print(lines.map(^\.text).joined(separator: "\n"))
 }

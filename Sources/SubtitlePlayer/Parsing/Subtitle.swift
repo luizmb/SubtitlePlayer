@@ -1,17 +1,17 @@
 import Common
 import Foundation
 
-public struct Subtitle {
-    let lines: [Line]
+public struct Subtitle: Equatable {
+    public let lines: [Line]
 
     public init(lines: [Line]) {
         self.lines = lines
     }
 
-    public struct Line {
-        let start: Time
-        let end: Time
-        let text: String
+    public struct Line: Equatable {
+        public let start: Time
+        public let end: Time
+        public let text: String
 
         public init(start: Time, end: Time, text: String) {
             self.start = start

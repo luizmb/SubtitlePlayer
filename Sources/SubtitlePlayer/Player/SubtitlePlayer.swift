@@ -9,21 +9,21 @@ public class SubtitlePlayer {
         self.subtitle = subtitle
     }
 
-    public func playFromBeggining() -> Observable<[String]> {
-        return playEvents(from: 0, lines: [.init(start: .zero, end: .zero, text: "")] + subtitle.lines).scanText()
+    public func playFromBeggining() -> Observable<[Subtitle.Line]> {
+        return playEvents(from: 0, lines: [.init(start: .zero, end: .zero, text: "")] + subtitle.lines).scanSubtitle()
     }
 
-    public func play(from index: Int) -> Observable<[String]> {
-        return playEvents(from: index, lines: subtitle.lines).scanText()
+    public func play(from index: Int) -> Observable<[Subtitle.Line]> {
+        return playEvents(from: index, lines: subtitle.lines).scanSubtitle()
     }
 }
 
 extension Observable where Element == SubtitleEvent {
-    public func scanText() -> Observable<[String]> {
-        return scan([String](), accumulator: { (strings, event) -> [String] in
+    public func scanSubtitle() -> Observable<[Subtitle.Line]> {
+        return scan([Subtitle.Line](), accumulator: { (accumulator, event) -> [Subtitle.Line] in
             switch event {
-            case let .entry(_, text): return strings + [text]
-            case let .exit(_, text): return strings.filter { $0 != text }
+            case let .entry(_, line): return accumulator + [line]
+            case let .exit(_, line): return accumulator.filter { $0 != line }
             }
         })
     }
@@ -54,8 +54,8 @@ private func getEvents(from index: Int, lines: [Subtitle.Line]) -> Result<[Subti
             .filter { line in line.start.totalSeconds - referenceStart >= 0 }
             .reduce([SubtitleEvent]()) { events, line in
                 events + [
-                    SubtitleEvent.entry(offset: line.start.totalSeconds - referenceStart, text: line.text),
-                    SubtitleEvent.exit(offset: line.end.totalSeconds - referenceStart, text: line.text),
+                    SubtitleEvent.entry(offset: line.start.totalSeconds - referenceStart, line: line),
+                    SubtitleEvent.exit(offset: line.end.totalSeconds - referenceStart, line: line),
                 ]
             }
     )
