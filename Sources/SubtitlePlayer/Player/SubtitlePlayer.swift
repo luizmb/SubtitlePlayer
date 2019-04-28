@@ -10,7 +10,7 @@ public class SubtitlePlayer {
     }
 
     public func playFromBeggining() -> Observable<[Subtitle.Line]> {
-        return playEvents(from: 0, lines: [.init(start: .zero, end: .zero, text: "")] + subtitle.lines).scanSubtitle()
+        return playEvents(from: 0, lines: [.init(sequence: 0, start: .zero, end: .zero, text: "")] + subtitle.lines).scanSubtitle()
     }
 
     public func play(from index: Int) -> Observable<[Subtitle.Line]> {
