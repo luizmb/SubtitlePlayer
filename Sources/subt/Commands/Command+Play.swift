@@ -17,6 +17,13 @@ extension Command {
             .map { $0.do(onNext: printLine).ignoreElements() }
     }
 
+    static func play(data: Data, encoding: String.Encoding = .isoLatin1, from sequence: Int = 0) -> Completable {
+        return SubtitlePlayer
+            .play(data: data, encoding: encoding, from: sequence)
+            .do(onNext: printLine)
+            .ignoreElements()
+    }
+
     static func play(subtitle: Subtitle, from sequence: Int = 0) -> Completable {
         return SubtitlePlayer
             .play(subtitle: subtitle, from: sequence)

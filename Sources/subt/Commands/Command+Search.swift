@@ -19,7 +19,7 @@ extension Command {
             tag: arguments.firstNonNil(^\.tag)
         )
 
-        let initialLine = arguments.firstNonNil(^\.line)
+        let initialLine = arguments.firstNonNil(^\.line) ?? 0
 
         return arguments
             .firstNonNil(^\.play)
@@ -35,7 +35,7 @@ extension Command {
         }.contramap { ($0.urlSession(), $0.openSubtitlesUserAgent()) }
     }
 
-    static func searchAndPlay(parameters: SearchParameters, resultIndex: Int, sequence: Int?) -> Reader<Environment, Completable> {
+    static func searchAndPlay(parameters: SearchParameters, resultIndex: Int, encoding: String.Encoding = .isoLatin1, sequence: Int = 0) -> Reader<Environment, Completable> {
         return Reader { environment in
             return OpenSubtitleAPI
                 .search(parameters)
@@ -56,13 +56,8 @@ extension Command {
                         .decompress($0)
                         .asSingle
                 }
-                .flatMap {
-                    Subtitle
-                        .from(data: $0, encoding: .isoLatin1)
-                        .asSingle
-                }
-                .flatMapCompletable { subtitle in
-                    Command.play(subtitle: subtitle, from: sequence ?? 0)
+                .flatMapCompletable { data in
+                    Command.play(data: data, from: sequence)
                 }
         }
     }
