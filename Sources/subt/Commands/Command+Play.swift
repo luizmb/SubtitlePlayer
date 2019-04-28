@@ -29,20 +29,13 @@ extension Command {
     }
 }
 
-private func openFile(path: String, encoding: String.Encoding = .isoLatin1) -> Reader<FileManagerProtocol, Single<Subtitle>> {
+private func player(for path: String, encoding: String.Encoding = .isoLatin1) -> Reader<FileManagerProtocol, Single<SubtitlePlayer>> {
     return Subtitle.from(filePath: path, encoding: encoding).map { result in
         result.fold(
             ifSuccess: Single<Subtitle>.just,
-            ifFailure: {
-                print("File not found: \(path)")
-                return Single<Subtitle>.error($0)
-            }
+            ifFailure: { Single<Subtitle>.error($0) }
         )
-    }
-}
-
-private func player(for path: String, encoding: String.Encoding = .isoLatin1) -> Reader<FileManagerProtocol, Single<SubtitlePlayer>> {
-    return openFile(path: path, encoding: encoding).map { $0.map(SubtitlePlayer.init) }
+    }.map { $0.map(SubtitlePlayer.init) }
 }
 
 private func printLine(lines: [Subtitle.Line]) {

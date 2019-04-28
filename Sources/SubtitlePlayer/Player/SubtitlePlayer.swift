@@ -20,7 +20,8 @@ extension SubtitlePlayer {
     }
 
     public static func play(data: Data, encoding: String.Encoding = .isoLatin1, from sequence: Int = 0) -> Observable<[Subtitle.Line]> {
-        return Subtitle.from(data: data, encoding: encoding)
+        return Subtitle
+            .from(data: data, encoding: encoding)
             .fold(
                 ifSuccess: { play(subtitle: $0, from: sequence) },
                 ifFailure: { .error($0) }
@@ -28,11 +29,23 @@ extension SubtitlePlayer {
     }
 
     public static func play(string: String, from sequence: Int = 0) -> Observable<[Subtitle.Line]> {
-        return Subtitle.from(string: string)
+        return Subtitle
+            .from(string: string)
             .fold(
                 ifSuccess: { play(subtitle: $0, from: sequence) },
                 ifFailure: { .error($0) }
-        )
+            )
+    }
+
+    public static func play(filePath: String, encoding: String.Encoding = .isoLatin1, from sequence: Int = 0) -> Reader<FileManagerProtocol, Observable<[Subtitle.Line]>> {
+        return Subtitle
+            .from(filePath: filePath, encoding: encoding)
+            .map {
+                $0.fold(
+                    ifSuccess: { play(subtitle: $0, from: sequence) },
+                    ifFailure: { .error($0) }
+                )
+            }
     }
 }
 
