@@ -20,11 +20,12 @@ extension Command {
         )
 
         let initialLine = arguments.firstNonNil(^\.line) ?? 0
+        let encoding = arguments.firstNonNil(^\.encoding) ?? .utf8
 
         return arguments
             .firstNonNil(^\.play)
             .fold(
-                ifSome: { searchAndPlay(parameters: searchParameters, resultIndex: $0, sequence: initialLine) },
+                ifSome: { searchAndPlay(parameters: searchParameters, resultIndex: $0, encoding: encoding, sequence: initialLine) },
                 ifNone: { searchOnly(parameters: searchParameters) }
             )
     }
@@ -35,7 +36,7 @@ extension Command {
         }.contramap { (urlSession: $0.urlSession(), userAgent: $0.openSubtitlesUserAgent()) }
     }
 
-    static func searchAndPlay(parameters: SearchParameters, resultIndex: Int, encoding: String.Encoding = .isoLatin1, sequence: Int = 0) -> Reader<Environment, Completable> {
+    static func searchAndPlay(parameters: SearchParameters, resultIndex: Int, encoding: String.Encoding, sequence: Int = 0) -> Reader<Environment, Completable> {
         let dependenciesResolver = { (env: Environment) in
             (urlSession: env.urlSession(), userAgent: env.openSubtitlesUserAgent(), fileManager: env.fileManager(), gzip: env.gzip())
         }
@@ -43,7 +44,7 @@ extension Command {
         return OpenSubtitlesManager
             .searchDownloadUnzip(parameters, at: resultIndex)
             .contramap(dependenciesResolver)
-            .map { $0.flatMapCompletable { Command.play(data: $0, from: sequence) } }
+            .map { $0.flatMapCompletable { Command.play(data: $0, encoding: encoding, from: sequence) } }
     }
 }
 

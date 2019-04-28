@@ -3,6 +3,7 @@ import Foundation
 enum PlayArgument {
     case file(String)
     case initialLine(Int)
+    case encoding(String.Encoding)
 
     static func parse(_ argument: String) -> PlayArgument? {
         let components = argument.components(separatedBy: "=")
@@ -11,6 +12,8 @@ enum PlayArgument {
             return components[safe: 1].map(PlayArgument.file)
         case "from-line":
             return components[safe: 1].flatMap(Int.init).map(PlayArgument.initialLine)
+        case "encoding":
+            return components[safe: 1].flatMap(String.Encoding.init(string:)).map(PlayArgument.encoding)
         default:
             return nil
         }
@@ -26,6 +29,11 @@ extension PlayArgument {
     var line: Int? {
         guard case let .initialLine(line) = self else { return nil }
         return line
+    }
+
+    var encoding: String.Encoding? {
+        guard case let .encoding(encoding) = self else { return nil }
+        return encoding
     }
 }
 

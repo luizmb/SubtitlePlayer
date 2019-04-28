@@ -7,17 +7,18 @@ extension Command {
     static func play(with arguments: [PlayArgument]) -> Reader<Environment, Completable> {
         guard let file = arguments.firstNonNil(^\.file) else { return .pure(.error(MissingArgumentError(argument: "file"))) }
         let firstLine = arguments.firstNonNil(^\.line) ?? 0
+        let encoding = arguments.firstNonNil(^\.encoding) ?? .utf8
 
-        return play(path: file, from: firstLine).contramap(^\.fileManager >>> run)
+        return play(path: file, encoding: encoding, from: firstLine).contramap(^\.fileManager >>> run)
     }
 
-    static func play(path: String, encoding: String.Encoding = .isoLatin1, from sequence: Int = 0) -> Reader<FileManagerProtocol, Completable> {
+    static func play(path: String, encoding: String.Encoding, from sequence: Int = 0) -> Reader<FileManagerProtocol, Completable> {
         return SubtitlePlayer
             .play(filePath: path, encoding: encoding, from: sequence)
             .map { $0.do(onNext: printLine).ignoreElements() }
     }
 
-    static func play(data: Data, encoding: String.Encoding = .isoLatin1, from sequence: Int = 0) -> Completable {
+    static func play(data: Data, encoding: String.Encoding, from sequence: Int = 0) -> Completable {
         return SubtitlePlayer
             .play(data: data, encoding: encoding, from: sequence)
             .do(onNext: printLine)

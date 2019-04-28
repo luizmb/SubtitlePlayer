@@ -4,6 +4,7 @@ enum DownloadArgument {
     case subtitleURL(URL)
     case destination(String)
     case play(Bool)
+    case encoding(String.Encoding)
 
     static func parse(_ argument: String) -> DownloadArgument? {
         let components = argument.components(separatedBy: "=")
@@ -14,6 +15,8 @@ enum DownloadArgument {
             return components[safe: 1].map(DownloadArgument.destination)
         case "play":
             return components[safe: 1].flatMap(Bool.init).map(DownloadArgument.play)
+        case "encoding":
+            return components[safe: 1].flatMap(String.Encoding.init(string:)).map(DownloadArgument.encoding)
         default:
             return nil
         }
@@ -34,6 +37,11 @@ extension DownloadArgument {
     var play: Bool? {
         guard case let .play(play) = self else { return nil }
         return play
+    }
+
+    var encoding: String.Encoding? {
+        guard case let .encoding(encoding) = self else { return nil }
+        return encoding
     }
 }
 

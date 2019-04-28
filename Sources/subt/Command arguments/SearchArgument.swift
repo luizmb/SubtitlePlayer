@@ -12,6 +12,7 @@ enum SearchArgument {
     case hash(String)
     case play(index: Int)
     case initialLine(Int)
+    case encoding(String.Encoding)
 
     static func parse(_ argument: String) -> SearchArgument? {
         let components = argument.components(separatedBy: "=")
@@ -36,6 +37,8 @@ enum SearchArgument {
             return components[safe: 1].flatMap(Int.init).map(SearchArgument.play)
         case "from-line":
             return components[safe: 1].flatMap(Int.init).map(SearchArgument.initialLine)
+        case "encoding":
+            return components[safe: 1].flatMap(String.Encoding.init(string:)).map(SearchArgument.encoding)
         default:
             return nil
         }
@@ -91,6 +94,11 @@ extension SearchArgument {
     var line: Int? {
         guard case let .initialLine(line) = self else { return nil }
         return line
+    }
+
+    var encoding: String.Encoding? {
+        guard case let .encoding(encoding) = self else { return nil }
+        return encoding
     }
 }
 
