@@ -1,10 +1,6 @@
 import Foundation
 import Gzip
-
-public protocol GzipProtocol {
-    static func compress(_ data: Data) -> Result<Data, Error>
-    static func decompress(_ data: Data) -> Result<Data, Error>
-}
+import OpenSubtitlesDownloader
 
 public struct Gzip: GzipProtocol {
     public static func compress(_ data: Data) -> Result<Data, Error> {

@@ -10,27 +10,11 @@ extension Command {
         guard let destination = arguments.firstNonNil(^\.destination) else { return .pure(.error(MissingArgumentError(argument: "into"))) }
         let play = arguments.firstNonNil(^\.play) ?? false
 
-        return downloadFile(from: source)
-            .flatMap(partialApply(unzipAndSave, destination))
+        return OpenSubtitlesManager
+            .download(from: source, unzipInto: destination)
+            .contramap { (urlSession: $0.urlSession(), userAgent: $0.openSubtitlesUserAgent(), fileManager: $0.fileManager(), gzip: $0.gzip()) }
             .flatMap(play ? startPlaying : { .pure($0.asCompletable()) })
     }
-}
-
-private func downloadFile(from: URL) -> Reader<Environment, Single<Data>> {
-    return OpenSubtitleAPI
-        .download(from)
-        .contramap { ($0.urlSession(), $0.openSubtitlesUserAgent()) }
-}
-
-private func unzipAndSave(into path: String, promisedData: Single<Data>) -> Reader<Environment, Single<String>> {
-    return Reader { (fileManager, gzip) in
-        promisedData.flatMap { data in
-            gzip
-                .decompress(data)
-                .flatMap { fileManager.save($0, into: path).mapError(^\.self) }
-                .asSingle
-        }
-    }.contramap { ($0.fileManager(), $0.gzip()) }
 }
 
 private func startPlaying(promisedPath: Single<String>) -> Reader<Environment, Completable> {
