@@ -25,6 +25,12 @@ To play from a specific dialog (convenient for popcorn breaks), run:
 swift run subt play file=/path/to/subtitle.srt from-line=42
 ```
 
+To play using a specific encoding, run:
+```shell
+swift run subt play file=/path/to/subtitle.srt encoding=isoLatin1
+```
+(for a full list of supported encodings, please check: https://github.com/luizmb/SubtitlePlayer/blob/master/Sources/Common/StringEncoding%2BExtensions.swift)
+
 ### Search
 To search a movie subtitles, run:
 ```shell
@@ -48,9 +54,9 @@ swift run subt download url=https://dl.opensubtitles.org/en/download/src-api/vrf
 ```
 
 ### All Together
-To search a TV show, pick the best match and play from certain dialog, run:
+To search a TV show, pick the best match and play from certain dialog using some specific encoding, run:
 ```
-swift run subt search query=game\ of\ thrones season=8 episode=2 language=pob play=0 from-line=3
+swift run subt search query=game\ of\ thrones season=8 episode=2 language=pob play=0 from-line=3 encoding=isoLatin1
 ```
 
 ## Disclaimer
