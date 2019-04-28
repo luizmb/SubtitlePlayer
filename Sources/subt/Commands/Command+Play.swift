@@ -30,12 +30,12 @@ extension Command {
 }
 
 private func openFile(path: String, encoding: String.Encoding = .isoLatin1) -> Reader<FileManagerProtocol, Single<Subtitle>> {
-    return Subtitle.from(filePath: path, encoding: encoding).map { maybeSubtitle in
-        maybeSubtitle.fold(
-            ifSome: Single<Subtitle>.just,
-            ifNone: {
+    return Subtitle.from(filePath: path, encoding: encoding).map { result in
+        result.fold(
+            ifSuccess: Single<Subtitle>.just,
+            ifFailure: {
                 print("File not found: \(path)")
-                return Single<Subtitle>.error(FileNotFoundError(path: path))
+                return Single<Subtitle>.error($0)
             }
         )
     }

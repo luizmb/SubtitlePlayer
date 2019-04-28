@@ -1,3 +1,4 @@
+import Common
 import Foundation
 
 public struct SearchResponse: Decodable {
@@ -126,6 +127,12 @@ extension SearchResponse {
     public var formattedSeriesString: String? {
         guard !["", "0"].contains(seriesEpisode) && !["", "0"].contains(seriesSeason) else { return nil }
         return "S\(seriesSeason.leading(char: "0", toLength: 2))E\(seriesEpisode.leading(char: "0", toLength: 2))"
+    }
+}
+
+extension Array where Element == SearchResponse {
+    public func subtitle(at index: Int) -> Result<SearchResponse, ResultIndexOutOfBoundsError> {
+        return self[safe: index].toResult(orError: ResultIndexOutOfBoundsError(index: index))
     }
 }
 

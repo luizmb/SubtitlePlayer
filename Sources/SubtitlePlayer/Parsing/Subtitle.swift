@@ -24,21 +24,26 @@ public struct Subtitle: Equatable {
 }
 
 extension Subtitle {
-    public static func from(filePath: String, encoding: String.Encoding) -> Reader<FileManagerProtocol, Subtitle?> {
+    public static func from(filePath: String, encoding: String.Encoding) -> Reader<FileManagerProtocol, Result<Subtitle, Error>> {
         return Reader { fileManager in
             fileManager
                 .contents(atPath: filePath)
-                .flatMap { Subtitle.from(data: $0, encoding: encoding) }
+                .toResult(orError: FileManagerError.fileNotFound(fileName: filePath, parent: URL(fileURLWithPath: filePath).deletingLastPathComponent(), childrenFoundOnParent: []))
+                .flatMap { Subtitle.from(data: $0, encoding: encoding).mapError(^\.self) }
         }
     }
 
-    public static func from(data: Data, encoding: String.Encoding) -> Subtitle? {
+    public static func from(data: Data, encoding: String.Encoding) -> Result<Subtitle, SubtitleDecodingError> {
         return String(data: data, encoding: encoding)
-            .map(from(string:))
+            .toResult(orError: SubtitleDecodingError())
+            .flatMap(from(string:))
+
     }
 
-    public static func from(string: String) -> Subtitle {
-        return .init(lines: extractLines(from: string))
+    public static func from(string: String) -> Result<Subtitle, SubtitleDecodingError> {
+        let lines = extractLines(from: string)
+        guard lines.count > 0 else { return .failure(SubtitleDecodingError()) }
+        return .success(.init(lines: lines))
     }
 }
 

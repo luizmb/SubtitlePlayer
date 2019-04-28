@@ -41,8 +41,8 @@ extension Command {
                 .search(parameters)
                 .inject((environment.urlSession(), environment.openSubtitlesUserAgent()))
                 .flatMap { (results: [SearchResponse]) -> Single<SearchResponse> in
-                    results[safe: resultIndex]
-                        .toResult(orError: ResultIndexOutOfBoundsError(index: resultIndex))
+                    results
+                        .subtitle(at: resultIndex)
                         .asSingle
                 }
                 .flatMap { response in
@@ -59,9 +59,7 @@ extension Command {
                 .flatMap {
                     Subtitle
                         .from(data: $0, encoding: .isoLatin1)
-                        .toResult(orError: InvalidSubtitleError())
                         .asSingle
-
                 }
                 .flatMapCompletable { subtitle in
                     Command.play(subtitle: subtitle, from: sequence ?? 0)

@@ -14,6 +14,28 @@ public class SubtitlePlayer {
     }
 }
 
+extension SubtitlePlayer {
+    public static func play(subtitle: Subtitle, from sequence: Int = 0) -> Observable<[Subtitle.Line]> {
+        return SubtitlePlayer(subtitle: subtitle).play(from: sequence)
+    }
+
+    public static func play(data: Data, encoding: String.Encoding = .isoLatin1, from sequence: Int = 0) -> Observable<[Subtitle.Line]> {
+        return Subtitle.from(data: data, encoding: encoding)
+            .fold(
+                ifSuccess: { play(subtitle: $0, from: sequence) },
+                ifFailure: { .error($0) }
+            )
+    }
+
+    public static func play(string: String, from sequence: Int = 0) -> Observable<[Subtitle.Line]> {
+        return Subtitle.from(string: string)
+            .fold(
+                ifSuccess: { play(subtitle: $0, from: sequence) },
+                ifFailure: { .error($0) }
+        )
+    }
+}
+
 extension Observable where Element == SubtitleEvent {
     public func scanSubtitle() -> Observable<[Subtitle.Line]> {
         return scan([Subtitle.Line](), accumulator: { (accumulator, event) -> [Subtitle.Line] in
