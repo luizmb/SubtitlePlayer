@@ -10,13 +10,10 @@ extension Command {
         guard let destination = arguments.firstNonNil(^\.destination) else { return .pure(.error(MissingArgumentError(argument: "into"))) }
         let play = arguments.firstNonNil(^\.play) ?? false
         let encoding = arguments.firstNonNil(^\.encoding) ?? .utf8
-        let dependenciesResolver = { (env: Environment) in
-            (env.urlSession(), env.openSubtitlesUserAgent(), env.fileManager(), env.gzip())
-        }
 
         return OpenSubtitlesManager
             .download(from: source, unzipInto: destination)
-            .contramap(dependenciesResolver)
+            .contramap(^\.urlSession, ^\.openSubtitlesUserAgent, ^\.fileManager, ^\.gzip)
             .flatMap(play ? { startPlaying(promisedPath: $0, encoding: encoding) } : { .pure($0.asCompletable()) })
     }
 }
@@ -27,5 +24,5 @@ private func startPlaying(promisedPath: Single<String>, encoding: String.Encodin
             .flatMapCompletable { file in
                 Command.play(path: file, encoding: encoding, from: 0).inject(fileManager)
             }
-    }.contramap(^\.fileManager >>> run)
+    }.contramap(^\.fileManager)
 }

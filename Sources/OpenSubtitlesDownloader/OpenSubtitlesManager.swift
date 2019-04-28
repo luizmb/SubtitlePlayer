@@ -4,27 +4,35 @@ import RxSwift
 
 public enum OpenSubtitlesManager { }
 
-public typealias ReaderFull<T> = Reader<(urlSession: URLSessionProtocol, userAgent: UserAgent, fileManager: FileManagerProtocol, gzip: GzipProtocol.Type), T>
-public typealias ReaderNetworking<T> = Reader<(urlSession: URLSessionProtocol, userAgent: UserAgent), T>
-public typealias ReaderFileSystem<T> = Reader<(fileManager: FileManagerProtocol, gzip: GzipProtocol.Type), T>
+public typealias ReaderFull<T> = Reader<(URLSessionProtocol, UserAgent, FileManagerProtocol, GzipProtocol.Type), T>
+
+public typealias ReaderNetworking<T> = Reader<(URLSessionProtocol, UserAgent), T>
+private func fullToNetworkingDependencies(urlSession: URLSessionProtocol, userAgent: UserAgent, fileManager: FileManagerProtocol, gzip: GzipProtocol.Type) -> (URLSessionProtocol, UserAgent) {
+    return (urlSession, userAgent)
+}
+
+public typealias ReaderFileSystem<T> = Reader<(FileManagerProtocol, GzipProtocol.Type), T>
+private func fullToFileSystemDependencies(urlSession: URLSessionProtocol, userAgent: UserAgent, fileManager: FileManagerProtocol, gzip: GzipProtocol.Type) -> (FileManagerProtocol, GzipProtocol.Type) {
+    return (fileManager, gzip)
+}
 
 extension OpenSubtitlesManager {
     public static func download(from sourceURL: URL) -> ReaderNetworking<Single<Data>> {
-        return OpenSubtitlesAPI.download(sourceURL).contramap { ($0.urlSession, $0.userAgent) }
+        return OpenSubtitlesAPI.download(sourceURL)
     }
 
     public static func download(from sourceURL: URL, unzipInto destinationPath: String) -> ReaderFull<Single<String>> {
         return download(from: sourceURL)
-            .contramap { (urlSession: $0.urlSession, userAgent: $0.userAgent) }
-            .flatMap { unzipAndSave(into: destinationPath, promisedData: $0).contramap { (fileManager: $0.fileManager, gzip: $0.gzip) } }
+            .contramap(fullToNetworkingDependencies)
+            .flatMap { unzipAndSave(into: destinationPath, promisedData: $0).contramap(fullToFileSystemDependencies) }
     }
 
     public static func download(subtitle: SearchResponse) -> ReaderNetworking<Single<Data>> {
-        return OpenSubtitlesAPI.download(subtitle: subtitle).contramap { ($0.urlSession, $0.userAgent) }
+        return OpenSubtitlesAPI.download(subtitle: subtitle)
     }
 
     public static func search(_ params: SearchParameters) -> ReaderNetworking<Single<[SearchResponse]>> {
-        return OpenSubtitlesAPI.search(params).contramap { ($0.urlSession, $0.userAgent) }
+        return OpenSubtitlesAPI.search(params)
     }
 
     public static func search(_ params: SearchParameters, at index: Int) -> ReaderNetworking<Single<SearchResponse>> {

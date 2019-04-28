@@ -31,23 +31,15 @@ extension Command {
     }
 
     static func searchOnly(parameters: SearchParameters) -> Reader<Environment, Completable> {
-        let dependenciesResolver = { (env: Environment) in
-            (env.urlSession(), env.openSubtitlesUserAgent())
-        }
-
         return OpenSubtitlesManager.search(parameters).map { searchPromise in
             searchPromise.do(onSuccess: printSearchResult).asCompletable()
-        }.contramap(dependenciesResolver)
+        }.contramap(^\.urlSession, ^\.openSubtitlesUserAgent)
     }
 
     static func searchAndPlay(parameters: SearchParameters, resultIndex: Int, encoding: String.Encoding, sequence: Int = 0) -> Reader<Environment, Completable> {
-        let dependenciesResolver = { (env: Environment) in
-            (env.urlSession(), env.openSubtitlesUserAgent(), env.fileManager(), env.gzip())
-        }
-
         return OpenSubtitlesManager
             .searchDownloadUnzip(parameters, at: resultIndex)
-            .contramap(dependenciesResolver)
+            .contramap(^\.urlSession, ^\.openSubtitlesUserAgent, ^\.fileManager, ^\.gzip)
             .map { $0.flatMapCompletable { Command.play(data: $0, encoding: encoding, from: sequence) } }
     }
 }

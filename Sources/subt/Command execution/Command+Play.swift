@@ -9,7 +9,7 @@ extension Command {
         let firstLine = arguments.firstNonNil(^\.line) ?? 0
         let encoding = arguments.firstNonNil(^\.encoding) ?? .utf8
 
-        return play(path: file, encoding: encoding, from: firstLine).contramap(^\.fileManager >>> run)
+        return play(path: file, encoding: encoding, from: firstLine).contramap(^\.fileManager)
     }
 
     static func play(path: String, encoding: String.Encoding, from sequence: Int = 0) -> Reader<FileManagerProtocol, Completable> {
