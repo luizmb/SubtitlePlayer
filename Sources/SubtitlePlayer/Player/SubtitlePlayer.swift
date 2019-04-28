@@ -9,12 +9,8 @@ public class SubtitlePlayer {
         self.subtitle = subtitle
     }
 
-    public func playFromBeggining() -> Observable<[Subtitle.Line]> {
-        return playEvents(from: 0, lines: [.init(sequence: 0, start: .zero, end: .zero, text: "")] + subtitle.lines).scanSubtitle()
-    }
-
-    public func play(from index: Int) -> Observable<[Subtitle.Line]> {
-        return playEvents(from: index, lines: subtitle.lines).scanSubtitle()
+    public func play(from sequence: Int = 0) -> Observable<[Subtitle.Line]> {
+        return playEvents(from: sequence, lines: [.init(sequence: 0, start: .zero, end: .zero, text: "")] + subtitle.lines).scanSubtitle()
     }
 }
 
@@ -29,8 +25,8 @@ extension Observable where Element == SubtitleEvent {
     }
 }
 
-private func playEvents(from index: Int, lines: [Subtitle.Line]) -> Observable<SubtitleEvent> {
-    return getEvents(from: index, lines: lines)
+private func playEvents(from sequence: Int, lines: [Subtitle.Line]) -> Observable<SubtitleEvent> {
+    return getEvents(from: sequence, lines: lines)
         .fold(
             ifSuccess: {
                 Observable<SubtitleEvent>
@@ -43,9 +39,9 @@ private func playEvents(from index: Int, lines: [Subtitle.Line]) -> Observable<S
     )
 }
 
-private func getEvents(from index: Int, lines: [Subtitle.Line]) -> Result<[SubtitleEvent], Error> {
-    guard let referenceStart = lines[safe: index]?.start.totalSeconds else {
-        return .failure(IndexOutOfBoundsError(providedIndex: index))
+private func getEvents(from sequence: Int, lines: [Subtitle.Line]) -> Result<[SubtitleEvent], Error> {
+    guard let referenceStart = lines.first(where: { $0.sequence == sequence })?.start.totalSeconds else {
+        return .failure(SequenceOutOfBoundsError(sequenceNumber: sequence))
     }
 
     return .success (

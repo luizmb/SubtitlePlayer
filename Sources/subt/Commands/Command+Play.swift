@@ -6,45 +6,24 @@ import SubtitlePlayer
 extension Command {
     static func play(with arguments: [PlayArgument]) -> Reader<Environment, Completable> {
         guard let file = arguments.firstNonNil(^\.file) else { return .pure(.error(MissingArgument(argument: "file"))) }
+        let firstLine = arguments.firstNonNil(^\.line) ?? 0
 
-        return arguments
-            .firstNonNil(^\.line)
-            .fold(
-                ifSome: partialApply(flip(play), file),
-                ifNone: lazy(playFromBeggining(path: file))
-            ).contramap(^\.fileManager >>> run)
+        return play(path: file, from: firstLine).contramap(^\.fileManager >>> run)
     }
 
-    static func playFromBeggining(path: String) -> Reader<FileManagerProtocol, Completable> {
+    static func play(path: String, from sequence: Int = 0) -> Reader<FileManagerProtocol, Completable> {
         return player(for: path).map { subtitleStream in
             subtitleStream
                 .asObservable()
-                .flatMap { $0.playFromBeggining() }
+                .flatMap { $0.play(from: sequence) }
                 .do(onNext: printLine)
                 .ignoreElements()
         }
     }
 
-    static func play(from index: Int, path: String) -> Reader<FileManagerProtocol, Completable> {
-        return player(for: path).map { subtitleStream in
-            subtitleStream
-                .asObservable()
-                .flatMap { $0.play(from: index) }
-                .do(onNext: printLine)
-                .ignoreElements()
-        }
-    }
-
-    static func playFromBeggining(subtitle: Subtitle) -> Completable {
+    static func play(subtitle: Subtitle, from sequence: Int = 0) -> Completable {
         return SubtitlePlayer(subtitle: subtitle)
-            .playFromBeggining()
-            .do(onNext: printLine)
-            .ignoreElements()
-    }
-
-    static func play(from index: Int, subtitle: Subtitle) -> Completable {
-        return SubtitlePlayer(subtitle: subtitle)
-            .play(from: index)
+            .play(from: sequence)
             .do(onNext: printLine)
             .ignoreElements()
     }

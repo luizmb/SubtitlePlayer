@@ -24,7 +24,7 @@ extension Command {
         return arguments
             .firstNonNil(^\.play)
             .fold(
-                ifSome: { searchAndPlay(parameters: searchParameters, playIndex: $0, initialLine: initialLine) },
+                ifSome: { searchAndPlay(parameters: searchParameters, resultIndex: $0, sequence: initialLine) },
                 ifNone: { searchOnly(parameters: searchParameters) }
             )
     }
@@ -35,14 +35,14 @@ extension Command {
         }.contramap { ($0.urlSession(), $0.openSubtitlesUserAgent()) }
     }
 
-    static func searchAndPlay(parameters: SearchParameters, playIndex: Int, initialLine: Int?) -> Reader<Environment, Completable> {
+    static func searchAndPlay(parameters: SearchParameters, resultIndex: Int, sequence: Int?) -> Reader<Environment, Completable> {
         return Reader { environment in
             return OpenSubtitleAPI
                 .search(parameters)
                 .inject((environment.urlSession(), environment.openSubtitlesUserAgent()))
                 .flatMap { (results: [SearchResponse]) -> Single<SearchResponse> in
-                    results[safe: playIndex]
-                        .toResult(orError: IndexOutOfBoundsError(providedIndex: playIndex))
+                    results[safe: resultIndex]
+                        .toResult(orError: ResultIndexOutOfBoundsError(index: resultIndex))
                         .asSingle
                 }
                 .flatMap { response in
@@ -64,10 +64,7 @@ extension Command {
 
                 }
                 .flatMapCompletable { subtitle in
-                    initialLine.fold(
-                        ifSome: { index in Command.play(from: index, subtitle: subtitle) },
-                        ifNone: { Command.playFromBeggining(subtitle: subtitle) }
-                    )
+                    Command.play(subtitle: subtitle, from: sequence ?? 0)
                 }
         }
     }

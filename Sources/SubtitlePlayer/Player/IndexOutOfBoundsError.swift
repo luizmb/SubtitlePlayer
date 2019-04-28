@@ -1,8 +1,8 @@
 import Foundation
 
-public struct IndexOutOfBoundsError: Error {
-    public let providedIndex: Int
-    public init(providedIndex: Int) {
-        self.providedIndex = providedIndex
+public struct SequenceOutOfBoundsError: Error {
+    public let sequenceNumber: Int
+    public init(sequenceNumber: Int) {
+        self.sequenceNumber = sequenceNumber
     }
 }

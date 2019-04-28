@@ -37,7 +37,7 @@ private func startPlaying(promisedPath: Single<String>) -> Reader<Environment, C
     return Reader { fileManager in
         promisedPath
             .flatMapCompletable { file in
-                Command.playFromBeggining(path: file).inject(fileManager)
+                Command.play(path: file, from: 0).inject(fileManager)
             }
     }.contramap(^\.fileManager >>> run)
 }
