@@ -19,6 +19,10 @@ public class Reader<E, A> {
         }
     }
 
+    public func dimap<A2, E2>(_ fn1: @escaping (A) -> A2, _ fn2: @escaping (E2) -> E) -> Reader<E2, A2> {
+        return map(fn1).contramap(fn2)
+    }
+
     public func flatMap<A2>(_ fn: @escaping (A) -> Reader<E, A2>) -> Reader<E, A2> {
         return Reader<E, A2> { environment in
             fn(self.inject(environment)).inject(environment)
