@@ -6,7 +6,7 @@
 //  Copyright © 2019 Luiz Rodrigo Martins Barbosa. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for SubtitlePlayer.
 FOUNDATION_EXPORT double SubtitlePlayerVersionNumber;

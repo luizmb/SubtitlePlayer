@@ -68,3 +68,18 @@ target 'SubtitlePlayer watchOS' do
     watchos_version
     rxswift
 end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['CODE_SIGNING_REQUIRED'] = "NO"
+            config.build_settings['CODE_SIGNING_ALLOWED'] = "NO"
+            config.build_settings['SWIFT_VERSION'] = "5.0"
+            config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = "YES"
+
+            if target.name == 'RxSwift' && config.name == 'Debug'
+                config.build_settings['OTHER_SWIFT_FLAGS'] ||= ['-D', 'TRACE_RESOURCES']
+            end
+        end
+    end
+end
