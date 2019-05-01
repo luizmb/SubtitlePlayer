@@ -6,6 +6,7 @@
 //  Copyright © 2019 Luiz Rodrigo Martins Barbosa. All rights reserved.
 //
 
+import Common
 import WatchKit
 import Foundation
 
@@ -14,8 +15,7 @@ class InterfaceController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        // Configure interface objects here.
+        print(Reader<Int, String> { String.init($0) })
     }
     
     override func willActivate() {

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D504818B2279CE580012BCB3"
-               BuildableName = "Subtitles App.app"
-               BlueprintName = "Subtitles App watchOS"
+               BlueprintIdentifier = "D50481972279CE5A0012BCB3"
+               BuildableName = "Subtitles App.appex"
+               BlueprintName = "Subtitles App watchOS Extension"
                ReferencedContainer = "container:Subtitles App.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D50481772279CE410012BCB3"
+               BlueprintIdentifier = "D504818B2279CE580012BCB3"
                BuildableName = "Subtitles App.app"
-               BlueprintName = "Subtitles App iOS"
+               BlueprintName = "Subtitles App watchOS"
                ReferencedContainer = "container:Subtitles App.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -64,8 +64,7 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES"
-      notificationPayloadFile = "Sources/Subtitles App/watchOS Extension/PushNotificationPayload.apns">
+      allowLocationSimulation = "YES">
       <RemoteRunnable
          runnableDebuggingMode = "2"
          BundleIdentifier = "com.apple.Carousel"
