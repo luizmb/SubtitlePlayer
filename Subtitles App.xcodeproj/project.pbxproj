@@ -7,6 +7,78 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D52CB90D227935BF008F83EF /* OpenSubtitlesDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = D52CB90B227935BF008F83EF /* OpenSubtitlesDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D52CB93922793668008F83EF /* OpenSubtitlesDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = D52CB90B227935BF008F83EF /* OpenSubtitlesDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D52CB93A22793668008F83EF /* OpenSubtitlesDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = D52CB90B227935BF008F83EF /* OpenSubtitlesDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D52CB93B22793669008F83EF /* OpenSubtitlesDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = D52CB90B227935BF008F83EF /* OpenSubtitlesDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D52CB950227936A0008F83EF /* ResultIndexOutOfBoundsErros.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB93D227936A0008F83EF /* ResultIndexOutOfBoundsErros.swift */; };
+		D52CB951227936A0008F83EF /* ResultIndexOutOfBoundsErros.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB93D227936A0008F83EF /* ResultIndexOutOfBoundsErros.swift */; };
+		D52CB952227936A0008F83EF /* ResultIndexOutOfBoundsErros.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB93D227936A0008F83EF /* ResultIndexOutOfBoundsErros.swift */; };
+		D52CB953227936A0008F83EF /* ResultIndexOutOfBoundsErros.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB93D227936A0008F83EF /* ResultIndexOutOfBoundsErros.swift */; };
+		D52CB954227936A0008F83EF /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB93F227936A0008F83EF /* URLRequest+Extensions.swift */; };
+		D52CB955227936A0008F83EF /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB93F227936A0008F83EF /* URLRequest+Extensions.swift */; };
+		D52CB956227936A0008F83EF /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB93F227936A0008F83EF /* URLRequest+Extensions.swift */; };
+		D52CB957227936A0008F83EF /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB93F227936A0008F83EF /* URLRequest+Extensions.swift */; };
+		D52CB958227936A0008F83EF /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB940227936A0008F83EF /* HTTPMethod.swift */; };
+		D52CB959227936A0008F83EF /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB940227936A0008F83EF /* HTTPMethod.swift */; };
+		D52CB95A227936A0008F83EF /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB940227936A0008F83EF /* HTTPMethod.swift */; };
+		D52CB95B227936A0008F83EF /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB940227936A0008F83EF /* HTTPMethod.swift */; };
+		D52CB95C227936A0008F83EF /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB941227936A0008F83EF /* URLSessionProtocol.swift */; };
+		D52CB95D227936A0008F83EF /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB941227936A0008F83EF /* URLSessionProtocol.swift */; };
+		D52CB95E227936A0008F83EF /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB941227936A0008F83EF /* URLSessionProtocol.swift */; };
+		D52CB95F227936A0008F83EF /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB941227936A0008F83EF /* URLSessionProtocol.swift */; };
+		D52CB960227936A0008F83EF /* Result+RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB942227936A0008F83EF /* Result+RxExtensions.swift */; };
+		D52CB961227936A0008F83EF /* Result+RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB942227936A0008F83EF /* Result+RxExtensions.swift */; };
+		D52CB962227936A0008F83EF /* Result+RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB942227936A0008F83EF /* Result+RxExtensions.swift */; };
+		D52CB963227936A0008F83EF /* Result+RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB942227936A0008F83EF /* Result+RxExtensions.swift */; };
+		D52CB964227936A0008F83EF /* URLSessionProtocol+RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB943227936A0008F83EF /* URLSessionProtocol+RxExtensions.swift */; };
+		D52CB965227936A0008F83EF /* URLSessionProtocol+RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB943227936A0008F83EF /* URLSessionProtocol+RxExtensions.swift */; };
+		D52CB966227936A0008F83EF /* URLSessionProtocol+RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB943227936A0008F83EF /* URLSessionProtocol+RxExtensions.swift */; };
+		D52CB967227936A0008F83EF /* URLSessionProtocol+RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB943227936A0008F83EF /* URLSessionProtocol+RxExtensions.swift */; };
+		D52CB968227936A0008F83EF /* OpenSubtitlesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB944227936A0008F83EF /* OpenSubtitlesManager.swift */; };
+		D52CB969227936A0008F83EF /* OpenSubtitlesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB944227936A0008F83EF /* OpenSubtitlesManager.swift */; };
+		D52CB96A227936A0008F83EF /* OpenSubtitlesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB944227936A0008F83EF /* OpenSubtitlesManager.swift */; };
+		D52CB96B227936A0008F83EF /* OpenSubtitlesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB944227936A0008F83EF /* OpenSubtitlesManager.swift */; };
+		D52CB96C227936A0008F83EF /* ImdbId.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB946227936A0008F83EF /* ImdbId.swift */; };
+		D52CB96D227936A0008F83EF /* ImdbId.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB946227936A0008F83EF /* ImdbId.swift */; };
+		D52CB96E227936A0008F83EF /* ImdbId.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB946227936A0008F83EF /* ImdbId.swift */; };
+		D52CB96F227936A0008F83EF /* ImdbId.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB946227936A0008F83EF /* ImdbId.swift */; };
+		D52CB970227936A0008F83EF /* SearchParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB947227936A0008F83EF /* SearchParameters.swift */; };
+		D52CB971227936A0008F83EF /* SearchParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB947227936A0008F83EF /* SearchParameters.swift */; };
+		D52CB972227936A0008F83EF /* SearchParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB947227936A0008F83EF /* SearchParameters.swift */; };
+		D52CB973227936A0008F83EF /* SearchParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB947227936A0008F83EF /* SearchParameters.swift */; };
+		D52CB974227936A0008F83EF /* LanguageId.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB948227936A0008F83EF /* LanguageId.swift */; };
+		D52CB975227936A0008F83EF /* LanguageId.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB948227936A0008F83EF /* LanguageId.swift */; };
+		D52CB976227936A0008F83EF /* LanguageId.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB948227936A0008F83EF /* LanguageId.swift */; };
+		D52CB977227936A0008F83EF /* LanguageId.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB948227936A0008F83EF /* LanguageId.swift */; };
+		D52CB978227936A0008F83EF /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB949227936A0008F83EF /* MovieInfo.swift */; };
+		D52CB979227936A0008F83EF /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB949227936A0008F83EF /* MovieInfo.swift */; };
+		D52CB97A227936A0008F83EF /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB949227936A0008F83EF /* MovieInfo.swift */; };
+		D52CB97B227936A0008F83EF /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB949227936A0008F83EF /* MovieInfo.swift */; };
+		D52CB97C227936A0008F83EF /* GzipProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94A227936A0008F83EF /* GzipProtocol.swift */; };
+		D52CB97D227936A0008F83EF /* GzipProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94A227936A0008F83EF /* GzipProtocol.swift */; };
+		D52CB97E227936A0008F83EF /* GzipProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94A227936A0008F83EF /* GzipProtocol.swift */; };
+		D52CB97F227936A0008F83EF /* GzipProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94A227936A0008F83EF /* GzipProtocol.swift */; };
+		D52CB980227936A0008F83EF /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94B227936A0008F83EF /* SearchResponse.swift */; };
+		D52CB981227936A0008F83EF /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94B227936A0008F83EF /* SearchResponse.swift */; };
+		D52CB982227936A0008F83EF /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94B227936A0008F83EF /* SearchResponse.swift */; };
+		D52CB983227936A0008F83EF /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94B227936A0008F83EF /* SearchResponse.swift */; };
+		D52CB984227936A0008F83EF /* UserAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94C227936A0008F83EF /* UserAgent.swift */; };
+		D52CB985227936A0008F83EF /* UserAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94C227936A0008F83EF /* UserAgent.swift */; };
+		D52CB986227936A0008F83EF /* UserAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94C227936A0008F83EF /* UserAgent.swift */; };
+		D52CB987227936A0008F83EF /* UserAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94C227936A0008F83EF /* UserAgent.swift */; };
+		D52CB988227936A0008F83EF /* OpenSubtitleEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94E227936A0008F83EF /* OpenSubtitleEndpoint.swift */; };
+		D52CB989227936A0008F83EF /* OpenSubtitleEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94E227936A0008F83EF /* OpenSubtitleEndpoint.swift */; };
+		D52CB98A227936A0008F83EF /* OpenSubtitleEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94E227936A0008F83EF /* OpenSubtitleEndpoint.swift */; };
+		D52CB98B227936A0008F83EF /* OpenSubtitleEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94E227936A0008F83EF /* OpenSubtitleEndpoint.swift */; };
+		D52CB98C227936A0008F83EF /* OpenSubtitlesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94F227936A0008F83EF /* OpenSubtitlesAPI.swift */; };
+		D52CB98D227936A0008F83EF /* OpenSubtitlesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94F227936A0008F83EF /* OpenSubtitlesAPI.swift */; };
+		D52CB98E227936A0008F83EF /* OpenSubtitlesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94F227936A0008F83EF /* OpenSubtitlesAPI.swift */; };
+		D52CB98F227936A0008F83EF /* OpenSubtitlesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52CB94F227936A0008F83EF /* OpenSubtitlesAPI.swift */; };
+		D52CB99022793701008F83EF /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58E5D3B227929F200E26F81 /* Common.framework */; };
+		D52CB99122793706008F83EF /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58E5D4822792A0900E26F81 /* Common.framework */; };
+		D52CB9922279370B008F83EF /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58E5D5522792A1400E26F81 /* Common.framework */; };
+		D52CB99322793713008F83EF /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58E5D6222792A1F00E26F81 /* Common.framework */; };
 		D5794EFB2279331B0083357C /* SubtitlePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = D5794EF92279331B0083357C /* SubtitlePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5794F27227933B10083357C /* SubtitlePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = D5794EF92279331B0083357C /* SubtitlePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5794F28227933B10083357C /* SubtitlePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = D5794EF92279331B0083357C /* SubtitlePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -74,6 +146,31 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D52CB909227935BF008F83EF /* OpenSubtitlesDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenSubtitlesDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D52CB90B227935BF008F83EF /* OpenSubtitlesDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenSubtitlesDownloader.h; sourceTree = "<group>"; };
+		D52CB90C227935BF008F83EF /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
+		D52CB916227935D1008F83EF /* OpenSubtitlesDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenSubtitlesDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D52CB919227935D1008F83EF /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
+		D52CB923227935E2008F83EF /* OpenSubtitlesDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenSubtitlesDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D52CB926227935E2008F83EF /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		D52CB930227935F3008F83EF /* OpenSubtitlesDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenSubtitlesDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D52CB933227935F3008F83EF /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
+		D52CB93D227936A0008F83EF /* ResultIndexOutOfBoundsErros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultIndexOutOfBoundsErros.swift; sourceTree = "<group>"; };
+		D52CB93F227936A0008F83EF /* URLRequest+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extensions.swift"; sourceTree = "<group>"; };
+		D52CB940227936A0008F83EF /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		D52CB941227936A0008F83EF /* URLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		D52CB942227936A0008F83EF /* Result+RxExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Result+RxExtensions.swift"; sourceTree = "<group>"; };
+		D52CB943227936A0008F83EF /* URLSessionProtocol+RxExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSessionProtocol+RxExtensions.swift"; sourceTree = "<group>"; };
+		D52CB944227936A0008F83EF /* OpenSubtitlesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSubtitlesManager.swift; sourceTree = "<group>"; };
+		D52CB946227936A0008F83EF /* ImdbId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImdbId.swift; sourceTree = "<group>"; };
+		D52CB947227936A0008F83EF /* SearchParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchParameters.swift; sourceTree = "<group>"; };
+		D52CB948227936A0008F83EF /* LanguageId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageId.swift; sourceTree = "<group>"; };
+		D52CB949227936A0008F83EF /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
+		D52CB94A227936A0008F83EF /* GzipProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GzipProtocol.swift; sourceTree = "<group>"; };
+		D52CB94B227936A0008F83EF /* SearchResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		D52CB94C227936A0008F83EF /* UserAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAgent.swift; sourceTree = "<group>"; };
+		D52CB94E227936A0008F83EF /* OpenSubtitleEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSubtitleEndpoint.swift; sourceTree = "<group>"; };
+		D52CB94F227936A0008F83EF /* OpenSubtitlesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSubtitlesAPI.swift; sourceTree = "<group>"; };
 		D5794EF72279331A0083357C /* SubtitlePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SubtitlePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5794EF92279331B0083357C /* SubtitlePlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubtitlePlayer.h; sourceTree = "<group>"; };
 		D5794EFA2279331B0083357C /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
@@ -108,6 +205,38 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D52CB906227935BF008F83EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D52CB99022793701008F83EF /* Common.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D52CB913227935D1008F83EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D52CB99122793706008F83EF /* Common.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D52CB920227935E2008F83EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D52CB9922279370B008F83EF /* Common.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D52CB92D227935F3008F83EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D52CB99322793713008F83EF /* Common.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5794EF42279331A0083357C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,10 +304,11 @@
 			isa = PBXGroup;
 			children = (
 				D58E5D7522792B1100E26F81 /* Common */,
+				D5794F4B2279348D0083357C /* Frameworks */,
 				D58E5D6A22792A9000E26F81 /* Metadata */,
+				D52CB93C227936A0008F83EF /* OpenSubtitlesDownloader */,
 				D5065A0C22791EE400BC4D1F /* Products */,
 				D5794F2A227934300083357C /* SubtitlePlayer */,
-				D5794F4B2279348D0083357C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -193,8 +323,72 @@
 				D5794F042279332E0083357C /* SubtitlePlayer.framework */,
 				D5794F11227933390083357C /* SubtitlePlayer.framework */,
 				D5794F1E227933440083357C /* SubtitlePlayer.framework */,
+				D52CB909227935BF008F83EF /* OpenSubtitlesDownloader.framework */,
+				D52CB916227935D1008F83EF /* OpenSubtitlesDownloader.framework */,
+				D52CB923227935E2008F83EF /* OpenSubtitlesDownloader.framework */,
+				D52CB930227935F3008F83EF /* OpenSubtitlesDownloader.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D52CB93822793626008F83EF /* OpenSubtitlesDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				D52CB90C227935BF008F83EF /* Info-iOS.plist */,
+				D52CB933227935F3008F83EF /* Info-macOS.plist */,
+				D52CB926227935E2008F83EF /* Info-tvOS.plist */,
+				D52CB919227935D1008F83EF /* Info-watchOS.plist */,
+				D52CB90B227935BF008F83EF /* OpenSubtitlesDownloader.h */,
+			);
+			path = OpenSubtitlesDownloader;
+			sourceTree = "<group>";
+		};
+		D52CB93C227936A0008F83EF /* OpenSubtitlesDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				D52CB944227936A0008F83EF /* OpenSubtitlesManager.swift */,
+				D52CB93D227936A0008F83EF /* ResultIndexOutOfBoundsErros.swift */,
+				D52CB94D227936A0008F83EF /* API */,
+				D52CB945227936A0008F83EF /* Model */,
+				D52CB93E227936A0008F83EF /* Networking */,
+			);
+			name = OpenSubtitlesDownloader;
+			path = Sources/OpenSubtitlesDownloader;
+			sourceTree = "<group>";
+		};
+		D52CB93E227936A0008F83EF /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D52CB940227936A0008F83EF /* HTTPMethod.swift */,
+				D52CB942227936A0008F83EF /* Result+RxExtensions.swift */,
+				D52CB93F227936A0008F83EF /* URLRequest+Extensions.swift */,
+				D52CB941227936A0008F83EF /* URLSessionProtocol.swift */,
+				D52CB943227936A0008F83EF /* URLSessionProtocol+RxExtensions.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D52CB945227936A0008F83EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D52CB94A227936A0008F83EF /* GzipProtocol.swift */,
+				D52CB946227936A0008F83EF /* ImdbId.swift */,
+				D52CB948227936A0008F83EF /* LanguageId.swift */,
+				D52CB949227936A0008F83EF /* MovieInfo.swift */,
+				D52CB947227936A0008F83EF /* SearchParameters.swift */,
+				D52CB94B227936A0008F83EF /* SearchResponse.swift */,
+				D52CB94C227936A0008F83EF /* UserAgent.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D52CB94D227936A0008F83EF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D52CB94E227936A0008F83EF /* OpenSubtitleEndpoint.swift */,
+				D52CB94F227936A0008F83EF /* OpenSubtitlesAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		D5794F26227933610083357C /* SubtitlePlayer */ = {
@@ -250,6 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				D58E5D6B22792A9000E26F81 /* Common */,
+				D52CB93822793626008F83EF /* OpenSubtitlesDownloader */,
 				D5794F26227933610083357C /* SubtitlePlayer */,
 			);
 			name = Metadata;
@@ -286,6 +481,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		D52CB904227935BF008F83EF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D52CB90D227935BF008F83EF /* OpenSubtitlesDownloader.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D52CB911227935D1008F83EF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D52CB93B22793669008F83EF /* OpenSubtitlesDownloader.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D52CB91E227935E2008F83EF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D52CB93A22793668008F83EF /* OpenSubtitlesDownloader.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D52CB92B227935F3008F83EF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D52CB93922793668008F83EF /* OpenSubtitlesDownloader.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5794EF22279331A0083357C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,6 +580,78 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		D52CB908227935BF008F83EF /* OpenSubtitlesDownloader iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D52CB910227935BF008F83EF /* Build configuration list for PBXNativeTarget "OpenSubtitlesDownloader iOS" */;
+			buildPhases = (
+				D52CB904227935BF008F83EF /* Headers */,
+				D52CB905227935BF008F83EF /* Sources */,
+				D52CB906227935BF008F83EF /* Frameworks */,
+				D52CB907227935BF008F83EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OpenSubtitlesDownloader iOS";
+			productName = "OpenSubtitlesDownloader iOS";
+			productReference = D52CB909227935BF008F83EF /* OpenSubtitlesDownloader.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D52CB915227935D1008F83EF /* OpenSubtitlesDownloader watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D52CB91B227935D1008F83EF /* Build configuration list for PBXNativeTarget "OpenSubtitlesDownloader watchOS" */;
+			buildPhases = (
+				D52CB911227935D1008F83EF /* Headers */,
+				D52CB912227935D1008F83EF /* Sources */,
+				D52CB913227935D1008F83EF /* Frameworks */,
+				D52CB914227935D1008F83EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OpenSubtitlesDownloader watchOS";
+			productName = "OpenSubtitlesDownloader watchOS";
+			productReference = D52CB916227935D1008F83EF /* OpenSubtitlesDownloader.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D52CB922227935E2008F83EF /* OpenSubtitlesDownloader tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D52CB928227935E2008F83EF /* Build configuration list for PBXNativeTarget "OpenSubtitlesDownloader tvOS" */;
+			buildPhases = (
+				D52CB91E227935E2008F83EF /* Headers */,
+				D52CB91F227935E2008F83EF /* Sources */,
+				D52CB920227935E2008F83EF /* Frameworks */,
+				D52CB921227935E2008F83EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OpenSubtitlesDownloader tvOS";
+			productName = "OpenSubtitlesDownloader tvOS";
+			productReference = D52CB923227935E2008F83EF /* OpenSubtitlesDownloader.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D52CB92F227935F3008F83EF /* OpenSubtitlesDownloader macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D52CB935227935F3008F83EF /* Build configuration list for PBXNativeTarget "OpenSubtitlesDownloader macOS" */;
+			buildPhases = (
+				D52CB92B227935F3008F83EF /* Headers */,
+				D52CB92C227935F3008F83EF /* Sources */,
+				D52CB92D227935F3008F83EF /* Frameworks */,
+				D52CB92E227935F3008F83EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OpenSubtitlesDownloader macOS";
+			productName = "OpenSubtitlesDownloader macOS";
+			productReference = D52CB930227935F3008F83EF /* OpenSubtitlesDownloader.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		D5794EF62279331A0083357C /* SubtitlePlayer iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5794EFE2279331B0083357C /* Build configuration list for PBXNativeTarget "SubtitlePlayer iOS" */;
@@ -507,6 +806,18 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Luiz Rodrigo Martins Barbosa";
 				TargetAttributes = {
+					D52CB908227935BF008F83EF = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					D52CB915227935D1008F83EF = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					D52CB922227935E2008F83EF = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					D52CB92F227935F3008F83EF = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					D5794EF62279331A0083357C = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -554,11 +865,43 @@
 				D5794F032279332E0083357C /* SubtitlePlayer watchOS */,
 				D5794F10227933390083357C /* SubtitlePlayer tvOS */,
 				D5794F1D227933440083357C /* SubtitlePlayer macOS */,
+				D52CB908227935BF008F83EF /* OpenSubtitlesDownloader iOS */,
+				D52CB915227935D1008F83EF /* OpenSubtitlesDownloader watchOS */,
+				D52CB922227935E2008F83EF /* OpenSubtitlesDownloader tvOS */,
+				D52CB92F227935F3008F83EF /* OpenSubtitlesDownloader macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D52CB907227935BF008F83EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D52CB914227935D1008F83EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D52CB921227935E2008F83EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D52CB92E227935F3008F83EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5794EF52279331A0083357C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -618,6 +961,98 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D52CB905227935BF008F83EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D52CB980227936A0008F83EF /* SearchResponse.swift in Sources */,
+				D52CB970227936A0008F83EF /* SearchParameters.swift in Sources */,
+				D52CB978227936A0008F83EF /* MovieInfo.swift in Sources */,
+				D52CB988227936A0008F83EF /* OpenSubtitleEndpoint.swift in Sources */,
+				D52CB96C227936A0008F83EF /* ImdbId.swift in Sources */,
+				D52CB974227936A0008F83EF /* LanguageId.swift in Sources */,
+				D52CB964227936A0008F83EF /* URLSessionProtocol+RxExtensions.swift in Sources */,
+				D52CB97C227936A0008F83EF /* GzipProtocol.swift in Sources */,
+				D52CB95C227936A0008F83EF /* URLSessionProtocol.swift in Sources */,
+				D52CB984227936A0008F83EF /* UserAgent.swift in Sources */,
+				D52CB960227936A0008F83EF /* Result+RxExtensions.swift in Sources */,
+				D52CB950227936A0008F83EF /* ResultIndexOutOfBoundsErros.swift in Sources */,
+				D52CB98C227936A0008F83EF /* OpenSubtitlesAPI.swift in Sources */,
+				D52CB954227936A0008F83EF /* URLRequest+Extensions.swift in Sources */,
+				D52CB958227936A0008F83EF /* HTTPMethod.swift in Sources */,
+				D52CB968227936A0008F83EF /* OpenSubtitlesManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D52CB912227935D1008F83EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D52CB981227936A0008F83EF /* SearchResponse.swift in Sources */,
+				D52CB971227936A0008F83EF /* SearchParameters.swift in Sources */,
+				D52CB979227936A0008F83EF /* MovieInfo.swift in Sources */,
+				D52CB989227936A0008F83EF /* OpenSubtitleEndpoint.swift in Sources */,
+				D52CB96D227936A0008F83EF /* ImdbId.swift in Sources */,
+				D52CB975227936A0008F83EF /* LanguageId.swift in Sources */,
+				D52CB965227936A0008F83EF /* URLSessionProtocol+RxExtensions.swift in Sources */,
+				D52CB97D227936A0008F83EF /* GzipProtocol.swift in Sources */,
+				D52CB95D227936A0008F83EF /* URLSessionProtocol.swift in Sources */,
+				D52CB985227936A0008F83EF /* UserAgent.swift in Sources */,
+				D52CB961227936A0008F83EF /* Result+RxExtensions.swift in Sources */,
+				D52CB951227936A0008F83EF /* ResultIndexOutOfBoundsErros.swift in Sources */,
+				D52CB98D227936A0008F83EF /* OpenSubtitlesAPI.swift in Sources */,
+				D52CB955227936A0008F83EF /* URLRequest+Extensions.swift in Sources */,
+				D52CB959227936A0008F83EF /* HTTPMethod.swift in Sources */,
+				D52CB969227936A0008F83EF /* OpenSubtitlesManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D52CB91F227935E2008F83EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D52CB982227936A0008F83EF /* SearchResponse.swift in Sources */,
+				D52CB972227936A0008F83EF /* SearchParameters.swift in Sources */,
+				D52CB97A227936A0008F83EF /* MovieInfo.swift in Sources */,
+				D52CB98A227936A0008F83EF /* OpenSubtitleEndpoint.swift in Sources */,
+				D52CB96E227936A0008F83EF /* ImdbId.swift in Sources */,
+				D52CB976227936A0008F83EF /* LanguageId.swift in Sources */,
+				D52CB966227936A0008F83EF /* URLSessionProtocol+RxExtensions.swift in Sources */,
+				D52CB97E227936A0008F83EF /* GzipProtocol.swift in Sources */,
+				D52CB95E227936A0008F83EF /* URLSessionProtocol.swift in Sources */,
+				D52CB986227936A0008F83EF /* UserAgent.swift in Sources */,
+				D52CB962227936A0008F83EF /* Result+RxExtensions.swift in Sources */,
+				D52CB952227936A0008F83EF /* ResultIndexOutOfBoundsErros.swift in Sources */,
+				D52CB98E227936A0008F83EF /* OpenSubtitlesAPI.swift in Sources */,
+				D52CB956227936A0008F83EF /* URLRequest+Extensions.swift in Sources */,
+				D52CB95A227936A0008F83EF /* HTTPMethod.swift in Sources */,
+				D52CB96A227936A0008F83EF /* OpenSubtitlesManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D52CB92C227935F3008F83EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D52CB983227936A0008F83EF /* SearchResponse.swift in Sources */,
+				D52CB973227936A0008F83EF /* SearchParameters.swift in Sources */,
+				D52CB97B227936A0008F83EF /* MovieInfo.swift in Sources */,
+				D52CB98B227936A0008F83EF /* OpenSubtitleEndpoint.swift in Sources */,
+				D52CB96F227936A0008F83EF /* ImdbId.swift in Sources */,
+				D52CB977227936A0008F83EF /* LanguageId.swift in Sources */,
+				D52CB967227936A0008F83EF /* URLSessionProtocol+RxExtensions.swift in Sources */,
+				D52CB97F227936A0008F83EF /* GzipProtocol.swift in Sources */,
+				D52CB95F227936A0008F83EF /* URLSessionProtocol.swift in Sources */,
+				D52CB987227936A0008F83EF /* UserAgent.swift in Sources */,
+				D52CB963227936A0008F83EF /* Result+RxExtensions.swift in Sources */,
+				D52CB953227936A0008F83EF /* ResultIndexOutOfBoundsErros.swift in Sources */,
+				D52CB98F227936A0008F83EF /* OpenSubtitlesAPI.swift in Sources */,
+				D52CB957227936A0008F83EF /* URLRequest+Extensions.swift in Sources */,
+				D52CB95B227936A0008F83EF /* HTTPMethod.swift in Sources */,
+				D52CB96B227936A0008F83EF /* OpenSubtitlesManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5794EF32279331A0083357C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -842,6 +1277,254 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D52CB90E227935BF008F83EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/OpenSubtitlesDownloader/Info-iOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.OpenSubtitlesDownloader-iOS";
+				PRODUCT_NAME = OpenSubtitlesDownloader;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D52CB90F227935BF008F83EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/OpenSubtitlesDownloader/Info-iOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.OpenSubtitlesDownloader-iOS";
+				PRODUCT_NAME = OpenSubtitlesDownloader;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D52CB91C227935D1008F83EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/OpenSubtitlesDownloader/Info-watchOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.OpenSubtitlesDownloader-watchOS";
+				PRODUCT_NAME = OpenSubtitlesDownloader;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		D52CB91D227935D1008F83EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/OpenSubtitlesDownloader/Info-watchOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.OpenSubtitlesDownloader-watchOS";
+				PRODUCT_NAME = OpenSubtitlesDownloader;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		D52CB929227935E2008F83EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/OpenSubtitlesDownloader/Info-tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.OpenSubtitlesDownloader-tvOS";
+				PRODUCT_NAME = OpenSubtitlesDownloader;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D52CB92A227935E2008F83EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/OpenSubtitlesDownloader/Info-tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.OpenSubtitlesDownloader-tvOS";
+				PRODUCT_NAME = OpenSubtitlesDownloader;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D52CB936227935F3008F83EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/OpenSubtitlesDownloader/Info-macOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.OpenSubtitlesDownloader-macOS";
+				PRODUCT_NAME = OpenSubtitlesDownloader;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D52CB937227935F3008F83EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/OpenSubtitlesDownloader/Info-macOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.OpenSubtitlesDownloader-macOS";
+				PRODUCT_NAME = OpenSubtitlesDownloader;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1349,6 +2032,42 @@
 			buildConfigurations = (
 				D5065A1B22791EE700BC4D1F /* Debug */,
 				D5065A1C22791EE700BC4D1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D52CB910227935BF008F83EF /* Build configuration list for PBXNativeTarget "OpenSubtitlesDownloader iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D52CB90E227935BF008F83EF /* Debug */,
+				D52CB90F227935BF008F83EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D52CB91B227935D1008F83EF /* Build configuration list for PBXNativeTarget "OpenSubtitlesDownloader watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D52CB91C227935D1008F83EF /* Debug */,
+				D52CB91D227935D1008F83EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D52CB928227935E2008F83EF /* Build configuration list for PBXNativeTarget "OpenSubtitlesDownloader tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D52CB929227935E2008F83EF /* Debug */,
+				D52CB92A227935E2008F83EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D52CB935227935F3008F83EF /* Build configuration list for PBXNativeTarget "OpenSubtitlesDownloader macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D52CB936227935F3008F83EF /* Debug */,
+				D52CB937227935F3008F83EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
