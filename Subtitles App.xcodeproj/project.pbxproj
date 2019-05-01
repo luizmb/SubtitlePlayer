@@ -16,6 +16,26 @@
 		BAB999EDBC435C014A4629DA /* Pods_Common_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC8210691B1890B89E34BF9 /* Pods_Common_macOS.framework */; };
 		CD6116ECD07817158CDDF1E6 /* Pods_OpenSubtitlesDownloader_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1A659B12FDAA44DC350EF8 /* Pods_OpenSubtitlesDownloader_iOS.framework */; };
 		CEB9655362111D70F5F8E9E1 /* Pods_Common_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D49D0A9BEE3095E705A7A23C /* Pods_Common_watchOS.framework */; };
+		D504817B2279CE410012BCB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D504817A2279CE410012BCB3 /* AppDelegate.swift */; };
+		D504817D2279CE410012BCB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D504817C2279CE410012BCB3 /* ViewController.swift */; };
+		D50481802279CE410012BCB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D504817E2279CE410012BCB3 /* Main.storyboard */; };
+		D50481822279CE430012BCB3 /* Assets-iOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D50481812279CE430012BCB3 /* Assets-iOS.xcassets */; };
+		D50481852279CE430012BCB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D50481832279CE430012BCB3 /* LaunchScreen.storyboard */; };
+		D50481902279CE580012BCB3 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D504818E2279CE580012BCB3 /* Interface.storyboard */; };
+		D50481922279CE590012BCB3 /* Assets-watchOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D50481912279CE590012BCB3 /* Assets-watchOS.xcassets */; };
+		D50481992279CE5A0012BCB3 /* Subtitles App.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D50481982279CE5A0012BCB3 /* Subtitles App.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D504819E2279CE5A0012BCB3 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D504819D2279CE5A0012BCB3 /* InterfaceController.swift */; };
+		D50481A02279CE5A0012BCB3 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D504819F2279CE5A0012BCB3 /* ExtensionDelegate.swift */; };
+		D50481A42279CE5B0012BCB3 /* Assets-watchOS-Extension.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D50481A32279CE5B0012BCB3 /* Assets-watchOS-Extension.xcassets */; };
+		D50481A92279CE5B0012BCB3 /* Subtitles App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D504818C2279CE580012BCB3 /* Subtitles App.app */; };
+		D50481B92279CE6E0012BCB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50481B82279CE6E0012BCB3 /* AppDelegate.swift */; };
+		D50481BB2279CE6E0012BCB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50481BA2279CE6E0012BCB3 /* ViewController.swift */; };
+		D50481BE2279CE6E0012BCB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D50481BC2279CE6E0012BCB3 /* Main.storyboard */; };
+		D50481C02279CE700012BCB3 /* Assets-tvOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D50481BF2279CE700012BCB3 /* Assets-tvOS.xcassets */; };
+		D50481CC2279CE990012BCB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50481CB2279CE990012BCB3 /* AppDelegate.swift */; };
+		D50481CE2279CE990012BCB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50481CD2279CE990012BCB3 /* ViewController.swift */; };
+		D50481D02279CE9A0012BCB3 /* Assets-macOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D50481CF2279CE9A0012BCB3 /* Assets-macOS.xcassets */; };
+		D50481D32279CE9A0012BCB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D50481D12279CE9A0012BCB3 /* Main.storyboard */; };
 		D52CB90D227935BF008F83EF /* OpenSubtitlesDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = D52CB90B227935BF008F83EF /* OpenSubtitlesDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D52CB93922793668008F83EF /* OpenSubtitlesDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = D52CB90B227935BF008F83EF /* OpenSubtitlesDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D52CB93A22793668008F83EF /* OpenSubtitlesDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = D52CB90B227935BF008F83EF /* OpenSubtitlesDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -157,6 +177,48 @@
 		FFFD90E424F63DF5CABBE036 /* Pods_SubtitlePlayer_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8E60451278818DFE495597 /* Pods_SubtitlePlayer_macOS.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D504819A2279CE5A0012BCB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5065A0322791EE400BC4D1F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D50481972279CE5A0012BCB3;
+			remoteInfo = "Subtitles App watchOS Extension";
+		};
+		D50481A72279CE5B0012BCB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5065A0322791EE400BC4D1F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D504818B2279CE580012BCB3;
+			remoteInfo = "Subtitles App watchOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D50481AD2279CE5B0012BCB3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D50481992279CE5A0012BCB3 /* Subtitles App.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D50481B12279CE5B0012BCB3 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				D50481A92279CE5B0012BCB3 /* Subtitles App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		02A75D693831FB5C403E95E8 /* Pods-SubtitlePlayer iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubtitlePlayer iOS.release.xcconfig"; path = "Target Support Files/Pods-SubtitlePlayer iOS/Pods-SubtitlePlayer iOS.release.xcconfig"; sourceTree = "<group>"; };
 		0BEFA97E4B1E25B18AE32E0C /* Pods-OpenSubtitlesDownloader iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSubtitlesDownloader iOS.debug.xcconfig"; path = "Target Support Files/Pods-OpenSubtitlesDownloader iOS/Pods-OpenSubtitlesDownloader iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +248,35 @@
 		CA1A659B12FDAA44DC350EF8 /* Pods_OpenSubtitlesDownloader_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenSubtitlesDownloader_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1D34015CCDF1C9C79AACFCD /* Pods-Common tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Common tvOS/Pods-Common tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D49D0A9BEE3095E705A7A23C /* Pods_Common_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D50481782279CE410012BCB3 /* Subtitles App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Subtitles App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D504817A2279CE410012BCB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D504817C2279CE410012BCB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D504817F2279CE410012BCB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D50481812279CE430012BCB3 /* Assets-iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets-iOS.xcassets"; sourceTree = "<group>"; };
+		D50481842279CE430012BCB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D50481862279CE430012BCB3 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
+		D504818C2279CE580012BCB3 /* Subtitles App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Subtitles App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D504818F2279CE580012BCB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		D50481912279CE590012BCB3 /* Assets-watchOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets-watchOS.xcassets"; sourceTree = "<group>"; };
+		D50481932279CE590012BCB3 /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
+		D50481982279CE5A0012BCB3 /* Subtitles App.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Subtitles App.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D504819D2279CE5A0012BCB3 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		D504819F2279CE5A0012BCB3 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		D50481A32279CE5B0012BCB3 /* Assets-watchOS-Extension.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets-watchOS-Extension.xcassets"; sourceTree = "<group>"; };
+		D50481A52279CE5B0012BCB3 /* Info-watchOS-Extension.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS-Extension.plist"; sourceTree = "<group>"; };
+		D50481B62279CE6E0012BCB3 /* Subtitles App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Subtitles App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D50481B82279CE6E0012BCB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D50481BA2279CE6E0012BCB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D50481BD2279CE6E0012BCB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D50481BF2279CE700012BCB3 /* Assets-tvOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets-tvOS.xcassets"; sourceTree = "<group>"; };
+		D50481C12279CE700012BCB3 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		D50481C92279CE990012BCB3 /* Subtitles App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Subtitles App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D50481CB2279CE990012BCB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D50481CD2279CE990012BCB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D50481CF2279CE9A0012BCB3 /* Assets-macOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets-macOS.xcassets"; sourceTree = "<group>"; };
+		D50481D22279CE9A0012BCB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D50481D42279CE9A0012BCB3 /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
+		D50481D52279CE9A0012BCB3 /* Subtitles_App_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Subtitles_App_macOS.entitlements; sourceTree = "<group>"; };
 		D52CB909227935BF008F83EF /* OpenSubtitlesDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenSubtitlesDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D52CB90B227935BF008F83EF /* OpenSubtitlesDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenSubtitlesDownloader.h; sourceTree = "<group>"; };
 		D52CB90C227935BF008F83EF /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
@@ -253,6 +344,34 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D50481752279CE410012BCB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D50481952279CE5A0012BCB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D50481B32279CE6E0012BCB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D50481C62279CE990012BCB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D52CB906227935BF008F83EF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -391,6 +510,85 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D50481792279CE410012BCB3 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D504817A2279CE410012BCB3 /* AppDelegate.swift */,
+				D504817C2279CE410012BCB3 /* ViewController.swift */,
+				D504817E2279CE410012BCB3 /* Main.storyboard */,
+				D50481812279CE430012BCB3 /* Assets-iOS.xcassets */,
+				D50481832279CE430012BCB3 /* LaunchScreen.storyboard */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		D504818D2279CE580012BCB3 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				D504818E2279CE580012BCB3 /* Interface.storyboard */,
+				D50481912279CE590012BCB3 /* Assets-watchOS.xcassets */,
+			);
+			path = watchOS;
+			sourceTree = "<group>";
+		};
+		D504819C2279CE5A0012BCB3 /* watchOS Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D504819D2279CE5A0012BCB3 /* InterfaceController.swift */,
+				D504819F2279CE5A0012BCB3 /* ExtensionDelegate.swift */,
+				D50481A32279CE5B0012BCB3 /* Assets-watchOS-Extension.xcassets */,
+			);
+			path = "watchOS Extension";
+			sourceTree = "<group>";
+		};
+		D50481B72279CE6E0012BCB3 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				D50481B82279CE6E0012BCB3 /* AppDelegate.swift */,
+				D50481BA2279CE6E0012BCB3 /* ViewController.swift */,
+				D50481BC2279CE6E0012BCB3 /* Main.storyboard */,
+				D50481BF2279CE700012BCB3 /* Assets-tvOS.xcassets */,
+			);
+			path = tvOS;
+			sourceTree = "<group>";
+		};
+		D50481CA2279CE990012BCB3 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				D50481CB2279CE990012BCB3 /* AppDelegate.swift */,
+				D50481CD2279CE990012BCB3 /* ViewController.swift */,
+				D50481CF2279CE9A0012BCB3 /* Assets-macOS.xcassets */,
+				D50481D12279CE9A0012BCB3 /* Main.storyboard */,
+				D50481D52279CE9A0012BCB3 /* Subtitles_App_macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		D50481D92279CEDC0012BCB3 /* Subtitles App */ = {
+			isa = PBXGroup;
+			children = (
+				D50481862279CE430012BCB3 /* Info-iOS.plist */,
+				D50481D42279CE9A0012BCB3 /* Info-macOS.plist */,
+				D50481C12279CE700012BCB3 /* Info-tvOS.plist */,
+				D50481A52279CE5B0012BCB3 /* Info-watchOS-Extension.plist */,
+				D50481932279CE590012BCB3 /* Info-watchOS.plist */,
+			);
+			path = "Subtitles App";
+			sourceTree = "<group>";
+		};
+		D50481DA2279CF6B0012BCB3 /* Subtitles App */ = {
+			isa = PBXGroup;
+			children = (
+				D50481792279CE410012BCB3 /* iOS */,
+				D50481CA2279CE990012BCB3 /* macOS */,
+				D50481B72279CE6E0012BCB3 /* tvOS */,
+				D504818D2279CE580012BCB3 /* watchOS */,
+				D504819C2279CE5A0012BCB3 /* watchOS Extension */,
+			);
+			name = "Subtitles App";
+			path = "Sources/Subtitles App";
+			sourceTree = "<group>";
+		};
 		D5065A0222791EE400BC4D1F = {
 			isa = PBXGroup;
 			children = (
@@ -398,9 +596,10 @@
 				D5794F4B2279348D0083357C /* Frameworks */,
 				D58E5D6A22792A9000E26F81 /* Metadata */,
 				D52CB93C227936A0008F83EF /* OpenSubtitlesDownloader */,
+				6C7D264856CF0E65C5337CF7 /* Pods */,
 				D5065A0C22791EE400BC4D1F /* Products */,
 				D5794F2A227934300083357C /* SubtitlePlayer */,
-				6C7D264856CF0E65C5337CF7 /* Pods */,
+				D50481DA2279CF6B0012BCB3 /* Subtitles App */,
 			);
 			sourceTree = "<group>";
 		};
@@ -419,6 +618,11 @@
 				D52CB916227935D1008F83EF /* OpenSubtitlesDownloader.framework */,
 				D52CB923227935E2008F83EF /* OpenSubtitlesDownloader.framework */,
 				D52CB930227935F3008F83EF /* OpenSubtitlesDownloader.framework */,
+				D50481782279CE410012BCB3 /* Subtitles App.app */,
+				D504818C2279CE580012BCB3 /* Subtitles App.app */,
+				D50481982279CE5A0012BCB3 /* Subtitles App.appex */,
+				D50481B62279CE6E0012BCB3 /* Subtitles App.app */,
+				D50481C92279CE990012BCB3 /* Subtitles App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -550,6 +754,7 @@
 				D58E5D6B22792A9000E26F81 /* Common */,
 				D52CB93822793626008F83EF /* OpenSubtitlesDownloader */,
 				D5794F26227933610083357C /* SubtitlePlayer */,
+				D50481D92279CEDC0012BCB3 /* Subtitles App */,
 			);
 			name = Metadata;
 			path = Sources/Metadata;
@@ -684,6 +889,93 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		D50481772279CE410012BCB3 /* Subtitles App iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D50481892279CE430012BCB3 /* Build configuration list for PBXNativeTarget "Subtitles App iOS" */;
+			buildPhases = (
+				D50481742279CE410012BCB3 /* Sources */,
+				D50481752279CE410012BCB3 /* Frameworks */,
+				D50481762279CE410012BCB3 /* Resources */,
+				D50481B12279CE5B0012BCB3 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D50481A82279CE5B0012BCB3 /* PBXTargetDependency */,
+			);
+			name = "Subtitles App iOS";
+			productName = "Subtitles App iOS";
+			productReference = D50481782279CE410012BCB3 /* Subtitles App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D504818B2279CE580012BCB3 /* Subtitles App watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D50481AE2279CE5B0012BCB3 /* Build configuration list for PBXNativeTarget "Subtitles App watchOS" */;
+			buildPhases = (
+				D504818A2279CE580012BCB3 /* Resources */,
+				D50481AD2279CE5B0012BCB3 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D504819B2279CE5A0012BCB3 /* PBXTargetDependency */,
+			);
+			name = "Subtitles App watchOS";
+			productName = "Subtitles App watchOS";
+			productReference = D504818C2279CE580012BCB3 /* Subtitles App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		D50481972279CE5A0012BCB3 /* Subtitles App watchOS Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D50481AA2279CE5B0012BCB3 /* Build configuration list for PBXNativeTarget "Subtitles App watchOS Extension" */;
+			buildPhases = (
+				D50481942279CE5A0012BCB3 /* Sources */,
+				D50481952279CE5A0012BCB3 /* Frameworks */,
+				D50481962279CE5A0012BCB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Subtitles App watchOS Extension";
+			productName = "Subtitles App watchOS Extension";
+			productReference = D50481982279CE5A0012BCB3 /* Subtitles App.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		D50481B52279CE6E0012BCB3 /* Subtitles App tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D50481C22279CE700012BCB3 /* Build configuration list for PBXNativeTarget "Subtitles App tvOS" */;
+			buildPhases = (
+				D50481B22279CE6E0012BCB3 /* Sources */,
+				D50481B32279CE6E0012BCB3 /* Frameworks */,
+				D50481B42279CE6E0012BCB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Subtitles App tvOS";
+			productName = "Subtitles App tvOS";
+			productReference = D50481B62279CE6E0012BCB3 /* Subtitles App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D50481C82279CE990012BCB3 /* Subtitles App macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D50481D62279CE9A0012BCB3 /* Build configuration list for PBXNativeTarget "Subtitles App macOS" */;
+			buildPhases = (
+				D50481C52279CE990012BCB3 /* Sources */,
+				D50481C62279CE990012BCB3 /* Frameworks */,
+				D50481C72279CE990012BCB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Subtitles App macOS";
+			productName = "Subtitles App macOS";
+			productReference = D50481C92279CE990012BCB3 /* Subtitles App.app */;
+			productType = "com.apple.product-type.application";
+		};
 		D52CB908227935BF008F83EF /* OpenSubtitlesDownloader iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D52CB910227935BF008F83EF /* Build configuration list for PBXNativeTarget "OpenSubtitlesDownloader iOS" */;
@@ -922,6 +1214,21 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Luiz Rodrigo Martins Barbosa";
 				TargetAttributes = {
+					D50481772279CE410012BCB3 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					D504818B2279CE580012BCB3 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					D50481972279CE5A0012BCB3 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					D50481B52279CE6E0012BCB3 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					D50481C82279CE990012BCB3 = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					D52CB908227935BF008F83EF = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -985,11 +1292,61 @@
 				D52CB915227935D1008F83EF /* OpenSubtitlesDownloader watchOS */,
 				D52CB922227935E2008F83EF /* OpenSubtitlesDownloader tvOS */,
 				D52CB92F227935F3008F83EF /* OpenSubtitlesDownloader macOS */,
+				D50481772279CE410012BCB3 /* Subtitles App iOS */,
+				D504818B2279CE580012BCB3 /* Subtitles App watchOS */,
+				D50481972279CE5A0012BCB3 /* Subtitles App watchOS Extension */,
+				D50481B52279CE6E0012BCB3 /* Subtitles App tvOS */,
+				D50481C82279CE990012BCB3 /* Subtitles App macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D50481762279CE410012BCB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D50481852279CE430012BCB3 /* LaunchScreen.storyboard in Resources */,
+				D50481822279CE430012BCB3 /* Assets-iOS.xcassets in Resources */,
+				D50481802279CE410012BCB3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D504818A2279CE580012BCB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D50481922279CE590012BCB3 /* Assets-watchOS.xcassets in Resources */,
+				D50481902279CE580012BCB3 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D50481962279CE5A0012BCB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D50481A42279CE5B0012BCB3 /* Assets-watchOS-Extension.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D50481B42279CE6E0012BCB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D50481C02279CE700012BCB3 /* Assets-tvOS.xcassets in Resources */,
+				D50481BE2279CE6E0012BCB3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D50481C72279CE990012BCB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D50481D02279CE9A0012BCB3 /* Assets-macOS.xcassets in Resources */,
+				D50481D32279CE9A0012BCB3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D52CB907227935BF008F83EF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1344,6 +1701,42 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D50481742279CE410012BCB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D504817D2279CE410012BCB3 /* ViewController.swift in Sources */,
+				D504817B2279CE410012BCB3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D50481942279CE5A0012BCB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D50481A02279CE5A0012BCB3 /* ExtensionDelegate.swift in Sources */,
+				D504819E2279CE5A0012BCB3 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D50481B22279CE6E0012BCB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D50481BB2279CE6E0012BCB3 /* ViewController.swift in Sources */,
+				D50481B92279CE6E0012BCB3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D50481C52279CE990012BCB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D50481CE2279CE990012BCB3 /* ViewController.swift in Sources */,
+				D50481CC2279CE990012BCB3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D52CB905227935BF008F83EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1546,7 +1939,279 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D504819B2279CE5A0012BCB3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D50481972279CE5A0012BCB3 /* Subtitles App watchOS Extension */;
+			targetProxy = D504819A2279CE5A0012BCB3 /* PBXContainerItemProxy */;
+		};
+		D50481A82279CE5B0012BCB3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D504818B2279CE580012BCB3 /* Subtitles App watchOS */;
+			targetProxy = D50481A72279CE5B0012BCB3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D504817E2279CE410012BCB3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D504817F2279CE410012BCB3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D50481832279CE430012BCB3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D50481842279CE430012BCB3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D504818E2279CE580012BCB3 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D504818F2279CE580012BCB3 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		D50481BC2279CE6E0012BCB3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D50481BD2279CE6E0012BCB3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D50481D12279CE9A0012BCB3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D50481D22279CE9A0012BCB3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		D50481872279CE430012BCB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/Subtitles App/Info-iOS.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.Subtitles-App";
+				PRODUCT_MODULE_NAME = SubtitlesPhone;
+				PRODUCT_NAME = "Subtitles App";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D50481882279CE430012BCB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/Subtitles App/Info-iOS.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.Subtitles-App";
+				PRODUCT_MODULE_NAME = SubtitlesPhone;
+				PRODUCT_NAME = "Subtitles App";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D50481AB2279CE5B0012BCB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/Subtitles App/Info-watchOS-Extension.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.Subtitles-App.watchkitapp.watchkitextension";
+				PRODUCT_MODULE_NAME = SubtitlesWatchExtension;
+				PRODUCT_NAME = "Subtitles App";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		D50481AC2279CE5B0012BCB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/Subtitles App/Info-watchOS-Extension.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.Subtitles-App.watchkitapp.watchkitextension";
+				PRODUCT_MODULE_NAME = SubtitlesWatchExtension;
+				PRODUCT_NAME = "Subtitles App";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
+		D50481AF2279CE5B0012BCB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				IBSC_MODULE = Subtitles_App_watchOS_Extension;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/Subtitles App/Info-watchOS.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.Subtitles-App.watchkitapp";
+				PRODUCT_MODULE_NAME = SubtitlesWatch;
+				PRODUCT_NAME = "Subtitles App";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		D50481B02279CE5B0012BCB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				IBSC_MODULE = Subtitles_App_watchOS_Extension;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/Subtitles App/Info-watchOS.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.Subtitles-App.watchkitapp";
+				PRODUCT_MODULE_NAME = SubtitlesWatch;
+				PRODUCT_NAME = "Subtitles App";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
+		D50481C32279CE700012BCB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/Subtitles App/Info-tvOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.Subtitles-App-tvOS";
+				PRODUCT_MODULE_NAME = SubtitlesWatchTV;
+				PRODUCT_NAME = "Subtitles App";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Debug;
+		};
+		D50481C42279CE700012BCB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/Subtitles App/Info-tvOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.Subtitles-App-tvOS";
+				PRODUCT_MODULE_NAME = SubtitlesWatchTV;
+				PRODUCT_NAME = "Subtitles App";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Release;
+		};
+		D50481D72279CE9A0012BCB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Sources/Subtitles App/macOS/Subtitles_App_macOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/Subtitles App/Info-macOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.Subtitles-App-macOS";
+				PRODUCT_MODULE_NAME = SubtitlesWatchMac;
+				PRODUCT_NAME = "Subtitles App";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D50481D82279CE9A0012BCB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Sources/Subtitles App/macOS/Subtitles_App_macOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/Subtitles App/Info-macOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.Subtitles-App-macOS";
+				PRODUCT_MODULE_NAME = SubtitlesWatchMac;
+				PRODUCT_NAME = "Subtitles App";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		D5065A1B22791EE700BC4D1F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2434,6 +3099,51 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D50481892279CE430012BCB3 /* Build configuration list for PBXNativeTarget "Subtitles App iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D50481872279CE430012BCB3 /* Debug */,
+				D50481882279CE430012BCB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D50481AA2279CE5B0012BCB3 /* Build configuration list for PBXNativeTarget "Subtitles App watchOS Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D50481AB2279CE5B0012BCB3 /* Debug */,
+				D50481AC2279CE5B0012BCB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D50481AE2279CE5B0012BCB3 /* Build configuration list for PBXNativeTarget "Subtitles App watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D50481AF2279CE5B0012BCB3 /* Debug */,
+				D50481B02279CE5B0012BCB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D50481C22279CE700012BCB3 /* Build configuration list for PBXNativeTarget "Subtitles App tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D50481C32279CE700012BCB3 /* Debug */,
+				D50481C42279CE700012BCB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D50481D62279CE9A0012BCB3 /* Build configuration list for PBXNativeTarget "Subtitles App macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D50481D72279CE9A0012BCB3 /* Debug */,
+				D50481D82279CE9A0012BCB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D5065A0622791EE400BC4D1F /* Build configuration list for PBXProject "Subtitles App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

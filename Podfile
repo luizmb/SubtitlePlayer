@@ -10,7 +10,7 @@ def macos_version() platform :macos, '10.10' end
 def rxswift() pod 'RxSwift', '5.0.0', :inhibit_warnings => true end
 
 target 'Common iOS' do
-    platform :ios, '10.0'
+    ios_version
     rxswift
 end
 
@@ -30,7 +30,7 @@ target 'Common watchOS' do
 end
 
 target 'OpenSubtitlesDownloader iOS' do
-    platform :ios, '10.0'
+    ios_version
     rxswift
 end
 
@@ -50,7 +50,7 @@ target 'OpenSubtitlesDownloader watchOS' do
 end
 
 target 'SubtitlePlayer iOS' do
-    platform :ios, '10.0'
+    ios_version
     rxswift
 end
 
