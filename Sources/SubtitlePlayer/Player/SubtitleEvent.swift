@@ -1,12 +1,12 @@
 import Foundation
 
 public enum SubtitleEvent {
-    case entry(offset: Double, line: Subtitle.Line)
-    case exit(offset: Double, line: Subtitle.Line)
+    case entry(offset: DispatchTimeInterval, line: Subtitle.Line)
+    case exit(offset: DispatchTimeInterval, line: Subtitle.Line)
 }
 
 extension SubtitleEvent {
-    public var offset: Double {
+    public var offset: DispatchTimeInterval {
         switch self {
         case let .entry(offset, _), let .exit(offset, _): return offset
         }

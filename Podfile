@@ -7,10 +7,10 @@ def ios_version() platform :ios, '10.0' end
 def watchos_version() platform :watchos, '3.0' end
 def tvos_version() platform :tvos, '10.0' end
 def macos_version() platform :macos, '10.10' end
-def rxswift() pod 'RxSwift', '4.5.0', :inhibit_warnings => true end
+def rxswift() pod 'RxSwift', '5.0.0', :inhibit_warnings => true end
 
 target 'Common iOS' do
-    ios_version
+    platform :ios, '10.0'
     rxswift
 end
 
@@ -30,7 +30,7 @@ target 'Common watchOS' do
 end
 
 target 'OpenSubtitlesDownloader iOS' do
-    ios_version
+    platform :ios, '10.0'
     rxswift
 end
 
@@ -50,7 +50,7 @@ target 'OpenSubtitlesDownloader watchOS' do
 end
 
 target 'SubtitlePlayer iOS' do
-    ios_version
+    platform :ios, '10.0'
     rxswift
 end
 

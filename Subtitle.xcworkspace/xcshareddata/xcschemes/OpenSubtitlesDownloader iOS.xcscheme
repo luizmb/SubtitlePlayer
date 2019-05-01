@@ -20,48 +20,6 @@
                ReferencedContainer = "container:Subtitles App.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D5794F1D227933440083357C"
-               BuildableName = "SubtitlePlayer.framework"
-               BlueprintName = "SubtitlePlayer macOS"
-               ReferencedContainer = "container:Subtitles App.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D5794F10227933390083357C"
-               BuildableName = "SubtitlePlayer.framework"
-               BlueprintName = "SubtitlePlayer tvOS"
-               ReferencedContainer = "container:Subtitles App.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D5794F032279332E0083357C"
-               BuildableName = "SubtitlePlayer.framework"
-               BlueprintName = "SubtitlePlayer watchOS"
-               ReferencedContainer = "container:Subtitles App.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

@@ -14,51 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D5794EF62279331A0083357C"
-               BuildableName = "SubtitlePlayer.framework"
-               BlueprintName = "SubtitlePlayer iOS"
-               ReferencedContainer = "container:Subtitles App.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D5794F1D227933440083357C"
-               BuildableName = "SubtitlePlayer.framework"
-               BlueprintName = "SubtitlePlayer macOS"
-               ReferencedContainer = "container:Subtitles App.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D5794F10227933390083357C"
-               BuildableName = "SubtitlePlayer.framework"
-               BlueprintName = "SubtitlePlayer tvOS"
-               ReferencedContainer = "container:Subtitles App.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D5794F032279332E0083357C"
-               BuildableName = "SubtitlePlayer.framework"
-               BlueprintName = "SubtitlePlayer watchOS"
+               BlueprintIdentifier = "D58E5D3A227929F200E26F81"
+               BuildableName = "Common.framework"
+               BlueprintName = "Common iOS"
                ReferencedContainer = "container:Subtitles App.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -74,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D5794EF62279331A0083357C"
-            BuildableName = "SubtitlePlayer.framework"
-            BlueprintName = "SubtitlePlayer iOS"
+            BlueprintIdentifier = "D58E5D3A227929F200E26F81"
+            BuildableName = "Common.framework"
+            BlueprintName = "Common iOS"
             ReferencedContainer = "container:Subtitles App.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -96,9 +54,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D5794EF62279331A0083357C"
-            BuildableName = "SubtitlePlayer.framework"
-            BlueprintName = "SubtitlePlayer iOS"
+            BlueprintIdentifier = "D58E5D3A227929F200E26F81"
+            BuildableName = "Common.framework"
+            BlueprintName = "Common iOS"
             ReferencedContainer = "container:Subtitles App.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -114,9 +72,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D5794EF62279331A0083357C"
-            BuildableName = "SubtitlePlayer.framework"
-            BlueprintName = "SubtitlePlayer iOS"
+            BlueprintIdentifier = "D58E5D3A227929F200E26F81"
+            BuildableName = "Common.framework"
+            BlueprintName = "Common iOS"
             ReferencedContainer = "container:Subtitles App.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

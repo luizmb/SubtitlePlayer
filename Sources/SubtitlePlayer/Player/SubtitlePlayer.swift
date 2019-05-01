@@ -85,8 +85,8 @@ private func getEvents(from sequence: Int, lines: [Subtitle.Line]) -> Result<[Su
             .filter { line in line.start.totalSeconds - referenceStart >= 0 }
             .reduce([SubtitleEvent]()) { events, line in
                 events + [
-                    SubtitleEvent.entry(offset: line.start.totalSeconds - referenceStart, line: line),
-                    SubtitleEvent.exit(offset: line.end.totalSeconds - referenceStart, line: line),
+                    SubtitleEvent.entry(offset: .seconds(Int(line.start.totalSeconds - referenceStart)), line: line),
+                    SubtitleEvent.exit(offset: .seconds(Int(line.end.totalSeconds - referenceStart)), line: line),
                 ]
             }
     )

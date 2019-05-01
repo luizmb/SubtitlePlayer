@@ -14,51 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D58E5D3A227929F200E26F81"
-               BuildableName = "Common.framework"
-               BlueprintName = "Common iOS"
-               ReferencedContainer = "container:Subtitles App.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "D58E5D6122792A1F00E26F81"
                BuildableName = "Common.framework"
                BlueprintName = "Common macOS"
-               ReferencedContainer = "container:Subtitles App.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D58E5D5422792A1400E26F81"
-               BuildableName = "Common.framework"
-               BlueprintName = "Common tvOS"
-               ReferencedContainer = "container:Subtitles App.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D58E5D4722792A0900E26F81"
-               BuildableName = "Common.framework"
-               BlueprintName = "Common watchOS"
                ReferencedContainer = "container:Subtitles App.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -71,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D58E5D3A227929F200E26F81"
-            BuildableName = "Common.framework"
-            BlueprintName = "Common iOS"
-            ReferencedContainer = "container:Subtitles App.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -96,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D58E5D3A227929F200E26F81"
+            BlueprintIdentifier = "D58E5D6122792A1F00E26F81"
             BuildableName = "Common.framework"
-            BlueprintName = "Common iOS"
+            BlueprintName = "Common macOS"
             ReferencedContainer = "container:Subtitles App.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -114,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D58E5D3A227929F200E26F81"
+            BlueprintIdentifier = "D58E5D6122792A1F00E26F81"
             BuildableName = "Common.framework"
-            BlueprintName = "Common iOS"
+            BlueprintName = "Common macOS"
             ReferencedContainer = "container:Subtitles App.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

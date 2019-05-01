@@ -10,7 +10,7 @@ let package = Package(
         .library(name: "Common", targets: ["Common"])
     ],
     dependencies: [
-        .package(url: "https://github.com/ReactiveX/RxSwift.git", "4.0.0" ..< "5.0.0"),
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", .exact("5.0.0")),
         .package(url: "https://github.com/1024jp/GzipSwift", .exact("5.0.0"))
     ],
     targets: [
