@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16999A3595F004E46B44036C /* Pods_OpenSubtitlesDownloader_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C106122AF6B6FE64F308DA /* Pods_OpenSubtitlesDownloader_watchOS.framework */; };
+		5E1B84B33D914BA451BD5CDD /* Pods_OpenSubtitlesDownloader_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2758D8D3099D22E7C6307045 /* Pods_OpenSubtitlesDownloader_tvOS.framework */; };
+		6507F692D6A21DBA3089FA5C /* Pods_SubtitlePlayer_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7694E1F0BA8FF0613796FDD2 /* Pods_SubtitlePlayer_tvOS.framework */; };
+		A158C92572C013003B16AD2B /* Pods_SubtitlePlayer_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF37ABF82FEE33C4BC88A653 /* Pods_SubtitlePlayer_watchOS.framework */; };
+		A6CA44679C87F5B6895A278A /* Pods_Common_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9302EFFA4BE3EE71CB6525 /* Pods_Common_iOS.framework */; };
+		B419376FA6A27B624BDD3898 /* Pods_Common_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF7F89B67A2CD950F950FE2 /* Pods_Common_tvOS.framework */; };
+		BAB999EDBC435C014A4629DA /* Pods_Common_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC8210691B1890B89E34BF9 /* Pods_Common_macOS.framework */; };
+		CD6116ECD07817158CDDF1E6 /* Pods_OpenSubtitlesDownloader_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1A659B12FDAA44DC350EF8 /* Pods_OpenSubtitlesDownloader_iOS.framework */; };
+		CEB9655362111D70F5F8E9E1 /* Pods_Common_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D49D0A9BEE3095E705A7A23C /* Pods_Common_watchOS.framework */; };
 		D52CB90D227935BF008F83EF /* OpenSubtitlesDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = D52CB90B227935BF008F83EF /* OpenSubtitlesDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D52CB93922793668008F83EF /* OpenSubtitlesDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = D52CB90B227935BF008F83EF /* OpenSubtitlesDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D52CB93A22793668008F83EF /* OpenSubtitlesDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = D52CB90B227935BF008F83EF /* OpenSubtitlesDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -143,9 +152,40 @@
 		D58E5D9622792B1200E26F81 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58E5D7C22792B1100E26F81 /* Optional+Extensions.swift */; };
 		D58E5D9722792B1200E26F81 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58E5D7C22792B1100E26F81 /* Optional+Extensions.swift */; };
 		D58E5D9822792B1200E26F81 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58E5D7C22792B1100E26F81 /* Optional+Extensions.swift */; };
+		EB2AFCBDEC453A4146E28EE9 /* Pods_OpenSubtitlesDownloader_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF55A6B62A6EDE2E2831839 /* Pods_OpenSubtitlesDownloader_macOS.framework */; };
+		FE6822E156E861245C93F3CF /* Pods_SubtitlePlayer_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD13740DF2F038E5BDBE89C2 /* Pods_SubtitlePlayer_iOS.framework */; };
+		FFFD90E424F63DF5CABBE036 /* Pods_SubtitlePlayer_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8E60451278818DFE495597 /* Pods_SubtitlePlayer_macOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02A75D693831FB5C403E95E8 /* Pods-SubtitlePlayer iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubtitlePlayer iOS.release.xcconfig"; path = "Target Support Files/Pods-SubtitlePlayer iOS/Pods-SubtitlePlayer iOS.release.xcconfig"; sourceTree = "<group>"; };
+		0BEFA97E4B1E25B18AE32E0C /* Pods-OpenSubtitlesDownloader iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSubtitlesDownloader iOS.debug.xcconfig"; path = "Target Support Files/Pods-OpenSubtitlesDownloader iOS/Pods-OpenSubtitlesDownloader iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		0BF7F89B67A2CD950F950FE2 /* Pods_Common_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1296C71D7E2FB2894A89169D /* Pods-SubtitlePlayer watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubtitlePlayer watchOS.debug.xcconfig"; path = "Target Support Files/Pods-SubtitlePlayer watchOS/Pods-SubtitlePlayer watchOS.debug.xcconfig"; sourceTree = "<group>"; };
+		250C923697373046F8C74D51 /* Pods-SubtitlePlayer tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubtitlePlayer tvOS.release.xcconfig"; path = "Target Support Files/Pods-SubtitlePlayer tvOS/Pods-SubtitlePlayer tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		2758D8D3099D22E7C6307045 /* Pods_OpenSubtitlesDownloader_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenSubtitlesDownloader_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D2C3B7C891F60B435B933B8 /* Pods-Common macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common macOS.release.xcconfig"; path = "Target Support Files/Pods-Common macOS/Pods-Common macOS.release.xcconfig"; sourceTree = "<group>"; };
+		2E8E60451278818DFE495597 /* Pods_SubtitlePlayer_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SubtitlePlayer_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C7DD3C1DFD2D1E0AA665B68 /* Pods-OpenSubtitlesDownloader macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSubtitlesDownloader macOS.release.xcconfig"; path = "Target Support Files/Pods-OpenSubtitlesDownloader macOS/Pods-OpenSubtitlesDownloader macOS.release.xcconfig"; sourceTree = "<group>"; };
+		3E114F62A131AAF3FC2F8BFE /* Pods-SubtitlePlayer watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubtitlePlayer watchOS.release.xcconfig"; path = "Target Support Files/Pods-SubtitlePlayer watchOS/Pods-SubtitlePlayer watchOS.release.xcconfig"; sourceTree = "<group>"; };
+		3F3031DA8A3EEEF710531FBD /* Pods-SubtitlePlayer iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubtitlePlayer iOS.debug.xcconfig"; path = "Target Support Files/Pods-SubtitlePlayer iOS/Pods-SubtitlePlayer iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		4FDA725B8492DC591BA11785 /* Pods-OpenSubtitlesDownloader iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSubtitlesDownloader iOS.release.xcconfig"; path = "Target Support Files/Pods-OpenSubtitlesDownloader iOS/Pods-OpenSubtitlesDownloader iOS.release.xcconfig"; sourceTree = "<group>"; };
+		5263DB64A346354C45938EB2 /* Pods-OpenSubtitlesDownloader watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSubtitlesDownloader watchOS.release.xcconfig"; path = "Target Support Files/Pods-OpenSubtitlesDownloader watchOS/Pods-OpenSubtitlesDownloader watchOS.release.xcconfig"; sourceTree = "<group>"; };
+		56C119CA766E702DCCAD8E8E /* Pods-OpenSubtitlesDownloader tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSubtitlesDownloader tvOS.release.xcconfig"; path = "Target Support Files/Pods-OpenSubtitlesDownloader tvOS/Pods-OpenSubtitlesDownloader tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		594BDFFF38A75B5E259C80D6 /* Pods-SubtitlePlayer macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubtitlePlayer macOS.debug.xcconfig"; path = "Target Support Files/Pods-SubtitlePlayer macOS/Pods-SubtitlePlayer macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		7694E1F0BA8FF0613796FDD2 /* Pods_SubtitlePlayer_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SubtitlePlayer_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76BB6436E4B70BEB2AEDB9EE /* Pods-Common watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common watchOS.debug.xcconfig"; path = "Target Support Files/Pods-Common watchOS/Pods-Common watchOS.debug.xcconfig"; sourceTree = "<group>"; };
+		78413EE2301D18B94C0EBCAC /* Pods-SubtitlePlayer tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubtitlePlayer tvOS.debug.xcconfig"; path = "Target Support Files/Pods-SubtitlePlayer tvOS/Pods-SubtitlePlayer tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		7CF5AE18AD4F0CDA950040F5 /* Pods-Common iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common iOS.release.xcconfig"; path = "Target Support Files/Pods-Common iOS/Pods-Common iOS.release.xcconfig"; sourceTree = "<group>"; };
+		91F25D1C51F68807E294C1E2 /* Pods-SubtitlePlayer macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubtitlePlayer macOS.release.xcconfig"; path = "Target Support Files/Pods-SubtitlePlayer macOS/Pods-SubtitlePlayer macOS.release.xcconfig"; sourceTree = "<group>"; };
+		94C106122AF6B6FE64F308DA /* Pods_OpenSubtitlesDownloader_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenSubtitlesDownloader_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EC8210691B1890B89E34BF9 /* Pods_Common_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A44F3475CE0B59A95EAC7E84 /* Pods-Common macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common macOS.debug.xcconfig"; path = "Target Support Files/Pods-Common macOS/Pods-Common macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		AB43131BD7CCD74A695015DA /* Pods-OpenSubtitlesDownloader tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSubtitlesDownloader tvOS.debug.xcconfig"; path = "Target Support Files/Pods-OpenSubtitlesDownloader tvOS/Pods-OpenSubtitlesDownloader tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		ADF55A6B62A6EDE2E2831839 /* Pods_OpenSubtitlesDownloader_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenSubtitlesDownloader_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA1A659B12FDAA44DC350EF8 /* Pods_OpenSubtitlesDownloader_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenSubtitlesDownloader_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1D34015CCDF1C9C79AACFCD /* Pods-Common tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Common tvOS/Pods-Common tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		D49D0A9BEE3095E705A7A23C /* Pods_Common_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D52CB909227935BF008F83EF /* OpenSubtitlesDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenSubtitlesDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D52CB90B227935BF008F83EF /* OpenSubtitlesDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenSubtitlesDownloader.h; sourceTree = "<group>"; };
 		D52CB90C227935BF008F83EF /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
@@ -202,6 +242,14 @@
 		D58E5D7A22792B1100E26F81 /* Result+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Result+Extensions.swift"; sourceTree = "<group>"; };
 		D58E5D7B22792B1100E26F81 /* StringEncoding+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StringEncoding+Extensions.swift"; sourceTree = "<group>"; };
 		D58E5D7C22792B1100E26F81 /* Optional+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
+		DC85AD67972053749D7E90AD /* Pods-Common iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common iOS.debug.xcconfig"; path = "Target Support Files/Pods-Common iOS/Pods-Common iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		DF73DEB4F7FE072F54F28A44 /* Pods-Common tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common tvOS.release.xcconfig"; path = "Target Support Files/Pods-Common tvOS/Pods-Common tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		E619C8A0E766D94105D5A815 /* Pods-Common watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common watchOS.release.xcconfig"; path = "Target Support Files/Pods-Common watchOS/Pods-Common watchOS.release.xcconfig"; sourceTree = "<group>"; };
+		EA248406DCCED747084DA996 /* Pods-OpenSubtitlesDownloader macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSubtitlesDownloader macOS.debug.xcconfig"; path = "Target Support Files/Pods-OpenSubtitlesDownloader macOS/Pods-OpenSubtitlesDownloader macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		ED9302EFFA4BE3EE71CB6525 /* Pods_Common_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F482C216AE0D0F7C8C5B0F34 /* Pods-OpenSubtitlesDownloader watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSubtitlesDownloader watchOS.debug.xcconfig"; path = "Target Support Files/Pods-OpenSubtitlesDownloader watchOS/Pods-OpenSubtitlesDownloader watchOS.debug.xcconfig"; sourceTree = "<group>"; };
+		FD13740DF2F038E5BDBE89C2 /* Pods_SubtitlePlayer_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SubtitlePlayer_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF37ABF82FEE33C4BC88A653 /* Pods_SubtitlePlayer_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SubtitlePlayer_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D52CB99022793701008F83EF /* Common.framework in Frameworks */,
+				CD6116ECD07817158CDDF1E6 /* Pods_OpenSubtitlesDownloader_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D52CB99122793706008F83EF /* Common.framework in Frameworks */,
+				16999A3595F004E46B44036C /* Pods_OpenSubtitlesDownloader_watchOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D52CB9922279370B008F83EF /* Common.framework in Frameworks */,
+				5E1B84B33D914BA451BD5CDD /* Pods_OpenSubtitlesDownloader_tvOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D52CB99322793713008F83EF /* Common.framework in Frameworks */,
+				EB2AFCBDEC453A4146E28EE9 /* Pods_OpenSubtitlesDownloader_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5794F4C2279348D0083357C /* Common.framework in Frameworks */,
+				FE6822E156E861245C93F3CF /* Pods_SubtitlePlayer_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5794F4D227934960083357C /* Common.framework in Frameworks */,
+				A158C92572C013003B16AD2B /* Pods_SubtitlePlayer_watchOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5794F4E2279349C0083357C /* Common.framework in Frameworks */,
+				6507F692D6A21DBA3089FA5C /* Pods_SubtitlePlayer_tvOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5794F4F227934A60083357C /* Common.framework in Frameworks */,
+				FFFD90E424F63DF5CABBE036 /* Pods_SubtitlePlayer_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +329,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6CA44679C87F5B6895A278A /* Pods_Common_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +337,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB9655362111D70F5F8E9E1 /* Pods_Common_watchOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +345,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B419376FA6A27B624BDD3898 /* Pods_Common_tvOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,12 +353,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAB999EDBC435C014A4629DA /* Pods_Common_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C7D264856CF0E65C5337CF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC85AD67972053749D7E90AD /* Pods-Common iOS.debug.xcconfig */,
+				7CF5AE18AD4F0CDA950040F5 /* Pods-Common iOS.release.xcconfig */,
+				A44F3475CE0B59A95EAC7E84 /* Pods-Common macOS.debug.xcconfig */,
+				2D2C3B7C891F60B435B933B8 /* Pods-Common macOS.release.xcconfig */,
+				D1D34015CCDF1C9C79AACFCD /* Pods-Common tvOS.debug.xcconfig */,
+				DF73DEB4F7FE072F54F28A44 /* Pods-Common tvOS.release.xcconfig */,
+				76BB6436E4B70BEB2AEDB9EE /* Pods-Common watchOS.debug.xcconfig */,
+				E619C8A0E766D94105D5A815 /* Pods-Common watchOS.release.xcconfig */,
+				0BEFA97E4B1E25B18AE32E0C /* Pods-OpenSubtitlesDownloader iOS.debug.xcconfig */,
+				4FDA725B8492DC591BA11785 /* Pods-OpenSubtitlesDownloader iOS.release.xcconfig */,
+				EA248406DCCED747084DA996 /* Pods-OpenSubtitlesDownloader macOS.debug.xcconfig */,
+				3C7DD3C1DFD2D1E0AA665B68 /* Pods-OpenSubtitlesDownloader macOS.release.xcconfig */,
+				AB43131BD7CCD74A695015DA /* Pods-OpenSubtitlesDownloader tvOS.debug.xcconfig */,
+				56C119CA766E702DCCAD8E8E /* Pods-OpenSubtitlesDownloader tvOS.release.xcconfig */,
+				F482C216AE0D0F7C8C5B0F34 /* Pods-OpenSubtitlesDownloader watchOS.debug.xcconfig */,
+				5263DB64A346354C45938EB2 /* Pods-OpenSubtitlesDownloader watchOS.release.xcconfig */,
+				3F3031DA8A3EEEF710531FBD /* Pods-SubtitlePlayer iOS.debug.xcconfig */,
+				02A75D693831FB5C403E95E8 /* Pods-SubtitlePlayer iOS.release.xcconfig */,
+				594BDFFF38A75B5E259C80D6 /* Pods-SubtitlePlayer macOS.debug.xcconfig */,
+				91F25D1C51F68807E294C1E2 /* Pods-SubtitlePlayer macOS.release.xcconfig */,
+				78413EE2301D18B94C0EBCAC /* Pods-SubtitlePlayer tvOS.debug.xcconfig */,
+				250C923697373046F8C74D51 /* Pods-SubtitlePlayer tvOS.release.xcconfig */,
+				1296C71D7E2FB2894A89169D /* Pods-SubtitlePlayer watchOS.debug.xcconfig */,
+				3E114F62A131AAF3FC2F8BFE /* Pods-SubtitlePlayer watchOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D5065A0222791EE400BC4D1F = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +401,7 @@
 				D52CB93C227936A0008F83EF /* OpenSubtitlesDownloader */,
 				D5065A0C22791EE400BC4D1F /* Products */,
 				D5794F2A227934300083357C /* SubtitlePlayer */,
+				6C7D264856CF0E65C5337CF7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -436,6 +529,18 @@
 		D5794F4B2279348D0083357C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED9302EFFA4BE3EE71CB6525 /* Pods_Common_iOS.framework */,
+				9EC8210691B1890B89E34BF9 /* Pods_Common_macOS.framework */,
+				0BF7F89B67A2CD950F950FE2 /* Pods_Common_tvOS.framework */,
+				D49D0A9BEE3095E705A7A23C /* Pods_Common_watchOS.framework */,
+				CA1A659B12FDAA44DC350EF8 /* Pods_OpenSubtitlesDownloader_iOS.framework */,
+				ADF55A6B62A6EDE2E2831839 /* Pods_OpenSubtitlesDownloader_macOS.framework */,
+				2758D8D3099D22E7C6307045 /* Pods_OpenSubtitlesDownloader_tvOS.framework */,
+				94C106122AF6B6FE64F308DA /* Pods_OpenSubtitlesDownloader_watchOS.framework */,
+				FD13740DF2F038E5BDBE89C2 /* Pods_SubtitlePlayer_iOS.framework */,
+				2E8E60451278818DFE495597 /* Pods_SubtitlePlayer_macOS.framework */,
+				7694E1F0BA8FF0613796FDD2 /* Pods_SubtitlePlayer_tvOS.framework */,
+				FF37ABF82FEE33C4BC88A653 /* Pods_SubtitlePlayer_watchOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -584,6 +689,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D52CB910227935BF008F83EF /* Build configuration list for PBXNativeTarget "OpenSubtitlesDownloader iOS" */;
 			buildPhases = (
+				D47B8FB5605ED1EF5BF108A9 /* [CP] Check Pods Manifest.lock */,
 				D52CB904227935BF008F83EF /* Headers */,
 				D52CB905227935BF008F83EF /* Sources */,
 				D52CB906227935BF008F83EF /* Frameworks */,
@@ -602,6 +708,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D52CB91B227935D1008F83EF /* Build configuration list for PBXNativeTarget "OpenSubtitlesDownloader watchOS" */;
 			buildPhases = (
+				EB48442CABE169B88273A87D /* [CP] Check Pods Manifest.lock */,
 				D52CB911227935D1008F83EF /* Headers */,
 				D52CB912227935D1008F83EF /* Sources */,
 				D52CB913227935D1008F83EF /* Frameworks */,
@@ -620,6 +727,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D52CB928227935E2008F83EF /* Build configuration list for PBXNativeTarget "OpenSubtitlesDownloader tvOS" */;
 			buildPhases = (
+				EBCD8364EAED18E35EBC28AD /* [CP] Check Pods Manifest.lock */,
 				D52CB91E227935E2008F83EF /* Headers */,
 				D52CB91F227935E2008F83EF /* Sources */,
 				D52CB920227935E2008F83EF /* Frameworks */,
@@ -638,6 +746,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D52CB935227935F3008F83EF /* Build configuration list for PBXNativeTarget "OpenSubtitlesDownloader macOS" */;
 			buildPhases = (
+				4BA7F7F1FC64668CD4C437B3 /* [CP] Check Pods Manifest.lock */,
 				D52CB92B227935F3008F83EF /* Headers */,
 				D52CB92C227935F3008F83EF /* Sources */,
 				D52CB92D227935F3008F83EF /* Frameworks */,
@@ -656,6 +765,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5794EFE2279331B0083357C /* Build configuration list for PBXNativeTarget "SubtitlePlayer iOS" */;
 			buildPhases = (
+				41D625B7B61A581058D04B7D /* [CP] Check Pods Manifest.lock */,
 				D5794EF22279331A0083357C /* Headers */,
 				D5794EF32279331A0083357C /* Sources */,
 				D5794EF42279331A0083357C /* Frameworks */,
@@ -674,6 +784,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5794F092279332E0083357C /* Build configuration list for PBXNativeTarget "SubtitlePlayer watchOS" */;
 			buildPhases = (
+				A69FDCD7E2F84509E1E4B40A /* [CP] Check Pods Manifest.lock */,
 				D5794EFF2279332E0083357C /* Headers */,
 				D5794F002279332E0083357C /* Sources */,
 				D5794F012279332E0083357C /* Frameworks */,
@@ -692,6 +803,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5794F16227933390083357C /* Build configuration list for PBXNativeTarget "SubtitlePlayer tvOS" */;
 			buildPhases = (
+				E2FB9C1B88BA4DC954F5C9A3 /* [CP] Check Pods Manifest.lock */,
 				D5794F0C227933390083357C /* Headers */,
 				D5794F0D227933390083357C /* Sources */,
 				D5794F0E227933390083357C /* Frameworks */,
@@ -710,6 +822,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5794F23227933440083357C /* Build configuration list for PBXNativeTarget "SubtitlePlayer macOS" */;
 			buildPhases = (
+				406280E4EE540A8F3E741088 /* [CP] Check Pods Manifest.lock */,
 				D5794F19227933440083357C /* Headers */,
 				D5794F1A227933440083357C /* Sources */,
 				D5794F1B227933440083357C /* Frameworks */,
@@ -728,6 +841,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D58E5D40227929F300E26F81 /* Build configuration list for PBXNativeTarget "Common iOS" */;
 			buildPhases = (
+				F6DFD27A9D75AE48214CE1D6 /* [CP] Check Pods Manifest.lock */,
 				D58E5D36227929F200E26F81 /* Headers */,
 				D58E5D37227929F200E26F81 /* Sources */,
 				D58E5D38227929F200E26F81 /* Frameworks */,
@@ -746,6 +860,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D58E5D4D22792A0900E26F81 /* Build configuration list for PBXNativeTarget "Common watchOS" */;
 			buildPhases = (
+				2B0AA4B132019DDC742BA174 /* [CP] Check Pods Manifest.lock */,
 				D58E5D4322792A0900E26F81 /* Headers */,
 				D58E5D4422792A0900E26F81 /* Sources */,
 				D58E5D4522792A0900E26F81 /* Frameworks */,
@@ -764,6 +879,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D58E5D5A22792A1500E26F81 /* Build configuration list for PBXNativeTarget "Common tvOS" */;
 			buildPhases = (
+				926EC2ADA14F947B5E476FC9 /* [CP] Check Pods Manifest.lock */,
 				D58E5D5022792A1400E26F81 /* Headers */,
 				D58E5D5122792A1400E26F81 /* Sources */,
 				D58E5D5222792A1400E26F81 /* Frameworks */,
@@ -782,6 +898,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D58E5D6722792A1F00E26F81 /* Build configuration list for PBXNativeTarget "Common macOS" */;
 			buildPhases = (
+				C45240DB6B458F1D6CE881B6 /* [CP] Check Pods Manifest.lock */,
 				D58E5D5D22792A1F00E26F81 /* Headers */,
 				D58E5D5E22792A1F00E26F81 /* Sources */,
 				D58E5D5F22792A1F00E26F81 /* Frameworks */,
@@ -959,6 +1076,273 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B0AA4B132019DDC742BA174 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Common watchOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		406280E4EE540A8F3E741088 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SubtitlePlayer macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41D625B7B61A581058D04B7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SubtitlePlayer iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BA7F7F1FC64668CD4C437B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenSubtitlesDownloader macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		926EC2ADA14F947B5E476FC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Common tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A69FDCD7E2F84509E1E4B40A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SubtitlePlayer watchOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C45240DB6B458F1D6CE881B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Common macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D47B8FB5605ED1EF5BF108A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenSubtitlesDownloader iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2FB9C1B88BA4DC954F5C9A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SubtitlePlayer tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB48442CABE169B88273A87D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenSubtitlesDownloader watchOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBCD8364EAED18E35EBC28AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenSubtitlesDownloader tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6DFD27A9D75AE48214CE1D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Common iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D52CB905227935BF008F83EF /* Sources */ = {
@@ -1282,6 +1666,7 @@
 		};
 		D52CB90E227935BF008F83EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BEFA97E4B1E25B18AE32E0C /* Pods-OpenSubtitlesDownloader iOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1312,6 +1697,7 @@
 		};
 		D52CB90F227935BF008F83EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FDA725B8492DC591BA11785 /* Pods-OpenSubtitlesDownloader iOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1342,6 +1728,7 @@
 		};
 		D52CB91C227935D1008F83EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F482C216AE0D0F7C8C5B0F34 /* Pods-OpenSubtitlesDownloader watchOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1373,6 +1760,7 @@
 		};
 		D52CB91D227935D1008F83EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5263DB64A346354C45938EB2 /* Pods-OpenSubtitlesDownloader watchOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1404,6 +1792,7 @@
 		};
 		D52CB929227935E2008F83EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB43131BD7CCD74A695015DA /* Pods-OpenSubtitlesDownloader tvOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1435,6 +1824,7 @@
 		};
 		D52CB92A227935E2008F83EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56C119CA766E702DCCAD8E8E /* Pods-OpenSubtitlesDownloader tvOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1466,6 +1856,7 @@
 		};
 		D52CB936227935F3008F83EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA248406DCCED747084DA996 /* Pods-OpenSubtitlesDownloader macOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -1498,6 +1889,7 @@
 		};
 		D52CB937227935F3008F83EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C7DD3C1DFD2D1E0AA665B68 /* Pods-OpenSubtitlesDownloader macOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -1530,6 +1922,7 @@
 		};
 		D5794EFC2279331B0083357C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F3031DA8A3EEEF710531FBD /* Pods-SubtitlePlayer iOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1560,6 +1953,7 @@
 		};
 		D5794EFD2279331B0083357C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02A75D693831FB5C403E95E8 /* Pods-SubtitlePlayer iOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1590,6 +1984,7 @@
 		};
 		D5794F0A2279332E0083357C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1296C71D7E2FB2894A89169D /* Pods-SubtitlePlayer watchOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1621,6 +2016,7 @@
 		};
 		D5794F0B2279332E0083357C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E114F62A131AAF3FC2F8BFE /* Pods-SubtitlePlayer watchOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1652,6 +2048,7 @@
 		};
 		D5794F17227933390083357C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78413EE2301D18B94C0EBCAC /* Pods-SubtitlePlayer tvOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1683,6 +2080,7 @@
 		};
 		D5794F18227933390083357C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 250C923697373046F8C74D51 /* Pods-SubtitlePlayer tvOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1714,6 +2112,7 @@
 		};
 		D5794F24227933440083357C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 594BDFFF38A75B5E259C80D6 /* Pods-SubtitlePlayer macOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -1746,6 +2145,7 @@
 		};
 		D5794F25227933440083357C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91F25D1C51F68807E294C1E2 /* Pods-SubtitlePlayer macOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -1778,6 +2178,7 @@
 		};
 		D58E5D41227929F300E26F81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC85AD67972053749D7E90AD /* Pods-Common iOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1808,6 +2209,7 @@
 		};
 		D58E5D42227929F300E26F81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CF5AE18AD4F0CDA950040F5 /* Pods-Common iOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1838,6 +2240,7 @@
 		};
 		D58E5D4E22792A0900E26F81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76BB6436E4B70BEB2AEDB9EE /* Pods-Common watchOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1869,6 +2272,7 @@
 		};
 		D58E5D4F22792A0900E26F81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E619C8A0E766D94105D5A815 /* Pods-Common watchOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1900,6 +2304,7 @@
 		};
 		D58E5D5B22792A1500E26F81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1D34015CCDF1C9C79AACFCD /* Pods-Common tvOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1931,6 +2336,7 @@
 		};
 		D58E5D5C22792A1500E26F81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF73DEB4F7FE072F54F28A44 /* Pods-Common tvOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1962,6 +2368,7 @@
 		};
 		D58E5D6822792A1F00E26F81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A44F3475CE0B59A95EAC7E84 /* Pods-Common macOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -1994,6 +2401,7 @@
 		};
 		D58E5D6922792A1F00E26F81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D2C3B7C891F60B435B933B8 /* Pods-Common macOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
