@@ -7,6 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D5794EFB2279331B0083357C /* SubtitlePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = D5794EF92279331B0083357C /* SubtitlePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5794F27227933B10083357C /* SubtitlePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = D5794EF92279331B0083357C /* SubtitlePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5794F28227933B10083357C /* SubtitlePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = D5794EF92279331B0083357C /* SubtitlePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5794F29227933B20083357C /* SubtitlePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = D5794EF92279331B0083357C /* SubtitlePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5794F33227934300083357C /* Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F2C227934300083357C /* Subtitle.swift */; };
+		D5794F34227934300083357C /* Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F2C227934300083357C /* Subtitle.swift */; };
+		D5794F35227934300083357C /* Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F2C227934300083357C /* Subtitle.swift */; };
+		D5794F36227934300083357C /* Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F2C227934300083357C /* Subtitle.swift */; };
+		D5794F37227934300083357C /* SubtitleDecodingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F2D227934300083357C /* SubtitleDecodingError.swift */; };
+		D5794F38227934300083357C /* SubtitleDecodingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F2D227934300083357C /* SubtitleDecodingError.swift */; };
+		D5794F39227934300083357C /* SubtitleDecodingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F2D227934300083357C /* SubtitleDecodingError.swift */; };
+		D5794F3A227934300083357C /* SubtitleDecodingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F2D227934300083357C /* SubtitleDecodingError.swift */; };
+		D5794F3B227934300083357C /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F2E227934300083357C /* Time.swift */; };
+		D5794F3C227934300083357C /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F2E227934300083357C /* Time.swift */; };
+		D5794F3D227934300083357C /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F2E227934300083357C /* Time.swift */; };
+		D5794F3E227934300083357C /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F2E227934300083357C /* Time.swift */; };
+		D5794F3F227934300083357C /* IndexOutOfBoundsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F30227934300083357C /* IndexOutOfBoundsError.swift */; };
+		D5794F40227934300083357C /* IndexOutOfBoundsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F30227934300083357C /* IndexOutOfBoundsError.swift */; };
+		D5794F41227934300083357C /* IndexOutOfBoundsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F30227934300083357C /* IndexOutOfBoundsError.swift */; };
+		D5794F42227934300083357C /* IndexOutOfBoundsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F30227934300083357C /* IndexOutOfBoundsError.swift */; };
+		D5794F43227934300083357C /* SubtitlePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F31227934300083357C /* SubtitlePlayer.swift */; };
+		D5794F44227934300083357C /* SubtitlePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F31227934300083357C /* SubtitlePlayer.swift */; };
+		D5794F45227934300083357C /* SubtitlePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F31227934300083357C /* SubtitlePlayer.swift */; };
+		D5794F46227934300083357C /* SubtitlePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F31227934300083357C /* SubtitlePlayer.swift */; };
+		D5794F47227934300083357C /* SubtitleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F32227934300083357C /* SubtitleEvent.swift */; };
+		D5794F48227934300083357C /* SubtitleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F32227934300083357C /* SubtitleEvent.swift */; };
+		D5794F49227934300083357C /* SubtitleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F32227934300083357C /* SubtitleEvent.swift */; };
+		D5794F4A227934300083357C /* SubtitleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5794F32227934300083357C /* SubtitleEvent.swift */; };
+		D5794F4C2279348D0083357C /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58E5D3B227929F200E26F81 /* Common.framework */; };
+		D5794F4D227934960083357C /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58E5D4822792A0900E26F81 /* Common.framework */; };
+		D5794F4E2279349C0083357C /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58E5D5522792A1400E26F81 /* Common.framework */; };
+		D5794F4F227934A60083357C /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58E5D6222792A1F00E26F81 /* Common.framework */; };
 		D58E5D7122792A9800E26F81 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = D58E5D6E22792A9000E26F81 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D58E5D7222792A9800E26F81 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = D58E5D6E22792A9000E26F81 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D58E5D7322792A9900E26F81 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = D58E5D6E22792A9000E26F81 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -42,10 +74,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D58E5D3B227929F200E26F81 /* Common_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D58E5D4822792A0900E26F81 /* Common_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D58E5D5522792A1400E26F81 /* Common_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D58E5D6222792A1F00E26F81 /* Common_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5794EF72279331A0083357C /* SubtitlePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SubtitlePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5794EF92279331B0083357C /* SubtitlePlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubtitlePlayer.h; sourceTree = "<group>"; };
+		D5794EFA2279331B0083357C /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
+		D5794F042279332E0083357C /* SubtitlePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SubtitlePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5794F072279332E0083357C /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
+		D5794F11227933390083357C /* SubtitlePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SubtitlePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5794F14227933390083357C /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		D5794F1E227933440083357C /* SubtitlePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SubtitlePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5794F21227933440083357C /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
+		D5794F2C227934300083357C /* Subtitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subtitle.swift; sourceTree = "<group>"; };
+		D5794F2D227934300083357C /* SubtitleDecodingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtitleDecodingError.swift; sourceTree = "<group>"; };
+		D5794F2E227934300083357C /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		D5794F30227934300083357C /* IndexOutOfBoundsError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexOutOfBoundsError.swift; sourceTree = "<group>"; };
+		D5794F31227934300083357C /* SubtitlePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtitlePlayer.swift; sourceTree = "<group>"; };
+		D5794F32227934300083357C /* SubtitleEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtitleEvent.swift; sourceTree = "<group>"; };
+		D58E5D3B227929F200E26F81 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D58E5D4822792A0900E26F81 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D58E5D5522792A1400E26F81 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D58E5D6222792A1F00E26F81 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58E5D6C22792A9000E26F81 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		D58E5D6D22792A9000E26F81 /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
 		D58E5D6E22792A9000E26F81 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
@@ -61,6 +108,38 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D5794EF42279331A0083357C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5794F4C2279348D0083357C /* Common.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5794F012279332E0083357C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5794F4D227934960083357C /* Common.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5794F0E227933390083357C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5794F4E2279349C0083357C /* Common.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5794F1B227933440083357C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5794F4F227934A60083357C /* Common.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D58E5D38227929F200E26F81 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -98,24 +177,80 @@
 				D58E5D7522792B1100E26F81 /* Common */,
 				D58E5D6A22792A9000E26F81 /* Metadata */,
 				D5065A0C22791EE400BC4D1F /* Products */,
+				D5794F2A227934300083357C /* SubtitlePlayer */,
+				D5794F4B2279348D0083357C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		D5065A0C22791EE400BC4D1F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D58E5D3B227929F200E26F81 /* Common_iOS.framework */,
-				D58E5D4822792A0900E26F81 /* Common_watchOS.framework */,
-				D58E5D5522792A1400E26F81 /* Common_tvOS.framework */,
-				D58E5D6222792A1F00E26F81 /* Common_macOS.framework */,
+				D58E5D3B227929F200E26F81 /* Common.framework */,
+				D58E5D4822792A0900E26F81 /* Common.framework */,
+				D58E5D5522792A1400E26F81 /* Common.framework */,
+				D58E5D6222792A1F00E26F81 /* Common.framework */,
+				D5794EF72279331A0083357C /* SubtitlePlayer.framework */,
+				D5794F042279332E0083357C /* SubtitlePlayer.framework */,
+				D5794F11227933390083357C /* SubtitlePlayer.framework */,
+				D5794F1E227933440083357C /* SubtitlePlayer.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D5794F26227933610083357C /* SubtitlePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				D5794EFA2279331B0083357C /* Info-iOS.plist */,
+				D5794F21227933440083357C /* Info-macOS.plist */,
+				D5794F14227933390083357C /* Info-tvOS.plist */,
+				D5794F072279332E0083357C /* Info-watchOS.plist */,
+				D5794EF92279331B0083357C /* SubtitlePlayer.h */,
+			);
+			path = SubtitlePlayer;
+			sourceTree = "<group>";
+		};
+		D5794F2A227934300083357C /* SubtitlePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				D5794F2B227934300083357C /* Parsing */,
+				D5794F2F227934300083357C /* Player */,
+			);
+			name = SubtitlePlayer;
+			path = Sources/SubtitlePlayer;
+			sourceTree = "<group>";
+		};
+		D5794F2B227934300083357C /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				D5794F2C227934300083357C /* Subtitle.swift */,
+				D5794F2D227934300083357C /* SubtitleDecodingError.swift */,
+				D5794F2E227934300083357C /* Time.swift */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
+		D5794F2F227934300083357C /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				D5794F30227934300083357C /* IndexOutOfBoundsError.swift */,
+				D5794F31227934300083357C /* SubtitlePlayer.swift */,
+				D5794F32227934300083357C /* SubtitleEvent.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		D5794F4B2279348D0083357C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D58E5D6A22792A9000E26F81 /* Metadata */ = {
 			isa = PBXGroup;
 			children = (
 				D58E5D6B22792A9000E26F81 /* Common */,
+				D5794F26227933610083357C /* SubtitlePlayer */,
 			);
 			name = Metadata;
 			path = Sources/Metadata;
@@ -151,6 +286,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		D5794EF22279331A0083357C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5794EFB2279331B0083357C /* SubtitlePlayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5794EFF2279332E0083357C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5794F29227933B20083357C /* SubtitlePlayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5794F0C227933390083357C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5794F28227933B10083357C /* SubtitlePlayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5794F19227933440083357C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5794F27227933B10083357C /* SubtitlePlayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D58E5D36227929F200E26F81 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -186,6 +353,78 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		D5794EF62279331A0083357C /* SubtitlePlayer iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5794EFE2279331B0083357C /* Build configuration list for PBXNativeTarget "SubtitlePlayer iOS" */;
+			buildPhases = (
+				D5794EF22279331A0083357C /* Headers */,
+				D5794EF32279331A0083357C /* Sources */,
+				D5794EF42279331A0083357C /* Frameworks */,
+				D5794EF52279331A0083357C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SubtitlePlayer iOS";
+			productName = "SubtitlePlayer iOS";
+			productReference = D5794EF72279331A0083357C /* SubtitlePlayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D5794F032279332E0083357C /* SubtitlePlayer watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5794F092279332E0083357C /* Build configuration list for PBXNativeTarget "SubtitlePlayer watchOS" */;
+			buildPhases = (
+				D5794EFF2279332E0083357C /* Headers */,
+				D5794F002279332E0083357C /* Sources */,
+				D5794F012279332E0083357C /* Frameworks */,
+				D5794F022279332E0083357C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SubtitlePlayer watchOS";
+			productName = "SubtitlePlayer watchOS";
+			productReference = D5794F042279332E0083357C /* SubtitlePlayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D5794F10227933390083357C /* SubtitlePlayer tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5794F16227933390083357C /* Build configuration list for PBXNativeTarget "SubtitlePlayer tvOS" */;
+			buildPhases = (
+				D5794F0C227933390083357C /* Headers */,
+				D5794F0D227933390083357C /* Sources */,
+				D5794F0E227933390083357C /* Frameworks */,
+				D5794F0F227933390083357C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SubtitlePlayer tvOS";
+			productName = "SubtitlePlayer tvOS";
+			productReference = D5794F11227933390083357C /* SubtitlePlayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D5794F1D227933440083357C /* SubtitlePlayer macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5794F23227933440083357C /* Build configuration list for PBXNativeTarget "SubtitlePlayer macOS" */;
+			buildPhases = (
+				D5794F19227933440083357C /* Headers */,
+				D5794F1A227933440083357C /* Sources */,
+				D5794F1B227933440083357C /* Frameworks */,
+				D5794F1C227933440083357C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SubtitlePlayer macOS";
+			productName = "SubtitlePlayer macOS";
+			productReference = D5794F1E227933440083357C /* SubtitlePlayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		D58E5D3A227929F200E26F81 /* Common iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D58E5D40227929F300E26F81 /* Build configuration list for PBXNativeTarget "Common iOS" */;
@@ -201,7 +440,7 @@
 			);
 			name = "Common iOS";
 			productName = "Common iOS";
-			productReference = D58E5D3B227929F200E26F81 /* Common_iOS.framework */;
+			productReference = D58E5D3B227929F200E26F81 /* Common.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D58E5D4722792A0900E26F81 /* Common watchOS */ = {
@@ -219,7 +458,7 @@
 			);
 			name = "Common watchOS";
 			productName = "Common watchOS";
-			productReference = D58E5D4822792A0900E26F81 /* Common_watchOS.framework */;
+			productReference = D58E5D4822792A0900E26F81 /* Common.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D58E5D5422792A1400E26F81 /* Common tvOS */ = {
@@ -237,7 +476,7 @@
 			);
 			name = "Common tvOS";
 			productName = "Common tvOS";
-			productReference = D58E5D5522792A1400E26F81 /* Common_tvOS.framework */;
+			productReference = D58E5D5522792A1400E26F81 /* Common.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D58E5D6122792A1F00E26F81 /* Common macOS */ = {
@@ -255,7 +494,7 @@
 			);
 			name = "Common macOS";
 			productName = "Common macOS";
-			productReference = D58E5D6222792A1F00E26F81 /* Common_macOS.framework */;
+			productReference = D58E5D6222792A1F00E26F81 /* Common.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -268,6 +507,18 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Luiz Rodrigo Martins Barbosa";
 				TargetAttributes = {
+					D5794EF62279331A0083357C = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					D5794F032279332E0083357C = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					D5794F10227933390083357C = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					D5794F1D227933440083357C = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					D58E5D3A227929F200E26F81 = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -299,11 +550,43 @@
 				D58E5D4722792A0900E26F81 /* Common watchOS */,
 				D58E5D5422792A1400E26F81 /* Common tvOS */,
 				D58E5D6122792A1F00E26F81 /* Common macOS */,
+				D5794EF62279331A0083357C /* SubtitlePlayer iOS */,
+				D5794F032279332E0083357C /* SubtitlePlayer watchOS */,
+				D5794F10227933390083357C /* SubtitlePlayer tvOS */,
+				D5794F1D227933440083357C /* SubtitlePlayer macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D5794EF52279331A0083357C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5794F022279332E0083357C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5794F0F227933390083357C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5794F1C227933440083357C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D58E5D39227929F200E26F81 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -335,6 +618,58 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D5794EF32279331A0083357C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5794F43227934300083357C /* SubtitlePlayer.swift in Sources */,
+				D5794F3F227934300083357C /* IndexOutOfBoundsError.swift in Sources */,
+				D5794F47227934300083357C /* SubtitleEvent.swift in Sources */,
+				D5794F3B227934300083357C /* Time.swift in Sources */,
+				D5794F33227934300083357C /* Subtitle.swift in Sources */,
+				D5794F37227934300083357C /* SubtitleDecodingError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5794F002279332E0083357C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5794F44227934300083357C /* SubtitlePlayer.swift in Sources */,
+				D5794F40227934300083357C /* IndexOutOfBoundsError.swift in Sources */,
+				D5794F48227934300083357C /* SubtitleEvent.swift in Sources */,
+				D5794F3C227934300083357C /* Time.swift in Sources */,
+				D5794F34227934300083357C /* Subtitle.swift in Sources */,
+				D5794F38227934300083357C /* SubtitleDecodingError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5794F0D227933390083357C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5794F45227934300083357C /* SubtitlePlayer.swift in Sources */,
+				D5794F41227934300083357C /* IndexOutOfBoundsError.swift in Sources */,
+				D5794F49227934300083357C /* SubtitleEvent.swift in Sources */,
+				D5794F3D227934300083357C /* Time.swift in Sources */,
+				D5794F35227934300083357C /* Subtitle.swift in Sources */,
+				D5794F39227934300083357C /* SubtitleDecodingError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5794F1A227933440083357C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5794F46227934300083357C /* SubtitlePlayer.swift in Sources */,
+				D5794F42227934300083357C /* IndexOutOfBoundsError.swift in Sources */,
+				D5794F4A227934300083357C /* SubtitleEvent.swift in Sources */,
+				D5794F3E227934300083357C /* Time.swift in Sources */,
+				D5794F36227934300083357C /* Subtitle.swift in Sources */,
+				D5794F3A227934300083357C /* SubtitleDecodingError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D58E5D37227929F200E26F81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -510,9 +845,258 @@
 			};
 			name = Release;
 		};
+		D5794EFC2279331B0083357C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/SubtitlePlayer/Info-iOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.SubtitlePlayer-iOS";
+				PRODUCT_NAME = SubtitlePlayer;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D5794EFD2279331B0083357C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/SubtitlePlayer/Info-iOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.SubtitlePlayer-iOS";
+				PRODUCT_NAME = SubtitlePlayer;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D5794F0A2279332E0083357C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/SubtitlePlayer/Info-watchOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.SubtitlePlayer-watchOS";
+				PRODUCT_NAME = SubtitlePlayer;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		D5794F0B2279332E0083357C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/SubtitlePlayer/Info-watchOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.SubtitlePlayer-watchOS";
+				PRODUCT_NAME = SubtitlePlayer;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		D5794F17227933390083357C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/SubtitlePlayer/Info-tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.SubtitlePlayer-tvOS";
+				PRODUCT_NAME = SubtitlePlayer;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D5794F18227933390083357C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/SubtitlePlayer/Info-tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.SubtitlePlayer-tvOS";
+				PRODUCT_NAME = SubtitlePlayer;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D5794F24227933440083357C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/SubtitlePlayer/Info-macOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.SubtitlePlayer-macOS";
+				PRODUCT_NAME = SubtitlePlayer;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D5794F25227933440083357C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Metadata/SubtitlePlayer/Info-macOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.SubtitlePlayer-macOS";
+				PRODUCT_NAME = SubtitlePlayer;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		D58E5D41227929F300E26F81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -530,7 +1114,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.Common-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Common;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -542,6 +1126,7 @@
 		D58E5D42227929F300E26F81 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -559,7 +1144,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.Common-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Common;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -588,7 +1173,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.Common-watchOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Common;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -619,7 +1204,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.Common-watchOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Common;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -633,6 +1218,7 @@
 		D58E5D5B22792A1500E26F81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -649,7 +1235,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.Common-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Common;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -663,6 +1249,7 @@
 		D58E5D5C22792A1500E26F81 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -679,7 +1266,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.Common-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Common;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -693,6 +1280,7 @@
 		D58E5D6822792A1F00E26F81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -712,7 +1300,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.Common-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Common;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -724,6 +1312,7 @@
 		D58E5D6922792A1F00E26F81 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -743,7 +1332,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.developercity.Common-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Common;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -760,6 +1349,42 @@
 			buildConfigurations = (
 				D5065A1B22791EE700BC4D1F /* Debug */,
 				D5065A1C22791EE700BC4D1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5794EFE2279331B0083357C /* Build configuration list for PBXNativeTarget "SubtitlePlayer iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5794EFC2279331B0083357C /* Debug */,
+				D5794EFD2279331B0083357C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5794F092279332E0083357C /* Build configuration list for PBXNativeTarget "SubtitlePlayer watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5794F0A2279332E0083357C /* Debug */,
+				D5794F0B2279332E0083357C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5794F16227933390083357C /* Build configuration list for PBXNativeTarget "SubtitlePlayer tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5794F17227933390083357C /* Debug */,
+				D5794F18227933390083357C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5794F23227933440083357C /* Build configuration list for PBXNativeTarget "SubtitlePlayer macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5794F24227933440083357C /* Debug */,
+				D5794F25227933440083357C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
