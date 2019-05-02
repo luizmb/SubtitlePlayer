@@ -6,11 +6,10 @@ def watchos_version() platform :watchos, '3.0' end
 def tvos_version() platform :tvos, '10.0' end
 def macos_version() platform :macos, '10.10' end
 def libraries_project() project 'SubtitleLibraries.xcodeproj' end
+def apps_project() project 'SubtitleApp.xcodeproj' end
 
 def rxswift() pod 'RxSwift', '5.0.0', :inhibit_warnings => true end
-def gzip
-    # pod 'GzipSwift', '5.0.0', :inhibit_warnings => true
-end
+def gzip() pod 'GzipSwift', '5.0.0', :inhibit_warnings => true end
 
 target 'Common iOS' do
     libraries_project
@@ -80,29 +79,33 @@ target 'SubtitlePlayer watchOS' do
     rxswift
 end
 
-# target 'Subtitles App iOS' do
-#     ios_version
-#     rxswift
-#     gzip
-# end
+target 'SubtitleApp' do
+    apps_project
+    ios_version
+    rxswift
+    gzip
+end
 
-# target 'Subtitles App macOS' do
-#     macos_version
-#     rxswift
-#     gzip
-# end
+target 'SubtitleApp Desktop' do
+    apps_project
+    macos_version
+    rxswift
+    gzip
+end
 
-# target 'Subtitles App tvOS' do
-#     tvos_version
-#     rxswift
-#     gzip
-# end
+target 'SubtitleApp TV' do
+    apps_project
+    tvos_version
+    rxswift
+    gzip
+end
 
-# target 'Subtitles App watchOS Extension' do
-#     watchos_version
-#     rxswift
-#     gzip
-# end
+target 'SubtitleApp watchOS Extension' do
+    apps_project
+    watchos_version
+    rxswift
+    gzip
+end
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|

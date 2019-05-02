@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SubtitleApp.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SubtitleLibraries.xcodeproj">
    </FileRef>
    <FileRef
