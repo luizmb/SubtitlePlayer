@@ -1753,7 +1753,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
 			};
 			name = Debug;
 		};
@@ -1785,7 +1785,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
 			};
 			name = Release;
 		};
@@ -2009,7 +2009,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
 			};
 			name = Debug;
 		};
@@ -2041,7 +2041,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
 			};
 			name = Release;
 		};
@@ -2265,7 +2265,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
 			};
 			name = Debug;
 		};
@@ -2297,7 +2297,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
 			};
 			name = Release;
 		};

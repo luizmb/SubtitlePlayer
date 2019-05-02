@@ -2,7 +2,7 @@ use_frameworks!
 workspace 'Subtitle.xcworkspace'
 
 def ios_version() platform :ios, '10.0' end
-def watchos_version() platform :watchos, '3.0' end
+def watchos_version() platform :watchos, '5.2' end
 def tvos_version() platform :tvos, '10.0' end
 def macos_version() platform :macos, '10.10' end
 def libraries_project() project 'SubtitleLibraries.xcodeproj' end
@@ -82,28 +82,28 @@ end
 target 'SubtitleApp' do
     apps_project
     ios_version
-    rxswift
+    # rxswift
     gzip
 end
 
 target 'SubtitleApp Desktop' do
     apps_project
     macos_version
-    rxswift
+    # rxswift
     gzip
 end
 
 target 'SubtitleApp TV' do
     apps_project
     tvos_version
-    rxswift
+    # rxswift
     gzip
 end
 
 target 'SubtitleApp watchOS Extension' do
     apps_project
     watchos_version
-    rxswift
+    # rxswift
     gzip
 end
 
