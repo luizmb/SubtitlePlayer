@@ -4,6 +4,10 @@ import Foundation
 public struct Subtitle: Equatable {
     public let lines: [Line]
 
+    public var length: Time {
+        return lines.map(^\.end).max() ?? .zero
+    }
+
     public init(lines: [Line]) {
         self.lines = lines
     }
@@ -35,14 +39,14 @@ extension Subtitle {
 
     public static func from(data: Data, encoding: String.Encoding) -> Result<Subtitle, SubtitleDecodingError> {
         return String(data: data, encoding: encoding)
-            .toResult(orError: SubtitleDecodingError())
+            .toResult(orError: .binaryDataCannotBeRepresentedAsString(encoding: encoding)) 
             .flatMap(from(string:))
 
     }
 
     public static func from(string: String) -> Result<Subtitle, SubtitleDecodingError> {
         let lines = extractLines(from: string)
-        guard lines.count > 0 else { return .failure(SubtitleDecodingError()) }
+        guard lines.count > 0 else { return .failure(.stringCannotBeRepresentedAsSubtitle(string)) }
         return .success(.init(lines: lines))
     }
 }

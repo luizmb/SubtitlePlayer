@@ -14,9 +14,9 @@ public struct SearchResponse: Decodable {
     public let subHash: String
     public let subLastTS: String
     public let subTSGroup: String?
-    public let infoReleaseGroup: String
-    public let infoFormat: String
-    public let infoOther: String
+    public let infoReleaseGroup: String?
+    public let infoFormat: String?
+    public let infoOther: String?
     public let idSubtitle: String
     public let userID: String
     public let subLanguageID: LanguageId
