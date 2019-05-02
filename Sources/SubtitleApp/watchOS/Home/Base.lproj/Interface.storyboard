@@ -13,7 +13,20 @@
         <scene sceneID="aou-V4-d1y">
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="SubtitleApp_watchOS" customModuleProvider="target">
-                    <color key="backgroundColor" red="0.91694822460000003" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <items>
+                        <group width="1" alignment="center" verticalAlignment="bottom" spacing="0.0" id="K9k-ov-H1b">
+                            <items>
+                                <label width="1" alignment="left" text="Label" textAlignment="center" numberOfLines="0" id="5Cp-uO-ce6">
+                                    <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="boldSystem" pointSize="14"/>
+                                </label>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="subtitleLabel" destination="5Cp-uO-ce6" id="KV1-87-m6o"/>
+                    </connections>
                 </controller>
             </objects>
         </scene>

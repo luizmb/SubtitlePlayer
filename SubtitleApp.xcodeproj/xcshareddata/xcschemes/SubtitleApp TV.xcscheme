@@ -14,6 +14,48 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D58E5D5422792A1400E26F81"
+               BuildableName = "Common.framework"
+               BlueprintName = "Common tvOS"
+               ReferencedContainer = "container:SubtitleLibraries.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D52CB922227935E2008F83EF"
+               BuildableName = "OpenSubtitlesDownloader.framework"
+               BlueprintName = "OpenSubtitlesDownloader tvOS"
+               ReferencedContainer = "container:SubtitleLibraries.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D5794F10227933390083357C"
+               BuildableName = "SubtitlePlayer.framework"
+               BlueprintName = "SubtitlePlayer tvOS"
+               ReferencedContainer = "container:SubtitleLibraries.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "D5864337227B6E2000D6ED22"
                BuildableName = "SubtitleApp TV.app"
                BlueprintName = "SubtitleApp TV"

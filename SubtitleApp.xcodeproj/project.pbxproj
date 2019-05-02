@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,32 @@
 		2CD3F50BDA8DAA2288DF1595 /* Pods_SubtitleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021AD0B8A424D29728379E63 /* Pods_SubtitleApp.framework */; };
 		4201BEBC1E000921D16FB5B0 /* Pods_SubtitleApp_Desktop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC60AC8CE888AC3A2841E15 /* Pods_SubtitleApp_Desktop.framework */; };
 		A0EDDC237558A17002C8186B /* Pods_SubtitleApp_watchOS_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CDDC48676FB984298C9168 /* Pods_SubtitleApp_watchOS_Extension.framework */; };
+		D5234E94227B7FD1004E289C /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5234E93227B7FD1004E289C /* Common.framework */; };
+		D5234E95227B7FD1004E289C /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5234E93227B7FD1004E289C /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5234E97227B7FD1004E289C /* SubtitlePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5234E96227B7FD1004E289C /* SubtitlePlayer.framework */; };
+		D5234E98227B7FD1004E289C /* SubtitlePlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5234E96227B7FD1004E289C /* SubtitlePlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5234E9A227B7FD1004E289C /* OpenSubtitlesDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5234E99227B7FD1004E289C /* OpenSubtitlesDownloader.framework */; };
+		D5234E9B227B7FD1004E289C /* OpenSubtitlesDownloader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5234E99227B7FD1004E289C /* OpenSubtitlesDownloader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5234E9E227B7FE3004E289C /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5234E9D227B7FE3004E289C /* Common.framework */; };
+		D5234E9F227B7FE3004E289C /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5234E9D227B7FE3004E289C /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5234EA1227B7FE3004E289C /* SubtitlePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5234EA0227B7FE3004E289C /* SubtitlePlayer.framework */; };
+		D5234EA2227B7FE3004E289C /* SubtitlePlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5234EA0227B7FE3004E289C /* SubtitlePlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5234EA4227B7FE3004E289C /* OpenSubtitlesDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5234EA3227B7FE3004E289C /* OpenSubtitlesDownloader.framework */; };
+		D5234EA5227B7FE3004E289C /* OpenSubtitlesDownloader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5234EA3227B7FE3004E289C /* OpenSubtitlesDownloader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5234EA8227B7FF2004E289C /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5234EA7227B7FF2004E289C /* Common.framework */; };
+		D5234EA9227B7FF2004E289C /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5234EA7227B7FF2004E289C /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5234EAB227B7FF2004E289C /* SubtitlePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5234EAA227B7FF2004E289C /* SubtitlePlayer.framework */; };
+		D5234EAC227B7FF2004E289C /* SubtitlePlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5234EAA227B7FF2004E289C /* SubtitlePlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5234EAE227B7FF3004E289C /* OpenSubtitlesDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5234EAD227B7FF3004E289C /* OpenSubtitlesDownloader.framework */; };
+		D5234EAF227B7FF3004E289C /* OpenSubtitlesDownloader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5234EAD227B7FF3004E289C /* OpenSubtitlesDownloader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5234EB2227B7FFF004E289C /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5234EB1227B7FFF004E289C /* Common.framework */; };
+		D5234EB3227B7FFF004E289C /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5234EB1227B7FFF004E289C /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5234EB5227B7FFF004E289C /* SubtitlePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5234EB4227B7FFF004E289C /* SubtitlePlayer.framework */; };
+		D5234EB6227B7FFF004E289C /* SubtitlePlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5234EB4227B7FFF004E289C /* SubtitlePlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5234EB8227B7FFF004E289C /* OpenSubtitlesDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5234EB7227B7FFF004E289C /* OpenSubtitlesDownloader.framework */; };
+		D5234EB9227B7FFF004E289C /* OpenSubtitlesDownloader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5234EB7227B7FFF004E289C /* OpenSubtitlesDownloader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5234EBC227B8417004E289C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5234EBB227B8417004E289C /* Environment.swift */; };
+		D5234EBE227B844F004E289C /* Gzip+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5234EBD227B844F004E289C /* Gzip+Extensions.swift */; };
 		D58642F4227B67BA00D6ED22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58642F3227B67BA00D6ED22 /* AppDelegate.swift */; };
 		D58642FB227B67BC00D6ED22 /* Assets-iOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58642FA227B67BC00D6ED22 /* Assets-iOS.xcassets */; };
 		D586430B227B6AB000D6ED22 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D586430A227B6AB000D6ED22 /* LaunchScreen.xib */; };
@@ -46,6 +72,58 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		D5234E9C227B7FD1004E289C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D5234E95227B7FD1004E289C /* Common.framework in Embed Frameworks */,
+				D5234E9B227B7FD1004E289C /* OpenSubtitlesDownloader.framework in Embed Frameworks */,
+				D5234E98227B7FD1004E289C /* SubtitlePlayer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5234EA6227B7FE3004E289C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D5234E9F227B7FE3004E289C /* Common.framework in Embed Frameworks */,
+				D5234EA5227B7FE3004E289C /* OpenSubtitlesDownloader.framework in Embed Frameworks */,
+				D5234EA2227B7FE3004E289C /* SubtitlePlayer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5234EB0227B7FF3004E289C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D5234EA9227B7FF2004E289C /* Common.framework in Embed Frameworks */,
+				D5234EAF227B7FF3004E289C /* OpenSubtitlesDownloader.framework in Embed Frameworks */,
+				D5234EAC227B7FF2004E289C /* SubtitlePlayer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5234EBA227B7FFF004E289C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D5234EB3227B7FFF004E289C /* Common.framework in Embed Frameworks */,
+				D5234EB9227B7FFF004E289C /* OpenSubtitlesDownloader.framework in Embed Frameworks */,
+				D5234EB6227B7FFF004E289C /* SubtitlePlayer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D586432C227B6B7900D6ED22 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,6 +159,20 @@
 		B50DCD7B49D8C423D4443B64 /* Pods_SubtitleApp_TV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SubtitleApp_TV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22841EAAF56D7011B75B81F /* Pods-SubtitleApp Desktop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubtitleApp Desktop.release.xcconfig"; path = "Target Support Files/Pods-SubtitleApp Desktop/Pods-SubtitleApp Desktop.release.xcconfig"; sourceTree = "<group>"; };
 		C5CCF59710720E9578C4EFEF /* Pods-SubtitleApp watchOS Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubtitleApp watchOS Extension.release.xcconfig"; path = "Target Support Files/Pods-SubtitleApp watchOS Extension/Pods-SubtitleApp watchOS Extension.release.xcconfig"; sourceTree = "<group>"; };
+		D5234E93227B7FD1004E289C /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5234E96227B7FD1004E289C /* SubtitlePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SubtitlePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5234E99227B7FD1004E289C /* OpenSubtitlesDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OpenSubtitlesDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5234E9D227B7FE3004E289C /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5234EA0227B7FE3004E289C /* SubtitlePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SubtitlePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5234EA3227B7FE3004E289C /* OpenSubtitlesDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OpenSubtitlesDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5234EA7227B7FF2004E289C /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5234EAA227B7FF2004E289C /* SubtitlePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SubtitlePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5234EAD227B7FF3004E289C /* OpenSubtitlesDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OpenSubtitlesDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5234EB1227B7FFF004E289C /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5234EB4227B7FFF004E289C /* SubtitlePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SubtitlePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5234EB7227B7FFF004E289C /* OpenSubtitlesDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OpenSubtitlesDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5234EBB227B8417004E289C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		D5234EBD227B844F004E289C /* Gzip+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gzip+Extensions.swift"; sourceTree = "<group>"; };
 		D58642F0227B67BA00D6ED22 /* SubtitleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubtitleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58642F3227B67BA00D6ED22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D58642FA227B67BC00D6ED22 /* Assets-iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets-iOS.xcassets"; sourceTree = "<group>"; };
@@ -121,7 +213,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5234EA1227B7FE3004E289C /* SubtitlePlayer.framework in Frameworks */,
 				2CD3F50BDA8DAA2288DF1595 /* Pods_SubtitleApp.framework in Frameworks */,
+				D5234E9E227B7FE3004E289C /* Common.framework in Frameworks */,
+				D5234EA4227B7FE3004E289C /* OpenSubtitlesDownloader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +224,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5234E97227B7FD1004E289C /* SubtitlePlayer.framework in Frameworks */,
 				A0EDDC237558A17002C8186B /* Pods_SubtitleApp_watchOS_Extension.framework in Frameworks */,
+				D5234E94227B7FD1004E289C /* Common.framework in Frameworks */,
+				D5234E9A227B7FD1004E289C /* OpenSubtitlesDownloader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +235,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5234EAB227B7FF2004E289C /* SubtitlePlayer.framework in Frameworks */,
 				2AAB37406B159470DEF593AD /* Pods_SubtitleApp_TV.framework in Frameworks */,
+				D5234EA8227B7FF2004E289C /* Common.framework in Frameworks */,
+				D5234EAE227B7FF3004E289C /* OpenSubtitlesDownloader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +246,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5234EB5227B7FFF004E289C /* SubtitlePlayer.framework in Frameworks */,
 				4201BEBC1E000921D16FB5B0 /* Pods_SubtitleApp_Desktop.framework in Frameworks */,
+				D5234EB2227B7FFF004E289C /* Common.framework in Frameworks */,
+				D5234EB8227B7FFF004E289C /* OpenSubtitlesDownloader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +268,6 @@
 				EB8EB58CB78B6D09C2AE945B /* Pods-SubtitleApp watchOS Extension.debug.xcconfig */,
 				C5CCF59710720E9578C4EFEF /* Pods-SubtitleApp watchOS Extension.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -182,6 +285,18 @@
 		D58642E7227B67BA00D6ED22 = {
 			isa = PBXGroup;
 			children = (
+				D5234EB7227B7FFF004E289C /* OpenSubtitlesDownloader.framework */,
+				D5234EB4227B7FFF004E289C /* SubtitlePlayer.framework */,
+				D5234EB1227B7FFF004E289C /* Common.framework */,
+				D5234EAD227B7FF3004E289C /* OpenSubtitlesDownloader.framework */,
+				D5234EAA227B7FF2004E289C /* SubtitlePlayer.framework */,
+				D5234EA7227B7FF2004E289C /* Common.framework */,
+				D5234EA3227B7FE3004E289C /* OpenSubtitlesDownloader.framework */,
+				D5234EA0227B7FE3004E289C /* SubtitlePlayer.framework */,
+				D5234E9D227B7FE3004E289C /* Common.framework */,
+				D5234E99227B7FD1004E289C /* OpenSubtitlesDownloader.framework */,
+				D5234E96227B7FD1004E289C /* SubtitlePlayer.framework */,
+				D5234E93227B7FD1004E289C /* Common.framework */,
 				D5864305227B690100D6ED22 /* Sources */,
 				D58642F1227B67BA00D6ED22 /* Products */,
 				715E1F54C034B52557562175 /* Pods */,
@@ -277,6 +392,8 @@
 			isa = PBXGroup;
 			children = (
 				D5864321227B6B7800D6ED22 /* ExtensionDelegate.swift */,
+				D5234EBB227B8417004E289C /* Environment.swift */,
+				D5234EBD227B844F004E289C /* Gzip+Extensions.swift */,
 			);
 			path = Bootstrap;
 			sourceTree = "<group>";
@@ -344,6 +461,7 @@
 				D58642EE227B67BA00D6ED22 /* Resources */,
 				D5864330227B6B7900D6ED22 /* Embed Watch Content */,
 				34685994F99BA1161C3F519C /* [CP] Embed Pods Frameworks */,
+				D5234EA6227B7FE3004E289C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -382,6 +500,7 @@
 				D5864317227B6B7700D6ED22 /* Frameworks */,
 				D5864318227B6B7700D6ED22 /* Resources */,
 				26A9CA019CF69760B38F1266 /* [CP] Embed Pods Frameworks */,
+				D5234E9C227B7FD1004E289C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -401,6 +520,7 @@
 				D5864335227B6E2000D6ED22 /* Frameworks */,
 				D5864336227B6E2000D6ED22 /* Resources */,
 				D0679C116A69D0B87CD7E4A1 /* [CP] Embed Pods Frameworks */,
+				D5234EB0227B7FF3004E289C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -420,6 +540,7 @@
 				D586434C227B702200D6ED22 /* Frameworks */,
 				D586434D227B702200D6ED22 /* Resources */,
 				48A30CFBE21A6E5B2D900B77 /* [CP] Embed Pods Frameworks */,
+				D5234EBA227B7FFF004E289C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -698,6 +819,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5864322227B6B7800D6ED22 /* ExtensionDelegate.swift in Sources */,
+				D5234EBE227B844F004E289C /* Gzip+Extensions.swift in Sources */,
+				D5234EBC227B8417004E289C /* Environment.swift in Sources */,
 				D5864320227B6B7800D6ED22 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

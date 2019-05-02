@@ -14,6 +14,48 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D58E5D4722792A0900E26F81"
+               BuildableName = "Common.framework"
+               BlueprintName = "Common watchOS"
+               ReferencedContainer = "container:SubtitleLibraries.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D52CB915227935D1008F83EF"
+               BuildableName = "OpenSubtitlesDownloader.framework"
+               BlueprintName = "OpenSubtitlesDownloader watchOS"
+               ReferencedContainer = "container:SubtitleLibraries.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D5794F032279332E0083357C"
+               BuildableName = "SubtitlePlayer.framework"
+               BlueprintName = "SubtitlePlayer watchOS"
+               ReferencedContainer = "container:SubtitleLibraries.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "D586430D227B6B7500D6ED22"
                BuildableName = "SubtitleApp watchOS.app"
                BlueprintName = "SubtitleApp watchOS"
