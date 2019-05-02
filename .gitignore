@@ -58,3 +58,5 @@ Thumbs.db
 *.DSYM
 *.DSYM.zip
 *.dSYM.zip
+
+**/subt.xcodeproj
