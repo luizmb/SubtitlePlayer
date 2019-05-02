@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-SubtitleApp TV/Pods-SubtitleApp TV-frameworks.sh
+${BUILT_PRODUCTS_DIR}/RxSwift-tvOS/RxSwift.framework
 ${BUILT_PRODUCTS_DIR}/GzipSwift-tvOS/Gzip.framework

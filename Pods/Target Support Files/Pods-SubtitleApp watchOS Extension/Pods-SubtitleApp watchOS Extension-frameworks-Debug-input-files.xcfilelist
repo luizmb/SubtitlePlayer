@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-SubtitleApp watchOS Extension/Pods-SubtitleApp watchOS Extension-frameworks.sh
+${BUILT_PRODUCTS_DIR}/RxSwift-watchOS/RxSwift.framework
 ${BUILT_PRODUCTS_DIR}/GzipSwift-watchOS/Gzip.framework

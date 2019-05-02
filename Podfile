@@ -82,28 +82,28 @@ end
 target 'SubtitleApp' do
     apps_project
     ios_version
-    # rxswift
+    rxswift
     gzip
 end
 
 target 'SubtitleApp Desktop' do
     apps_project
     macos_version
-    # rxswift
+    rxswift
     gzip
 end
 
 target 'SubtitleApp TV' do
     apps_project
     tvos_version
-    # rxswift
+    rxswift
     gzip
 end
 
 target 'SubtitleApp watchOS Extension' do
     apps_project
     watchos_version
-    # rxswift
+    rxswift
     gzip
 end
 

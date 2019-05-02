@@ -18,6 +18,7 @@
 		04FA82C5BCBA6834794FE81A550D099D /* AtomicInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D454696AED9F847F7F470EA0D8D5A856 /* AtomicInt.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0501706FAE26B27153DFAB81D2F3B412 /* InvocableScheduledItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4DD474F513C68C874FE8DFF4C57BE /* InvocableScheduledItem.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		054B952804649E83AE599AACE0B6E832 /* GzipSwift-macOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BC02A50E2569870FED5994F7398FE2E /* GzipSwift-macOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		055598BDE9AAED409ABA7ED0CC719386 /* Pods-SubtitleApp TV-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 01195F7F51B70657130D063CE62583C4 /* Pods-SubtitleApp TV-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		056649CBE630554E623447989948F513 /* Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E17182BDE1C0F61DA223C4DEF69F35D /* Rx.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0570E3F7E61D09DAFCE2C15895A49407 /* RetryWhen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5C02345BFA7AD16A9111061293B793 /* RetryWhen.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		05EB2A4DBD020ECAA402BBD2E6D2F41B /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C2A86213F66DB400FAAB808F298917 /* Disposable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -35,9 +36,10 @@
 		091E777B543FF6220A57A93A4D90F5D6 /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F64C06D811B1CF4DFFDEADCC08A8FD /* ObservableType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		09AA07F3CF8C2C42B86409611190186E /* Using.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD045B25620A1DF9073B925F4D90626 /* Using.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0A0E0D0632599844C2F8A08F6500C10B /* Concat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8DC1FE2ADCAF428D67D165C23ACC6 /* Concat.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0A514CE99E4F9BA88B22A3AB1C74A2FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE82FAD66B3AE8940E580B74A55104C3 /* Foundation.framework */; };
 		0A7740038D2B7AE27C915135841DC77E /* LockOwnerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8CC7FF3096D63CCE7326A846B02323 /* LockOwnerType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0B1ED04696A6CFB6FBC84009C624754D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5EC9B344BB330C9BC2FB8F7EC39997E /* Foundation.framework */; };
 		0B9A7AA920F0E4B8E0AEFEE90CC7DE49 /* SchedulerServices+Emulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451E2A176899090A8862DD0CB22DC85A /* SchedulerServices+Emulation.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		0CAB76728B5D73C9EB19638D59F81FD1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5219AEE11F0998E0ADD75AA73A7A7DC /* Cocoa.framework */; };
 		0D88ED4A12073EB54C5C1134821CBD58 /* Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706767615AE156CAB85025CE59822B9C /* Sink.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0DFAC29DE078F0C9E99EFD03C9059450 /* LockOwnerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8CC7FF3096D63CCE7326A846B02323 /* LockOwnerType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0E1FE6496A188E12C2C9998A608599C8 /* RefCountDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A5EE31C10D66265A2478C39762794C /* RefCountDisposable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -90,6 +92,7 @@
 		1C7847FEADFC6900E3438C7E57F0D366 /* Disposables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F5363446522E6E12432CDF867AAA5 /* Disposables.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1CEF789FECDEF2E430A44ABCDF41836E /* Platform.Darwin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1A20CCB35A0A77D31BB1BEAC996DF /* Platform.Darwin.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1D2FF6C801C7FE6C2B4EF5A66D9171E8 /* PublishSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054A067F0C4F3237887EB23E15B413D9 /* PublishSubject.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1D8E6DBC2F38496CF854F085814B03F2 /* Pods-SubtitleApp Desktop-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D706241462309BA5117392BADB07B74F /* Pods-SubtitleApp Desktop-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DA5FD6846FE6C0340A9654E385B9ACC /* Using.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD045B25620A1DF9073B925F4D90626 /* Using.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1E0014CED991165FD5A34F15AA84D6C6 /* ObserverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85E19705620EEA34222BB4003043BED /* ObserverType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1E1CFCB6B67433AC67F79FDED5F43DA3 /* Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706767615AE156CAB85025CE59822B9C /* Sink.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -113,6 +116,7 @@
 		21A611368F59108ADDD686068A6F9B92 /* AsyncLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274FB10DEE046C2D0C8AAB8DEB1DC39 /* AsyncLock.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		21C285047C895E0BF4F40DCF1DD92740 /* Just.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE2CC83CE825F46902DB28CAD77F7B /* Just.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		21C9659EA5B4C26469C6B94BD7A19CF5 /* Platform.Darwin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1A20CCB35A0A77D31BB1BEAC996DF /* Platform.Darwin.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		239A0BD95BBE2D0AE2EEB823E4CD3DA9 /* Pods-SubtitleApp TV-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C85F554D1F1165A005BDFEB69C319AC9 /* Pods-SubtitleApp TV-dummy.m */; };
 		23BD9B3CEA9787CCC3FBD8C6711F23DA /* Cancelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDA41C6498C0150714ABA842FF33F30 /* Cancelable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		23F92001E97EF058F89878BB34EC3174 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD78FE059844D4715ED5595E0B025EE /* Observable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		24C16486017DC64D9CD9647FEA768FFE /* RxMutableBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC15B140C6C2B05194CC97FB3EE223F /* RxMutableBox.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -139,7 +143,6 @@
 		2C8131D2FC8E3B8CBC9C7A0676638E8C /* ElementAt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68036B7CC81AE6DD500752366689326C /* ElementAt.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2CEFB13AE444AB3C88F7598DDBDEB044 /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E716E7EA31EC2210A66B15C215D0E /* DisposeBag.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2CFE7636248BBFC708F1D221286E0AC9 /* DispatchQueueConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED683290B7874510662086411007E95 /* DispatchQueueConfiguration.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		2D045EE3D3AB4E407677572C177A2759 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE82FAD66B3AE8940E580B74A55104C3 /* Foundation.framework */; };
 		2D2C3B72ED49CBFCE134A7D874435D53 /* Throttle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB1D4D215AED5F9F713CD7EF9AC1D58 /* Throttle.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2D51F0BCCDE809DE7CD4A2D8DB60BDCD /* ScheduledItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2C9D927FAFFB09F4B65EF3812913D /* ScheduledItem.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2D665252239B8C48BBF63B8B80D5F550 /* AsSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078808CF345CEAB1DAC919ED2121CCB3 /* AsSingle.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -147,6 +150,7 @@
 		2E10944D82B57C2DD84608EDE63C0835 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE9AB23E12FCE9EC73EBD2C6EBF0713 /* Event.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2E2A707A3838F5458DDFD32269424AE0 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD78FE059844D4715ED5595E0B025EE /* Observable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2EC972B4FC6E3DBD0612A029645C82D4 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D68119393E015FA019E9F0B06D961 /* Reactive.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2F3048023185DE798A390B8127AAE808 /* Pods-SubtitleApp watchOS Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C59691A6FE6D52048E0613F054810C6 /* Pods-SubtitleApp watchOS Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FE928D579FCBC9F65DBAFB635096A35 /* Generate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839B4744A2EA8283B9E3B9A6B388D236 /* Generate.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3053F1173A15280356732CC862EDE075 /* Enumerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FE2078D4274DBF9949B4299608D246 /* Enumerated.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		306E220A25AC43A8C64F34940FE830DA /* Pods-SubtitlePlayer macOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9C5EDB6445181C6851E53FC90B3F8 /* Pods-SubtitlePlayer macOS-dummy.m */; };
@@ -171,7 +175,6 @@
 		374D63E77F631D2EF03FF3DDB7B43C77 /* NopDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23154618E4C7F1C46627C8BA1A70139D /* NopDisposable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		378264B6DEFC17DCC18630AD77C5540E /* ScheduledDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D484AF9837B33767E5D88D8420ACE8AB /* ScheduledDisposable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		385FFBD3AAD3C37A256F315FAC3653A6 /* ObservableType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E30E86A37D5D9FA3A02CAFD975F7B86 /* ObservableType+Extensions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		3887BB6B61FA81F48BECE6FBAD3C5F94 /* Pods-SubtitleApp TV-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C85F554D1F1165A005BDFEB69C319AC9 /* Pods-SubtitleApp TV-dummy.m */; };
 		392DC611C07A510DB3B787A96F013427 /* Debounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF4D6453176085D7ACA5873507F9473 /* Debounce.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3954DFA411A9FE891346ED7EF837C96F /* RetryWhen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5C02345BFA7AD16A9111061293B793 /* RetryWhen.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		39FF75E6758F9BDC9691BC9EEB4F94CC /* TailRecursiveSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254B94CDEA76BEBC9735DA4CBF6B20D /* TailRecursiveSink.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -222,9 +225,7 @@
 		53720ECAD5C88A43DA973369745ED439 /* Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B0FD3341EB2474106B698BEAD91CEF /* Zip.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		538F724AE817417684AFE0CF9A14134E /* CurrentThreadScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FF6E3FBF8371B7A4A059BCBDF890DC /* CurrentThreadScheduler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		539B0176E2DCF4F84843B24A313E9729 /* Amb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902F60BF1D51451B04F69276E418C538 /* Amb.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		54AA9785C1D3AA283B40336E187A543B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF83BE1E97A55908B52CB32B7B526D0B /* Foundation.framework */; };
 		54F4435E2BE2957CAD07BED47C484F1F /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F64C06D811B1CF4DFFDEADCC08A8FD /* ObservableType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		55156196ED049E186036F17A08084F06 /* Pods-SubtitleApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C243AF0617E96E80457BE74238D766A9 /* Pods-SubtitleApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		552696DED22E1C95E5BD60F2994F77C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE82FAD66B3AE8940E580B74A55104C3 /* Foundation.framework */; };
 		5538129FCC6E70671A81BA79A4D3CDFE /* LockOwnerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8CC7FF3096D63CCE7326A846B02323 /* LockOwnerType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		556E5337536E8E1DFDCF66A5C55F9D3B /* Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706767615AE156CAB85025CE59822B9C /* Sink.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -255,7 +256,6 @@
 		5B303C8CA0233753DA72DA975C3C97E8 /* HistoricalSchedulerTimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1630102374F6C1DA23F757612BB92D0 /* HistoricalSchedulerTimeConverter.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5B55DA2DC6F340FDCD3E540E2A2A60D9 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F81B8C1DE297EDDC08D017DF073CD5 /* Filter.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5B5F4AE763415BD5ECF564359E55B3C2 /* Concat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8DC1FE2ADCAF428D67D165C23ACC6 /* Concat.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		5B8E8BF457A22A1CB329E111B30CDB7D /* Pods-SubtitleApp Desktop-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D706241462309BA5117392BADB07B74F /* Pods-SubtitleApp Desktop-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BB68DFD42DBEB28D3AE421132CD2473 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AC4453032D81AB3C4662A4C21A8CF /* Queue.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5CBF6B1D63752A78C813E2EACBF6D233 /* Producer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67739A681A9ED431606A789A2CBC38C8 /* Producer.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5D5B8CA78B8E531D7B97E72732EB91A5 /* DefaultIfEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FAA61C3EE77B7F9AEC02B7A97201A /* DefaultIfEmpty.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -271,6 +271,7 @@
 		61B66062817D3B064D2A2C9FAF2CB411 /* AtomicInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D454696AED9F847F7F470EA0D8D5A856 /* AtomicInt.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		61E1D76F816310DC405C617C43748611 /* Data+Gzip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49AEA950779CFB91F92F3D05927D792 /* Data+Gzip.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6237FBAF1E137349941BAFCA712C4CFC /* Zip+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA5F1E94858B8E7F06ABFA866972548 /* Zip+Collection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		630D5C4EC4CDC183A87EFE85FB36B342 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF83BE1E97A55908B52CB32B7B526D0B /* Foundation.framework */; };
 		634DEE0A9461826B16A32E4F5E2DE06B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5219AEE11F0998E0ADD75AA73A7A7DC /* Cocoa.framework */; };
 		63EFA99059EB848D63CF1B2882E0FEB3 /* CombineLatest+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D82DAFD95C3D2C5B3BBECFE23AE5C /* CombineLatest+Collection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6401779C5A0B45F9DAB30D27827BA9E2 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8BF945D41A82942DE43CE43D9791D4 /* Optional.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -278,7 +279,6 @@
 		64D7C45E060D7A0CAE5DC6B670F6F4C0 /* SubscribeOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05DE6CB769063EF65D636B37B746F70 /* SubscribeOn.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		651B2E9D9C0840C66F77644BBC2E867E /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC4828F3C57DA80575B49F4086B8A93 /* Range.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		65253B26334E36FED67FB5248E76E677 /* Completable+AndThen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F192378446295D96E637F8266B9F3F2 /* Completable+AndThen.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		6534034CE1018D26C700B77469D6E29E /* Pods-SubtitleApp TV-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 01195F7F51B70657130D063CE62583C4 /* Pods-SubtitleApp TV-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65C264E68CF0215367C546B33677D662 /* MainScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EBACF350864A6391F8964F049227B2 /* MainScheduler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		65D3DABE7099D93B7CB7FF8722C5B9E1 /* DelaySubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843805B80A28A11B95E83BB4B586E801 /* DelaySubscription.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		65D6AAE012B81131BF2FDB9D8C3792BA /* TakeUntil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8BEA6F272B6772C87262A11E9B44C /* TakeUntil.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -292,6 +292,7 @@
 		6757FF9FCB633451D5FDCE77AABB5D1D /* SynchronizedOnType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F0F0BDF32BB6479A836372851569E6 /* SynchronizedOnType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		67A8C0B1D7EB447A9F6B6706580D48C3 /* OperationQueueScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD81993E8FDAF96BEE117C5A3EAB61F /* OperationQueueScheduler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		687B5ABFF0443751CBB5F59B6AA30903 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7A2D3AAA22EFDE6347645B6B7F9A63 /* Sequence.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		68AD41BFE32DA146D335682A7294926A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5219AEE11F0998E0ADD75AA73A7A7DC /* Cocoa.framework */; };
 		6959C2DD9F20562F1358DA5C5A1F9BEF /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8BF945D41A82942DE43CE43D9791D4 /* Optional.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		696EDA0052629FA9AB239EF25645013A /* AnonymousObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594B52E4C6CC982466EEC5EC87A73BD7 /* AnonymousObserver.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		69FF5113B2649334B44E6EBEE145A5E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5EC9B344BB330C9BC2FB8F7EC39997E /* Foundation.framework */; };
@@ -311,7 +312,6 @@
 		6F87A76E4344C6644A24541035C8EBCA /* AsMaybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606DBF5C47F1B2B48A43A1263F3C22BC /* AsMaybe.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6FA95631586633B6AD76DFE60BDCA0B7 /* SingleAssignmentDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC53EE67722899B1936B8DCA7B105B1 /* SingleAssignmentDisposable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6FAE42C38CA40724BA47B492A5C42492 /* BinaryDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFBDED3D21E95E6970EB9603BEC2A0C /* BinaryDisposable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		6FB0E91C665D3F2F53E2FE27EA719776 /* Pods-SubtitleApp Desktop-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F45FC543B1E6246FB5E88A8576BBCC /* Pods-SubtitleApp Desktop-dummy.m */; };
 		6FC0139C77EEA0BC1CDCAF23FA4C12C0 /* CombineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57989CE2661E8ECE902A980EBF22B4 /* CombineLatest.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6FDC0FEBD379C16CE4D9F8C32F6A156B /* HistoricalScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCA084006D828723FD64AB90A9C9259 /* HistoricalScheduler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6FE3974ACBC7026774421BE58C537768 /* Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3146923194B96290A7ED6697D5B633C /* Reduce.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -328,7 +328,6 @@
 		72EEA0A9B79C66125CC300D5DDFBB946 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13C688D93A605FCD01BB235A8D0D4E /* Switch.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		74327519EE786BC428C1E92B5599EBA7 /* Platform.Linux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD4B2729BA80E52D1F56AF34355A031 /* Platform.Linux.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		743AFE5B531C2F4EF5341FB20E41A813 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA5537CB0E4653C214FB309BD23FC1 /* PriorityQueue.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		743F61C215A22F92B50C7355B06DC097 /* Pods-SubtitleApp watchOS Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C59691A6FE6D52048E0613F054810C6 /* Pods-SubtitleApp watchOS Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7457201769FAE057AD954F332C23FC84 /* Deferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9476F9FBF03FF33E24BF1B990D3388 /* Deferred.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		759DA5D107E08AC7133C4AF1F385E0D7 /* ReplaySubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A21D7D6C96D48B80684502CC8C6174 /* ReplaySubject.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		75AB779473C7825D406ADA000E515630 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D68119393E015FA019E9F0B06D961 /* Reactive.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -391,7 +390,6 @@
 		8D221983E9AAB45E0EACA4E53C5A5FEC /* Multicast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E5E195D9DF2858008A12C88304104 /* Multicast.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8D3E906A5B2AA685566942651F773995 /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7737EC41189B131BC771C565AA121D43 /* Buffer.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8DD2BC9B641A1540185AAC213520ED17 /* RxSwift-macOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA5436999A743D5C1C395256D1ADE4E /* RxSwift-macOS-dummy.m */; };
-		8DE8CFC32CCCF0114844D98A601AE077 /* Pods-SubtitleApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CA21F7108BCCDD220EC71BE994904D /* Pods-SubtitleApp-dummy.m */; };
 		8E6FD935D80B5C81BFF9EB8E063E55B6 /* Amb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902F60BF1D51451B04F69276E418C538 /* Amb.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8F8675EE8BC7A056D9BB3F528E13A29F /* SchedulerServices+Emulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451E2A176899090A8862DD0CB22DC85A /* SchedulerServices+Emulation.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8FC6AE2773B6B2432AC3443A2E56E074 /* GzipSwift-watchOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 923D80A55541F0B5A235EB36896EE801 /* GzipSwift-watchOS-dummy.m */; };
@@ -418,7 +416,6 @@
 		97610311B1004BF2929CE6F4F1032ABD /* DelaySubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843805B80A28A11B95E83BB4B586E801 /* DelaySubscription.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9792E6A3E650C72A61B8952722334F30 /* Pods-Common watchOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B2660249D89C3299BB5BED7E771AEDE5 /* Pods-Common watchOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		97CFF1EE21CD48C01829A3F63152EE51 /* Producer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67739A681A9ED431606A789A2CBC38C8 /* Producer.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		97DBCDB769249E15E37716F7ACF6B61E /* Pods-SubtitleApp watchOS Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEF3909D172A35302E388BEDFEF771B /* Pods-SubtitleApp watchOS Extension-dummy.m */; };
 		982814CAAE562CC9A354A6E53BCD2E06 /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D7F47CCDA8E12D898D09712926479 /* DispatchQueue+Extensions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9880B5B7583D9237E38B23F9429951CC /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB2126599ECF15556DA7D41A77136F0 /* Errors.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		989865AC71F00137423650034496A231 /* SkipWhile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF16B4BF6234EFA672023B32DB6340E /* SkipWhile.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -466,6 +463,7 @@
 		AA60811B09296AD75EA3CF61AF5FF7CD /* DispatchQueueConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED683290B7874510662086411007E95 /* DispatchQueueConfiguration.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AA6E90DB3F8C6AF9CEA55209C74344FE /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC4828F3C57DA80575B49F4086B8A93 /* Range.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AA72DEECDED5D9E2FDA911BB80C6899E /* AsSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078808CF345CEAB1DAC919ED2121CCB3 /* AsSingle.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		AAC9A638745FE9565045DCAC7071B145 /* Pods-SubtitleApp Desktop-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F45FC543B1E6246FB5E88A8576BBCC /* Pods-SubtitleApp Desktop-dummy.m */; };
 		AAEAA96626CE73DAD14F2FDAF909065A /* AsyncLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274FB10DEE046C2D0C8AAB8DEB1DC39 /* AsyncLock.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AB39BD4175B90021BD3CEF3630DEE95B /* WithLatestFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9759A0C4DBDE2208EB9173AF38A5FF5 /* WithLatestFrom.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		ABA92204A600CF385C14C2DC82AE5E14 /* InvocableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A25DAA2BC3CAFC307FFDC34FF6C246 /* InvocableType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -489,6 +487,7 @@
 		B2C0290CD48AA23E87BD8B3CE84CD3B4 /* Pods-OpenSubtitlesDownloader macOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A663DFBEFC8721BE690DA9BA4504FA8 /* Pods-OpenSubtitlesDownloader macOS-dummy.m */; };
 		B314ADC1D0B9D7EDE5F68D8F7BC3D64C /* String+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC8BE14D6BDC968067D696217694509 /* String+Rx.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B32217AC85AF0B13F0E8EC375BDFF7DC /* SubscriptionDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5887BF8FA52A7DE16700AFFC0D5575 /* SubscriptionDisposable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B34E5E46FBAAA7FA89D520FCC7D2792F /* Pods-SubtitleApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C243AF0617E96E80457BE74238D766A9 /* Pods-SubtitleApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B439FE6D481C099717230C40F3FCBC9A /* ObservableType+PrimitiveSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5497FA0BB527A823972AC0132AFB97B4 /* ObservableType+PrimitiveSequence.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B4D692BAF9E9AB5C07A66E6F529D47D1 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B40E8511C8839173C10D978F7C61F0 /* Empty.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B518AEEEB8CE8FB09A62613A6B7655F5 /* SingleAssignmentDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC53EE67722899B1936B8DCA7B105B1 /* SingleAssignmentDisposable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -515,6 +514,7 @@
 		BBF78210835FDF3BA913331C0F013EB3 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9EBCC445B2221FAF303CFBD7A2C73D /* Window.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BC15E734951A5542683771312057FD0C /* ObserverBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B043473A59F63B2F7FCA85DD3FFAF /* ObserverBase.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BDC787AB2C6F93C67C1FA7188F14B832 /* First.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EFCC9BBD432D11D3C0FF4A8B8FDEC2 /* First.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BE34479F6AE60F0A97D38448796CA7D5 /* Pods-SubtitleApp watchOS Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEF3909D172A35302E388BEDFEF771B /* Pods-SubtitleApp watchOS Extension-dummy.m */; };
 		BE4105017D90A1A1C54A8EBEA272645D /* Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B0FD3341EB2474106B698BEAD91CEF /* Zip.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BE46331BA1819F1790221AEA35C562BF /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C2A86213F66DB400FAAB808F298917 /* Disposable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BE55FB8C41D059976D011F353DDDA7A7 /* ObserverBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B043473A59F63B2F7FCA85DD3FFAF /* ObserverBase.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -629,11 +629,11 @@
 		E74391E2A0292304D43A859F1E3ADA49 /* Pods-Common tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 941D073FBE1D7F563D5E7FE3917F168A /* Pods-Common tvOS-dummy.m */; };
 		E78098DE6165DFB6262766273E464694 /* ConnectableObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5791637B461A14B10B507166274583F2 /* ConnectableObservableType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E7E240D9EA49B8891345F51F7F6864EE /* ObservableConvertibleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765D350629F1194BFD2659544EE71B00 /* ObservableConvertibleType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E7E8A1F5E7839D53A07997A2C7A97B4A /* Pods-SubtitleApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CA21F7108BCCDD220EC71BE994904D /* Pods-SubtitleApp-dummy.m */; };
 		E7EFCC88CFBB359B9E338A7B2F997369 /* SkipUntil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6774CB387FD37B5C6E6C8D5E10344F1 /* SkipUntil.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E855CE82B04664A48A1DD8A9F276BDB4 /* SerialDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA406DBACAB3B54B98EC849F753E94A0 /* SerialDisposable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E8AE1BCA916CC624C8BD78B0B2C92CD8 /* Concat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8DC1FE2ADCAF428D67D165C23ACC6 /* Concat.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EA3DD3F43C91E8093C305465AAFB6491 /* Zip+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA5F1E94858B8E7F06ABFA866972548 /* Zip+Collection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		EA9D43ABFE06C017AF24F17B67EB99B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5EC9B344BB330C9BC2FB8F7EC39997E /* Foundation.framework */; };
 		EAEE4D0E117CD04736B0E2A0E770D6AE /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC4828F3C57DA80575B49F4086B8A93 /* Range.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		ECEA29E1E1566D93E65B4AE68DFA240F /* TakeLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91213D9275C3A52FF516FA61D3F507EF /* TakeLast.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EDA356E75F0363BCA7DCEE34EA915BC8 /* GroupBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEE6AA2BD6A246DE94459314BD699E /* GroupBy.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -704,12 +704,12 @@
 			remoteGlobalIDString = 29BD6A25E3F5CE57461BB7788E3769A6;
 			remoteInfo = "RxSwift-tvOS";
 		};
-		44EA5A2C5BD2409C7332909246C3F838 /* PBXContainerItemProxy */ = {
+		4EB7D4E1EFFA99E29F648DEF8A790CF2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 47CC3336ACFC4B55F4C29FA49D52ED3F;
-			remoteInfo = "GzipSwift-iOS";
+			remoteGlobalIDString = 86C42FC12B1378CA4DA6B82FCB3E0DF1;
+			remoteInfo = "GzipSwift-tvOS";
 		};
 		5AB92C7430EEF4BBB8C6AA07B747FAA2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -717,13 +717,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 44198E09922F87F08714316C85D85764;
 			remoteInfo = "RxSwift-iOS";
-		};
-		61E799E3495CE1200DA47D2AE4C7C676 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 86C42FC12B1378CA4DA6B82FCB3E0DF1;
-			remoteInfo = "GzipSwift-tvOS";
 		};
 		81166BD4323A8751051FF60D5EFD94C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -746,19 +739,47 @@
 			remoteGlobalIDString = B706FB94E7D3D664AF7AE4083D9FC9E8;
 			remoteInfo = "RxSwift-macOS";
 		};
-		A1C3E3E2812D77BB4123966CEB7CAD6D /* PBXContainerItemProxy */ = {
+		961A62D9A37624ED48A2A265C556D63E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47CC3336ACFC4B55F4C29FA49D52ED3F;
+			remoteInfo = "GzipSwift-iOS";
+		};
+		98FEBD05607414122BDA0D3D4B324163 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51A04ED6324B0F993F228FA1F0FFC372;
+			remoteInfo = "GzipSwift-macOS";
+		};
+		A16D6559786CAD07BB34280C9DC74A3F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1FF366AF995471938D267DE4A9EE353A;
 			remoteInfo = "GzipSwift-watchOS";
 		};
-		B2AA615D1E3DE40CD53DF7740419B937 /* PBXContainerItemProxy */ = {
+		B6A208EBC06D8F8D60561174FF081F74 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 51A04ED6324B0F993F228FA1F0FFC372;
-			remoteInfo = "GzipSwift-macOS";
+			remoteGlobalIDString = 8BAB16A995C063292E6235D65EC751AE;
+			remoteInfo = "RxSwift-watchOS";
+		};
+		C35883A9186FD994127C2330EC3FD843 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B706FB94E7D3D664AF7AE4083D9FC9E8;
+			remoteInfo = "RxSwift-macOS";
+		};
+		D2308D12EF01D2CFC1C01D42C7A85735 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44198E09922F87F08714316C85D85764;
+			remoteInfo = "RxSwift-iOS";
 		};
 		D6D868AF41C176EC62CF83A13271172C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -768,6 +789,13 @@
 			remoteInfo = "RxSwift-iOS";
 		};
 		DD13182A417710DB1545BF5850AF3EC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29BD6A25E3F5CE57461BB7788E3769A6;
+			remoteInfo = "RxSwift-tvOS";
+		};
+		DDA7E5A7AF595EE53F760E7FF1F4590D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -1141,14 +1169,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		074DC1EED68B04CA6A26A84D4C35C4EB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2D045EE3D3AB4E407677572C177A2759 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0E3DCF4E9841E2431DB28B87F623BABA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1213,6 +1233,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4A11E30272CCB29C80892D8D0A190F2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630D5C4EC4CDC183A87EFE85FB36B342 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B54DA20C153F19A774A7AD446176FB9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1237,30 +1265,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5E0E386E24818195596A554D5D7ECDA0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				54AA9785C1D3AA283B40336E187A543B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		76701055551E750545A866445AAB55D2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0CAB76728B5D73C9EB19638D59F81FD1 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7DCAFEE00E6ABFFC2ACE7B56AB0FC287 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EA9D43ABFE06C017AF24F17B67EB99B1 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		801EAD03635ECBDD28F9AE0D99830524 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1274,6 +1278,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7259D27C74EC494CCB899599E025FCD3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F644AF29EEA4442E508D63BD6655C2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A514CE99E4F9BA88B22A3AB1C74A2FC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1306,6 +1318,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				E005DBF8B76BE6468F25CEF59B67D9E5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D62CE92B52A2CC597F6976AA7A323EB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B1ED04696A6CFB6FBC84009C624754D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8AB45FB3DBE040400012D1DBA64A484 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68AD41BFE32DA146D335682A7294926A /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1950,19 +1978,19 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		04A93B2707F8607E765EE9198334DE44 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				55156196ED049E186036F17A08084F06 /* Pods-SubtitleApp-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0EB8A35001DF952536D2C00EB17189B6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7E0D8F068735F1B19318D3B7AE69A68A /* RxSwift-tvOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1574EE2E1A896DD6D737600A94F8C6AB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F3048023185DE798A390B8127AAE808 /* Pods-SubtitleApp watchOS Extension-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1990,11 +2018,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		54B5A3DD011A478E34ACF5613194A046 /* Headers */ = {
+		5526908764A43F9ACF5B37494C8612B0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				743F61C215A22F92B50C7355B06DC097 /* Pods-SubtitleApp watchOS Extension-umbrella.h in Headers */,
+				B34E5E46FBAAA7FA89D520FCC7D2792F /* Pods-SubtitleApp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2006,11 +2034,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5F6DA005625C19CA323DE8C2F23E89A4 /* Headers */ = {
+		5B0F79F9DBDB251B0349ED3984E28877 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6534034CE1018D26C700B77469D6E29E /* Pods-SubtitleApp TV-umbrella.h in Headers */,
+				1D8E6DBC2F38496CF854F085814B03F2 /* Pods-SubtitleApp Desktop-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2062,6 +2090,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8C57E32CE6F511FF8BE9469081F4BA0B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055598BDE9AAED409ABA7ED0CC719386 /* Pods-SubtitleApp TV-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9272A9F182895436FFC7D230536F6701 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -2099,14 +2135,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				24CF0E37B44790D545FD654B9D9E7AB9 /* Pods-SubtitlePlayer tvOS-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BC0C3CBE0A14507AE87B725EAFC29496 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5B8E8BF457A22A1CB329E111B30CDB7D /* Pods-SubtitleApp Desktop-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2221,17 +2249,18 @@
 		};
 		4214B1B8F6D6BB119B47661B61CC3148 /* Pods-SubtitleApp Desktop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 30BC49CEC6E3F8319C7D336C44642984 /* Build configuration list for PBXNativeTarget "Pods-SubtitleApp Desktop" */;
+			buildConfigurationList = F57A4989B89BB87C1697E6CC0E807EA1 /* Build configuration list for PBXNativeTarget "Pods-SubtitleApp Desktop" */;
 			buildPhases = (
-				BC0C3CBE0A14507AE87B725EAFC29496 /* Headers */,
-				E7D7FF36055F8757239952857D31D07D /* Sources */,
-				76701055551E750545A866445AAB55D2 /* Frameworks */,
-				C8E0E27E5D5953FB9180723EC18CC7B4 /* Resources */,
+				5B0F79F9DBDB251B0349ED3984E28877 /* Headers */,
+				C17D3470DE794D25E25FAA56DDBBF9D3 /* Sources */,
+				D8AB45FB3DBE040400012D1DBA64A484 /* Frameworks */,
+				F123BFCAE0A67D5A94FCEC341ECCA55F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D1BB143B5ED539FBA7CFB73AD5A6F1FE /* PBXTargetDependency */,
+				7A7739ED56008514E666E93196F5E482 /* PBXTargetDependency */,
+				BDEB752D7C27455ADC9FE8DAC59E1332 /* PBXTargetDependency */,
 			);
 			name = "Pods-SubtitleApp Desktop";
 			productName = "Pods-SubtitleApp Desktop";
@@ -2276,17 +2305,18 @@
 		};
 		50E32E29146A3F0266B544B00E7E5226 /* Pods-SubtitleApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8128DC45DE55A52BFCEA1904C057E3BA /* Build configuration list for PBXNativeTarget "Pods-SubtitleApp" */;
+			buildConfigurationList = 1C19E7625904548F37B398F28EF4DC33 /* Build configuration list for PBXNativeTarget "Pods-SubtitleApp" */;
 			buildPhases = (
-				04A93B2707F8607E765EE9198334DE44 /* Headers */,
-				DBB18B40220B81E8700B8710CA3712FE /* Sources */,
-				074DC1EED68B04CA6A26A84D4C35C4EB /* Frameworks */,
-				64AB5ED6F33DEA79AA872731E4DFE597 /* Resources */,
+				5526908764A43F9ACF5B37494C8612B0 /* Headers */,
+				072255806156B87AFE6E5A1B87C16B31 /* Sources */,
+				9F644AF29EEA4442E508D63BD6655C2F /* Frameworks */,
+				D5FB6B71AA220D1CE5C263BB4001F9AB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2061095A40494D14E1C276B70E0B7117 /* PBXTargetDependency */,
+				F1CB2E91E78AEF57D2E1E9C95AB0E7F1 /* PBXTargetDependency */,
+				7C86B9F9D74E9FD128AEE56B9D28A172 /* PBXTargetDependency */,
 			);
 			name = "Pods-SubtitleApp";
 			productName = "Pods-SubtitleApp";
@@ -2349,17 +2379,18 @@
 		};
 		54E0503B761B5CA769AAE4B8CE73FD0F /* Pods-SubtitleApp TV */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 65645861EAB49E2ACFA0F040754E7247 /* Build configuration list for PBXNativeTarget "Pods-SubtitleApp TV" */;
+			buildConfigurationList = 804EDE81B2193AD0BB975DA7547C3D51 /* Build configuration list for PBXNativeTarget "Pods-SubtitleApp TV" */;
 			buildPhases = (
-				5F6DA005625C19CA323DE8C2F23E89A4 /* Headers */,
-				83506FEE1222A9105D72068208E2A021 /* Sources */,
-				5E0E386E24818195596A554D5D7ECDA0 /* Frameworks */,
-				D59B0883584016DB378B95890AEFEBA0 /* Resources */,
+				8C57E32CE6F511FF8BE9469081F4BA0B /* Headers */,
+				6C79CDFC8BDD9C6D47B69EE8663D6E49 /* Sources */,
+				4A11E30272CCB29C80892D8D0A190F2D /* Frameworks */,
+				567C60C676F3458BEA425343131B7B6A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9134089632862475C7035178D181E2DE /* PBXTargetDependency */,
+				2E100A6A6D2ADD78E93DBBD7C2FB641D /* PBXTargetDependency */,
+				F79B79D8F746A85073D24CB3AB362AA5 /* PBXTargetDependency */,
 			);
 			name = "Pods-SubtitleApp TV";
 			productName = "Pods-SubtitleApp TV";
@@ -2572,17 +2603,18 @@
 		};
 		F46AE282C94C2DA6FBEA360D7F3A457E /* Pods-SubtitleApp watchOS Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 72E4CC52204698B782140452CB02F6F2 /* Build configuration list for PBXNativeTarget "Pods-SubtitleApp watchOS Extension" */;
+			buildConfigurationList = 3E5B595B0005E4195B0115374E4F87A9 /* Build configuration list for PBXNativeTarget "Pods-SubtitleApp watchOS Extension" */;
 			buildPhases = (
-				54B5A3DD011A478E34ACF5613194A046 /* Headers */,
-				EE5E3B3B91F68AF5B727327510D96E4B /* Sources */,
-				7DCAFEE00E6ABFFC2ACE7B56AB0FC287 /* Frameworks */,
-				0C8586F5374799283405140BC1944526 /* Resources */,
+				1574EE2E1A896DD6D737600A94F8C6AB /* Headers */,
+				0D33640FE4B2B5C33B3AD32568F45EC2 /* Sources */,
+				D62CE92B52A2CC597F6976AA7A323EB2 /* Frameworks */,
+				2678D644BCB8160ACD3762836DAFA3A4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				773916881EB754F39134D3AF7D7E0013 /* PBXTargetDependency */,
+				01946580CD52B1D1F32E042A33862BAA /* PBXTargetDependency */,
+				E12A3F340A278F8E21CDBDD8FD5FF22F /* PBXTargetDependency */,
 			);
 			name = "Pods-SubtitleApp watchOS Extension";
 			productName = "Pods-SubtitleApp watchOS Extension";
@@ -2653,13 +2685,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C8586F5374799283405140BC1944526 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0ED105E61A6154703C272CBF52FEFB5D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2668,6 +2693,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		251579DCFB91CA1E93CD051B2871B515 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2678D644BCB8160ACD3762836DAFA3A4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2688,6 +2720,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		567C60C676F3458BEA425343131B7B6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		58DF36A99AAA81C8929B1E7DC61B180A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2696,13 +2735,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5EB007573A44463D45D365E1F6655CCC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		64AB5ED6F33DEA79AA872731E4DFE597 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2744,13 +2776,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8E0E27E5D5953FB9180723EC18CC7B4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C96FDA75A1ACA613CF4E8A0CA1EB057F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2772,7 +2797,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D59B0883584016DB378B95890AEFEBA0 /* Resources */ = {
+		D5FB6B71AA220D1CE5C263BB4001F9AB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2787,6 +2812,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E6F3EF8F0A35183FFD85A8B8331A0C3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F123BFCAE0A67D5A94FCEC341ECCA55F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2810,6 +2842,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		072255806156B87AFE6E5A1B87C16B31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7E8A1F5E7839D53A07997A2C7A97B4A /* Pods-SubtitleApp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D33640FE4B2B5C33B3AD32568F45EC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE34479F6AE60F0A97D38448796CA7D5 /* Pods-SubtitleApp watchOS Extension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1C491FF8E73EE07CBF7BD9E6CC51F82B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3203,19 +3251,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6C79CDFC8BDD9C6D47B69EE8663D6E49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				239A0BD95BBE2D0AE2EEB823E4CD3DA9 /* Pods-SubtitleApp TV-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		703FFEFE56EFDA5816F5CD354602E08D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				85D17CFCCAF7A745C05D038C9AB6512E /* Pods-SubtitlePlayer iOS-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		83506FEE1222A9105D72068208E2A021 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3887BB6B61FA81F48BECE6FBAD3C5F94 /* Pods-SubtitleApp TV-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3386,6 +3434,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C17D3470DE794D25E25FAA56DDBBF9D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAC9A638745FE9565045DCAC7071B145 /* Pods-SubtitleApp Desktop-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C7E4AE8957E0187FDF972A0CF1DA1B40 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3408,14 +3464,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				306E220A25AC43A8C64F34940FE830DA /* Pods-SubtitlePlayer macOS-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBB18B40220B81E8700B8710CA3712FE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8DE8CFC32CCCF0114844D98A601AE077 /* Pods-SubtitleApp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3578,22 +3626,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E7D7FF36055F8757239952857D31D07D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6FB0E91C665D3F2F53E2FE27EA719776 /* Pods-SubtitleApp Desktop-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EE5E3B3B91F68AF5B727327510D96E4B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				97DBCDB769249E15E37716F7ACF6B61E /* Pods-SubtitleApp watchOS Extension-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F4F797A07FC329F5D582498ED2A6D258 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3613,17 +3645,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		01946580CD52B1D1F32E042A33862BAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "GzipSwift-watchOS";
+			target = 1FF366AF995471938D267DE4A9EE353A /* GzipSwift-watchOS */;
+			targetProxy = A16D6559786CAD07BB34280C9DC74A3F /* PBXContainerItemProxy */;
+		};
 		1E394C4EEF51EB8DE5D403C3283B61AF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "RxSwift-macOS";
 			target = B706FB94E7D3D664AF7AE4083D9FC9E8 /* RxSwift-macOS */;
 			targetProxy = 81166BD4323A8751051FF60D5EFD94C6 /* PBXContainerItemProxy */;
 		};
-		2061095A40494D14E1C276B70E0B7117 /* PBXTargetDependency */ = {
+		2E100A6A6D2ADD78E93DBBD7C2FB641D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "GzipSwift-iOS";
-			target = 47CC3336ACFC4B55F4C29FA49D52ED3F /* GzipSwift-iOS */;
-			targetProxy = 44EA5A2C5BD2409C7332909246C3F838 /* PBXContainerItemProxy */;
+			name = "GzipSwift-tvOS";
+			target = 86C42FC12B1378CA4DA6B82FCB3E0DF1 /* GzipSwift-tvOS */;
+			targetProxy = 4EB7D4E1EFFA99E29F648DEF8A790CF2 /* PBXContainerItemProxy */;
 		};
 		458C0FDD18D8979819D7BF3743AFB0C8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3637,23 +3675,23 @@
 			target = 44198E09922F87F08714316C85D85764 /* RxSwift-iOS */;
 			targetProxy = D6D868AF41C176EC62CF83A13271172C /* PBXContainerItemProxy */;
 		};
-		773916881EB754F39134D3AF7D7E0013 /* PBXTargetDependency */ = {
+		7A7739ED56008514E666E93196F5E482 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "GzipSwift-watchOS";
-			target = 1FF366AF995471938D267DE4A9EE353A /* GzipSwift-watchOS */;
-			targetProxy = A1C3E3E2812D77BB4123966CEB7CAD6D /* PBXContainerItemProxy */;
+			name = "GzipSwift-macOS";
+			target = 51A04ED6324B0F993F228FA1F0FFC372 /* GzipSwift-macOS */;
+			targetProxy = 98FEBD05607414122BDA0D3D4B324163 /* PBXContainerItemProxy */;
+		};
+		7C86B9F9D74E9FD128AEE56B9D28A172 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "RxSwift-iOS";
+			target = 44198E09922F87F08714316C85D85764 /* RxSwift-iOS */;
+			targetProxy = D2308D12EF01D2CFC1C01D42C7A85735 /* PBXContainerItemProxy */;
 		};
 		8B3A0E859B8A063D3706197C80527793 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "RxSwift-macOS";
 			target = B706FB94E7D3D664AF7AE4083D9FC9E8 /* RxSwift-macOS */;
 			targetProxy = 86FD9A2A21BB4066B95FEB8145C61629 /* PBXContainerItemProxy */;
-		};
-		9134089632862475C7035178D181E2DE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "GzipSwift-tvOS";
-			target = 86C42FC12B1378CA4DA6B82FCB3E0DF1 /* GzipSwift-tvOS */;
-			targetProxy = 61E799E3495CE1200DA47D2AE4C7C676 /* PBXContainerItemProxy */;
 		};
 		9800FF88011DED1FCC53A683631AFCD9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3667,23 +3705,41 @@
 			target = 8BAB16A995C063292E6235D65EC751AE /* RxSwift-watchOS */;
 			targetProxy = 8380F092407A8C218F824F2931F785A0 /* PBXContainerItemProxy */;
 		};
+		BDEB752D7C27455ADC9FE8DAC59E1332 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "RxSwift-macOS";
+			target = B706FB94E7D3D664AF7AE4083D9FC9E8 /* RxSwift-macOS */;
+			targetProxy = C35883A9186FD994127C2330EC3FD843 /* PBXContainerItemProxy */;
+		};
 		C06E3281DCE3B4FA5A6EA19DE2E2E65F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "RxSwift-tvOS";
 			target = 29BD6A25E3F5CE57461BB7788E3769A6 /* RxSwift-tvOS */;
 			targetProxy = DD13182A417710DB1545BF5850AF3EC7 /* PBXContainerItemProxy */;
 		};
-		D1BB143B5ED539FBA7CFB73AD5A6F1FE /* PBXTargetDependency */ = {
+		E12A3F340A278F8E21CDBDD8FD5FF22F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "GzipSwift-macOS";
-			target = 51A04ED6324B0F993F228FA1F0FFC372 /* GzipSwift-macOS */;
-			targetProxy = B2AA615D1E3DE40CD53DF7740419B937 /* PBXContainerItemProxy */;
+			name = "RxSwift-watchOS";
+			target = 8BAB16A995C063292E6235D65EC751AE /* RxSwift-watchOS */;
+			targetProxy = B6A208EBC06D8F8D60561174FF081F74 /* PBXContainerItemProxy */;
 		};
 		EAD0592BF65347053CE25AF5E8A24691 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "RxSwift-iOS";
 			target = 44198E09922F87F08714316C85D85764 /* RxSwift-iOS */;
 			targetProxy = 5AB92C7430EEF4BBB8C6AA07B747FAA2 /* PBXContainerItemProxy */;
+		};
+		F1CB2E91E78AEF57D2E1E9C95AB0E7F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "GzipSwift-iOS";
+			target = 47CC3336ACFC4B55F4C29FA49D52ED3F /* GzipSwift-iOS */;
+			targetProxy = 961A62D9A37624ED48A2A265C556D63E /* PBXContainerItemProxy */;
+		};
+		F79B79D8F746A85073D24CB3AB362AA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "RxSwift-tvOS";
+			target = 29BD6A25E3F5CE57461BB7788E3769A6 /* RxSwift-tvOS */;
+			targetProxy = DDA7E5A7AF595EE53F760E7FF1F4590D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -3726,50 +3782,6 @@
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
-		};
-		013B736A3ADEE4FD4746813800348C38 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 621B2E9757F6DDEB52832D6293433020 /* Pods-SubtitleApp Desktop.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "Target Support Files/Pods-SubtitleApp Desktop/Pods-SubtitleApp Desktop-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MODULEMAP_FILE = "Target Support Files/Pods-SubtitleApp Desktop/Pods-SubtitleApp Desktop.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		0C07698AF3B4E2C0A1D869F9754D2152 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3815,13 +3827,12 @@
 			};
 			name = Debug;
 		};
-		238A85FBE930659496F8E3465AE7AA0F /* Release */ = {
+		27823F4F4DDE3F3909FB1E21EC48CA38 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50784B09A1D070295CD79BB5440797D6 /* Pods-SubtitleApp Desktop.release.xcconfig */;
+			baseConfigurationReference = 6BA7FB7F193504C641631E63841ECDF1 /* Pods-SubtitleApp.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
@@ -3829,78 +3840,37 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "Target Support Files/Pods-SubtitleApp Desktop/Pods-SubtitleApp Desktop-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SubtitleApp/Pods-SubtitleApp-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MODULEMAP_FILE = "Target Support Files/Pods-SubtitleApp Desktop/Pods-SubtitleApp Desktop.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		280C7AF97212EB7E517FE09C6725A943 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F41B502A8B36485A7D45A60F2B519699 /* Pods-SubtitleApp watchOS Extension.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SubtitleApp watchOS Extension/Pods-SubtitleApp watchOS Extension-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SubtitleApp watchOS Extension/Pods-SubtitleApp watchOS Extension.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-SubtitleApp/Pods-SubtitleApp.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = watchos;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
 			};
-			name = Debug;
+			name = Release;
 		};
-		2BA33C846D32815F5BE2BCCDCD354179 /* Debug */ = {
+		2AC37712EAE3E4710210AABEBAB5E6B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9B3E034F816144F70C7A212AAFE9D3FF /* Pods-SubtitleApp TV.debug.xcconfig */;
 			buildSettings = {
@@ -3979,48 +3949,6 @@
 			};
 			name = Debug;
 		};
-		2F1C53DE40F24C62091F714B5C7ACB85 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 679289E93082D10C568F6DB3AE3FE7B2 /* Pods-SubtitleApp watchOS Extension.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SubtitleApp watchOS Extension/Pods-SubtitleApp watchOS Extension-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SubtitleApp watchOS Extension/Pods-SubtitleApp watchOS Extension.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
-			};
-			name = Release;
-		};
 		31C0DB088AFB47E5A86AEEB74B0FB39D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 16E9D4DA02CA709FBC6A84FD0883D4E2 /* Pods-Common iOS.debug.xcconfig */;
@@ -4063,9 +3991,53 @@
 			};
 			name = Debug;
 		};
-		3F1911B109C8C4544361D4CBF9FBFD1C /* Release */ = {
+		39BF33D13EAE4FFB78108C8EEA5C2774 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 967AA208E465AC8A2635FFFAC1FB9DF8 /* Pods-SubtitleApp TV.release.xcconfig */;
+			baseConfigurationReference = 50784B09A1D070295CD79BB5440797D6 /* Pods-SubtitleApp Desktop.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-SubtitleApp Desktop/Pods-SubtitleApp Desktop-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/Pods-SubtitleApp Desktop/Pods-SubtitleApp Desktop.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		49DB6BDD882DDC5DE74F59474E6616AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 679289E93082D10C568F6DB3AE3FE7B2 /* Pods-SubtitleApp watchOS Extension.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -4080,7 +4052,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SubtitleApp TV/Pods-SubtitleApp TV-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SubtitleApp watchOS Extension/Pods-SubtitleApp watchOS Extension-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4088,20 +4060,20 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SubtitleApp TV/Pods-SubtitleApp TV.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-SubtitleApp watchOS Extension/Pods-SubtitleApp watchOS Extension.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = appletvos;
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 10.0;
+				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
 			};
 			name = Release;
 		};
@@ -4452,6 +4424,48 @@
 			};
 			name = Debug;
 		};
+		6F4187AA3C7C31C1637E4398602397FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 967AA208E465AC8A2635FFFAC1FB9DF8 /* Pods-SubtitleApp TV.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SubtitleApp TV/Pods-SubtitleApp TV-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SubtitleApp TV/Pods-SubtitleApp TV.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		7BBDEA006369FB07109E0F464ABAE1F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8958332E47CC5FFBB13A8E988ACC1CAC /* RxSwift-iOS.xcconfig */;
@@ -4570,6 +4584,50 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		7FD1AC2B4BA760DAB8A1AED566165358 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 621B2E9757F6DDEB52832D6293433020 /* Pods-SubtitleApp Desktop.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-SubtitleApp Desktop/Pods-SubtitleApp Desktop-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/Pods-SubtitleApp Desktop/Pods-SubtitleApp Desktop.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		8D1829D8451CBFF5B42A20CA223618B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -4764,48 +4822,6 @@
 				WATCHOS_DEPLOYMENT_TARGET = 5.2;
 			};
 			name = Release;
-		};
-		96B46637A85A5B06A9B61616288DDA25 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2E8E86948C57534DF6F5136B41AAB49 /* Pods-SubtitleApp.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SubtitleApp/Pods-SubtitleApp-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SubtitleApp/Pods-SubtitleApp.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		9775AFB7D7AA29BF4922800F4601423E /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -5589,6 +5605,48 @@
 			};
 			name = Release;
 		};
+		EE2942423D0D22C231ED6EC83B5D4EFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2E8E86948C57534DF6F5136B41AAB49 /* Pods-SubtitleApp.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SubtitleApp/Pods-SubtitleApp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SubtitleApp/Pods-SubtitleApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		EE296E5D0D927B06DA7CECE39B0766C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6127C2685822449CBEA32987BB99CE67 /* RxSwift-watchOS.xcconfig */;
@@ -5628,13 +5686,12 @@
 			};
 			name = Release;
 		};
-		F7D5C338952E1B5B34C0F6281379E5E5 /* Release */ = {
+		EECD7047A666F2135D02EB5BA1DBE3A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BA7FB7F193504C641631E63841ECDF1 /* Pods-SubtitleApp.release.xcconfig */;
+			baseConfigurationReference = F41B502A8B36485A7D45A60F2B519699 /* Pods-SubtitleApp watchOS Extension.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -5646,30 +5703,29 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SubtitleApp/Pods-SubtitleApp-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SubtitleApp watchOS Extension/Pods-SubtitleApp watchOS Extension-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SubtitleApp/Pods-SubtitleApp.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-SubtitleApp watchOS Extension/Pods-SubtitleApp watchOS Extension.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
+				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
 			};
-			name = Release;
+			name = Debug;
 		};
 		F95E3FA600EF2147A4F49A1E45D50110 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -5817,20 +5873,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		1C19E7625904548F37B398F28EF4DC33 /* Build configuration list for PBXNativeTarget "Pods-SubtitleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE2942423D0D22C231ED6EC83B5D4EFB /* Debug */,
+				27823F4F4DDE3F3909FB1E21EC48CA38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2718EA8ECBDBFC3BD03A21A50DBC5ADE /* Build configuration list for PBXNativeTarget "Pods-Common watchOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CDE1B3E059A0EB346CBE28CED863CF00 /* Debug */,
 				B3AC9C027170A6290FE2CE5A421CEFA9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		30BC49CEC6E3F8319C7D336C44642984 /* Build configuration list for PBXNativeTarget "Pods-SubtitleApp Desktop" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				013B736A3ADEE4FD4746813800348C38 /* Debug */,
-				238A85FBE930659496F8E3465AE7AA0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5849,6 +5905,15 @@
 			buildConfigurations = (
 				B1DB202A87E56A87401688301E1B3240 /* Debug */,
 				00AB5F253E2DD322C4D740D39E57E237 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E5B595B0005E4195B0115374E4F87A9 /* Build configuration list for PBXNativeTarget "Pods-SubtitleApp watchOS Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EECD7047A666F2135D02EB5BA1DBE3A4 /* Debug */,
+				49DB6BDD882DDC5DE74F59474E6616AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5880,15 +5945,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		65645861EAB49E2ACFA0F040754E7247 /* Build configuration list for PBXNativeTarget "Pods-SubtitleApp TV" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2BA33C846D32815F5BE2BCCDCD354179 /* Debug */,
-				3F1911B109C8C4544361D4CBF9FBFD1C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		710F1BD4E688BA21E489880F911472DF /* Build configuration list for PBXNativeTarget "Pods-OpenSubtitlesDownloader tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -5898,20 +5954,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		72E4CC52204698B782140452CB02F6F2 /* Build configuration list for PBXNativeTarget "Pods-SubtitleApp watchOS Extension" */ = {
+		804EDE81B2193AD0BB975DA7547C3D51 /* Build configuration list for PBXNativeTarget "Pods-SubtitleApp TV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				280C7AF97212EB7E517FE09C6725A943 /* Debug */,
-				2F1C53DE40F24C62091F714B5C7ACB85 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8128DC45DE55A52BFCEA1904C057E3BA /* Build configuration list for PBXNativeTarget "Pods-SubtitleApp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				96B46637A85A5B06A9B61616288DDA25 /* Debug */,
-				F7D5C338952E1B5B34C0F6281379E5E5 /* Release */,
+				2AC37712EAE3E4710210AABEBAB5E6B4 /* Debug */,
+				6F4187AA3C7C31C1637E4398602397FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -6011,6 +6058,15 @@
 			buildConfigurations = (
 				E4989B70C6F41C78B84110A8E4DB9F76 /* Debug */,
 				8FCAC9C07AB4C4429F1F33D04A3CF28D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F57A4989B89BB87C1697E6CC0E807EA1 /* Build configuration list for PBXNativeTarget "Pods-SubtitleApp Desktop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FD1AC2B4BA760DAB8A1AED566165358 /* Debug */,
+				39BF33D13EAE4FFB78108C8EEA5C2774 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

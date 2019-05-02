@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-SubtitleApp Desktop/Pods-SubtitleApp Desktop-frameworks.sh
+${BUILT_PRODUCTS_DIR}/RxSwift-macOS/RxSwift.framework
 ${BUILT_PRODUCTS_DIR}/GzipSwift-macOS/Gzip.framework
