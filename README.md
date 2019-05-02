@@ -59,6 +59,11 @@ To search a TV show, pick the best match and play from certain dialog using some
 swift run subt search query=game\ of\ thrones season=8 episode=2 language=pob play=0 from-line=3 encoding=isoLatin1
 ```
 
+### iPhone, iPad, Apple Watch, Apple TV and Mac
+This is work in progress.
+
+![Subtitle App for watchOS](Docs/subtitle_watch.gif)
+
 ## Disclaimer
 
 Requires RxSwift and Swift 5
