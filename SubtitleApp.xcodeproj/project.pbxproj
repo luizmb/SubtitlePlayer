@@ -278,13 +278,6 @@
 				0CC60AC8CE888AC3A2841E15 /* Pods_SubtitleApp_Desktop.framework */,
 				B50DCD7B49D8C423D4443B64 /* Pods_SubtitleApp_TV.framework */,
 				23CDDC48676FB984298C9168 /* Pods_SubtitleApp_watchOS_Extension.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D58642E7227B67BA00D6ED22 = {
-			isa = PBXGroup;
-			children = (
 				D5234EB7227B7FFF004E289C /* OpenSubtitlesDownloader.framework */,
 				D5234EB4227B7FFF004E289C /* SubtitlePlayer.framework */,
 				D5234EB1227B7FFF004E289C /* Common.framework */,
@@ -297,6 +290,13 @@
 				D5234E99227B7FD1004E289C /* OpenSubtitlesDownloader.framework */,
 				D5234E96227B7FD1004E289C /* SubtitlePlayer.framework */,
 				D5234E93227B7FD1004E289C /* Common.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D58642E7227B67BA00D6ED22 = {
+			isa = PBXGroup;
+			children = (
 				D5864305227B690100D6ED22 /* Sources */,
 				D58642F1227B67BA00D6ED22 /* Products */,
 				715E1F54C034B52557562175 /* Pods */,
