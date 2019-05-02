@@ -2,10 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:subt.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Subtitles App.xcodeproj">
+      location = "group:SubtitleLibraries.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

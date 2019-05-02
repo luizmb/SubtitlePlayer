@@ -1,6 +1,0 @@
-framework module Pods_Subtitles_App_watchOS_Extension {
-  umbrella header "Pods-Subtitles App watchOS Extension-umbrella.h"
-
-  export *
-  module * { export * }
-}

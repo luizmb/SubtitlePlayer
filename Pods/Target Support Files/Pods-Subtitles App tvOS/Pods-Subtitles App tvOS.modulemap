@@ -1,6 +1,0 @@
-framework module Pods_Subtitles_App_tvOS {
-  umbrella header "Pods-Subtitles App tvOS-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,99 +1,108 @@
 use_frameworks!
 workspace 'Subtitle.xcworkspace'
-project 'Subtitles App.xcodeproj'
 
 def ios_version() platform :ios, '10.0' end
 def watchos_version() platform :watchos, '3.0' end
 def tvos_version() platform :tvos, '10.0' end
 def macos_version() platform :macos, '10.10' end
+def libraries_project() project 'SubtitleLibraries.xcodeproj' end
 
-def rxswift
-    pod 'RxSwift', '5.0.0', :inhibit_warnings => true
-end
-
+def rxswift() pod 'RxSwift', '5.0.0', :inhibit_warnings => true end
 def gzip
     # pod 'GzipSwift', '5.0.0', :inhibit_warnings => true
 end
 
 target 'Common iOS' do
+    libraries_project
     ios_version
 end
 
 target 'Common macOS' do
+    libraries_project
     macos_version
 end
 
 target 'Common tvOS' do
+    libraries_project
     tvos_version
 end
 
 target 'Common watchOS' do
+    libraries_project
     watchos_version
 end
 
 target 'OpenSubtitlesDownloader iOS' do
+    libraries_project
     ios_version
     rxswift
 end
 
 target 'OpenSubtitlesDownloader macOS' do
+    libraries_project
     macos_version
     rxswift
 end
 
 target 'OpenSubtitlesDownloader tvOS' do
+    libraries_project
     tvos_version
     rxswift
 end
 
 target 'OpenSubtitlesDownloader watchOS' do
+    libraries_project
     watchos_version
     rxswift
 end
 
 target 'SubtitlePlayer iOS' do
+    libraries_project
     ios_version
     rxswift
 end
 
 target 'SubtitlePlayer macOS' do
+    libraries_project
     macos_version
     rxswift
 end
 
 target 'SubtitlePlayer tvOS' do
+    libraries_project
     tvos_version
     rxswift
 end
 
 target 'SubtitlePlayer watchOS' do
+    libraries_project
     watchos_version
     rxswift
 end
 
-target 'Subtitles App iOS' do
-    ios_version
-    rxswift
-    gzip
-end
+# target 'Subtitles App iOS' do
+#     ios_version
+#     rxswift
+#     gzip
+# end
 
-target 'Subtitles App macOS' do
-    macos_version
-    rxswift
-    gzip
-end
+# target 'Subtitles App macOS' do
+#     macos_version
+#     rxswift
+#     gzip
+# end
 
-target 'Subtitles App tvOS' do
-    tvos_version
-    rxswift
-    gzip
-end
+# target 'Subtitles App tvOS' do
+#     tvos_version
+#     rxswift
+#     gzip
+# end
 
-target 'Subtitles App watchOS Extension' do
-    watchos_version
-    rxswift
-    gzip
-end
+# target 'Subtitles App watchOS Extension' do
+#     watchos_version
+#     rxswift
+#     gzip
+# end
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|
