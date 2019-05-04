@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DXt-SK-BaU">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--SplashView-->
+        <scene sceneID="j2m-lq-edh">
+            <objects>
+                <controller identifier="SplashView" id="DXt-SK-BaU" customClass="SplashViewController" customModule="SubtitleApp_watchOS_Extension">
+                    <color key="backgroundColor" red="0.91694822460000003" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="137" y="78"/>
+        </scene>
+    </scenes>
+</document>

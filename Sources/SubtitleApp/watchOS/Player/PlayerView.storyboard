@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--PlayerView-->
+        <scene sceneID="KBN-Z7-lvK">
+            <objects>
+                <controller identifier="PlayerView" id="cud-oQ-Pj5" customClass="PlayerViewController" customModule="SubtitleApp_watchOS_Extension">
+                    <items>
+                        <label width="1" alignment="center" verticalAlignment="bottom" text="Subtitles" textAlignment="center" numberOfLines="0" id="vgb-Rs-ybL">
+                            <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" type="boldSystem" pointSize="14"/>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="91" y="88"/>
+        </scene>
+    </scenes>
+</document>
