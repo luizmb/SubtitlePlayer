@@ -49,7 +49,7 @@ public struct SearchResponse: Decodable {
     public let movieKind: String
     public let subHD: String
     public let seriesIMDBParent: String
-    public let subEncoding: String
+    public let subEncoding: String?
     public let subAutoTranslation: String
     public let subForeignPartsOnly: String
     public let subFromTrusted: String

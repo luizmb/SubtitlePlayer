@@ -8,6 +8,7 @@ public struct Environment {
     public let openSubtitlesUserAgent: () -> UserAgent
     public let fileManager: () -> FileManagerProtocol
     public let gzip: () -> GzipProtocol.Type
+    public let userDefaults: () -> UserDefaults
 }
 
 extension Reader {

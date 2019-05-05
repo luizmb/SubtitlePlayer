@@ -1,14 +1,16 @@
+import RxSwift
 import WatchKit
 
 public final class SearchResultViewController: WKInterfaceController {
     private var didAppearSignal: (() -> Void)!
     private var willDisappearSignal: (() -> Void)!
+    private let disposeBag = DisposeBag()
 
     public override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         let viewModel: ViewModel<SearchResultViewModelInput, SearchResultViewModelOutput>! = InterfaceControllerContext.wrapped(context: context)
 
-        let outputs: SearchResultViewModelOutput = ()
+        let outputs: SearchResultViewModelOutput = (disposeBag)
 
         let inputs = viewModel.bind(outputs)
 

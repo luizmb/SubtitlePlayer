@@ -6,8 +6,10 @@ import WatchKit
 public final class MainRouter {
     public static func start() {
         let router = MainRouter()
-        let searchViewContext = ViewModel(bind: searchViewModel(router: router)).asContext
-        let playerViewContext = ViewModel(bind: playerViewModel(router: router)).asContext
+        let searchViewContext =
+            ViewModel(bind: searchViewModel(router: router).contramap(^\.userDefaults).inject(Environment.current)).asContext
+        let playerViewContext =
+            ViewModel(bind: playerViewModel(router: router)).asContext
 
         WKInterfaceController.reloadRootPageControllers(
             withNames: [SearchViewController.name, PlayerViewController.name],
@@ -43,6 +45,7 @@ extension Environment {
         urlSession: { URLSession.shared },
         openSubtitlesUserAgent: { UserAgent(rawValue: "TemporaryUserAgent") },
         fileManager: FileManager.init,
-        gzip: { Gzip.self }
+        gzip: { Gzip.self },
+        userDefaults: { UserDefaults.standard }
     )
 }

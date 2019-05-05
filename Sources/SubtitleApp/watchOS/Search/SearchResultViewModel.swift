@@ -4,6 +4,7 @@ import OpenSubtitlesDownloader
 import RxSwift
 
 public typealias SearchResultViewModelOutput = (
+    DisposeBag
 )
 
 public typealias SearchResultViewModelInput = (
@@ -13,8 +14,6 @@ public typealias SearchResultViewModelInput = (
 )
 
 public func searchResultViewModel(router: Router, searchParameters: SearchParameters) -> Reader<(URLSessionProtocol, UserAgent), (SearchResultViewModelOutput) -> SearchResultViewModelInput> {
-    let disposeBag = DisposeBag()
-
     return OpenSubtitlesManager
         .search(searchParameters)
         .map { promiseResponse in
@@ -30,7 +29,7 @@ public func searchResultViewModel(router: Router, searchParameters: SearchParame
                                 print("Search error")
                                 print(error)
                             }
-                        ).disposed(by: disposeBag)
+                        ).disposed(by: output)
                     },
                     didAppear: { },
                     willDisappear: { }
