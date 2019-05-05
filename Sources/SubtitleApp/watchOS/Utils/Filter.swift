@@ -6,6 +6,22 @@ public enum Filter<T> {
 }
 
 extension Filter {
+    public func map<U>(_ fn: @escaping (T) -> U) -> Filter<U> {
+        switch self {
+        case .empty: return .empty
+        case let .some(value): return .some(fn(value))
+        }
+    }
+
+    public func flatMap<U>(_ fn: @escaping (T) -> Filter<U>) -> Filter<U> {
+        switch self {
+        case .empty: return .empty
+        case let .some(value): return fn(value)
+        }
+    }
+}
+
+extension Filter {
     public func value(orEmpty: T) -> T {
         switch self {
         case .empty: return orEmpty

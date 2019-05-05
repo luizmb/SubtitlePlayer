@@ -14,7 +14,7 @@ public typealias SearchViewModelInput = (
     awakeWithContext: (Any?) -> Void,
     didAppear: () -> Void,
     willDisappear: () -> Void,
-    searchButtonTap: () -> Void,
+    searchButtonTap: (InterfaceControllerProtocol) -> Void,
     queryButtonTap: (InterfaceControllerProtocol) -> Void,
     seasonButtonTap: (InterfaceControllerProtocol) -> Void,
     episodeButtonTap: (InterfaceControllerProtocol) -> Void,
@@ -25,15 +25,15 @@ public func searchViewModel(router: Router) -> (SearchViewModelOutput) -> Search
     return { output in
         let empty = "<empty>"
         var queryFilter: Filter<String> = .empty
-        var seasonFilter: Filter<String> = .empty
-        var episodeFilter: Filter<String> = .empty
+        var seasonFilter: Filter<Int> = .empty
+        var episodeFilter: Filter<Int> = .empty
         var languageFilter: Filter<LanguageId> = .empty
 
         let updateView = {
             output.queryLabelString(queryFilter.value(orEmpty: empty))
-            output.seasonLabelString(seasonFilter.value(orEmpty: empty))
-            output.episodeLabelString(episodeFilter.value(orEmpty: empty))
-            output.languageLabelString(languageFilter.value(orEmpty: LanguageId.all).description)
+            output.seasonLabelString(seasonFilter.map(String.init).value(orEmpty: empty))
+            output.episodeLabelString(episodeFilter.map(String.init).value(orEmpty: empty))
+            output.languageLabelString(languageFilter.map(^\.description).value(orEmpty: LanguageId.all.description))
             output.searchButtonEnabled(queryFilter.isSome)
         }
 
@@ -41,7 +41,14 @@ public func searchViewModel(router: Router) -> (SearchViewModelOutput) -> Search
             awakeWithContext: { _ in },
             didAppear: { updateView() },
             willDisappear: { },
-            searchButtonTap: { router.handle(.startSearch) },
+            searchButtonTap: { view in
+                let searchParameters = SearchParameters(
+                    query: queryFilter.some,
+                    episode: episodeFilter.some,
+                    season: seasonFilter.some,
+                    language: languageFilter.some ?? .all)
+                router.handle(.startSearch(parent: view, searchParameters: searchParameters))
+            },
             queryButtonTap: { view in
                 router.handle(.dictation(parent: view,
                                          empty: empty,
@@ -56,9 +63,9 @@ public func searchViewModel(router: Router) -> (SearchViewModelOutput) -> Search
                 router.handle(.textPicker(parent: view,
                                           empty: empty,
                                           suggestions: suggestions,
-                                          selectedIndex: seasonFilter.some.flatMap(suggestions.firstIndex(of:)),
+                                          selectedIndex: seasonFilter.map(String.init).some.flatMap(suggestions.firstIndex(of:)),
                                           completion: { choice in
-                    seasonFilter = choice ?? seasonFilter
+                    seasonFilter = choice?.some.flatMap(Int.init).map(Filter.some) ?? seasonFilter
                     updateView()
                 }))
             },
@@ -67,9 +74,9 @@ public func searchViewModel(router: Router) -> (SearchViewModelOutput) -> Search
                 router.handle(.textPicker(parent: view,
                                           empty: empty,
                                           suggestions: suggestions,
-                                          selectedIndex: episodeFilter.some.flatMap(suggestions.firstIndex(of:)),
+                                          selectedIndex: episodeFilter.map(String.init).some.flatMap(suggestions.firstIndex(of:)),
                                           completion: { choice in
-                    episodeFilter = choice ?? episodeFilter
+                    episodeFilter = choice?.some.flatMap(Int.init).map(Filter.some) ?? episodeFilter
                     updateView()
                 }))
             },

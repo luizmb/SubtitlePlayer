@@ -58,14 +58,4 @@ class InterfaceController: WKInterfaceController {
             .disposed(by: bag)
     }
 }
-
-extension Environment {
-    fileprivate static var current: Environment = Environment(
-        now: Date.init,
-        urlSession: { URLSession.shared },
-        openSubtitlesUserAgent: { UserAgent(rawValue: "TemporaryUserAgent") },
-        fileManager: FileManager.init,
-        gzip: { Gzip.self }
-    )
-}
 */

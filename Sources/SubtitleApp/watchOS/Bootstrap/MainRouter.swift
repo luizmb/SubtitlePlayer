@@ -1,4 +1,6 @@
+import Common
 import Foundation
+import OpenSubtitlesDownloader
 import WatchKit
 
 public final class MainRouter {
@@ -19,8 +21,9 @@ public final class MainRouter {
 extension MainRouter: Router {
     public func handle(_ event: RouterEvent) {
         switch event {
-        case .startSearch:
-            print("Start Search")
+        case let .startSearch(parent, searchParameters):
+            let searchResultViewContext = ViewModel(bind: searchResultViewModel(router: self, searchParameters: searchParameters).contramap(^\.urlSession, ^\.openSubtitlesUserAgent).inject(Environment.current)).asContext
+            parent.presentController(withName: SearchResultViewController.name, context: searchResultViewContext)
         case let .textPicker(parent, empty, suggestions, selectedIndex, completion):
             let textPickerViewContext = ViewModel(bind: textPickerViewModel(items: suggestions, selectedIndex: selectedIndex, completion: { text in
                 completion(text.map { $0 == empty ? Filter.empty : .some($0) })
@@ -32,4 +35,14 @@ extension MainRouter: Router {
             }
         }
     }
+}
+
+extension Environment {
+    fileprivate static var current: Environment = Environment(
+        now: Date.init,
+        urlSession: { URLSession.shared },
+        openSubtitlesUserAgent: { UserAgent(rawValue: "TemporaryUserAgent") },
+        fileManager: FileManager.init,
+        gzip: { Gzip.self }
+    )
 }

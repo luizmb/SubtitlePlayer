@@ -9,7 +9,7 @@ public final class SearchViewController: WKInterfaceController {
 
     private var didAppearSignal: (() -> Void)!
     private var willDisappearSignal: (() -> Void)!
-    private var searchButtonTapSignal: (() -> Void)!
+    private var searchButtonTapSignal: ((InterfaceControllerProtocol) -> Void)!
     private var queryButtonTapSignal: ((InterfaceControllerProtocol) -> Void)!
     private var seasonButtonTapSignal: ((InterfaceControllerProtocol) -> Void)!
     private var episodeButtonTapSignal: ((InterfaceControllerProtocol) -> Void)!
@@ -61,7 +61,7 @@ public final class SearchViewController: WKInterfaceController {
     }
 
     @IBAction private func searchButtonTap() {
-        searchButtonTapSignal()
+        searchButtonTapSignal(self)
     }
 
     @IBAction private func setQueryButtonTap() {
