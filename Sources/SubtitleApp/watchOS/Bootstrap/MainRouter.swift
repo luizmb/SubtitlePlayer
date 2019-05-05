@@ -7,7 +7,7 @@ public final class MainRouter {
     public static func start() {
         let router = MainRouter()
         let searchViewContext =
-            ViewModel(bind: searchViewModel(router: router).contramap(^\.userDefaults).inject(Environment.current)).asContext
+            ViewModel(bind: searchViewModel(router: router).contramap(^\.persistence).inject(Environment.current)).asContext
         let playerViewContext =
             ViewModel(bind: playerViewModel(router: router)).asContext
 
@@ -46,6 +46,6 @@ extension Environment {
         openSubtitlesUserAgent: { UserAgent(rawValue: "TemporaryUserAgent") },
         fileManager: FileManager.init,
         gzip: { Gzip.self },
-        userDefaults: { UserDefaults.standard }
+        persistence: { UserDefaults.standard }
     )
 }

@@ -21,18 +21,16 @@ public typealias SearchViewModelInput = (
     languageButtonTap: (InterfaceControllerProtocol) -> Void
 )
 
-public func searchViewModel(router: Router) -> Reader<UserDefaults, (SearchViewModelOutput) -> SearchViewModelInput> {
-    return Reader { userDefaults in
+public func searchViewModel(router: Router) -> Reader<Persistence, (SearchViewModelOutput) -> SearchViewModelInput> {
+    return Reader { persistence in
         { output in
             let empty = "<empty>"
-            let lastLanguageKey = "Last-Language"
-            let querySearchesKey = "Query-Searches"
-            var querySearches = userDefaults.stringArray(forKey: querySearchesKey) ?? []
+            var querySearches = persistence.readQuerySearches() ?? []
             var queryFilter: Filter<String> = .empty
             var seasonFilter: Filter<Int> = .empty
             var episodeFilter: Filter<Int> = .empty
             var languageFilter: Filter<LanguageId> =
-                userDefaults.string(forKey: lastLanguageKey).flatMap(LanguageId.init(rawValue:)).map(Filter.some) ?? .empty
+                persistence.readLastLanguage().flatMap(LanguageId.init(rawValue:)).map(Filter.some) ?? .empty
 
             let updateView = {
                 output.queryLabelString(queryFilter.value(orEmpty: empty))
@@ -63,7 +61,7 @@ public func searchViewModel(router: Router) -> Reader<UserDefaults, (SearchViewM
                         choice?.some.map {
                             if !querySearches.contains($0) {
                                 querySearches.insert($0, at: 0)
-                                userDefaults.set(querySearches, forKey: querySearchesKey)
+                                persistence.saveQuerySearches(querySearches)
                             }
                         }
                         updateView()
@@ -101,7 +99,7 @@ public func searchViewModel(router: Router) -> Reader<UserDefaults, (SearchViewM
                                               completion: { choice in
                         let chosenLanguage = choice?.some.flatMap(LanguageId.init(description:))
                         chosenLanguage.map {
-                            userDefaults.set($0.rawValue, forKey: lastLanguageKey)
+                            persistence.saveLastLanguage($0.rawValue)
                         }
                         languageFilter = chosenLanguage.map(Filter.some) ?? languageFilter
                         updateView()
