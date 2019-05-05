@@ -11,19 +11,21 @@ public typealias SearchResultViewModelOutput = (
 public typealias SearchResultViewModelInput = (
     awakeWithContext: (Any?) -> Void,
     didAppear: () -> Void,
-    willDisappear: () -> Void
+    willDisappear: () -> Void,
+    itemSelected: (InterfaceControllerProtocol, Int) -> Void
 )
 
-public func searchResultViewModel(router: Router, searchParameters: SearchParameters) -> Reader<(URLSessionProtocol, UserAgent), (SearchResultViewModelOutput) -> SearchResultViewModelInput> {
+public func searchResultViewModel(router: Router, searchParameters: SearchParameters, completion: @escaping (SearchResponse?) -> Void) -> Reader<(URLSessionProtocol, UserAgent), (SearchResultViewModelOutput) -> SearchResultViewModelInput> {
     return OpenSubtitlesManager
         .search(searchParameters)
         .map { promiseResponse in
-            { output in
-                return (
+            var items: [SearchResponse] = []
+            return { output in
+                (
                     awakeWithContext: { _ in
                         promiseResponse.observeOn(MainScheduler.instance).subscribe(
                             onSuccess: { response in
-                                let formatter = NumberFormatter()
+                                items = response
                                 return output.items(response.map {
                                     (
                                         title: $0.movieName,
@@ -40,7 +42,11 @@ public func searchResultViewModel(router: Router, searchParameters: SearchParame
                         ).disposed(by: output.disposeBag)
                     },
                     didAppear: { },
-                    willDisappear: { }
+                    willDisappear: { },
+                    itemSelected: { view, index in
+                        completion(items[safe: index])
+                        view.dismiss()
+                    }
                 )
             }
         }

@@ -24,7 +24,7 @@ extension MainRouter: Router {
     public func handle(_ event: RouterEvent) {
         switch event {
         case let .startSearch(parent, searchParameters):
-            let searchResultViewContext = ViewModel(bind: searchResultViewModel(router: self, searchParameters: searchParameters).contramap(^\.urlSession, ^\.openSubtitlesUserAgent).inject(Environment.current)).asContext
+            let searchResultViewContext = ViewModel(bind: searchResultViewModel(router: self, searchParameters: searchParameters, completion: { subtitle in print(subtitle) }).contramap(^\.urlSession, ^\.openSubtitlesUserAgent).inject(Environment.current)).asContext
             parent.presentController(withName: SearchResultViewController.name, context: searchResultViewContext)
         case let .textPicker(parent, empty, suggestions, selectedIndex, completion):
             let textPickerViewContext = ViewModel(bind: textPickerViewModel(items: suggestions, selectedIndex: selectedIndex, completion: { text in

@@ -5,6 +5,7 @@ public final class SearchResultViewController: WKInterfaceController {
     private var didAppearSignal: (() -> Void)!
     private var willDisappearSignal: (() -> Void)!
     private let disposeBag = DisposeBag()
+    private var itemSelectedSignal: ((InterfaceControllerProtocol, Int) -> Void)!
     @IBOutlet private weak var table: WKInterfaceTable!
 
     public override func awake(withContext context: Any?) {
@@ -30,8 +31,13 @@ public final class SearchResultViewController: WKInterfaceController {
 
         self.didAppearSignal = inputs.didAppear
         self.willDisappearSignal = inputs.willDisappear
+        self.itemSelectedSignal = inputs.itemSelected
 
         inputs.awakeWithContext(context)
+    }
+
+    public override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+        itemSelectedSignal(self, rowIndex)
     }
 
     public override func didAppear() {
@@ -50,6 +56,5 @@ public final class SearchResultRow: NSObject {
     @IBOutlet fileprivate weak var titleLabel: WKInterfaceLabel!
     @IBOutlet fileprivate weak var yearLabel: WKInterfaceLabel!
     @IBOutlet fileprivate weak var languageLabel: WKInterfaceLabel!
-    @IBOutlet fileprivate weak var scoreLabel: WKInterfaceLabel!
     @IBOutlet fileprivate weak var fileLabel: WKInterfaceLabel!
 }
