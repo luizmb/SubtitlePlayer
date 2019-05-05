@@ -1,7 +1,8 @@
+import Common
 import Foundation
+import OpenSubtitlesDownloader
 
 public typealias SearchViewModelOutput = (
-    presentQueryDictation: ([String]) -> Void,
     queryLabelString: (String) -> Void,
     seasonLabelString: (String) -> Void,
     episodeLabelString: (String) -> Void,
@@ -14,26 +15,26 @@ public typealias SearchViewModelInput = (
     didAppear: () -> Void,
     willDisappear: () -> Void,
     searchButtonTap: () -> Void,
-    queryButtonTap: () -> Void,
-    seasonButtonTap: () -> Void,
-    episodeButtonTap: () -> Void,
-    languageButtonTap: () -> Void,
-    queryTextChanged: (String?) -> Void
+    queryButtonTap: (InterfaceControllerProtocol) -> Void,
+    seasonButtonTap: (InterfaceControllerProtocol) -> Void,
+    episodeButtonTap: (InterfaceControllerProtocol) -> Void,
+    languageButtonTap: (InterfaceControllerProtocol) -> Void
 )
 
 public func searchViewModel(router: Router) -> (SearchViewModelOutput) -> SearchViewModelInput {
     return { output in
-        var currentQuery: String? = nil
-        var currentSeason: String? = nil
-        var currentEpisode: String? = nil
-        var currentLanguage: String? = nil
+        let empty = "<empty>"
+        var queryFilter: Filter<String> = .empty
+        var seasonFilter: Filter<String> = .empty
+        var episodeFilter: Filter<String> = .empty
+        var languageFilter: Filter<LanguageId> = .empty
 
         let updateView = {
-            output.queryLabelString(currentQuery ?? "<empty>")
-            output.seasonLabelString(currentSeason ?? "<empty>")
-            output.episodeLabelString(currentEpisode ?? "<empty>")
-            output.languageLabelString(currentLanguage ?? "All")
-            output.searchButtonEnabled(currentQuery != nil)
+            output.queryLabelString(queryFilter.value(orEmpty: empty))
+            output.seasonLabelString(seasonFilter.value(orEmpty: empty))
+            output.episodeLabelString(episodeFilter.value(orEmpty: empty))
+            output.languageLabelString(languageFilter.value(orEmpty: LanguageId.all).description)
+            output.searchButtonEnabled(queryFilter.isSome)
         }
 
         return (
@@ -41,13 +42,47 @@ public func searchViewModel(router: Router) -> (SearchViewModelOutput) -> Search
             didAppear: { updateView() },
             willDisappear: { },
             searchButtonTap: { router.handle(.startSearch) },
-            queryButtonTap: { output.presentQueryDictation(["<empty>"]) },
-            seasonButtonTap: { print("setSeasonButtonTap") },
-            episodeButtonTap: { print("setEpisodeButtonTap") },
-            languageButtonTap: { print("setLanguageButtonTap") },
-            queryTextChanged: { text in
-                currentQuery = text ?? currentQuery
-                updateView()
+            queryButtonTap: { view in
+                router.handle(.dictation(parent: view,
+                                         empty: empty,
+                                         suggestions: [empty, queryFilter.some].compactMap { $0 },
+                                         completion: { choice in
+                    queryFilter = choice ?? queryFilter
+                    updateView()
+                }))
+            },
+            seasonButtonTap: { view in
+                let suggestions = [empty] + (1...99).map(String.init)
+                router.handle(.textPicker(parent: view,
+                                          empty: empty,
+                                          suggestions: suggestions,
+                                          selectedIndex: seasonFilter.some.flatMap(suggestions.firstIndex(of:)),
+                                          completion: { choice in
+                    seasonFilter = choice ?? seasonFilter
+                    updateView()
+                }))
+            },
+            episodeButtonTap: { view in
+                let suggestions = [empty] + (1...99).map(String.init)
+                router.handle(.textPicker(parent: view,
+                                          empty: empty,
+                                          suggestions: suggestions,
+                                          selectedIndex: episodeFilter.some.flatMap(suggestions.firstIndex(of:)),
+                                          completion: { choice in
+                    episodeFilter = choice ?? episodeFilter
+                    updateView()
+                }))
+            },
+            languageButtonTap: { view in
+                let suggestions = LanguageId.allCases.map(^\.description).sorted()
+                router.handle(.textPicker(parent: view,
+                                          empty: empty,
+                                          suggestions: suggestions,
+                                          selectedIndex: languageFilter.some.map(^\.description).flatMap(suggestions.firstIndex(of:)),
+                                          completion: { choice in
+                    languageFilter = choice?.some.flatMap(LanguageId.init(description:)).map(Filter.some) ?? languageFilter
+                    updateView()
+                }))
             }
         )
     }

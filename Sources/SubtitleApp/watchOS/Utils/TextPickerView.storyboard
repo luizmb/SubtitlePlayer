@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--TextPickerView-->
+        <scene sceneID="06O-yr-jpC">
+            <objects>
+                <controller identifier="TextPickerView" id="wHw-Bf-DMa" customClass="TextPickerViewController" customModule="SubtitleApp_watchOS_Extension">
+                    <items>
+                        <picker height="1" alignment="left" id="i1n-lM-924">
+                            <connections>
+                                <action selector="textPickerDidChange:" destination="wHw-Bf-DMa" id="eWb-zf-ubD"/>
+                            </connections>
+                        </picker>
+                    </items>
+                    <connections>
+                        <outlet property="picker" destination="i1n-lM-924" id="l75-Ng-6Lz"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="79" y="173"/>
+        </scene>
+    </scenes>
+</document>

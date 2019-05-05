@@ -53,6 +53,10 @@
 		D5234EF4227DF3C4004E289C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5234EF3227DF3C4004E289C /* Extensions.swift */; };
 		D5234EF6227E0990004E289C /* InterfaceControllerContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5234EF5227E0990004E289C /* InterfaceControllerContext.swift */; };
 		D5234EF8227E0A1F004E289C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5234EF7227E0A1F004E289C /* Router.swift */; };
+		D5234EFB227E4F32004E289C /* TextPickerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5234EFA227E4F32004E289C /* TextPickerView.storyboard */; };
+		D5234EFD227E4F52004E289C /* TextPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5234EFC227E4F52004E289C /* TextPickerViewController.swift */; };
+		D5234EFF227E5263004E289C /* TextPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5234EFE227E5263004E289C /* TextPickerViewModel.swift */; };
+		D5234F01227E6118004E289C /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5234F00227E6118004E289C /* Filter.swift */; };
 		D58642F4227B67BA00D6ED22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58642F3227B67BA00D6ED22 /* AppDelegate.swift */; };
 		D58642FB227B67BC00D6ED22 /* Assets-iOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58642FA227B67BC00D6ED22 /* Assets-iOS.xcassets */; };
 		D586430B227B6AB000D6ED22 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D586430A227B6AB000D6ED22 /* LaunchScreen.xib */; };
@@ -203,6 +207,10 @@
 		D5234EF3227DF3C4004E289C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D5234EF5227E0990004E289C /* InterfaceControllerContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceControllerContext.swift; sourceTree = "<group>"; };
 		D5234EF7227E0A1F004E289C /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		D5234EFA227E4F32004E289C /* TextPickerView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TextPickerView.storyboard; sourceTree = "<group>"; };
+		D5234EFC227E4F52004E289C /* TextPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPickerViewController.swift; sourceTree = "<group>"; };
+		D5234EFE227E5263004E289C /* TextPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPickerViewModel.swift; sourceTree = "<group>"; };
+		D5234F00227E6118004E289C /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		D58642F0227B67BA00D6ED22 /* SubtitleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubtitleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58642F3227B67BA00D6ED22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D58642FA227B67BC00D6ED22 /* Assets-iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets-iOS.xcassets"; sourceTree = "<group>"; };
@@ -354,6 +362,21 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		D5234EF9227E4E47004E289C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D5234EF3227DF3C4004E289C /* Extensions.swift */,
+				D5234F00227E6118004E289C /* Filter.swift */,
+				D5234EBD227B844F004E289C /* Gzip+Extensions.swift */,
+				D5234EF5227E0990004E289C /* InterfaceControllerContext.swift */,
+				D5234EFA227E4F32004E289C /* TextPickerView.storyboard */,
+				D5234EFC227E4F52004E289C /* TextPickerViewController.swift */,
+				D5234EFE227E5263004E289C /* TextPickerViewModel.swift */,
+				D5234EE4227DCD67004E289C /* ViewModel.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		D58642E7227B67BA00D6ED22 = {
 			isa = PBXGroup;
 			children = (
@@ -446,6 +469,7 @@
 				D5234ECF227DC4FD004E289C /* Player */,
 				D5234ECE227DC4EC004E289C /* Search */,
 				D5234EE8227DD116004E289C /* Splash */,
+				D5234EF9227E4E47004E289C /* Utils */,
 			);
 			path = watchOS;
 			sourceTree = "<group>";
@@ -455,12 +479,8 @@
 			children = (
 				D5234EBB227B8417004E289C /* Environment.swift */,
 				D5864321227B6B7800D6ED22 /* ExtensionDelegate.swift */,
-				D5234EF3227DF3C4004E289C /* Extensions.swift */,
-				D5234EBD227B844F004E289C /* Gzip+Extensions.swift */,
-				D5234EF5227E0990004E289C /* InterfaceControllerContext.swift */,
 				D5234EDC227DC92E004E289C /* MainRouter.swift */,
 				D5234EF7227E0A1F004E289C /* Router.swift */,
-				D5234EE4227DCD67004E289C /* ViewModel.swift */,
 			);
 			path = Bootstrap;
 			sourceTree = "<group>";
@@ -672,6 +692,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5234EFB227E4F32004E289C /* TextPickerView.storyboard in Resources */,
 				D5864314227B6B7700D6ED22 /* Assets-watchOS.xcassets in Resources */,
 				D5234EDF227DCAF8004E289C /* SearchResultView.storyboard in Resources */,
 				D5234ED3227DC6D2004E289C /* SearchView.storyboard in Resources */,
@@ -884,12 +905,15 @@
 				D5864322227B6B7800D6ED22 /* ExtensionDelegate.swift in Sources */,
 				D5234EE1227DCB49004E289C /* SearchResultViewController.swift in Sources */,
 				D5234EDB227DC757004E289C /* SearchViewModel.swift in Sources */,
+				D5234EFF227E5263004E289C /* TextPickerViewModel.swift in Sources */,
 				D5234EF0227DD18B004E289C /* SplashViewController.swift in Sources */,
 				D5234EF6227E0990004E289C /* InterfaceControllerContext.swift in Sources */,
 				D5234EF8227E0A1F004E289C /* Router.swift in Sources */,
 				D5234EBE227B844F004E289C /* Gzip+Extensions.swift in Sources */,
 				D5234EBC227B8417004E289C /* Environment.swift in Sources */,
+				D5234F01227E6118004E289C /* Filter.swift in Sources */,
 				D5234ED9227DC746004E289C /* PlayerViewModel.swift in Sources */,
+				D5234EFD227E4F52004E289C /* TextPickerViewController.swift in Sources */,
 				D5234ED5227DC70C004E289C /* PlayerViewController.swift in Sources */,
 				D5234EE5227DCD67004E289C /* ViewModel.swift in Sources */,
 				D5234EF4227DF3C4004E289C /* Extensions.swift in Sources */,

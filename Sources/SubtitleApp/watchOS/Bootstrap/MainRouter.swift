@@ -21,6 +21,15 @@ extension MainRouter: Router {
         switch event {
         case .startSearch:
             print("Start Search")
+        case let .textPicker(parent, empty, suggestions, selectedIndex, completion):
+            let textPickerViewContext = ViewModel(bind: textPickerViewModel(items: suggestions, selectedIndex: selectedIndex, completion: { text in
+                completion(text.map { $0 == empty ? Filter.empty : .some($0) })
+            })).asContext
+            parent.presentController(withName: TextPickerViewController.name, context: textPickerViewContext)
+        case let .dictation(parent, empty, suggestions, completion):
+            parent.presentTextInputController(withSuggestions: suggestions, allowedInputMode: .plain) { text in
+                completion((text?.first as? String).map { $0 == empty ? Filter.empty : .some($0) })
+            }
         }
     }
 }

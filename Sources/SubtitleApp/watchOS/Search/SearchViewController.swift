@@ -10,22 +10,16 @@ public final class SearchViewController: WKInterfaceController {
     private var didAppearSignal: (() -> Void)!
     private var willDisappearSignal: (() -> Void)!
     private var searchButtonTapSignal: (() -> Void)!
-    private var queryButtonTapSignal: (() -> Void)!
-    private var seasonButtonTapSignal: (() -> Void)!
-    private var episodeButtonTapSignal: (() -> Void)!
-    private var languageButtonTapSignal: (() -> Void)!
-    private var queryTextChangedSignal: ((String?) -> Void)!
+    private var queryButtonTapSignal: ((InterfaceControllerProtocol) -> Void)!
+    private var seasonButtonTapSignal: ((InterfaceControllerProtocol) -> Void)!
+    private var episodeButtonTapSignal: ((InterfaceControllerProtocol) -> Void)!
+    private var languageButtonTapSignal: ((InterfaceControllerProtocol) -> Void)!
 
     public override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         let viewModel: ViewModel<SearchViewModelInput, SearchViewModelOutput>! = InterfaceControllerContext.wrapped(context: context)
 
         let outputs: SearchViewModelOutput = (
-            presentQueryDictation: { [weak self] suggestions in
-                self?.presentTextInputController(withSuggestions: suggestions, allowedInputMode: .plain) { [weak self] text in
-                    self?.queryTextChangedSignal(text?.first as? String)
-                }
-            },
             queryLabelString: { [weak self] text in
                 self?.queryLabel.setText(text)
             },
@@ -52,7 +46,6 @@ public final class SearchViewController: WKInterfaceController {
         self.seasonButtonTapSignal = inputs.seasonButtonTap
         self.episodeButtonTapSignal = inputs.episodeButtonTap
         self.languageButtonTapSignal = inputs.languageButtonTap
-        self.queryTextChangedSignal = inputs.queryTextChanged
 
         inputs.awakeWithContext(context)
     }
@@ -72,18 +65,18 @@ public final class SearchViewController: WKInterfaceController {
     }
 
     @IBAction private func setQueryButtonTap() {
-        queryButtonTapSignal()
+        queryButtonTapSignal(self)
     }
 
     @IBAction private func setSeasonButtonTap() {
-        seasonButtonTapSignal()
+        seasonButtonTapSignal(self)
     }
 
     @IBAction private func setEpisodeButtonTap() {
-        episodeButtonTapSignal()
+        episodeButtonTapSignal(self)
     }
 
     @IBAction private func setLanguageButtonTap() {
-        languageButtonTapSignal()
+        languageButtonTapSignal(self)
     }
 }
