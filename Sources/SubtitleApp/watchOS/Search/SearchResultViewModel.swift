@@ -4,7 +4,8 @@ import OpenSubtitlesDownloader
 import RxSwift
 
 public typealias SearchResultViewModelOutput = (
-    DisposeBag
+    disposeBag: DisposeBag,
+    items: ([(title: String, year: String, language: String, file: String)]) -> Void
 )
 
 public typealias SearchResultViewModelInput = (
@@ -20,16 +21,23 @@ public func searchResultViewModel(router: Router, searchParameters: SearchParame
             { output in
                 return (
                     awakeWithContext: { _ in
-                        promiseResponse.subscribe(
+                        promiseResponse.observeOn(MainScheduler.instance).subscribe(
                             onSuccess: { response in
-                                print("Successful search")
-                                print(response)
+                                let formatter = NumberFormatter()
+                                return output.items(response.map {
+                                    (
+                                        title: $0.movieName,
+                                        year: $0.formattedSeriesString ?? String($0.movieYear),
+                                        language: $0.languageName,
+                                        file: $0.subFileName
+                                    )
+                                })
                             },
                             onError: { error in
                                 print("Search error")
                                 print(error)
                             }
-                        ).disposed(by: output)
+                        ).disposed(by: output.disposeBag)
                     },
                     didAppear: { },
                     willDisappear: { }

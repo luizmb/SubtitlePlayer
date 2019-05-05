@@ -12,7 +12,46 @@
         <!--SearchResultView-->
         <scene sceneID="2Bx-mE-QQd">
             <objects>
-                <controller identifier="SearchResultView" id="In3-5o-MLx" customClass="SearchResultViewController" customModule="SubtitleApp_watchOS_Extension"/>
+                <controller identifier="SearchResultView" id="In3-5o-MLx" customClass="SearchResultViewController" customModule="SubtitleApp_watchOS_Extension">
+                    <items>
+                        <table alignment="left" id="YCj-7n-HaH">
+                            <items>
+                                <tableRow identifier="SearchResultRow" id="bfq-Ho-1wL" customClass="SearchResultRow" customModule="SubtitleApp_watchOS_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="0Dx-5t-hwq">
+                                        <items>
+                                            <label width="1" alignment="left" text="Title" numberOfLines="3" id="sSc-hB-66h">
+                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                            </label>
+                                            <group width="1" alignment="left" id="47R-s9-e8y">
+                                                <items>
+                                                    <label width="0.40000000000000002" alignment="left" text="2010" minimumScaleFactor="0.59999999999999998" id="yt5-Zy-dkb">
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
+                                                    </label>
+                                                    <label width="0.59999999999999998" alignment="right" text="Language" textAlignment="right" minimumScaleFactor="0.59999999999999998" id="NoC-DC-uCm">
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <label width="1" alignment="right" text="File" textAlignment="left" numberOfLines="2" minimumScaleFactor="0.80000000000000004" id="IQf-fy-rQF">
+                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                            </label>
+                                        </items>
+                                        <edgeInsets key="margins" left="0.0" right="0.0" top="4" bottom="4"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="fileLabel" destination="IQf-fy-rQF" id="nET-S0-oSe"/>
+                                        <outlet property="languageLabel" destination="NoC-DC-uCm" id="f6g-A3-cqZ"/>
+                                        <outlet property="titleLabel" destination="sSc-hB-66h" id="Ez0-0n-VgB"/>
+                                        <outlet property="yearLabel" destination="yt5-Zy-dkb" id="K5m-nh-aci"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="YCj-7n-HaH" id="w11-jc-jTr"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="149" y="89"/>
         </scene>

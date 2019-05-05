@@ -5,12 +5,26 @@ public final class SearchResultViewController: WKInterfaceController {
     private var didAppearSignal: (() -> Void)!
     private var willDisappearSignal: (() -> Void)!
     private let disposeBag = DisposeBag()
+    @IBOutlet private weak var table: WKInterfaceTable!
 
     public override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         let viewModel: ViewModel<SearchResultViewModelInput, SearchResultViewModelOutput>! = InterfaceControllerContext.wrapped(context: context)
 
-        let outputs: SearchResultViewModelOutput = (disposeBag)
+        let outputs: SearchResultViewModelOutput = (
+            disposeBag: disposeBag,
+            items: { [weak self] itemList in
+                self?.table.setNumberOfRows(itemList.count, withRowType: SearchResultRow.name)
+                itemList.enumerated().forEach { offset, item in
+                    (self?.table.rowController(at: offset) as? SearchResultRow).map {
+                        $0.titleLabel.setText(item.title)
+                        $0.yearLabel.setText(item.year)
+                        $0.languageLabel.setText(item.language)
+                        $0.fileLabel.setText(item.file)
+                    }
+                }
+            }
+        )
 
         let inputs = viewModel.bind(outputs)
 
@@ -29,4 +43,13 @@ public final class SearchResultViewController: WKInterfaceController {
         super.willDisappear()
         willDisappearSignal()
     }
+}
+
+public final class SearchResultRow: NSObject {
+    public static let name = "SearchResultRow"
+    @IBOutlet fileprivate weak var titleLabel: WKInterfaceLabel!
+    @IBOutlet fileprivate weak var yearLabel: WKInterfaceLabel!
+    @IBOutlet fileprivate weak var languageLabel: WKInterfaceLabel!
+    @IBOutlet fileprivate weak var scoreLabel: WKInterfaceLabel!
+    @IBOutlet fileprivate weak var fileLabel: WKInterfaceLabel!
 }
