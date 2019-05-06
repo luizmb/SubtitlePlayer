@@ -88,6 +88,10 @@
 		D52CB99122793706008F83EF /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58E5D4822792A0900E26F81 /* Common.framework */; };
 		D52CB9922279370B008F83EF /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58E5D5522792A1400E26F81 /* Common.framework */; };
 		D52CB99322793713008F83EF /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58E5D6222792A1F00E26F81 /* Common.framework */; };
+		D53CA2B02280EFE900AA9AB1 /* Scanner+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53CA2AF2280EFE900AA9AB1 /* Scanner+Swift.swift */; };
+		D53CA2B12280EFE900AA9AB1 /* Scanner+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53CA2AF2280EFE900AA9AB1 /* Scanner+Swift.swift */; };
+		D53CA2B22280EFE900AA9AB1 /* Scanner+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53CA2AF2280EFE900AA9AB1 /* Scanner+Swift.swift */; };
+		D53CA2B32280EFE900AA9AB1 /* Scanner+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53CA2AF2280EFE900AA9AB1 /* Scanner+Swift.swift */; };
 		D5794EFB2279331B0083357C /* SubtitlePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = D5794EF92279331B0083357C /* SubtitlePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5794F27227933B10083357C /* SubtitlePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = D5794EF92279331B0083357C /* SubtitlePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5794F28227933B10083357C /* SubtitlePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = D5794EF92279331B0083357C /* SubtitlePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -216,6 +220,7 @@
 		D52CB94C227936A0008F83EF /* UserAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAgent.swift; sourceTree = "<group>"; };
 		D52CB94E227936A0008F83EF /* OpenSubtitleEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSubtitleEndpoint.swift; sourceTree = "<group>"; };
 		D52CB94F227936A0008F83EF /* OpenSubtitlesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSubtitlesAPI.swift; sourceTree = "<group>"; };
+		D53CA2AF2280EFE900AA9AB1 /* Scanner+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scanner+Swift.swift"; sourceTree = "<group>"; };
 		D5794EF72279331A0083357C /* SubtitlePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SubtitlePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5794EF92279331B0083357C /* SubtitlePlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubtitlePlayer.h; sourceTree = "<group>"; };
 		D5794EFA2279331B0083357C /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
@@ -571,12 +576,13 @@
 			isa = PBXGroup;
 			children = (
 				D58E5D7622792B1100E26F81 /* Array+Extensions.swift */,
-				D58E5D7722792B1100E26F81 /* Reader.swift */,
 				D58E5D7822792B1100E26F81 /* FileManagerProtocol.swift */,
 				D58E5D7922792B1100E26F81 /* Operator.swift */,
-				D58E5D7A22792B1100E26F81 /* Result+Extensions.swift */,
-				D58E5D7B22792B1100E26F81 /* StringEncoding+Extensions.swift */,
 				D58E5D7C22792B1100E26F81 /* Optional+Extensions.swift */,
+				D58E5D7722792B1100E26F81 /* Reader.swift */,
+				D58E5D7A22792B1100E26F81 /* Result+Extensions.swift */,
+				D53CA2AF2280EFE900AA9AB1 /* Scanner+Swift.swift */,
+				D58E5D7B22792B1100E26F81 /* StringEncoding+Extensions.swift */,
 			);
 			name = Common;
 			path = Sources/Common;
@@ -1492,6 +1498,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D53CA2B02280EFE900AA9AB1 /* Scanner+Swift.swift in Sources */,
 				D58E5D8122792B1200E26F81 /* Reader.swift in Sources */,
 				D58E5D8922792B1200E26F81 /* Operator.swift in Sources */,
 				D58E5D9522792B1200E26F81 /* Optional+Extensions.swift in Sources */,
@@ -1506,6 +1513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D53CA2B12280EFE900AA9AB1 /* Scanner+Swift.swift in Sources */,
 				D58E5D8222792B1200E26F81 /* Reader.swift in Sources */,
 				D58E5D8A22792B1200E26F81 /* Operator.swift in Sources */,
 				D58E5D9622792B1200E26F81 /* Optional+Extensions.swift in Sources */,
@@ -1520,6 +1528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D53CA2B22280EFE900AA9AB1 /* Scanner+Swift.swift in Sources */,
 				D58E5D8322792B1200E26F81 /* Reader.swift in Sources */,
 				D58E5D8B22792B1200E26F81 /* Operator.swift in Sources */,
 				D58E5D9722792B1200E26F81 /* Optional+Extensions.swift in Sources */,
@@ -1534,6 +1543,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D53CA2B32280EFE900AA9AB1 /* Scanner+Swift.swift in Sources */,
 				D58E5D8422792B1200E26F81 /* Reader.swift in Sources */,
 				D58E5D8C22792B1200E26F81 /* Operator.swift in Sources */,
 				D58E5D9822792B1200E26F81 /* Optional+Extensions.swift in Sources */,

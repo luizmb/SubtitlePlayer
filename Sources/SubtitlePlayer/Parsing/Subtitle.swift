@@ -52,6 +52,32 @@ extension Subtitle {
 }
 
 private func extractLines(from string: String) -> [Subtitle.Line] {
+    let scanner = Scanner(string: string)
+    scanner.charactersToBeSkipped = .whitespacesAndNewlines
+    let timeCharacteres = CharacterSet(charactersIn: "0123456789,:.")
+
+    var currentNumber = 1
+    var accumulator = [Subtitle.Line]()
+    while let _ = scanner.scanString(str: "\(currentNumber)") {
+        guard
+            let startTime = scanner.scanCharacters(from: timeCharacteres).flatMap(Time.init),
+            let _ = scanner.scanString(str: "-->"),
+            let endTime = scanner.scanCharacters(from: timeCharacteres).flatMap(Time.init),
+            let text = scanner.scanUpToString(str: "\(currentNumber + 1)") else {
+            return accumulator
+        }
+
+        accumulator.append(.init(
+            sequence: currentNumber,
+            start: startTime,
+            end: endTime,
+            text: text.trimmingCharacters(in: .whitespacesAndNewlines)))
+        currentNumber += 1
+    }
+    return accumulator
+}
+
+private func extractLinesOld(from string: String) -> [Subtitle.Line] {
     enum ReadingState {
         case timeInterval(sequence: Int)
         case text(nextSequence: Int)

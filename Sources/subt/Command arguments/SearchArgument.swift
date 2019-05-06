@@ -28,7 +28,7 @@ enum SearchArgument {
         case "imdb":
             return components[safe: 1].flatMap(ImdbId.init).map(SearchArgument.imdb)
         case "language":
-            return components[safe: 1].flatMap(LanguageId.init).map(SearchArgument.language)
+            return components[safe: 1].flatMap(LanguageId.init(rawValue:)).map(SearchArgument.language)
         case "byte-size":
             return components[safe: 1].flatMap(Int.init).map(SearchArgument.byteSize)
         case "hash":
