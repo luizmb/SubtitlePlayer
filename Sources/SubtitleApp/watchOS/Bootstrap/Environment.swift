@@ -41,4 +41,14 @@ extension Reader {
         -> Reader<E2, A> where E == (First, Second, Third, Fourth) {
             return contramap { zip(zip(first, second, third, fourth)($0))() }
     }
+
+    public func contramap<E2, First, Second, Third, Fourth, Fifth>(
+        _ first: @escaping (E2) -> () -> First,
+        _ second: @escaping (E2) -> () -> Second,
+        _ third: @escaping (E2) -> () -> Third,
+        _ fourth: @escaping (E2) -> () -> Fourth,
+        _ fifth: @escaping (E2) -> () -> Fifth)
+        -> Reader<E2, A> where E == (First, Second, Third, Fourth, Fifth) {
+            return contramap { zip(zip(first, second, third, fourth, fifth)($0))() }
+    }
 }

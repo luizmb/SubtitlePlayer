@@ -5,7 +5,6 @@ public final class SearchResultViewController: WKInterfaceController {
     private var didAppearSignal: (() -> Void)!
     private var willDisappearSignal: (() -> Void)!
     private let disposeBag = DisposeBag()
-    private var itemSelectedSignal: ((InterfaceControllerProtocol, Int) -> Void)!
     @IBOutlet private weak var table: WKInterfaceTable!
 
     public override func awake(withContext context: Any?) {
@@ -16,12 +15,9 @@ public final class SearchResultViewController: WKInterfaceController {
             disposeBag: disposeBag,
             items: { [weak self] itemList in
                 self?.table.setNumberOfRows(itemList.count, withRowType: SearchResultRow.name)
-                itemList.enumerated().forEach { offset, item in
+                itemList.enumerated().forEach { offset, itemOutput in
                     (self?.table.rowController(at: offset) as? SearchResultRow).map {
-                        $0.titleLabel.setText(item.title)
-                        $0.yearLabel.setText(item.year)
-                        $0.languageLabel.setText(item.language)
-                        $0.fileLabel.setText(item.file)
+                        $0.bind(itemOutput)
                     }
                 }
             }
@@ -31,13 +27,14 @@ public final class SearchResultViewController: WKInterfaceController {
 
         self.didAppearSignal = inputs.didAppear
         self.willDisappearSignal = inputs.willDisappear
-        self.itemSelectedSignal = inputs.itemSelected
 
         inputs.awakeWithContext(context)
     }
 
     public override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
-        itemSelectedSignal(self, rowIndex)
+        guard let cell = (table.rowController(at: rowIndex) as? SearchResultRow),
+            let signal = cell.itemSelectedSignal else { return }
+        signal(cell, rowIndex)
     }
 
     public override func didAppear() {
@@ -53,8 +50,22 @@ public final class SearchResultViewController: WKInterfaceController {
 
 public final class SearchResultRow: NSObject {
     public static let name = "SearchResultRow"
-    @IBOutlet fileprivate weak var titleLabel: WKInterfaceLabel!
-    @IBOutlet fileprivate weak var yearLabel: WKInterfaceLabel!
-    @IBOutlet fileprivate weak var languageLabel: WKInterfaceLabel!
-    @IBOutlet fileprivate weak var fileLabel: WKInterfaceLabel!
+    @IBOutlet private weak var titleLabel: WKInterfaceLabel!
+    @IBOutlet private weak var yearLabel: WKInterfaceLabel!
+    @IBOutlet private weak var languageLabel: WKInterfaceLabel!
+    @IBOutlet private weak var fileLabel: WKInterfaceLabel!
+    fileprivate var itemSelectedSignal: ((NSObject, Int) -> Void)!
+
+    public func bind(_ model: (SearchResultItemViewModelOutput) -> SearchResultItemViewModelInput) {
+        let inputs = model((
+            title: titleLabel.setText,
+            year: yearLabel.setText,
+            language: languageLabel.setText,
+            file: fileLabel.setText,
+            isDownloaded: { [weak self] downloaded in self?.titleLabel.setTextColor(downloaded ? .green : .red) },
+            isDownloading: { [weak self] downloading in self?.fileLabel.setTextColor(downloading ? .green : .red) }
+        ))
+
+        itemSelectedSignal = inputs
+    }
 }

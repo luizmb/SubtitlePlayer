@@ -60,8 +60,8 @@ extension OpenSubtitlesManager {
 
             return search(params, at: index)
                 .inject(networkingDependencies)
-                    .flatMap { download(subtitle: $0).inject(networkingDependencies) }
-                    .flatMap { gzip.decompress($0).asSingle }
+                .flatMap { download(subtitle: $0).inject(networkingDependencies) }
+                .flatMap { gzip.decompress($0).asSingle }
         }
     }
 
