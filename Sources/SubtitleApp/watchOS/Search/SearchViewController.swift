@@ -9,11 +9,11 @@ public final class SearchViewController: WKInterfaceController {
 
     private var didAppearSignal: (() -> Void)!
     private var willDisappearSignal: (() -> Void)!
-    private var searchButtonTapSignal: ((InterfaceControllerProtocol) -> Void)!
-    private var queryButtonTapSignal: ((InterfaceControllerProtocol) -> Void)!
-    private var seasonButtonTapSignal: ((InterfaceControllerProtocol) -> Void)!
-    private var episodeButtonTapSignal: ((InterfaceControllerProtocol) -> Void)!
-    private var languageButtonTapSignal: ((InterfaceControllerProtocol) -> Void)!
+    private var searchButtonTapSignal: ((Controller) -> Void)!
+    private var queryButtonTapSignal: ((Controller) -> Void)!
+    private var seasonButtonTapSignal: ((Controller) -> Void)!
+    private var episodeButtonTapSignal: ((Controller) -> Void)!
+    private var languageButtonTapSignal: ((Controller) -> Void)!
 
     public override func awake(withContext context: Any?) {
         super.awake(withContext: context)

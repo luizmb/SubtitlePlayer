@@ -11,7 +11,7 @@ extension WKInterfaceController {
     }
 }
 
-public protocol InterfaceControllerProtocol {
+public protocol Controller {
     func pushController(withName name: String, context: Any?)
     func pop()
     func popToRootController()
@@ -24,4 +24,4 @@ public protocol InterfaceControllerProtocol {
     func dismissTextInputController()
 }
 
-extension WKInterfaceController: InterfaceControllerProtocol { }
+extension WKInterfaceController: Controller { }

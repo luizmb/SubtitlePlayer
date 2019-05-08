@@ -14,11 +14,11 @@ public typealias SearchViewModelInput = (
     awakeWithContext: (Any?) -> Void,
     didAppear: () -> Void,
     willDisappear: () -> Void,
-    searchButtonTap: (InterfaceControllerProtocol) -> Void,
-    queryButtonTap: (InterfaceControllerProtocol) -> Void,
-    seasonButtonTap: (InterfaceControllerProtocol) -> Void,
-    episodeButtonTap: (InterfaceControllerProtocol) -> Void,
-    languageButtonTap: (InterfaceControllerProtocol) -> Void
+    searchButtonTap: (Controller) -> Void,
+    queryButtonTap: (Controller) -> Void,
+    seasonButtonTap: (Controller) -> Void,
+    episodeButtonTap: (Controller) -> Void,
+    languageButtonTap: (Controller) -> Void
 )
 
 private let emptyString = "<empty>"
@@ -77,7 +77,7 @@ func searchButtonTap(router: Router,
                      queryFilter: @escaping () -> Filter<String>,
                      seasonFilter: @escaping () -> Filter<Int>,
                      episodeFilter: @escaping () -> Filter<Int>,
-                     languageFilter: @escaping () -> Filter<LanguageId>) -> (InterfaceControllerProtocol) -> Void {
+                     languageFilter: @escaping () -> Filter<LanguageId>) -> (Controller) -> Void {
     return { view in
         let searchParameters = SearchParameters(
             query: queryFilter().some,
@@ -91,7 +91,7 @@ func searchButtonTap(router: Router,
 func queryButtonTap(router: Router,
                     persistence: Persistence,
                     updateQueryFilter: @escaping (Filter<String>?) -> Void,
-                    updateView: @escaping () -> Void) -> (InterfaceControllerProtocol) -> Void {
+                    updateView: @escaping () -> Void) -> (Controller) -> Void {
     return { view in
         let querySearches = persistence.readQuerySearches() ?? []
         router.handle(.dictation(
@@ -113,7 +113,7 @@ func queryButtonTap(router: Router,
 func seasonButtonTap(router: Router,
                      seasonFilter: @escaping () -> Filter<Int>,
                      updateSeasonFilter: @escaping (Filter<Int>?) -> Void,
-                     updateView: @escaping () -> Void) -> (InterfaceControllerProtocol) -> Void {
+                     updateView: @escaping () -> Void) -> (Controller) -> Void {
     return { view in
         router.handle(
             .textPicker(
@@ -133,7 +133,7 @@ func seasonButtonTap(router: Router,
 func episodeButtonTap(router: Router,
                       episodeFilter: @escaping () -> Filter<Int>,
                       updateEpisodeFilter: @escaping (Filter<Int>?) -> Void,
-                      updateView: @escaping () -> Void) -> (InterfaceControllerProtocol) -> Void {
+                      updateView: @escaping () -> Void) -> (Controller) -> Void {
     return { view in
         router.handle(
             .textPicker(
@@ -154,7 +154,7 @@ func languageButtonTap(router: Router,
                        persistence: Persistence,
                        languageFilter: @escaping () -> Filter<LanguageId>,
                        updateLanguageFilter: @escaping (Filter<LanguageId>?) -> Void,
-                       updateView: @escaping () -> Void) -> (InterfaceControllerProtocol) -> Void {
+                       updateView: @escaping () -> Void) -> (Controller) -> Void {
     return { view in
         router.handle(
             .textPicker(
