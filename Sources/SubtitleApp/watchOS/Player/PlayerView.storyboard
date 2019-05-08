@@ -14,11 +14,18 @@
             <objects>
                 <controller identifier="PlayerView" id="cud-oQ-Pj5" customClass="PlayerViewController" customModule="SubtitleApp_watchOS_Extension">
                     <items>
-                        <label width="1" alignment="center" verticalAlignment="bottom" text="Subtitles" textAlignment="center" numberOfLines="0" id="vgb-Rs-ybL">
-                            <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="font" type="boldSystem" pointSize="14"/>
-                        </label>
+                        <group width="1" height="1" heightAdjustment="-8" alignment="left" layout="vertical" id="0Hx-8z-Gxy">
+                            <items>
+                                <label width="1" alignment="center" verticalAlignment="bottom" text="Subtitles" textAlignment="center" numberOfLines="0" id="vgb-Rs-ybL">
+                                    <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="boldSystem" pointSize="14"/>
+                                </label>
+                            </items>
+                        </group>
                     </items>
+                    <connections>
+                        <outlet property="subtitleLabel" destination="vgb-Rs-ybL" id="a04-aI-9sF"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="91" y="88"/>

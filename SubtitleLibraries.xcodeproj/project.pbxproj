@@ -160,6 +160,10 @@
 		D6F9EFD9228361DC00E67179 /* SubtitleStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9EFD7228361DC00E67179 /* SubtitleStorage.swift */; };
 		D6F9EFDA228361DC00E67179 /* SubtitleStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9EFD7228361DC00E67179 /* SubtitleStorage.swift */; };
 		D6F9EFDB228361DC00E67179 /* SubtitleStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9EFD7228361DC00E67179 /* SubtitleStorage.swift */; };
+		D6F9EFEA22837BEE00E67179 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9EFE922837BEE00E67179 /* String+Extensions.swift */; };
+		D6F9EFEB22837BEE00E67179 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9EFE922837BEE00E67179 /* String+Extensions.swift */; };
+		D6F9EFEC22837BEE00E67179 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9EFE922837BEE00E67179 /* String+Extensions.swift */; };
+		D6F9EFED22837BEE00E67179 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9EFE922837BEE00E67179 /* String+Extensions.swift */; };
 		E8E14B7738F2F15F82BD14F9 /* Pods_SubtitlePlayer_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4511EC5CC84CD7083C92E6B4 /* Pods_SubtitlePlayer_watchOS.framework */; };
 		EE5E12B75042411B592C54F4 /* Pods_Common_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F185A323E4DAE97A5FAAC7C /* Pods_Common_macOS.framework */; };
 		F76B81A315118B44B997E388 /* Pods_Common_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1A3A3454274D5934C0E7C6 /* Pods_Common_tvOS.framework */; };
@@ -257,6 +261,7 @@
 		D58E5D7B22792B1100E26F81 /* StringEncoding+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StringEncoding+Extensions.swift"; sourceTree = "<group>"; };
 		D58E5D7C22792B1100E26F81 /* Optional+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
 		D6F9EFD7228361DC00E67179 /* SubtitleStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleStorage.swift; sourceTree = "<group>"; };
+		D6F9EFE922837BEE00E67179 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		DD3C7FBD52C042651D5C2317 /* Pods-SubtitlePlayer watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubtitlePlayer watchOS.release.xcconfig"; path = "Target Support Files/Pods-SubtitlePlayer watchOS/Pods-SubtitlePlayer watchOS.release.xcconfig"; sourceTree = "<group>"; };
 		E6EF587368E1476A36C77AAF /* Pods-Common tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Common tvOS/Pods-Common tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		EC1A3A3454274D5934C0E7C6 /* Pods_Common_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -588,6 +593,7 @@
 				D58E5D7722792B1100E26F81 /* Reader.swift */,
 				D58E5D7A22792B1100E26F81 /* Result+Extensions.swift */,
 				D53CA2AF2280EFE900AA9AB1 /* Scanner+Swift.swift */,
+				D6F9EFE922837BEE00E67179 /* String+Extensions.swift */,
 				D58E5D7B22792B1100E26F81 /* StringEncoding+Extensions.swift */,
 			);
 			name = Common;
@@ -1520,6 +1526,7 @@
 				D58E5D8122792B1200E26F81 /* Reader.swift in Sources */,
 				D58E5D8922792B1200E26F81 /* Operator.swift in Sources */,
 				D58E5D9522792B1200E26F81 /* Optional+Extensions.swift in Sources */,
+				D6F9EFEA22837BEE00E67179 /* String+Extensions.swift in Sources */,
 				D58E5D7D22792B1200E26F81 /* Array+Extensions.swift in Sources */,
 				D58E5D8522792B1200E26F81 /* FileManagerProtocol.swift in Sources */,
 				D58E5D8D22792B1200E26F81 /* Result+Extensions.swift in Sources */,
@@ -1535,6 +1542,7 @@
 				D58E5D8222792B1200E26F81 /* Reader.swift in Sources */,
 				D58E5D8A22792B1200E26F81 /* Operator.swift in Sources */,
 				D58E5D9622792B1200E26F81 /* Optional+Extensions.swift in Sources */,
+				D6F9EFEB22837BEE00E67179 /* String+Extensions.swift in Sources */,
 				D58E5D7E22792B1200E26F81 /* Array+Extensions.swift in Sources */,
 				D58E5D8622792B1200E26F81 /* FileManagerProtocol.swift in Sources */,
 				D58E5D8E22792B1200E26F81 /* Result+Extensions.swift in Sources */,
@@ -1550,6 +1558,7 @@
 				D58E5D8322792B1200E26F81 /* Reader.swift in Sources */,
 				D58E5D8B22792B1200E26F81 /* Operator.swift in Sources */,
 				D58E5D9722792B1200E26F81 /* Optional+Extensions.swift in Sources */,
+				D6F9EFEC22837BEE00E67179 /* String+Extensions.swift in Sources */,
 				D58E5D7F22792B1200E26F81 /* Array+Extensions.swift in Sources */,
 				D58E5D8722792B1200E26F81 /* FileManagerProtocol.swift in Sources */,
 				D58E5D8F22792B1200E26F81 /* Result+Extensions.swift in Sources */,
@@ -1565,6 +1574,7 @@
 				D58E5D8422792B1200E26F81 /* Reader.swift in Sources */,
 				D58E5D8C22792B1200E26F81 /* Operator.swift in Sources */,
 				D58E5D9822792B1200E26F81 /* Optional+Extensions.swift in Sources */,
+				D6F9EFED22837BEE00E67179 /* String+Extensions.swift in Sources */,
 				D58E5D8022792B1200E26F81 /* Array+Extensions.swift in Sources */,
 				D58E5D8822792B1200E26F81 /* FileManagerProtocol.swift in Sources */,
 				D58E5D9022792B1200E26F81 /* Result+Extensions.swift in Sources */,

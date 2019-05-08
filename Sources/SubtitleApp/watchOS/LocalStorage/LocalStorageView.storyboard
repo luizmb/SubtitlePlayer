@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--Play-->
+        <scene sceneID="jMv-Xb-lN2">
+            <objects>
+                <controller identifier="LocalStorageView" title="Play" id="wbb-8g-oM9" customClass="LocalStorageViewController" customModule="SubtitleApp_watchOS_Extension">
+                    <items>
+                        <table alignment="left" id="T3B-FN-fIL">
+                            <items>
+                                <tableRow identifier="LocalStorageRow" id="3DN-SV-TXC" customClass="LocalStorageRow" customModule="SubtitleApp_watchOS_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="DRV-e9-C9Y">
+                                        <items>
+                                            <label alignment="left" text="Title" id="iKu-W5-WGW">
+                                                <fontDescription key="font" type="boldSystem" pointSize="12"/>
+                                            </label>
+                                            <group width="1" alignment="left" spacing="4" id="gVF-8d-dgc">
+                                                <items>
+                                                    <label alignment="left" text="Season" id="6N8-f9-fwu">
+                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="font" type="system" pointSize="11"/>
+                                                    </label>
+                                                    <label alignment="left" text="Language" id="U6c-Pj-6bj">
+                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="font" type="system" pointSize="11"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <label alignment="left" text="File" numberOfLines="0" id="D8s-Hv-9C2">
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="font" type="system" pointSize="10"/>
+                                            </label>
+                                        </items>
+                                        <edgeInsets key="margins" left="4" right="4" top="4" bottom="4"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="fileLabel" destination="D8s-Hv-9C2" id="MvG-Mk-Gb8"/>
+                                        <outlet property="languageLabel" destination="U6c-Pj-6bj" id="EeP-wa-B8T"/>
+                                        <outlet property="seasonLabel" destination="6N8-f9-fwu" id="Baa-SL-JnW"/>
+                                        <outlet property="titleLabel" destination="iKu-W5-WGW" id="Khs-Pk-Dul"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="T3B-FN-fIL" id="Kvm-90-s1J"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-104" y="84"/>
+        </scene>
+    </scenes>
+</document>

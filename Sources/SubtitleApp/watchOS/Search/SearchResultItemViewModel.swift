@@ -25,6 +25,7 @@ public typealias SearchResultItemViewModelOutput = (
 public func searchResultItemViewModel(item: SearchResponse, disposeBag: DisposeBag) -> Reader<(URLSessionProtocol, UserAgent, FileManagerProtocol, GzipProtocol.Type, Persistence), (SearchResultItemViewModelOutput) -> SearchResultItemViewModelInput> {
     let file = subtitleFile(for: item)
     return Reader { urlSession, userAgent, fileManager, gzip, persistence in
+        // TODO: Move to the table view model so reading won't happen every cell
         var downloadedSubtitlesList = persistence.readDownloadedSubtitles()
         let isDownloaded = { downloadedSubtitlesList.contains(where: { $0.id == file.id }) }
 
@@ -36,6 +37,7 @@ public func searchResultItemViewModel(item: SearchResponse, disposeBag: DisposeB
             output.background(isDownloaded() ? .local : .remote)
 
             return ({ cell, index in
+                // TODO: guard against isDownloading too
                 guard !isDownloaded() else { return }
                 output.background(.downloading)
                 let folderPath = SubtitleStorage.folderPath(for: file).inject(fileManager)
@@ -67,10 +69,11 @@ public func searchResultItemViewModel(item: SearchResponse, disposeBag: DisposeB
     }
 }
 
-func subtitleFile(for searchResponse: SearchResponse) -> SubtitleFile {
+private func subtitleFile(for searchResponse: SearchResponse) -> SubtitleFile {
     return .init(id: searchResponse.idSubtitleFile,
                  filename: searchResponse.subFileName,
                  title: searchResponse.movieName,
+                 language: searchResponse.subLanguageID.rawValue,
                  season: searchResponse.seriesSeason,
                  episode: searchResponse.seriesEpisode)
 }

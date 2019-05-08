@@ -36,7 +36,7 @@ public func searchResultViewModel(router: Router, searchParameters: SearchParame
     }
 }
 
-func awakeWithContext(request: Single<[SearchResponse]>,
+private func awakeWithContext(request: Single<[SearchResponse]>,
                       handleSuccess: @escaping ([SearchResponse]) -> Void,
                       handleError: @escaping (Error) -> Void,
                       disposeBag: DisposeBag) -> (Any?) -> Void {
@@ -48,7 +48,7 @@ func awakeWithContext(request: Single<[SearchResponse]>,
     }
 }
 
-func handleResponse(itemsUpdated: @escaping ([(SearchResultItemViewModelOutput) -> SearchResultItemViewModelInput]) -> Void,
+private func handleResponse(itemsUpdated: @escaping ([(SearchResultItemViewModelOutput) -> SearchResultItemViewModelInput]) -> Void,
                     disposeBag: DisposeBag)
     -> Reader<(URLSessionProtocol, UserAgent, FileManagerProtocol, GzipProtocol.Type, Persistence), ([SearchResponse]) -> Void> {
     return Reader { deps in
@@ -58,7 +58,7 @@ func handleResponse(itemsUpdated: @escaping ([(SearchResultItemViewModelOutput) 
     }
 }
 
-func handleError(_ error: Error) {
+private func handleError(_ error: Error) {
     print("Search error")
     print(error)
 }

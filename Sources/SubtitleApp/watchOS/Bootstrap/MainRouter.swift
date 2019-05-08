@@ -6,14 +6,14 @@ import WatchKit
 public final class MainRouter {
     public static func start() {
         let router = MainRouter()
+        let localStorageViewContext =
+            ViewModel(bind: localStorageViewModel(router: router).contramap(^\.fileManager, ^\.persistence).inject(Environment.current)).asContext
         let searchViewContext =
             ViewModel(bind: searchViewModel(router: router).contramap(^\.persistence).inject(Environment.current)).asContext
-        let playerViewContext =
-            ViewModel(bind: playerViewModel(router: router)).asContext
 
         WKInterfaceController.reloadRootPageControllers(
-            withNames: [SearchViewController.name, PlayerViewController.name],
-            contexts: [searchViewContext, playerViewContext],
+            withNames: [LocalStorageViewController.name, SearchViewController.name],
+            contexts: [localStorageViewContext, searchViewContext],
             orientation: .horizontal,
             pageIndex: 0
         )
@@ -38,6 +38,9 @@ extension MainRouter: Router {
             parent.presentTextInputController(withSuggestions: suggestions, allowedInputMode: .plain) { text in
                 completion((text?.first as? String).map { $0 == empty ? Filter.empty : .some($0) })
             }
+        case let .play(parent, subtitle):
+            let playerViewContext = ViewModel(bind: playerViewModel(router: self, subtitle: subtitle)).asContext
+            parent.presentController(withName: PlayerViewController.name, context: playerViewContext)
         }
     }
 }

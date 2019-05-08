@@ -73,7 +73,7 @@ public func searchViewModel(router: Router) -> Reader<Persistence, (SearchViewMo
     }
 }
 
-func searchButtonTap(router: Router,
+private func searchButtonTap(router: Router,
                      queryFilter: @escaping () -> Filter<String>,
                      seasonFilter: @escaping () -> Filter<Int>,
                      episodeFilter: @escaping () -> Filter<Int>,
@@ -88,7 +88,7 @@ func searchButtonTap(router: Router,
     }
 }
 
-func queryButtonTap(router: Router,
+private func queryButtonTap(router: Router,
                     persistence: Persistence,
                     updateQueryFilter: @escaping (Filter<String>?) -> Void,
                     updateView: @escaping () -> Void) -> (Controller) -> Void {
@@ -110,7 +110,7 @@ func queryButtonTap(router: Router,
     }
 }
 
-func seasonButtonTap(router: Router,
+private func seasonButtonTap(router: Router,
                      seasonFilter: @escaping () -> Filter<Int>,
                      updateSeasonFilter: @escaping (Filter<Int>?) -> Void,
                      updateView: @escaping () -> Void) -> (Controller) -> Void {
@@ -130,7 +130,7 @@ func seasonButtonTap(router: Router,
     }
 }
 
-func episodeButtonTap(router: Router,
+private func episodeButtonTap(router: Router,
                       episodeFilter: @escaping () -> Filter<Int>,
                       updateEpisodeFilter: @escaping (Filter<Int>?) -> Void,
                       updateView: @escaping () -> Void) -> (Controller) -> Void {
@@ -150,7 +150,7 @@ func episodeButtonTap(router: Router,
     }
 }
 
-func languageButtonTap(router: Router,
+private func languageButtonTap(router: Router,
                        persistence: Persistence,
                        languageFilter: @escaping () -> Filter<LanguageId>,
                        updateLanguageFilter: @escaping (Filter<LanguageId>?) -> Void,

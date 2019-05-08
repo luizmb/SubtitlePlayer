@@ -1,6 +1,7 @@
 import WatchKit
 
 public final class PlayerViewController: WKInterfaceController {
+    @IBOutlet weak var subtitleLabel: WKInterfaceLabel!
     private var didAppearSignal: (() -> Void)!
     private var willDisappearSignal: (() -> Void)!
 
@@ -8,7 +9,10 @@ public final class PlayerViewController: WKInterfaceController {
         super.awake(withContext: context)
         let viewModel: ViewModel<PlayerViewModelInput, PlayerViewModelOutput>! = InterfaceControllerContext.wrapped(context: context)
 
-        let outputs: PlayerViewModelOutput = ()
+        let outputs: PlayerViewModelOutput = (
+            subtitle: subtitleLabel.setText,
+            playing: { _ in }
+        )
 
         let inputs = viewModel.bind(outputs)
 
@@ -28,34 +32,3 @@ public final class PlayerViewController: WKInterfaceController {
         willDisappearSignal()
     }
 }
-
-/*
-import Common
-import OpenSubtitlesDownloader
-import RxSwift
-import SubtitlePlayer
-import WatchKit
-
-class InterfaceController: WKInterfaceController {
-    @IBOutlet weak var subtitleLabel: WKInterfaceLabel!
-    var bag = DisposeBag()
-
-    override func didAppear() {
-        OpenSubtitlesManager
-            .searchDownloadUnzip(.init(query: "it crowd", episode: 3, season: 4, language: .english), at: 0)
-            .contramap(^\.urlSession, ^\.openSubtitlesUserAgent, ^\.fileManager, ^\.gzip)
-            .map {
-                $0.asObservable().flatMap { data in
-                    SubtitlePlayer
-                        .play(data: data, encoding: .utf8, from: 1)
-                }
-            }.inject(Environment.current)
-            .subscribe(onNext: { [weak self] (lines: [Subtitle.Line]) in
-                DispatchQueue.main.async {
-                    self?.subtitleLabel.setText(lines.map(^\.text).joined(separator: "\n"))
-                }
-            })
-            .disposed(by: bag)
-    }
-}
-*/
