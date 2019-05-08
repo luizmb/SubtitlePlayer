@@ -21,11 +21,13 @@ public typealias SearchViewModelInput = (
     languageButtonTap: (InterfaceControllerProtocol) -> Void
 )
 
+private let emptyString = "<empty>"
+private let numberPickerSuggestions = [emptyString] + (1...99).map(String.init)
+private let languagePickerSuggestions = LanguageId.allCases.map(^\.description).sorted()
+
 public func searchViewModel(router: Router) -> Reader<Persistence, (SearchViewModelOutput) -> SearchViewModelInput> {
     return Reader { persistence in
         { output in
-            let empty = "<empty>"
-            var querySearches = persistence.readQuerySearches() ?? []
             var queryFilter: Filter<String> = .empty
             var seasonFilter: Filter<Int> = .empty
             var episodeFilter: Filter<Int> = .empty
@@ -33,79 +35,142 @@ public func searchViewModel(router: Router) -> Reader<Persistence, (SearchViewMo
                 persistence.readLastLanguage().flatMap(LanguageId.init(rawValue:)).map(Filter.some) ?? .empty
 
             let updateView = {
-                output.queryLabelString(queryFilter.value(orEmpty: empty))
-                output.seasonLabelString(seasonFilter.map(String.init).value(orEmpty: empty))
-                output.episodeLabelString(episodeFilter.map(String.init).value(orEmpty: empty))
+                output.queryLabelString(queryFilter.value(orEmpty: emptyString))
+                output.seasonLabelString(seasonFilter.map(String.init).value(orEmpty: emptyString))
+                output.episodeLabelString(episodeFilter.map(String.init).value(orEmpty: emptyString))
                 output.languageLabelString(languageFilter.map(^\.description).value(orEmpty: LanguageId.all.description))
                 output.searchButtonEnabled(queryFilter.isSome)
             }
 
             return (
                 awakeWithContext: { _ in },
-                didAppear: { updateView() },
+                didAppear: updateView,
                 willDisappear: { },
-                searchButtonTap: { view in
-                    let searchParameters = SearchParameters(
-                        query: queryFilter.some,
-                        episode: episodeFilter.some,
-                        season: seasonFilter.some,
-                        language: languageFilter.some ?? .all)
-                    router.handle(.startSearch(parent: view, searchParameters: searchParameters))
-                },
-                queryButtonTap: { view in
-                    router.handle(.dictation(parent: view,
-                                             empty: empty,
-                                             suggestions: [empty] + querySearches,
-                                             completion: { choice in
-                        queryFilter = choice ?? queryFilter
-                        choice?.some.map {
-                            if !querySearches.contains($0) {
-                                querySearches.insert($0, at: 0)
-                                persistence.saveQuerySearches(querySearches)
-                            }
-                        }
-                        updateView()
-                    }))
-                },
-                seasonButtonTap: { view in
-                    let suggestions = [empty] + (1...99).map(String.init)
-                    router.handle(.textPicker(parent: view,
-                                              empty: empty,
-                                              suggestions: suggestions,
-                                              selectedIndex: seasonFilter.map(String.init).some.flatMap(suggestions.firstIndex(of:)),
-                                              completion: { choice in
-                        seasonFilter = choice?.some.flatMap(Int.init).map(Filter.some) ?? seasonFilter
-                        updateView()
-                    }))
-                },
-                episodeButtonTap: { view in
-                    let suggestions = [empty] + (1...99).map(String.init)
-                    router.handle(.textPicker(parent: view,
-                                              empty: empty,
-                                              suggestions: suggestions,
-                                              selectedIndex: episodeFilter.map(String.init).some.flatMap(suggestions.firstIndex(of:)),
-                                              completion: { choice in
-                        episodeFilter = choice?.some.flatMap(Int.init).map(Filter.some) ?? episodeFilter
-                        updateView()
-                    }))
-                },
-                languageButtonTap: { view in
-                    let suggestions = LanguageId.allCases.map(^\.description).sorted()
-
-                    router.handle(.textPicker(parent: view,
-                                              empty: empty,
-                                              suggestions: suggestions,
-                                              selectedIndex: languageFilter.some.map(^\.description).flatMap(suggestions.firstIndex(of:)),
-                                              completion: { choice in
-                        let chosenLanguage = choice?.some.flatMap(LanguageId.init(description:))
-                        chosenLanguage.map {
-                            persistence.saveLastLanguage($0.rawValue)
-                        }
-                        languageFilter = chosenLanguage.map(Filter.some) ?? languageFilter
-                        updateView()
-                    }))
-                }
+                searchButtonTap: searchButtonTap(router: router,
+                                                 queryFilter: { queryFilter },
+                                                 seasonFilter: { seasonFilter },
+                                                 episodeFilter: { episodeFilter },
+                                                 languageFilter: { languageFilter }),
+                queryButtonTap: queryButtonTap(router: router,
+                                               persistence: persistence,
+                                               updateQueryFilter: { queryFilter = $0 ?? queryFilter },
+                                               updateView: updateView),
+                seasonButtonTap: seasonButtonTap(router: router,
+                                                 seasonFilter: { seasonFilter },
+                                                 updateSeasonFilter: { seasonFilter = $0 ?? seasonFilter },
+                                                 updateView: updateView),
+                episodeButtonTap: episodeButtonTap(router: router,
+                                                   episodeFilter: { episodeFilter },
+                                                   updateEpisodeFilter: { episodeFilter = $0 ?? episodeFilter },
+                                                   updateView: updateView),
+                languageButtonTap: languageButtonTap(router: router,
+                                                     persistence: persistence,
+                                                     languageFilter: { languageFilter },
+                                                     updateLanguageFilter: { languageFilter = $0 ?? languageFilter },
+                                                     updateView: updateView)
             )
         }
+    }
+}
+
+func searchButtonTap(router: Router,
+                     queryFilter: @escaping () -> Filter<String>,
+                     seasonFilter: @escaping () -> Filter<Int>,
+                     episodeFilter: @escaping () -> Filter<Int>,
+                     languageFilter: @escaping () -> Filter<LanguageId>) -> (InterfaceControllerProtocol) -> Void {
+    return { view in
+        let searchParameters = SearchParameters(
+            query: queryFilter().some,
+            episode: episodeFilter().some,
+            season: seasonFilter().some,
+            language: languageFilter().some ?? .all)
+        router.handle(.startSearch(parent: view, searchParameters: searchParameters))
+    }
+}
+
+func queryButtonTap(router: Router,
+                    persistence: Persistence,
+                    updateQueryFilter: @escaping (Filter<String>?) -> Void,
+                    updateView: @escaping () -> Void) -> (InterfaceControllerProtocol) -> Void {
+    return { view in
+        let querySearches = persistence.readQuerySearches() ?? []
+        router.handle(.dictation(
+            parent: view,
+            empty: emptyString,
+            suggestions: [emptyString] + querySearches,
+            completion: { choice in
+                updateQueryFilter(choice)
+                choice?.some.map {
+                    if !querySearches.contains($0) {
+                        persistence.saveQuerySearches([$0] + querySearches)
+                    }
+                }
+                updateView()
+        }))
+    }
+}
+
+func seasonButtonTap(router: Router,
+                     seasonFilter: @escaping () -> Filter<Int>,
+                     updateSeasonFilter: @escaping (Filter<Int>?) -> Void,
+                     updateView: @escaping () -> Void) -> (InterfaceControllerProtocol) -> Void {
+    return { view in
+        router.handle(
+            .textPicker(
+                parent: view,
+                empty: emptyString,
+                suggestions: numberPickerSuggestions,
+                selectedIndex: seasonFilter().map(String.init).some.flatMap(numberPickerSuggestions.firstIndex(of:)),
+                completion: { choice in
+                    updateSeasonFilter(choice?.some.flatMap(Int.init).map(Filter.some))
+                    updateView()
+                }
+            )
+        )
+    }
+}
+
+func episodeButtonTap(router: Router,
+                      episodeFilter: @escaping () -> Filter<Int>,
+                      updateEpisodeFilter: @escaping (Filter<Int>?) -> Void,
+                      updateView: @escaping () -> Void) -> (InterfaceControllerProtocol) -> Void {
+    return { view in
+        router.handle(
+            .textPicker(
+                parent: view,
+                empty: emptyString,
+                suggestions: numberPickerSuggestions,
+                selectedIndex: episodeFilter().map(String.init).some.flatMap(numberPickerSuggestions.firstIndex(of:)),
+                completion: { choice in
+                    updateEpisodeFilter(choice?.some.flatMap(Int.init).map(Filter.some))
+                    updateView()
+                }
+            )
+        )
+    }
+}
+
+func languageButtonTap(router: Router,
+                       persistence: Persistence,
+                       languageFilter: @escaping () -> Filter<LanguageId>,
+                       updateLanguageFilter: @escaping (Filter<LanguageId>?) -> Void,
+                       updateView: @escaping () -> Void) -> (InterfaceControllerProtocol) -> Void {
+    return { view in
+        router.handle(
+            .textPicker(
+                parent: view,
+                empty: emptyString,
+                suggestions: languagePickerSuggestions,
+                selectedIndex: languageFilter().some.map(^\.description).flatMap(languagePickerSuggestions.firstIndex(of:)),
+                completion: { choice in
+                    let chosenLanguage = choice?.some.flatMap(LanguageId.init(description:))
+                    chosenLanguage.map {
+                        persistence.saveLastLanguage($0.rawValue)
+                    }
+                    updateLanguageFilter(chosenLanguage.map(Filter.some))
+                    updateView()
+                }
+            )
+        )
     }
 }
