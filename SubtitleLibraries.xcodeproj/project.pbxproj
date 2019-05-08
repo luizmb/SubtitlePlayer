@@ -156,6 +156,10 @@
 		D58E5D9622792B1200E26F81 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58E5D7C22792B1100E26F81 /* Optional+Extensions.swift */; };
 		D58E5D9722792B1200E26F81 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58E5D7C22792B1100E26F81 /* Optional+Extensions.swift */; };
 		D58E5D9822792B1200E26F81 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58E5D7C22792B1100E26F81 /* Optional+Extensions.swift */; };
+		D6F9EFD8228361DC00E67179 /* SubtitleStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9EFD7228361DC00E67179 /* SubtitleStorage.swift */; };
+		D6F9EFD9228361DC00E67179 /* SubtitleStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9EFD7228361DC00E67179 /* SubtitleStorage.swift */; };
+		D6F9EFDA228361DC00E67179 /* SubtitleStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9EFD7228361DC00E67179 /* SubtitleStorage.swift */; };
+		D6F9EFDB228361DC00E67179 /* SubtitleStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9EFD7228361DC00E67179 /* SubtitleStorage.swift */; };
 		E8E14B7738F2F15F82BD14F9 /* Pods_SubtitlePlayer_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4511EC5CC84CD7083C92E6B4 /* Pods_SubtitlePlayer_watchOS.framework */; };
 		EE5E12B75042411B592C54F4 /* Pods_Common_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F185A323E4DAE97A5FAAC7C /* Pods_Common_macOS.framework */; };
 		F76B81A315118B44B997E388 /* Pods_Common_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1A3A3454274D5934C0E7C6 /* Pods_Common_tvOS.framework */; };
@@ -252,6 +256,7 @@
 		D58E5D7A22792B1100E26F81 /* Result+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Result+Extensions.swift"; sourceTree = "<group>"; };
 		D58E5D7B22792B1100E26F81 /* StringEncoding+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StringEncoding+Extensions.swift"; sourceTree = "<group>"; };
 		D58E5D7C22792B1100E26F81 /* Optional+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
+		D6F9EFD7228361DC00E67179 /* SubtitleStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleStorage.swift; sourceTree = "<group>"; };
 		DD3C7FBD52C042651D5C2317 /* Pods-SubtitlePlayer watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubtitlePlayer watchOS.release.xcconfig"; path = "Target Support Files/Pods-SubtitlePlayer watchOS/Pods-SubtitlePlayer watchOS.release.xcconfig"; sourceTree = "<group>"; };
 		E6EF587368E1476A36C77AAF /* Pods-Common tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Common tvOS/Pods-Common tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		EC1A3A3454274D5934C0E7C6 /* Pods_Common_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -524,6 +529,7 @@
 			children = (
 				D5794F2B227934300083357C /* Parsing */,
 				D5794F2F227934300083357C /* Player */,
+				D6F9EFD6228361AA00E67179 /* Storage */,
 			);
 			name = SubtitlePlayer;
 			path = Sources/SubtitlePlayer;
@@ -586,6 +592,14 @@
 			);
 			name = Common;
 			path = Sources/Common;
+			sourceTree = "<group>";
+		};
+		D6F9EFD6228361AA00E67179 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				D6F9EFD7228361DC00E67179 /* SubtitleStorage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1450,6 +1464,7 @@
 				D5794F3F227934300083357C /* IndexOutOfBoundsError.swift in Sources */,
 				D5794F47227934300083357C /* SubtitleEvent.swift in Sources */,
 				D5794F3B227934300083357C /* Time.swift in Sources */,
+				D6F9EFD8228361DC00E67179 /* SubtitleStorage.swift in Sources */,
 				D5794F33227934300083357C /* Subtitle.swift in Sources */,
 				D5794F37227934300083357C /* SubtitleDecodingError.swift in Sources */,
 			);
@@ -1463,6 +1478,7 @@
 				D5794F40227934300083357C /* IndexOutOfBoundsError.swift in Sources */,
 				D5794F48227934300083357C /* SubtitleEvent.swift in Sources */,
 				D5794F3C227934300083357C /* Time.swift in Sources */,
+				D6F9EFD9228361DC00E67179 /* SubtitleStorage.swift in Sources */,
 				D5794F34227934300083357C /* Subtitle.swift in Sources */,
 				D5794F38227934300083357C /* SubtitleDecodingError.swift in Sources */,
 			);
@@ -1476,6 +1492,7 @@
 				D5794F41227934300083357C /* IndexOutOfBoundsError.swift in Sources */,
 				D5794F49227934300083357C /* SubtitleEvent.swift in Sources */,
 				D5794F3D227934300083357C /* Time.swift in Sources */,
+				D6F9EFDA228361DC00E67179 /* SubtitleStorage.swift in Sources */,
 				D5794F35227934300083357C /* Subtitle.swift in Sources */,
 				D5794F39227934300083357C /* SubtitleDecodingError.swift in Sources */,
 			);
@@ -1489,6 +1506,7 @@
 				D5794F42227934300083357C /* IndexOutOfBoundsError.swift in Sources */,
 				D5794F4A227934300083357C /* SubtitleEvent.swift in Sources */,
 				D5794F3E227934300083357C /* Time.swift in Sources */,
+				D6F9EFDB228361DC00E67179 /* SubtitleStorage.swift in Sources */,
 				D5794F36227934300083357C /* Subtitle.swift in Sources */,
 				D5794F3A227934300083357C /* SubtitleDecodingError.swift in Sources */,
 			);

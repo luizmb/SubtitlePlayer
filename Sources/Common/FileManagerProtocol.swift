@@ -14,6 +14,7 @@ public protocol FileManagerProtocol {
     func linkItem(at srcURL: URL, to dstURL: URL) throws
     func removeItem(at URL: URL) throws
     func createDirectory(at url: URL, withIntermediateDirectories createIntermediates: Bool, attributes: [FileAttributeKey : Any]?) throws
+    func createDirectory(atPath path: String, withIntermediateDirectories createIntermediates: Bool, attributes: [FileAttributeKey : Any]?) throws
     func createFile(atPath path: String, contents data: Data?, attributes attr: [FileAttributeKey : Any]?) -> Bool
 }
 
@@ -22,9 +23,9 @@ public enum FileManagerError: Error {
     case fileNotFound(fileName: String, parent: URL, childrenFoundOnParent: [URL])
     case specialFolderNotFound(FileManager.SearchPathDirectory)
     case groupFolderNotFound(groupName: String)
-    case folderNotFound(folderName: String, parent: URL?, childrenFoundOnParent: [URL])
+    case folderNotFound(folderName: String)
     case fileCopyHasFailed(sourceFile: URL, destinationFile: URL, error: Error)
-    case createFolderHasFailed(folder: URL, error: Error)
+    case createFolderHasFailed(folder: String, error: Error)
     case fileAlreadyExists(path: String)
     case fileCreationHasFailed(path: String)
 }
@@ -55,7 +56,7 @@ extension FileManagerProtocol {
         if fileExists(atPath: folderUrl.path, isDirectory: &isDirectory), isDirectory.boolValue {
             return .success(folderUrl)
         } else {
-            return .failure(.folderNotFound(folderName: folderName, parent: parentFolder, childrenFoundOnParent: contents(of: parentFolder).value ?? []))
+            return .failure(.folderNotFound(folderName: folderName))
         }
     }
 
@@ -77,20 +78,18 @@ extension FileManagerProtocol {
         })
     }
 
-    public func ensureFolderExists(_ folder: URL, createIfNeeded: Bool = false) -> Result<URL, FileManagerError> {
+    public func ensureFolderExists(_ folder: String, createIfNeeded: Bool = false) -> Result<String, FileManagerError> {
         var isDirectory: ObjCBool = true
-        if fileExists(atPath: folder.path, isDirectory: &isDirectory), isDirectory.boolValue {
+        if fileExists(atPath: folder, isDirectory: &isDirectory), isDirectory.boolValue {
             return .success(folder)
         }
 
         if !createIfNeeded {
-            return .failure(FileManagerError.folderNotFound(folderName: folder.lastPathComponent,
-                                                            parent: folder.deletingLastPathComponent(),
-                                                            childrenFoundOnParent: contents(of: folder.deletingLastPathComponent()).value ?? []))
+            return .failure(FileManagerError.folderNotFound(folderName: folder))
         }
 
         return Result(catching: {
-            try createDirectory(at: folder, withIntermediateDirectories: true, attributes: nil)
+            try createDirectory(atPath: folder, withIntermediateDirectories: true, attributes: nil)
             return folder
         }).biMap(success: identity, failure: {
             FileManagerError.createFolderHasFailed(folder: folder, error: $0)

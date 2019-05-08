@@ -14,8 +14,16 @@ public final class SearchResultRow: NSObject {
             year: yearLabel.setText,
             language: languageLabel.setText,
             file: fileLabel.setText,
-            isDownloaded: { [weak self] downloaded in self?.titleLabel.setTextColor(downloaded ? .green : .red) },
-            isDownloading: { [weak self] downloading in self?.fileLabel.setTextColor(downloading ? .green : .red) }
+            background: { [weak self] state in
+                switch state {
+                case .remote:
+                    self?.titleLabel.setTextColor(.gray)
+                case .downloading:
+                    self?.titleLabel.setTextColor(.yellow)
+                case .local:
+                    self?.titleLabel.setTextColor(.green)
+                }
+            }
         ))
 
         itemSelectedSignal = inputs
