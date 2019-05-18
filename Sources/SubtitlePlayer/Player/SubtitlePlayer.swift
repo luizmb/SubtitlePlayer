@@ -54,7 +54,7 @@ extension Observable where Element == SubtitleEvent {
         return scan([Subtitle.Line](), accumulator: { (accumulator, event) -> [Subtitle.Line] in
             switch event {
             case let .entry(_, line): return accumulator + [line]
-            case let .exit(_, line): return accumulator.filter { $0 != line }
+            case let .exit(_, line): return accumulator.filter { $0.sequence != line.sequence }
             }
         })
     }
@@ -65,9 +65,11 @@ private func playEvents(from sequence: Int, lines: [Subtitle.Line]) -> Observabl
         .fold(
             ifSuccess: {
                 Observable<SubtitleEvent>
-                    .from($0, scheduler: MainScheduler.instance)
+                    .from($0)
                     .flatMap { event in
-                        Observable<SubtitleEvent>.just(event).delay(event.offset, scheduler: MainScheduler.instance)
+                        Observable<SubtitleEvent>
+                            .just(event)
+                            .delay(event.offset, scheduler: MainScheduler.instance)
                     }
             },
             ifFailure: Observable<SubtitleEvent>.error
@@ -75,18 +77,18 @@ private func playEvents(from sequence: Int, lines: [Subtitle.Line]) -> Observabl
 }
 
 private func getEvents(from sequence: Int, lines: [Subtitle.Line]) -> Result<[SubtitleEvent], Error> {
-    guard let referenceStart = lines.first(where: { $0.sequence == sequence })?.start.totalSeconds else {
+    guard let referenceStart = lines.first(where: { $0.sequence == sequence })?.start.totalMilliseconds else {
         return .failure(SequenceOutOfBoundsError(sequenceNumber: sequence))
     }
 
     return .success (
         lines
             .lazy
-            .filter { line in line.start.totalSeconds - referenceStart >= 0 }
+            .filter { line in line.start.totalMilliseconds - referenceStart >= 0 }
             .reduce([SubtitleEvent]()) { events, line in
                 events + [
-                    SubtitleEvent.entry(offset: .seconds(Int(line.start.totalSeconds - referenceStart)), line: line),
-                    SubtitleEvent.exit(offset: .seconds(Int(line.end.totalSeconds - referenceStart)), line: line),
+                    SubtitleEvent.entry(offset: .milliseconds(Int(line.start.totalMilliseconds - referenceStart)), line: line),
+                    SubtitleEvent.exit(offset: .milliseconds(Int(line.end.totalMilliseconds - referenceStart)), line: line),
                 ]
             }
     )
