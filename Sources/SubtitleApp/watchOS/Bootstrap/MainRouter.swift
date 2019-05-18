@@ -10,10 +10,12 @@ public final class MainRouter {
             ViewModel(bind: localStorageViewModel(router: router).contramap(^\.fileManager, ^\.persistence).inject(Environment.current)).asContext
         let searchViewContext =
             ViewModel(bind: searchViewModel(router: router).contramap(^\.persistence).inject(Environment.current)).asContext
+        let settingsViewContext =
+            ViewModel(bind: settingsViewModel(router: router).contramap(^\.persistence).inject(Environment.current)).asContext
 
         WKInterfaceController.reloadRootPageControllers(
-            withNames: [LocalStorageViewController.name, SearchViewController.name],
-            contexts: [localStorageViewContext, searchViewContext],
+            withNames: [LocalStorageViewController.name, SearchViewController.name, SettingsViewController.name],
+            contexts: [localStorageViewContext, searchViewContext, settingsViewContext],
             orientation: .horizontal,
             pageIndex: 0
         )
