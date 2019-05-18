@@ -9,10 +9,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
     <scenes>
-        <!--Play-->
+        <!--Subtitles-->
         <scene sceneID="jMv-Xb-lN2">
             <objects>
-                <controller identifier="LocalStorageView" title="Play" id="wbb-8g-oM9" customClass="LocalStorageViewController" customModule="SubtitleApp_watchOS_Extension">
+                <controller identifier="LocalStorageView" title="Subtitles" id="wbb-8g-oM9" customClass="LocalStorageViewController" customModule="SubtitleApp_watchOS_Extension">
                     <items>
                         <table alignment="left" id="T3B-FN-fIL">
                             <items>
