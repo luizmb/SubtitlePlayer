@@ -33,7 +33,7 @@ public func localStorageViewModel(router: Router)
                         let filePath = SubtitleStorage.filePath(for: subtitle).inject(fileManager)
                         Subtitle
                             .from(filePath: filePath,
-                                  encoding: .isoLatin1)
+                                  encoding: persistence.readEncoding() ?? .utf8)
                             .inject(fileManager)
                             .analysis(
                                 ifSuccess: { router.handle(.play(parent: controller, subtitle: $0)) },
