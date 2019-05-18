@@ -6,7 +6,7 @@ import SubtitlePlayer
 
 public typealias LocalStorageItemViewModelInput = (
     itemSelected: (NSObject, Int) -> Void,
-    _: Void
+    itemDeleted: (NSObject, Int) -> Void
 )
 
 public typealias LocalStorageItemViewModelOutput = (
@@ -16,7 +16,7 @@ public typealias LocalStorageItemViewModelOutput = (
     file: (String) -> Void
 )
 
-public func localStorageItemViewModel(item: SubtitleFile, play: @escaping (SubtitleFile) -> Void) -> (LocalStorageItemViewModelOutput) -> LocalStorageItemViewModelInput {
+public func localStorageItemViewModel(item: SubtitleFile, play: @escaping (SubtitleFile) -> Void, delete: @escaping (SubtitleFile) -> Void) -> (LocalStorageItemViewModelOutput) -> LocalStorageItemViewModelInput {
     return { output in
         output.title(item.title)
         output.season(item.formattedSeriesString ?? "")
@@ -27,7 +27,9 @@ public func localStorageItemViewModel(item: SubtitleFile, play: @escaping (Subti
             itemSelected: { _, _ in
                 play(item)
             },
-            _: ()
+            itemDeleted: { _, _ in
+                delete(item)
+            }
         )
     }
 }

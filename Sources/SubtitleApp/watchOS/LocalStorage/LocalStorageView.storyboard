@@ -39,31 +39,46 @@
                                     </connections>
                                 </tableRow>
                                 <tableRow identifier="LocalStorageRow" id="3DN-SV-TXC" customClass="LocalStorageRow" customModule="SubtitleApp_watchOS_Extension">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="DRV-e9-C9Y">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" spacing="0.0" id="DRV-e9-C9Y">
                                         <items>
-                                            <label alignment="left" text="Title" id="iKu-W5-WGW">
-                                                <fontDescription key="font" type="boldSystem" pointSize="12"/>
-                                            </label>
-                                            <group width="1" alignment="left" spacing="4" id="gVF-8d-dgc">
+                                            <group width="1" alignment="left" layout="vertical" spacing="0.0" id="toq-yo-gQd">
                                                 <items>
-                                                    <label alignment="left" text="Season" id="6N8-f9-fwu">
-                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="font" type="system" pointSize="11"/>
+                                                    <label alignment="left" text="Title" id="iKu-W5-WGW">
+                                                        <fontDescription key="font" type="boldSystem" pointSize="12"/>
                                                     </label>
-                                                    <label alignment="left" text="Language" id="U6c-Pj-6bj">
+                                                    <group width="1" alignment="left" spacing="4" id="gVF-8d-dgc">
+                                                        <items>
+                                                            <label alignment="left" text="Season" id="6N8-f9-fwu">
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                                            </label>
+                                                            <label alignment="left" text="Language" id="U6c-Pj-6bj">
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <label alignment="left" text="File" numberOfLines="0" id="D8s-Hv-9C2">
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="font" type="system" pointSize="11"/>
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
                                                     </label>
                                                 </items>
+                                                <edgeInsets key="margins" left="4" right="4" top="4" bottom="4"/>
                                             </group>
-                                            <label alignment="left" text="File" numberOfLines="0" id="D8s-Hv-9C2">
-                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="font" type="system" pointSize="10"/>
-                                            </label>
+                                            <button width="54" height="1" alignment="left" hidden="YES" title="Delete" id="73h-XN-40t">
+                                                <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                                <connections>
+                                                    <action selector="deleteButtonTap" destination="3DN-SV-TXC" id="J6E-cO-nTL"/>
+                                                </connections>
+                                            </button>
                                         </items>
-                                        <edgeInsets key="margins" left="4" right="4" top="4" bottom="4"/>
+                                        <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                                     </group>
                                     <connections>
+                                        <outlet property="containerGroup" destination="toq-yo-gQd" id="zeT-du-Qbx"/>
+                                        <outlet property="deleteButton" destination="73h-XN-40t" id="dL9-J3-uTm"/>
                                         <outlet property="fileLabel" destination="D8s-Hv-9C2" id="MvG-Mk-Gb8"/>
                                         <outlet property="languageLabel" destination="U6c-Pj-6bj" id="EeP-wa-B8T"/>
                                         <outlet property="seasonLabel" destination="6N8-f9-fwu" id="Baa-SL-JnW"/>

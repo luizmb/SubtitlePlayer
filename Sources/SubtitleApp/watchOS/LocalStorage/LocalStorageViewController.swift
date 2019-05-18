@@ -23,6 +23,15 @@ public final class LocalStorageViewController: WKInterfaceController {
 
                 self?.insertHeader()
             },
+            editMode: { [weak self] editMode in
+                guard let strongSelf = self else { return }
+                (0 ..< strongSelf.table.numberOfRows)
+                    .compactMap { index in
+                        (strongSelf.table.rowController(at: index) as? LocalStorageRow)
+                            .map { (index, $0) }
+                    }
+                    .forEach { index, cell in cell.editModeSignal(editMode, cell, index) }
+            },
             scrollToRow: table.scrollToRow(at:),
             controller: self
         )

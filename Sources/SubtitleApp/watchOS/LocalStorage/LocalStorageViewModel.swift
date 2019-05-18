@@ -6,6 +6,7 @@ import SubtitlePlayer
 
 public typealias LocalStorageViewModelOutput = (
     tableItems: ([(LocalStorageItemViewModelOutput) -> LocalStorageItemViewModelInput]) -> Void,
+    editMode: (Bool) -> Void,
     scrollToRow: (Int) -> Void,
     controller: Controller
 )
@@ -31,19 +32,27 @@ public func localStorageViewModel(router: Router)
             downloadedSubtitles = persistence.readDownloadedSubtitles()
             if old != downloadedSubtitles {
                 updateUI(downloadedSubtitles.map {
-                    localStorageItemViewModel(item: $0, play: { subtitle in
-                        let filePath = SubtitleStorage.filePath(for: subtitle).inject(fileManager)
-                        Subtitle
-                            .from(filePath: filePath,
-                                  encoding: persistence.readEncoding() ?? .utf8)
-                            .inject(fileManager)
-                            .analysis(
-                                ifSuccess: { router.handle(.play(parent: controller, subtitle: $0)) },
-                                ifFailure: { print("Error \($0)") })
-                    })
+                    localStorageItemViewModel(
+                        item: $0,
+                        play: { subtitle in
+                            let filePath = SubtitleStorage.filePath(for: subtitle).inject(fileManager)
+                            Subtitle
+                                .from(filePath: filePath,
+                                      encoding: persistence.readEncoding() ?? .utf8)
+                                .inject(fileManager)
+                                .analysis(
+                                    ifSuccess: { router.handle(.play(parent: controller, subtitle: $0)) },
+                                    ifFailure: { print("Error \($0)") })
+                        },
+                        delete: { subtitle in
+                            print("to delete subtitle")
+                        }
+                    )
                 })
             }
         }
+
+        var editMode = false
 
         return { output in (
             awakeWithContext: { _ in },
@@ -52,7 +61,10 @@ public func localStorageViewModel(router: Router)
             },
             willDisappear: { },
             plusTap: { router.handle(.searchForm) },
-            editTap: { print("edit") }
+            editTap: {
+                editMode.toggle()
+                output.editMode(editMode)
+            }
         )}
     }
 }
