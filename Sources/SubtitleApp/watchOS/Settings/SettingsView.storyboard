@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--Settings-->
+        <scene sceneID="8tc-QW-PKV">
+            <objects>
+                <controller identifier="SettingsView" title="Settings" id="nEq-vj-CY1" customClass="SettingsViewController" customModule="SubtitleApp_watchOS_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="JH3-n5-1oo">
+                            <items>
+                                <group width="0.69999999999999996" alignment="left" layout="vertical" id="eAe-nc-AWE">
+                                    <items>
+                                        <label height="14" alignment="left" text="Encoding" id="QvJ-tr-zQh">
+                                            <fontDescription key="font" type="system" weight="light" pointSize="11"/>
+                                        </label>
+                                        <label alignment="left" text="UTF8" id="6kL-Fl-dRZ">
+                                            <fontDescription key="font" type="system" pointSize="13"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <button width="0.29999999999999999" alignment="center" verticalAlignment="center" title="Set" id="GxE-Wz-Mxn">
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <connections>
+                                        <action selector="setEncodingButtonTap" destination="nEq-vj-CY1" id="ZUf-BF-2Le"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="encodingLabel" destination="6kL-Fl-dRZ" id="ahf-fO-jpm"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="95" y="113"/>
+        </scene>
+    </scenes>
+</document>

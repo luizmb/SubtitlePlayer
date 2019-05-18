@@ -9,10 +9,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
     <scenes>
-        <!--SearchView-->
+        <!--Search Subtitles-->
         <scene sceneID="9xv-kT-WTb">
             <objects>
-                <controller identifier="SearchView" id="KqR-3d-9XB" customClass="SearchViewController" customModule="SubtitleApp_watchOS_Extension">
+                <controller identifier="SearchView" title="Search Subtitles" id="KqR-3d-9XB" customClass="SearchViewController" customModule="SubtitleApp_watchOS_Extension">
                     <items>
                         <group width="1" alignment="left" layout="vertical" spacing="8" id="qoy-ff-bM5">
                             <items>

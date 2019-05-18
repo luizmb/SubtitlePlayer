@@ -60,6 +60,9 @@
 		D52F3A6A227F33EE00085690 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52F3A69227F33EE00085690 /* Persistence.swift */; };
 		D53CA2B522824C7200AA9AB1 /* SearchResultItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53CA2B422824C7200AA9AB1 /* SearchResultItemViewModel.swift */; };
 		D53CA2B722824CF200AA9AB1 /* SearchResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53CA2B622824CF200AA9AB1 /* SearchResultRow.swift */; };
+		D55BE06222908BE900A0771F /* SettingsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55BE06122908BE900A0771F /* SettingsView.storyboard */; };
+		D55BE06422908CC300A0771F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55BE06322908CC300A0771F /* SettingsViewController.swift */; };
+		D55BE06622908D2200A0771F /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55BE06522908D2200A0771F /* SettingsViewModel.swift */; };
 		D58642F4227B67BA00D6ED22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58642F3227B67BA00D6ED22 /* AppDelegate.swift */; };
 		D58642FB227B67BC00D6ED22 /* Assets-iOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58642FA227B67BC00D6ED22 /* Assets-iOS.xcassets */; };
 		D586430B227B6AB000D6ED22 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D586430A227B6AB000D6ED22 /* LaunchScreen.xib */; };
@@ -222,6 +225,9 @@
 		D52F3A69227F33EE00085690 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		D53CA2B422824C7200AA9AB1 /* SearchResultItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultItemViewModel.swift; sourceTree = "<group>"; };
 		D53CA2B622824CF200AA9AB1 /* SearchResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultRow.swift; sourceTree = "<group>"; };
+		D55BE06122908BE900A0771F /* SettingsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsView.storyboard; sourceTree = "<group>"; };
+		D55BE06322908CC300A0771F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D55BE06522908D2200A0771F /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		D58642F0227B67BA00D6ED22 /* SubtitleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubtitleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58642F3227B67BA00D6ED22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D58642FA227B67BC00D6ED22 /* Assets-iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets-iOS.xcassets"; sourceTree = "<group>"; };
@@ -395,6 +401,16 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		D55BE06022908BC500A0771F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D55BE06122908BE900A0771F /* SettingsView.storyboard */,
+				D55BE06322908CC300A0771F /* SettingsViewController.swift */,
+				D55BE06522908D2200A0771F /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		D58642E7227B67BA00D6ED22 = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +504,7 @@
 				D5234ECF227DC4FD004E289C /* Player */,
 				D5234ECE227DC4EC004E289C /* Search */,
 				D5234EE8227DD116004E289C /* Splash */,
+				D55BE06022908BC500A0771F /* Settings */,
 				D5234EF9227E4E47004E289C /* Utils */,
 			);
 			path = watchOS;
@@ -726,6 +743,7 @@
 			files = (
 				D5234EFB227E4F32004E289C /* TextPickerView.storyboard in Resources */,
 				D5864314227B6B7700D6ED22 /* Assets-watchOS.xcassets in Resources */,
+				D55BE06222908BE900A0771F /* SettingsView.storyboard in Resources */,
 				D5234EDF227DCAF8004E289C /* SearchResultView.storyboard in Resources */,
 				D5234ED3227DC6D2004E289C /* SearchView.storyboard in Resources */,
 				D6F9EFE0228374E600E67179 /* LocalStorageView.storyboard in Resources */,
@@ -956,8 +974,10 @@
 				D5234ED5227DC70C004E289C /* PlayerViewController.swift in Sources */,
 				D6F9EFE22283763900E67179 /* LocalStorageViewController.swift in Sources */,
 				D5234EE5227DCD67004E289C /* ViewModel.swift in Sources */,
+				D55BE06422908CC300A0771F /* SettingsViewController.swift in Sources */,
 				D5234EF4227DF3C4004E289C /* Extensions.swift in Sources */,
 				D5234EDD227DC92E004E289C /* MainRouter.swift in Sources */,
+				D55BE06622908D2200A0771F /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
