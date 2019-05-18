@@ -5,7 +5,8 @@ import RxSwift
 import SubtitlePlayer
 
 public typealias LocalStorageItemViewModelInput = (
-    (NSObject, Int) -> Void
+    itemSelected: (NSObject, Int) -> Void,
+    _: Void
 )
 
 public typealias LocalStorageItemViewModelOutput = (
@@ -22,8 +23,11 @@ public func localStorageItemViewModel(item: SubtitleFile, play: @escaping (Subti
         output.language(LanguageId(rawValue: item.language)?.description ?? item.language)
         output.file(item.filename)
 
-        return ({ _, _ in
-            play(item)
-        })
+        return (
+            itemSelected: { _, _ in
+                play(item)
+            },
+            _: ()
+        )
     }
 }

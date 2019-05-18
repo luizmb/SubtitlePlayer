@@ -5,20 +5,7 @@ import WatchKit
 
 public final class MainRouter {
     public static func start() {
-        let router = MainRouter()
-        let localStorageViewContext =
-            ViewModel(bind: localStorageViewModel(router: router).contramap(^\.fileManager, ^\.persistence).inject(Environment.current)).asContext
-        let searchViewContext =
-            ViewModel(bind: searchViewModel(router: router).contramap(^\.persistence).inject(Environment.current)).asContext
-        let settingsViewContext =
-            ViewModel(bind: settingsViewModel(router: router).contramap(^\.persistence).inject(Environment.current)).asContext
-
-        WKInterfaceController.reloadRootPageControllers(
-            withNames: [LocalStorageViewController.name, SearchViewController.name, SettingsViewController.name],
-            contexts: [localStorageViewContext, searchViewContext, settingsViewContext],
-            orientation: .horizontal,
-            pageIndex: 0
-        )
+        createRootPages(router: MainRouter())
     }
 }
 
@@ -43,6 +30,8 @@ extension MainRouter: Router {
         case let .play(parent, subtitle):
             let playerViewContext = ViewModel(bind: playerViewModel(router: self, subtitle: subtitle)).asContext
             parent.presentController(withName: PlayerViewController.name, context: playerViewContext)
+        case .searchForm:
+            createRootPages(router: self, index: 1)
         }
     }
 }
@@ -55,5 +44,26 @@ extension Environment {
         fileManager: FileManager.init,
         gzip: { Gzip.self },
         persistence: { UserDefaults.standard }
+    )
+}
+
+func createRootPages(router: MainRouter, index: Int = 0) {
+    let localStorage = localStorageViewModel(router: router).contramap(^\.fileManager, ^\.persistence).inject(Environment.current)
+    let search = searchViewModel(router: router).contramap(^\.persistence).inject(Environment.current)
+    let settings = settingsViewModel(router: router).contramap(^\.persistence).inject(Environment.current)
+
+    WKInterfaceController.reloadRootPageControllers(
+        withNames: [
+            LocalStorageViewController.name,
+            SearchViewController.name,
+            SettingsViewController.name
+        ],
+        contexts: [
+            ViewModel(bind: localStorage).asContext,
+            ViewModel(bind: search).asContext,
+            ViewModel(bind: settings).asContext
+        ],
+        orientation: .horizontal,
+        pageIndex: index
     )
 }

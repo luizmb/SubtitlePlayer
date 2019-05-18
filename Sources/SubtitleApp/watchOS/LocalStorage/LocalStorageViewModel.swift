@@ -13,7 +13,9 @@ public typealias LocalStorageViewModelOutput = (
 public typealias LocalStorageViewModelInput = (
     awakeWithContext: (Any?) -> Void,
     didAppear: () -> Void,
-    willDisappear: () -> Void
+    willDisappear: () -> Void,
+    plusTap: () -> Void,
+    editTap: () -> Void
 )
 
 public func localStorageViewModel(router: Router)
@@ -48,7 +50,9 @@ public func localStorageViewModel(router: Router)
             didAppear: {
                 updateSubtitles(output.tableItems, output.controller)
             },
-            willDisappear: { }
+            willDisappear: { },
+            plusTap: { router.handle(.searchForm) },
+            editTap: { print("edit") }
         )}
     }
 }

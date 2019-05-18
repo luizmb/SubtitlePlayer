@@ -76,6 +76,7 @@
 		D5864352227B702200D6ED22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5864351227B702200D6ED22 /* AppDelegate.swift */; };
 		D5864354227B702300D6ED22 /* Assets-macOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5864353227B702300D6ED22 /* Assets-macOS.xcassets */; };
 		D5864357227B702300D6ED22 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5864355227B702300D6ED22 /* MainMenu.xib */; };
+		D5D36ABF2290AB0C009540D5 /* EditRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D36ABE2290AB0C009540D5 /* EditRow.swift */; };
 		D6F9EFE0228374E600E67179 /* LocalStorageView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6F9EFDF228374E600E67179 /* LocalStorageView.storyboard */; };
 		D6F9EFE22283763900E67179 /* LocalStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9EFE12283763900E67179 /* LocalStorageViewController.swift */; };
 		D6F9EFE42283764800E67179 /* LocalStorageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9EFE32283764800E67179 /* LocalStorageViewModel.swift */; };
@@ -250,6 +251,7 @@
 		D5864356227B702300D6ED22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D5864358227B702300D6ED22 /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
 		D5864359227B702300D6ED22 /* SubtitleApp_Desktop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SubtitleApp_Desktop.entitlements; sourceTree = "<group>"; };
+		D5D36ABE2290AB0C009540D5 /* EditRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRow.swift; sourceTree = "<group>"; };
 		D6F9EFDF228374E600E67179 /* LocalStorageView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocalStorageView.storyboard; sourceTree = "<group>"; };
 		D6F9EFE12283763900E67179 /* LocalStorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageViewController.swift; sourceTree = "<group>"; };
 		D6F9EFE32283764800E67179 /* LocalStorageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageViewModel.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 		D5234EF9227E4E47004E289C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D5D36ABE2290AB0C009540D5 /* EditRow.swift */,
 				D5234EF3227DF3C4004E289C /* Extensions.swift */,
 				D5234F00227E6118004E289C /* Filter.swift */,
 				D5234EBD227B844F004E289C /* Gzip+Extensions.swift */,
@@ -965,6 +968,7 @@
 				D52F3A6A227F33EE00085690 /* Persistence.swift in Sources */,
 				D5234EF8227E0A1F004E289C /* Router.swift in Sources */,
 				D5234EBE227B844F004E289C /* Gzip+Extensions.swift in Sources */,
+				D5D36ABF2290AB0C009540D5 /* EditRow.swift in Sources */,
 				D5234EBC227B8417004E289C /* Environment.swift in Sources */,
 				D6F9EFE42283764800E67179 /* LocalStorageViewModel.swift in Sources */,
 				D5234F01227E6118004E289C /* Filter.swift in Sources */,

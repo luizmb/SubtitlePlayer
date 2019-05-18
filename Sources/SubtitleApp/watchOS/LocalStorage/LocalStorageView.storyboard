@@ -16,6 +16,28 @@
                     <items>
                         <table alignment="left" id="T3B-FN-fIL">
                             <items>
+                                <tableRow identifier="EditRow" id="dqk-u8-KpL" customClass="EditRow" customModule="SubtitleApp_watchOS_Extension">
+                                    <group key="rootItem" width="1" height="30" alignment="left" id="SEE-At-CXn">
+                                        <items>
+                                            <button width="0.5" height="1" alignment="left" title="+" id="FCt-JA-lBz">
+                                                <connections>
+                                                    <action selector="plusButtonTap" destination="dqk-u8-KpL" id="d7i-Ti-NOe"/>
+                                                </connections>
+                                            </button>
+                                            <button width="0.5" height="1" alignment="left" title="Edit" id="1qP-M3-UD0">
+                                                <connections>
+                                                    <action selector="editButtonTap" destination="dqk-u8-KpL" id="AF7-lS-4jD"/>
+                                                </connections>
+                                            </button>
+                                        </items>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="editButton" destination="1qP-M3-UD0" id="sNL-gj-nzN"/>
+                                        <outlet property="plusButton" destination="FCt-JA-lBz" id="jUE-Af-ZZ1"/>
+                                    </connections>
+                                </tableRow>
                                 <tableRow identifier="LocalStorageRow" id="3DN-SV-TXC" customClass="LocalStorageRow" customModule="SubtitleApp_watchOS_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="DRV-e9-C9Y">
                                         <items>

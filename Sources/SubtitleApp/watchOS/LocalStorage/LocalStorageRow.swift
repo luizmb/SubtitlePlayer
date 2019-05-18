@@ -18,6 +18,6 @@ public final class LocalStorageRow: NSObject {
             file: fileLabel.setText
         ))
 
-        itemSelectedSignal = inputs
+        itemSelectedSignal = inputs.itemSelected
     }
 }
