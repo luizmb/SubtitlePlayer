@@ -28,6 +28,7 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
         var playing = false
         var currentLine = 0
         var crownAccumulation: Double = 0
+        let lastLine = subtitle.lastSequence
 
         return (
             awakeWithContext: { _ in output.subtitle("") },
@@ -37,7 +38,7 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
             willDisappear: { },
             rewindButtonTap: {
                 currentLine = max(currentLine - 1, 0)
-                output.subtitle(subtitle.lines.first(where: { $0.sequence == currentLine }).map(^\.text) ?? "")
+                output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
                 output.hapticClick()
             },
             playToggleButtonTap: {
@@ -46,8 +47,7 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
 
                 if playing {
                     disposeBag = disposeBag ?? DisposeBag()
-                    output.hapticClick()
-                    currentLine = currentLine >= subtitle.lines.count ? 0 : currentLine
+                    currentLine = currentLine > lastLine ? 0 : currentLine
                     return SubtitlePlayer
                         .play(subtitle: subtitle, from: currentLine)
                         .subscribe(onNext: { lines in
@@ -58,13 +58,13 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
                         }).disposed(by: disposeBag!)
                 } else {
                     disposeBag = nil
-                    output.hapticClick()
-                    output.subtitle(subtitle.lines.first(where: { $0.sequence == currentLine }).map(^\.text) ?? "")
+                    output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
                 }
+                output.hapticClick()
             },
             forwardButtonTap: {
-                currentLine = min(currentLine + 1, subtitle.lines.map(^\.sequence).max() ?? Int.max)
-                output.subtitle(subtitle.lines.first(where: { $0.sequence == currentLine }).map(^\.text) ?? "")
+                currentLine = min(currentLine + 1, lastLine)
+                output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
                 output.hapticClick()
             },
             crownRotate: { delta in
@@ -73,18 +73,18 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
 
                 if crownAccumulation > 0.1 {
                     crownAccumulation = 0
-                    let newLine = min(currentLine + 1, subtitle.lines.map(^\.sequence).max() ?? Int.max)
+                    let newLine = min(currentLine + 1, lastLine)
                     guard newLine != currentLine else { return }
                     currentLine = newLine
+                    output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
                     output.hapticClick()
-                    output.subtitle(subtitle.lines.first(where: { $0.sequence == currentLine }).map(^\.text) ?? "")
                 } else if crownAccumulation < -0.1 {
                     crownAccumulation = 0
                     let newLine = max(currentLine - 1, 0)
                     guard newLine != currentLine else { return }
                     currentLine = newLine
+                    output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
                     output.hapticClick()
-                    output.subtitle(subtitle.lines.first(where: { $0.sequence == currentLine }).map(^\.text) ?? "")
                 }
             },
             crownRotationEnded: {

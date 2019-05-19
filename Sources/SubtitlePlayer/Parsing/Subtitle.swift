@@ -8,8 +8,16 @@ public struct Subtitle: Equatable {
         return lines.map(^\.end).max() ?? .zero
     }
 
+    public var lastSequence: Int {
+        return lines.map(^\.sequence).max() ?? .zero
+    }
+
     public init(lines: [Line]) {
         self.lines = lines
+    }
+
+    public func line(sequence: Int) -> Line? {
+        return lines.first(where: { $0.sequence == sequence })
     }
 
     public struct Line: Equatable {
