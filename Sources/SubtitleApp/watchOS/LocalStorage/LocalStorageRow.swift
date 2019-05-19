@@ -15,6 +15,7 @@ public final class LocalStorageRow: NSObject {
     var editModeSignal: ((Bool, NSObject, Int) -> Void)!
 
     public func bind(_ model: (LocalStorageItemViewModelOutput) -> LocalStorageItemViewModelInput) {
+        editMode(false)
         let inputs = model((
             title: titleLabel.setText,
             season: seasonLabel.setText,
@@ -24,10 +25,13 @@ public final class LocalStorageRow: NSObject {
 
         itemSelectedSignal = inputs.itemSelected
         editModeSignal = { [weak self] enabled, sender, index in
-            self?.deleteButton.setHidden(!enabled)
-            self?.containerGroup.setRelativeWidth(1.0, withAdjustment: enabled ? -54 : 0)
-            self?.itemDeletedSignal = enabled ? { inputs.itemDeleted(sender, index) } : nil
+            self?.editMode(enabled)
         }
+    }
+
+    func editMode(_ enabled: Bool) {
+        containerGroup.setRelativeWidth(1.0, withAdjustment: enabled ? -54 : 0)
+        deleteButton.setHidden(!enabled)
     }
 
     @IBAction func deleteButtonTap() {

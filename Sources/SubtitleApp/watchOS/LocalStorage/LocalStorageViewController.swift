@@ -30,7 +30,11 @@ public final class LocalStorageViewController: WKInterfaceController {
                         (strongSelf.table.rowController(at: index) as? LocalStorageRow)
                             .map { (index, $0) }
                     }
-                    .forEach { index, cell in cell.editModeSignal(editMode, cell, index) }
+                    .forEach { index, cell in
+                        self?.animate(withDuration: 0.4) {
+                            cell.editModeSignal(editMode, cell, index)
+                        }
+                    }
             },
             scrollToRow: table.scrollToRow(at:),
             controller: self

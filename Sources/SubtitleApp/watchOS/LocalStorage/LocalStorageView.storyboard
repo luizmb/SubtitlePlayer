@@ -41,7 +41,7 @@
                                 <tableRow identifier="LocalStorageRow" id="3DN-SV-TXC" customClass="LocalStorageRow" customModule="SubtitleApp_watchOS_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" spacing="0.0" id="DRV-e9-C9Y">
                                         <items>
-                                            <group width="1" alignment="left" layout="vertical" spacing="0.0" id="toq-yo-gQd">
+                                            <group width="1" alignment="left" verticalAlignment="center" layout="vertical" spacing="0.0" id="toq-yo-gQd">
                                                 <items>
                                                     <label alignment="left" text="Title" id="iKu-W5-WGW">
                                                         <fontDescription key="font" type="boldSystem" pointSize="12"/>
@@ -65,7 +65,7 @@
                                                 </items>
                                                 <edgeInsets key="margins" left="4" right="4" top="4" bottom="4"/>
                                             </group>
-                                            <button width="54" height="1" alignment="left" hidden="YES" title="Delete" id="73h-XN-40t">
+                                            <button width="54" height="1" alignment="right" verticalAlignment="center" title="Delete" id="73h-XN-40t">
                                                 <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="font" type="system" pointSize="11"/>
