@@ -20,6 +20,7 @@ public final class TextPickerViewController: WKInterfaceController {
                 })
             }, selectItem: { [weak self] index in
                 self?.picker.setSelectedItemIndex(index)
+                self?.picker.focus()
             }
         )
 
