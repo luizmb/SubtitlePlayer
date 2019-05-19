@@ -34,6 +34,7 @@ public final class TextPickerViewController: WKInterfaceController {
 
     public override func didAppear() {
         super.didAppear()
+        picker.focus()
         didAppearSignal()
     }
 

@@ -17,7 +17,6 @@ public final class PlayerViewController: WKInterfaceController {
         super.awake(withContext: context)
         crownSequencer.delegate = self
         crownSequencer.isHapticFeedbackEnabled = true
-        crownSequencer.focus()
 
         let viewModel: ViewModel<PlayerViewModelInput, PlayerViewModelOutput>! = InterfaceControllerContext.wrapped(context: context)
 
@@ -54,6 +53,7 @@ public final class PlayerViewController: WKInterfaceController {
 
     public override func didAppear() {
         super.didAppear()
+        crownSequencer.focus()
         didAppearSignal()
     }
 
