@@ -5,6 +5,7 @@ public final class PlayerViewController: WKInterfaceController {
     @IBOutlet private weak var playToggleButton: WKInterfaceButton!
     @IBOutlet private weak var forwardButton: WKInterfaceButton!
     @IBOutlet private weak var subtitleLabel: WKInterfaceLabel!
+    @IBOutlet private weak var progressBar: WKInterfaceSeparator!
 
     private var didAppearSignal: (() -> Void)!
     private var willDisappearSignal: (() -> Void)!
@@ -26,6 +27,7 @@ public final class PlayerViewController: WKInterfaceController {
             playingToggleText: { [weak self] text in self?.playToggleButton.setTitle(text) },
             rewindButtonHidden: { [weak self] hidden in self?.rewindButton.setHidden(hidden) },
             forwardButtonHidden: { [weak self] hidden in self?.forwardButton.setHidden(hidden) },
+            progress: { [weak self] value in self?.progressBar.setRelativeWidth(CGFloat(value), withAdjustment: 0) },
             hapticClick: { WKInterfaceDevice.current().play(.click) }
         )
 

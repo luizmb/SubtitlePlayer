@@ -20,6 +20,15 @@
                                     <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" type="boldSystem" pointSize="14"/>
                                 </label>
+                                <group width="1" height="6" alignment="left" verticalAlignment="bottom" layout="vertical" spacing="0.0" id="ZgJ-Ta-Io5">
+                                    <items>
+                                        <separator width="0.5" height="2" alignment="left" verticalAlignment="center" id="ts2-iA-uUE">
+                                            <color key="color" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </separator>
+                                    </items>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <edgeInsets key="margins" left="1" right="1" top="1" bottom="0.0"/>
+                                </group>
                                 <group width="1" alignment="left" verticalAlignment="bottom" id="kKc-XE-Rof">
                                     <items>
                                         <button width="0.33000000000000002" alignment="left" title="⏪" id="Qc1-RD-ABH">
@@ -52,6 +61,7 @@
                     <connections>
                         <outlet property="forwardButton" destination="725-wz-CrH" id="KMK-wY-OQl"/>
                         <outlet property="playToggleButton" destination="O6E-lg-ofg" id="5OA-GR-64d"/>
+                        <outlet property="progressBar" destination="ts2-iA-uUE" id="Uc5-Kz-6fE"/>
                         <outlet property="rewindButton" destination="Qc1-RD-ABH" id="Kjo-eC-Dlv"/>
                         <outlet property="subtitleLabel" destination="vgb-Rs-ybL" id="a04-aI-9sF"/>
                     </connections>
