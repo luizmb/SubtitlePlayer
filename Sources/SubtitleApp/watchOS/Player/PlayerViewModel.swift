@@ -10,7 +10,8 @@ public typealias PlayerViewModelInput = (
     rewindButtonTap: () -> Void,
     playToggleButtonTap: () -> Void,
     forwardButtonTap: () -> Void,
-    crownRotate: (Double) -> Void
+    crownRotate: (Double) -> Void,
+    crownRotationEnded: () -> Void
 )
 
 public typealias PlayerViewModelOutput = (
@@ -25,6 +26,7 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
         var disposeBag: DisposeBag? = DisposeBag()
         var playing = false
         var currentLine = 0
+        var crownAccumulation: Double = 0
 
         return (
             awakeWithContext: { _ in output.subtitle("") },
@@ -62,13 +64,20 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
             },
             crownRotate: { delta in
                 guard !playing else { return }
-                if delta > 0 {
+                crownAccumulation += delta
+
+                if crownAccumulation > 0.1 {
+                    crownAccumulation = 0
                     currentLine = min(currentLine + 1, subtitle.lines.map(^\.sequence).max() ?? Int.max)
                     output.subtitle(subtitle.lines.first(where: { $0.sequence == currentLine }).map(^\.text) ?? "")
-                } else if delta < 0 {
+                } else if crownAccumulation < -0.1 {
+                    crownAccumulation = 0
                     currentLine = max(currentLine - 1, 0)
                     output.subtitle(subtitle.lines.first(where: { $0.sequence == currentLine }).map(^\.text) ?? "")
                 }
+            },
+            crownRotationEnded: {
+                crownAccumulation = 0
             }
         )
     }

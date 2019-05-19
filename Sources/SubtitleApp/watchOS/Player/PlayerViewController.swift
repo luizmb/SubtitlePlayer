@@ -12,6 +12,7 @@ public final class PlayerViewController: WKInterfaceController {
     private var playToggleButtonTapSignal: (() -> Void)!
     private var forwardButtonTapSignal: (() -> Void)!
     private var crownRotateSignal: ((Double) -> Void)!
+    private var crownRotationEndedSignal: (() -> Void)!
 
     public override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -35,6 +36,7 @@ public final class PlayerViewController: WKInterfaceController {
         self.playToggleButtonTapSignal = inputs.playToggleButtonTap
         self.forwardButtonTapSignal = inputs.forwardButtonTap
         self.crownRotateSignal = inputs.crownRotate
+        self.crownRotationEndedSignal = inputs.crownRotationEnded
 
         inputs.awakeWithContext(context)
     }
@@ -66,5 +68,9 @@ public final class PlayerViewController: WKInterfaceController {
 extension PlayerViewController: WKCrownDelegate {
     public func crownDidRotate(_ crownSequencer: WKCrownSequencer?, rotationalDelta: Double) {
         crownRotateSignal(rotationalDelta)
+    }
+
+    public func crownDidBecomeIdle(_ crownSequencer: WKCrownSequencer?) {
+        crownRotationEndedSignal()
     }
 }
