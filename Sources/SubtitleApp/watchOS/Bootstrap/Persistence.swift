@@ -11,6 +11,7 @@ public protocol Persistence {
     func saveEncoding(_ encoding: String.Encoding)
     func readEncoding() -> String.Encoding?
     func insertDownloadedSubtitle(_ substitleStorage: SubtitleFile) -> [SubtitleFile]
+    func deleteDownloadedSubtitle(_ substitleStorage: SubtitleFile) -> [SubtitleFile]
 }
 
 extension UserDefaults: Persistence {
@@ -51,6 +52,16 @@ extension UserDefaults: Persistence {
     public func insertDownloadedSubtitle(_ subtitleStorage: SubtitleFile) -> [SubtitleFile] {
         let itemsBefore = readDownloadedSubtitles()
         let itemsAfter = itemsBefore + [subtitleStorage]
+        return (try? JSONEncoder().encode(itemsAfter))
+            .map {
+                set($0, forKey: UserDefaults.downloadedSubtitlesKey)
+                return itemsAfter
+            } ?? itemsBefore
+    }
+
+    public func deleteDownloadedSubtitle(_ subtitleStorage: SubtitleFile) -> [SubtitleFile] {
+        let itemsBefore = readDownloadedSubtitles()
+        let itemsAfter = itemsBefore.filter { $0.id != subtitleStorage.id }
         return (try? JSONEncoder().encode(itemsAfter))
             .map {
                 set($0, forKey: UserDefaults.downloadedSubtitlesKey)

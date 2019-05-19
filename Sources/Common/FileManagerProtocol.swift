@@ -13,6 +13,7 @@ public protocol FileManagerProtocol {
     func moveItem(at srcURL: URL, to dstURL: URL) throws
     func linkItem(at srcURL: URL, to dstURL: URL) throws
     func removeItem(at URL: URL) throws
+    func removeItem(atPath path: String) throws
     func createDirectory(at url: URL, withIntermediateDirectories createIntermediates: Bool, attributes: [FileAttributeKey : Any]?) throws
     func createDirectory(atPath path: String, withIntermediateDirectories createIntermediates: Bool, attributes: [FileAttributeKey : Any]?) throws
     func createFile(atPath path: String, contents data: Data?, attributes attr: [FileAttributeKey : Any]?) -> Bool
@@ -25,6 +26,7 @@ public enum FileManagerError: Error {
     case groupFolderNotFound(groupName: String)
     case folderNotFound(folderName: String)
     case fileCopyHasFailed(sourceFile: URL, destinationFile: URL, error: Error)
+    case fileDeletionHasFailed(path: String, error: Error)
     case createFolderHasFailed(folder: String, error: Error)
     case fileAlreadyExists(path: String)
     case fileCreationHasFailed(path: String)
@@ -75,6 +77,22 @@ extension FileManagerProtocol {
             try copyItem(at: source, to: destination)
         }).biMap(success: identity, failure: {
             FileManagerError.fileCopyHasFailed(sourceFile: source, destinationFile: destination, error: $0)
+        })
+    }
+
+    public func delete(file: URL) -> Result<Void, FileManagerError> {
+        return Result(catching: {
+            try removeItem(at: file)
+        }).biMap(success: identity, failure: {
+            FileManagerError.fileDeletionHasFailed(path: file.absoluteString, error: $0)
+        })
+    }
+
+    public func delete(file: String) -> Result<Void, FileManagerError> {
+        return Result(catching: {
+            try removeItem(atPath: file)
+        }).biMap(success: identity, failure: {
+            FileManagerError.fileDeletionHasFailed(path: file, error: $0)
         })
     }
 
