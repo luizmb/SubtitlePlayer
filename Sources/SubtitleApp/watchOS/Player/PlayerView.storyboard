@@ -16,6 +16,31 @@
                     <items>
                         <group width="1" height="1" heightAdjustment="-8" alignment="left" layout="vertical" id="0Hx-8z-Gxy">
                             <items>
+                                <group width="1" alignment="left" id="kKc-XE-Rof">
+                                    <items>
+                                        <button width="0.33000000000000002" alignment="left" title="⏪" id="Qc1-RD-ABH">
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="font" type="system" pointSize="24"/>
+                                            <connections>
+                                                <action selector="rewindButtonTap" destination="cud-oQ-Pj5" id="l7V-T9-P1E"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.33000000000000002" alignment="center" title="▶️" id="O6E-lg-ofg">
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="font" type="system" pointSize="24"/>
+                                            <connections>
+                                                <action selector="playToggleButtonTap" destination="cud-oQ-Pj5" id="RyT-5V-xZa"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.33000000000000002" alignment="right" title="⏩" id="725-wz-CrH">
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="font" type="system" pointSize="24"/>
+                                            <connections>
+                                                <action selector="forwardButtonTap" destination="cud-oQ-Pj5" id="aSy-D2-6V3"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
                                 <label width="1" alignment="center" verticalAlignment="bottom" text="Subtitles" textAlignment="center" numberOfLines="0" id="vgb-Rs-ybL">
                                     <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" type="boldSystem" pointSize="14"/>
@@ -24,6 +49,9 @@
                         </group>
                     </items>
                     <connections>
+                        <outlet property="forwardButton" destination="725-wz-CrH" id="KMK-wY-OQl"/>
+                        <outlet property="playToggleButton" destination="O6E-lg-ofg" id="5OA-GR-64d"/>
+                        <outlet property="rewindButton" destination="Qc1-RD-ABH" id="Kjo-eC-Dlv"/>
                         <outlet property="subtitleLabel" destination="vgb-Rs-ybL" id="a04-aI-9sF"/>
                     </connections>
                 </controller>
