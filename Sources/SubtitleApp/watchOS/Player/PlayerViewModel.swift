@@ -9,7 +9,8 @@ public typealias PlayerViewModelInput = (
     willDisappear: () -> Void,
     rewindButtonTap: () -> Void,
     playToggleButtonTap: () -> Void,
-    forwardButtonTap: () -> Void
+    forwardButtonTap: () -> Void,
+    crownRotate: (Double) -> Void
 )
 
 public typealias PlayerViewModelOutput = (
@@ -58,6 +59,16 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
             forwardButtonTap: {
                 currentLine = min(currentLine + 1, subtitle.lines.map(^\.sequence).max() ?? Int.max)
                 output.subtitle(subtitle.lines.first(where: { $0.sequence == currentLine }).map(^\.text) ?? "")
+            },
+            crownRotate: { delta in
+                guard !playing else { return }
+                if delta > 0 {
+                    currentLine = min(currentLine + 1, subtitle.lines.map(^\.sequence).max() ?? Int.max)
+                    output.subtitle(subtitle.lines.first(where: { $0.sequence == currentLine }).map(^\.text) ?? "")
+                } else if delta < 0 {
+                    currentLine = max(currentLine - 1, 0)
+                    output.subtitle(subtitle.lines.first(where: { $0.sequence == currentLine }).map(^\.text) ?? "")
+                }
             }
         )
     }

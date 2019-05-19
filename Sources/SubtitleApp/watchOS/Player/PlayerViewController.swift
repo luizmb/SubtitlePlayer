@@ -11,9 +11,14 @@ public final class PlayerViewController: WKInterfaceController {
     private var rewindButtonTapSignal: (() -> Void)!
     private var playToggleButtonTapSignal: (() -> Void)!
     private var forwardButtonTapSignal: (() -> Void)!
+    private var crownRotateSignal: ((Double) -> Void)!
 
     public override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        crownSequencer.delegate = self
+        crownSequencer.isHapticFeedbackEnabled = true
+        crownSequencer.focus()
+
         let viewModel: ViewModel<PlayerViewModelInput, PlayerViewModelOutput>! = InterfaceControllerContext.wrapped(context: context)
 
         let outputs: PlayerViewModelOutput = (
@@ -30,6 +35,7 @@ public final class PlayerViewController: WKInterfaceController {
         self.rewindButtonTapSignal = inputs.rewindButtonTap
         self.playToggleButtonTapSignal = inputs.playToggleButtonTap
         self.forwardButtonTapSignal = inputs.forwardButtonTap
+        self.crownRotateSignal = inputs.crownRotate
 
         inputs.awakeWithContext(context)
     }
@@ -54,5 +60,11 @@ public final class PlayerViewController: WKInterfaceController {
     public override func willDisappear() {
         super.willDisappear()
         willDisappearSignal()
+    }
+}
+
+extension PlayerViewController: WKCrownDelegate {
+    public func crownDidRotate(_ crownSequencer: WKCrownSequencer?, rotationalDelta: Double) {
+        crownRotateSignal(rotationalDelta)
     }
 }
