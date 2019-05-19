@@ -26,6 +26,7 @@ public final class LocalStorageRow: NSObject {
         itemSelectedSignal = inputs.itemSelected
         editModeSignal = { [weak self] enabled, sender, index in
             self?.editMode(enabled)
+            self?.itemDeletedSignal = enabled ? { inputs.itemDeleted(sender, index) } : nil
         }
     }
 
