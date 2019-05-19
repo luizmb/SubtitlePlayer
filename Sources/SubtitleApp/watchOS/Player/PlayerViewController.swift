@@ -17,7 +17,7 @@ public final class PlayerViewController: WKInterfaceController {
     public override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         crownSequencer.delegate = self
-        crownSequencer.isHapticFeedbackEnabled = true
+        crownSequencer.isHapticFeedbackEnabled = false
 
         let viewModel: ViewModel<PlayerViewModelInput, PlayerViewModelOutput>! = InterfaceControllerContext.wrapped(context: context)
 
@@ -25,8 +25,10 @@ public final class PlayerViewController: WKInterfaceController {
             subtitle: { [weak self] text in self?.subtitleLabel.setText(text) },
             playingToggleText: { [weak self] text in self?.playToggleButton.setTitle(text) },
             rewindButtonHidden: { [weak self] hidden in self?.rewindButton.setHidden(hidden) },
-            forwardButtonHidden: { [weak self] hidden in self?.forwardButton.setHidden(hidden) }
+            forwardButtonHidden: { [weak self] hidden in self?.forwardButton.setHidden(hidden) },
+            hapticClick: { WKInterfaceDevice.current().play(.click) }
         )
+
 
         let inputs = viewModel.bind(outputs)
 

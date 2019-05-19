@@ -18,7 +18,8 @@ public typealias PlayerViewModelOutput = (
     subtitle: (String) -> Void,
     playingToggleText: (String) -> Void,
     rewindButtonHidden: (Bool) -> Void,
-    forwardButtonHidden: (Bool) -> Void
+    forwardButtonHidden: (Bool) -> Void,
+    hapticClick: () -> Void
 )
 
 public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewModelOutput) -> PlayerViewModelInput {
@@ -37,6 +38,7 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
             rewindButtonTap: {
                 currentLine = max(currentLine - 1, 0)
                 output.subtitle(subtitle.lines.first(where: { $0.sequence == currentLine }).map(^\.text) ?? "")
+                output.hapticClick()
             },
             playToggleButtonTap: {
                 playing.toggle()
@@ -44,6 +46,7 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
 
                 if playing {
                     disposeBag = disposeBag ?? DisposeBag()
+                    output.hapticClick()
                     currentLine = currentLine >= subtitle.lines.count ? 0 : currentLine
                     return SubtitlePlayer
                         .play(subtitle: subtitle, from: currentLine)
@@ -55,12 +58,14 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
                         }).disposed(by: disposeBag!)
                 } else {
                     disposeBag = nil
+                    output.hapticClick()
                     output.subtitle(subtitle.lines.first(where: { $0.sequence == currentLine }).map(^\.text) ?? "")
                 }
             },
             forwardButtonTap: {
                 currentLine = min(currentLine + 1, subtitle.lines.map(^\.sequence).max() ?? Int.max)
                 output.subtitle(subtitle.lines.first(where: { $0.sequence == currentLine }).map(^\.text) ?? "")
+                output.hapticClick()
             },
             crownRotate: { delta in
                 guard !playing else { return }
@@ -68,11 +73,17 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
 
                 if crownAccumulation > 0.1 {
                     crownAccumulation = 0
-                    currentLine = min(currentLine + 1, subtitle.lines.map(^\.sequence).max() ?? Int.max)
+                    let newLine = min(currentLine + 1, subtitle.lines.map(^\.sequence).max() ?? Int.max)
+                    guard newLine != currentLine else { return }
+                    currentLine = newLine
+                    output.hapticClick()
                     output.subtitle(subtitle.lines.first(where: { $0.sequence == currentLine }).map(^\.text) ?? "")
                 } else if crownAccumulation < -0.1 {
                     crownAccumulation = 0
-                    currentLine = max(currentLine - 1, 0)
+                    let newLine = max(currentLine - 1, 0)
+                    guard newLine != currentLine else { return }
+                    currentLine = newLine
+                    output.hapticClick()
                     output.subtitle(subtitle.lines.first(where: { $0.sequence == currentLine }).map(^\.text) ?? "")
                 }
             },
