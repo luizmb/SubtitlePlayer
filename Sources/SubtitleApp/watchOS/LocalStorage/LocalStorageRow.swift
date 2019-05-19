@@ -17,10 +17,10 @@ public final class LocalStorageRow: NSObject {
     public func bind(_ model: (LocalStorageItemViewModelOutput) -> LocalStorageItemViewModelInput) {
         editMode(false)
         let inputs = model((
-            title: titleLabel.setText,
-            season: seasonLabel.setText,
-            language: languageLabel.setText,
-            file: fileLabel.setText
+            title: { [weak self] text in self?.titleLabel.setText(text) },
+            season: { [weak self] text in self?.seasonLabel.setText(text) },
+            language: { [weak self] text in self?.languageLabel.setText(text) },
+            file: { [weak self] text in self?.fileLabel.setText(text) }
         ))
 
         itemSelectedSignal = inputs.itemSelected

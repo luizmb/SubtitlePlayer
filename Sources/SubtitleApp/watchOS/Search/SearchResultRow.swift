@@ -10,10 +10,10 @@ public final class SearchResultRow: NSObject {
 
     public func bind(_ model: (SearchResultItemViewModelOutput) -> SearchResultItemViewModelInput) {
         let inputs = model((
-            title: titleLabel.setText,
-            year: yearLabel.setText,
-            language: languageLabel.setText,
-            file: fileLabel.setText,
+            title: { [weak self] text in self?.titleLabel.setText(text) },
+            year: { [weak self] text in self?.yearLabel.setText(text) },
+            language: { [weak self] text in self?.languageLabel.setText(text) },
+            file: { [weak self] text in self?.fileLabel.setText(text) },
             background: { [weak self] state in
                 switch state {
                 case .remote:

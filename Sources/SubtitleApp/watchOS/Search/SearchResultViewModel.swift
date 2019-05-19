@@ -49,7 +49,7 @@ private func awakeWithContext(request: Single<[SearchResponse]>,
 }
 
 private func handleResponse(itemsUpdated: @escaping ([(SearchResultItemViewModelOutput) -> SearchResultItemViewModelInput]) -> Void,
-                    disposeBag: DisposeBag)
+                            disposeBag: DisposeBag)
     -> Reader<(URLSessionProtocol, UserAgent, FileManagerProtocol, GzipProtocol.Type, Persistence), ([SearchResponse]) -> Void> {
     return Reader { deps in
         { response in
