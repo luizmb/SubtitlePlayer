@@ -58,9 +58,6 @@ public func localStorageViewModel(router: Router)
     }
 }
 
-private func refreshUI(controller: Controller, items: [SubtitleFile]) {
-}
-
 private func reloadTable(router: Router,
                          fileManager: FileManagerProtocol,
                          persistence: Persistence,
