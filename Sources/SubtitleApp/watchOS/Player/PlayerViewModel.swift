@@ -45,6 +45,7 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
                 output.hapticClick()
             },
             playToggleButtonTap: {
+                let now = DispatchTime.now()
                 playing.toggle()
                 setPlaying(playing, output: output)
 
@@ -53,7 +54,7 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
                     currentLine = currentLine > lastLine ? 0 : currentLine
                     output.progress(Double(currentLine) / Double(max(lastLine, 1)))
                     return SubtitlePlayer
-                        .play(subtitle: subtitle, from: currentLine)
+                        .play(subtitle: subtitle, triggerTime: now, startingLine: currentLine, now: now)
                         .subscribe(onNext: { lines in
                             DispatchQueue.main.async {
                                 currentLine = lines.last?.sequence ?? currentLine
