@@ -6,9 +6,10 @@ public final class PlayerViewController: WKInterfaceController {
     @IBOutlet private weak var forwardButton: WKInterfaceButton!
     @IBOutlet private weak var subtitleLabel: WKInterfaceLabel!
     @IBOutlet private weak var progressBar: WKInterfaceSeparator!
-
     private var didAppearSignal: (() -> Void)!
     private var willDisappearSignal: (() -> Void)!
+    private var didDeactivateSignal: (() -> Void)!
+    private var willActivateSignal: (() -> Void)!
     private var rewindButtonTapSignal: (() -> Void)!
     private var playToggleButtonTapSignal: (() -> Void)!
     private var forwardButtonTapSignal: (() -> Void)!
@@ -31,11 +32,12 @@ public final class PlayerViewController: WKInterfaceController {
             hapticClick: { WKInterfaceDevice.current().play(.click) }
         )
 
-
         let inputs = viewModel.bind(outputs)
 
         self.didAppearSignal = inputs.didAppear
         self.willDisappearSignal = inputs.willDisappear
+        self.didDeactivateSignal = inputs.didDeactivate
+        self.willActivateSignal = inputs.willActivate
         self.rewindButtonTapSignal = inputs.rewindButtonTap
         self.playToggleButtonTapSignal = inputs.playToggleButtonTap
         self.forwardButtonTapSignal = inputs.forwardButtonTap
@@ -55,6 +57,16 @@ public final class PlayerViewController: WKInterfaceController {
 
     @IBAction func forwardButtonTap() {
         forwardButtonTapSignal()
+    }
+
+    public override func willActivate() {
+        super.willActivate()
+        willActivateSignal()
+    }
+
+    public override func didDeactivate() {
+        super.didDeactivate()
+        didDeactivateSignal()
     }
 
     public override func didAppear() {
