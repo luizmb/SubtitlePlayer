@@ -128,7 +128,7 @@ private func setPlaying(_ playing: Bool, output: PlayerViewModelOutput) {
 }
 
 private func progress(_ current: Int, _ total: Int) -> Double {
-    return Double(min(current, 0)) / Double(max(total, 1))
+    return Double(max(current, 0)) / Double(max(total, 1))
 }
 
 private func play(_ subtitle: Subtitle, started: Date, line: Int, now: Date, next: @escaping (Int, String) -> Void) -> Disposable {
