@@ -30,90 +30,90 @@ private struct PlayingDetails: Equatable {
     let startingLine: Int
 }
 
-public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewModelOutput) -> PlayerViewModelInput {
-    return { output in
-        var disposableExecution: Disposable? = nil
-        var playingDetails: PlayingDetails? {
-            didSet {
-                guard playingDetails != oldValue else { return }
-                setPlaying(playingDetails != nil, output: output)
+public func playerViewModel(router: Router, subtitle: Subtitle) -> Reader<() -> Date, (PlayerViewModelOutput) -> PlayerViewModelInput> {
+    return Reader { now in
+        { output in
+            var disposableExecution: Disposable? = nil
+            var playingDetails: PlayingDetails? {
+                didSet {
+                    guard playingDetails != oldValue else { return }
+                    setPlaying(playingDetails != nil, output: output)
+                }
             }
-        }
-        let lastLine = subtitle.lastSequence
-        var currentLine = -1 {
-            didSet {
-                guard currentLine != oldValue else { return }
-                output.progress(progress(currentLine, lastLine))
-                if currentLine == -1 {
+            let lastLine = subtitle.lastSequence
+            var currentLine = -1 {
+                didSet {
+                    guard currentLine != oldValue else { return }
+                    output.progress(progress(currentLine, lastLine))
+                    if currentLine == -1 {
+                        playingDetails = nil
+                    }
+                }
+            }
+            var crownAccumulation: Double = 0
+
+            return (
+                awakeWithContext: { _ in output.subtitle("") },
+                didAppear: {
+                    currentLine = 0
                     playingDetails = nil
-                }
-            }
-        }
-        var crownAccumulation: Double = 0
-
-        return (
-            awakeWithContext: { _ in output.subtitle("") },
-            didAppear: {
-                currentLine = 0
-                playingDetails = nil
-            },
-            willDisappear: { },
-            didDeactivate: {
-                disposableExecution?.dispose()
-                disposableExecution = nil
-            },
-            willActivate: {
-                let now = Date()
-                output.subtitle("")
-                guard let playingDetails = playingDetails else { return }
-                disposableExecution = play(subtitle, playingDetails: playingDetails, now: now) {
-                    currentLine = $0 ?? currentLine
-                    output.subtitle($1)
-                }
-            },
-            rewindButtonTap: {
-                currentLine = max(currentLine - 1, 0)
-                output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
-                output.hapticClick()
-            },
-            playToggleButtonTap: {
-                let now = Date()
-                currentLine = currentLine > lastLine ? 0 : currentLine
-
-                if playingDetails == nil {
-                    playingDetails = PlayingDetails(triggerStart: now, startingLine: currentLine)
-                    disposableExecution = play(subtitle, playingDetails: playingDetails!, now: now){
+                },
+                willDisappear: { },
+                didDeactivate: {
+                    disposableExecution?.dispose()
+                    disposableExecution = nil
+                },
+                willActivate: {
+                    output.subtitle("")
+                    guard let playingDetails = playingDetails else { return }
+                    disposableExecution = play(subtitle, playingDetails: playingDetails, now: now()) {
                         currentLine = $0 ?? currentLine
                         output.subtitle($1)
                     }
-                } else {
-                    playingDetails = nil
-                    disposableExecution?.dispose()
-                    disposableExecution = nil
+                },
+                rewindButtonTap: {
+                    currentLine = max(currentLine - 1, 0)
                     output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
+                    output.hapticClick()
+                },
+                playToggleButtonTap: {
+                    currentLine = currentLine > lastLine ? 0 : currentLine
+
+                    if playingDetails == nil {
+                        playingDetails = PlayingDetails(triggerStart: now(), startingLine: currentLine)
+                        disposableExecution = play(subtitle, playingDetails: playingDetails!, now: now()){
+                            currentLine = $0 ?? currentLine
+                            output.subtitle($1)
+                        }
+                    } else {
+                        playingDetails = nil
+                        disposableExecution?.dispose()
+                        disposableExecution = nil
+                        output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
+                    }
+                    output.hapticClick()
+                },
+                forwardButtonTap: {
+                    currentLine = min(currentLine + 1, lastLine)
+                    output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
+                    output.hapticClick()
+                },
+                crownRotate: {
+                    crownRotate(isPlaying: playingDetails != nil,
+                                delta: $0,
+                                accumulation: &crownAccumulation,
+                                currentLine: currentLine,
+                                lastLine: lastLine) {
+                                    currentLine = $0
+                                    output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
+                                    output.hapticClick()
+                                }
+                },
+                crownRotationEnded: {
+                    crownAccumulation = 0
                 }
-                output.hapticClick()
-            },
-            forwardButtonTap: {
-                currentLine = min(currentLine + 1, lastLine)
-                output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
-                output.hapticClick()
-            },
-            crownRotate: {
-                crownRotate(isPlaying: playingDetails != nil,
-                            delta: $0,
-                            accumulation: &crownAccumulation,
-                            currentLine: currentLine,
-                            lastLine: lastLine) {
-                                currentLine = $0
-                                output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
-                                output.hapticClick()
-                            }
-            },
-            crownRotationEnded: {
-                crownAccumulation = 0
-            }
-        )
+            )
+        }
     }
 }
 

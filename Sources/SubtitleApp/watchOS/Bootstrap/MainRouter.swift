@@ -28,7 +28,7 @@ extension MainRouter: Router {
                 completion((text?.first as? String).map { $0 == empty ? Filter.empty : .some($0) })
             }
         case let .play(parent, subtitle):
-            let playerViewContext = ViewModel(bind: playerViewModel(router: self, subtitle: subtitle)).asContext
+            let playerViewContext = ViewModel(bind: playerViewModel(router: self, subtitle: subtitle).contramap(^\.now).inject(Environment.current)).asContext
             parent.presentController(withName: PlayerViewController.name, context: playerViewContext)
         case .searchForm:
             createRootPages(router: self, index: 1)
@@ -38,7 +38,7 @@ extension MainRouter: Router {
 
 extension Environment {
     fileprivate static var current: Environment = Environment(
-        now: Date.init,
+        now: { Date.init },
         urlSession: { URLSession.shared },
         openSubtitlesUserAgent: { UserAgent(rawValue: "TemporaryUserAgent") },
         fileManager: FileManager.init,
