@@ -26,7 +26,7 @@ public typealias PlayerViewModelOutput = (
 )
 
 private struct PlayingDetails {
-    let triggerStart: DispatchTime
+    let triggerStart: DispatchWallTime
     let offset: OffsetType
 
     enum OffsetType {
@@ -55,7 +55,7 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
                 disposableExecution = nil
             },
             willActivate: {
-                let now = DispatchTime.now()
+                let now = DispatchWallTime.now()
                 setPlaying(playingDetails != nil, output: output)
                 output.subtitle("")
                 guard let playingDetails = playingDetails, case let .lines(startingLine) = playingDetails.offset else { return }
@@ -76,7 +76,7 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
                 output.hapticClick()
             },
             playToggleButtonTap: {
-                let now = DispatchTime.now()
+                let now = DispatchWallTime.now()
                 playingDetails = playingDetails != nil ? nil : PlayingDetails(triggerStart: now, offset: .lines(currentLine))
                 setPlaying(playingDetails != nil, output: output)
 

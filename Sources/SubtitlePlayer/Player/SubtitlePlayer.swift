@@ -9,9 +9,9 @@ public class SubtitlePlayer {
         self.subtitle = subtitle
     }
 
-    public func play(triggerTime: DispatchTime,
+    public func play(triggerTime: DispatchWallTime,
                      startingLine: Int,
-                     now: DispatchTime) -> Observable<SubtitleEvent> {
+                     now: DispatchWallTime) -> Observable<SubtitleEvent> {
         guard startingLine != 0 else {
             return play(triggerTime: triggerTime, offset: .milliseconds(0), now: now)
         }
@@ -23,9 +23,9 @@ public class SubtitlePlayer {
         return play(triggerTime: triggerTime, offset: .milliseconds(Int(offset)), now: now)
     }
 
-    public func play(triggerTime: DispatchTime,
+    public func play(triggerTime: DispatchWallTime,
                      offset: DispatchTimeInterval,
-                     now: DispatchTime) -> Observable<SubtitleEvent> {
+                     now: DispatchWallTime) -> Observable<SubtitleEvent> {
         return Observable<SubtitleEvent>
             .from(
                 getEvents(triggerTime: triggerTime, offset: offset, now: now, lines: subtitle.lines)
@@ -39,17 +39,17 @@ public class SubtitlePlayer {
 
 extension SubtitlePlayer {
     public static func play(subtitle: Subtitle,
-                            triggerTime: DispatchTime,
+                            triggerTime: DispatchWallTime,
                             startingLine: Int,
-                            now: DispatchTime) -> Observable<[Subtitle.Line]> {
+                            now: DispatchWallTime) -> Observable<[Subtitle.Line]> {
         return SubtitlePlayer(subtitle: subtitle)
             .play(triggerTime: triggerTime, startingLine: startingLine, now: now).scanSubtitle()
     }
 
     public static func play(subtitle: Subtitle,
-                            triggerTime: DispatchTime,
+                            triggerTime: DispatchWallTime,
                             offset: DispatchTimeInterval,
-                            now: DispatchTime) -> Observable<[Subtitle.Line]> {
+                            now: DispatchWallTime) -> Observable<[Subtitle.Line]> {
         return SubtitlePlayer(subtitle: subtitle)
             .play(triggerTime: triggerTime, offset: offset, now: now).scanSubtitle()
     }
@@ -58,9 +58,9 @@ extension SubtitlePlayer {
 extension SubtitlePlayer {
     public static func play(data: Data,
                             encoding: String.Encoding,
-                            triggerTime: DispatchTime,
+                            triggerTime: DispatchWallTime,
                             startingLine: Int,
-                            now: DispatchTime) -> Observable<[Subtitle.Line]> {
+                            now: DispatchWallTime) -> Observable<[Subtitle.Line]> {
         return Subtitle
             .from(data: data, encoding: encoding)
             .fold(
@@ -71,9 +71,9 @@ extension SubtitlePlayer {
 
     public static func play(data: Data,
                             encoding: String.Encoding,
-                            triggerTime: DispatchTime,
+                            triggerTime: DispatchWallTime,
                             offset: DispatchTimeInterval,
-                            now: DispatchTime) -> Observable<[Subtitle.Line]> {
+                            now: DispatchWallTime) -> Observable<[Subtitle.Line]> {
         return Subtitle
             .from(data: data, encoding: encoding)
             .fold(
@@ -85,9 +85,9 @@ extension SubtitlePlayer {
 
 extension SubtitlePlayer {
     public static func play(string: String,
-                            triggerTime: DispatchTime,
+                            triggerTime: DispatchWallTime,
                             startingLine: Int,
-                            now: DispatchTime) -> Observable<[Subtitle.Line]> {
+                            now: DispatchWallTime) -> Observable<[Subtitle.Line]> {
         return Subtitle
             .from(string: string)
             .fold(
@@ -97,9 +97,9 @@ extension SubtitlePlayer {
     }
 
     public static func play(string: String,
-                            triggerTime: DispatchTime,
+                            triggerTime: DispatchWallTime,
                             offset: DispatchTimeInterval,
-                            now: DispatchTime) -> Observable<[Subtitle.Line]> {
+                            now: DispatchWallTime) -> Observable<[Subtitle.Line]> {
         return Subtitle
             .from(string: string)
             .fold(
@@ -112,9 +112,9 @@ extension SubtitlePlayer {
 extension SubtitlePlayer {
     public static func play(filePath: String,
                             encoding: String.Encoding,
-                            triggerTime: DispatchTime,
+                            triggerTime: DispatchWallTime,
                             startingLine: Int,
-                            now: DispatchTime) -> Reader<FileManagerProtocol, Observable<[Subtitle.Line]>> {
+                            now: DispatchWallTime) -> Reader<FileManagerProtocol, Observable<[Subtitle.Line]>> {
         return Subtitle
             .from(filePath: filePath, encoding: encoding)
             .map {
@@ -127,9 +127,9 @@ extension SubtitlePlayer {
 
     public static func play(filePath: String,
                             encoding: String.Encoding,
-                            triggerTime: DispatchTime,
+                            triggerTime: DispatchWallTime,
                             offset: DispatchTimeInterval,
-                            now: DispatchTime) -> Reader<FileManagerProtocol, Observable<[Subtitle.Line]>> {
+                            now: DispatchWallTime) -> Reader<FileManagerProtocol, Observable<[Subtitle.Line]>> {
         return Subtitle
             .from(filePath: filePath, encoding: encoding)
             .map {
@@ -141,9 +141,9 @@ extension SubtitlePlayer {
     }
 }
 
-private func getEvents(triggerTime: DispatchTime,
+private func getEvents(triggerTime: DispatchWallTime,
                        offset: DispatchTimeInterval,
-                       now: DispatchTime,
+                       now: DispatchWallTime,
                        lines: [Subtitle.Line]) -> [SubtitleEvent] {
     //           trigger:  "21:30:00"
     //            offset:  "00:05:00"
@@ -153,7 +153,7 @@ private func getEvents(triggerTime: DispatchTime,
     // line not included:  "00:34:55"
     //     line included:  "00:35:01"
     let movieZeroMark = triggerTime - offset // 21:30:00 - 00:05:00 = 21:25:00
-    let currentTimeInMilli = Double(now.uptimeNanoseconds - movieZeroMark.uptimeNanoseconds) * 1e-6 // 22:00:00 - 21:25:00 = 00:35:00
+    let currentTimeInMilli = Double(now.rawValue - movieZeroMark.rawValue) * 1e-6 // 22:00:00 - 21:25:00 = 00:35:00
 
     return ([.init(sequence: 0, start: .zero, end: .zero, text: "")] + lines)
         .reduce(into: [SubtitleEvent]()) { events, line in
