@@ -25,11 +25,11 @@ public typealias PlayerViewModelOutput = (
     hapticClick: () -> Void
 )
 
-private struct PlayingDetails {
+private struct PlayingDetails: Equatable {
     let triggerStart: Date
     let offset: OffsetType
 
-    enum OffsetType {
+    enum OffsetType: Equatable {
         // case time(DispatchTimeInterval)
         case lines(Int)
     }
@@ -38,7 +38,12 @@ private struct PlayingDetails {
 public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewModelOutput) -> PlayerViewModelInput {
     return { output in
         var disposableExecution: Disposable? = nil
-        var playingDetails: PlayingDetails?
+        var playingDetails: PlayingDetails? {
+            didSet {
+                guard playingDetails != oldValue else { return }
+                setPlaying(playingDetails != nil, output: output)
+            }
+        }
         let lastLine = subtitle.lastSequence
         var currentLine = -1 {
             didSet {
@@ -52,7 +57,7 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
             awakeWithContext: { _ in output.subtitle("") },
             didAppear: {
                 currentLine = 0
-                setPlaying(playingDetails != nil, output: output)
+                playingDetails = nil
             },
             willDisappear: { },
             didDeactivate: {
@@ -61,21 +66,27 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
             },
             willActivate: {
                 let now = Date()
-                setPlaying(playingDetails != nil, output: output)
                 output.subtitle("")
-                guard let playingDetails = playingDetails, case let .lines(startingLine) = playingDetails.offset else { return }
+                guard let started = playingDetails?.triggerStart, case let .lines(startingLine)? = playingDetails?.offset else { return }
                 disposableExecution = SubtitlePlayer
                     .play(subtitle: subtitle,
-                          triggerTime: playingDetails.triggerStart,
+                          triggerTime: started,
                           startingLine: startingLine,
                           now: now)
-                    .subscribe(onNext: { lines in
-                        DispatchQueue.main.async {
-                            currentLine = lines.last?.sequence ?? currentLine
-                            let text = lines.map(^\.text).joined(separator: "\n")
-                            output.subtitle(text)
+                    .subscribe(
+                        onNext: { lines in
+                            DispatchQueue.main.async {
+                                currentLine = lines.last?.sequence ?? currentLine
+                                let text = lines.map(^\.text).joined(separator: "\n")
+                                output.subtitle(text)
+                            }
+                        },
+                        onCompleted: {
+                            currentLine = 0
+                            playingDetails = nil
+                            output.subtitle("")
                         }
-                    })
+                    )
             },
             rewindButtonTap: {
                 currentLine = max(currentLine - 1, 0)
@@ -86,21 +97,29 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
                 let now = Date()
                 currentLine = currentLine > lastLine ? 0 : currentLine
                 playingDetails = playingDetails != nil ? nil : PlayingDetails(triggerStart: now, offset: .lines(currentLine))
-                setPlaying(playingDetails != nil, output: output)
 
-                if let playingDetails = playingDetails {
+                if let started = playingDetails?.triggerStart {
                     disposableExecution = SubtitlePlayer
                         .play(subtitle: subtitle,
-                              triggerTime: playingDetails.triggerStart,
+                              triggerTime: started,
                               startingLine: currentLine,
                               now: now)
-                        .subscribe(onNext: { lines in
-                            DispatchQueue.main.async {
-                                currentLine = lines.last?.sequence ?? currentLine
-                                let text = lines.map(^\.text).joined(separator: "\n")
-                                output.subtitle(text)
+                        .subscribe(
+                            onNext: { lines in
+                                DispatchQueue.main.async {
+                                    currentLine = lines.last?.sequence ?? currentLine
+                                    let text = lines.map(^\.text).joined(separator: "\n")
+                                    output.subtitle(text)
+                                }
+                            },
+                            onCompleted: {
+                                DispatchQueue.main.async {
+                                    currentLine = 0
+                                    playingDetails = nil
+                                    output.subtitle("")
+                                }
                             }
-                        })
+                        )
                 } else {
                     disposableExecution?.dispose()
                     disposableExecution = nil
