@@ -115,25 +115,20 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
             },
             crownRotate: { delta in
                 guard playingDetails == nil else { return }
+                let threshold = 0.1
                 crownAccumulation += delta
+                guard abs(crownAccumulation) > threshold else { return }
 
-                if crownAccumulation > 0.1 {
-                    crownAccumulation = 0
-                    let newLine = min(currentLine + 1, lastLine)
-                    guard newLine != currentLine else { return }
-                    currentLine = newLine
-                    output.progress(progress(currentLine, lastLine))
-                    output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
-                    output.hapticClick()
-                } else if crownAccumulation < -0.1 {
-                    crownAccumulation = 0
-                    let newLine = max(currentLine - 1, 0)
-                    guard newLine != currentLine else { return }
-                    currentLine = newLine
-                    output.progress(progress(currentLine, lastLine))
-                    output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
-                    output.hapticClick()
-                }
+                let newLine = crownAccumulation > 0
+                    ? min(currentLine + 1, lastLine)
+                    : max(currentLine - 1, 0)
+
+                crownAccumulation = 0
+                guard newLine != currentLine else { return }
+                currentLine = newLine
+                output.progress(progress(currentLine, lastLine))
+                output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
+                output.hapticClick()
             },
             crownRotationEnded: {
                 crownAccumulation = 0
