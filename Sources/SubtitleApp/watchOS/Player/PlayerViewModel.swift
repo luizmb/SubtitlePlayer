@@ -49,6 +49,9 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
             didSet {
                 guard currentLine != oldValue else { return }
                 output.progress(progress(currentLine, lastLine))
+                if currentLine == -1 {
+                    playingDetails = nil
+                }
             }
         }
         var crownAccumulation: Double = 0
@@ -68,25 +71,10 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
                 let now = Date()
                 output.subtitle("")
                 guard let started = playingDetails?.triggerStart, case let .lines(startingLine)? = playingDetails?.offset else { return }
-                disposableExecution = SubtitlePlayer
-                    .play(subtitle: subtitle,
-                          triggerTime: started,
-                          startingLine: startingLine,
-                          now: now)
-                    .subscribe(
-                        onNext: { lines in
-                            DispatchQueue.main.async {
-                                currentLine = lines.last?.sequence ?? currentLine
-                                let text = lines.map(^\.text).joined(separator: "\n")
-                                output.subtitle(text)
-                            }
-                        },
-                        onCompleted: {
-                            currentLine = 0
-                            playingDetails = nil
-                            output.subtitle("")
-                        }
-                    )
+                disposableExecution = play(subtitle, started: started, line: startingLine, now: now) {
+                    currentLine = $0
+                    output.subtitle($1)
+                }
             },
             rewindButtonTap: {
                 currentLine = max(currentLine - 1, 0)
@@ -99,27 +87,10 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
                 playingDetails = playingDetails != nil ? nil : PlayingDetails(triggerStart: now, offset: .lines(currentLine))
 
                 if let started = playingDetails?.triggerStart {
-                    disposableExecution = SubtitlePlayer
-                        .play(subtitle: subtitle,
-                              triggerTime: started,
-                              startingLine: currentLine,
-                              now: now)
-                        .subscribe(
-                            onNext: { lines in
-                                DispatchQueue.main.async {
-                                    currentLine = lines.last?.sequence ?? currentLine
-                                    let text = lines.map(^\.text).joined(separator: "\n")
-                                    output.subtitle(text)
-                                }
-                            },
-                            onCompleted: {
-                                DispatchQueue.main.async {
-                                    currentLine = 0
-                                    playingDetails = nil
-                                    output.subtitle("")
-                                }
-                            }
-                        )
+                    disposableExecution = play(subtitle, started: started, line: currentLine, now: now){
+                        currentLine = $0
+                        output.subtitle($1)
+                    }
                 } else {
                     disposableExecution?.dispose()
                     disposableExecution = nil
@@ -162,5 +133,27 @@ private func setPlaying(_ playing: Bool, output: PlayerViewModelOutput) {
 }
 
 private func progress(_ current: Int, _ total: Int) -> Double {
-    return Double(current) / Double(max(total, 1))
+    return Double(min(current, 0)) / Double(max(total, 1))
+}
+
+private func play(_ subtitle: Subtitle, started: Date, line: Int, now: Date, next: @escaping (Int, String) -> Void) -> Disposable {
+    return SubtitlePlayer
+        .play(subtitle: subtitle,
+              triggerTime: started,
+              startingLine: line,
+              now: now)
+        .subscribe(
+            onNext: { lines in
+                DispatchQueue.main.async {
+                    let currentLine = lines.last?.sequence ?? line
+                    let text = lines.map(^\.text).joined(separator: "\n")
+                    next(currentLine, text)
+                }
+            },
+            onCompleted: {
+                DispatchQueue.main.async {
+                    next(-1, "")
+                }
+            }
+        )
 }
