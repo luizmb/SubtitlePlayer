@@ -39,15 +39,20 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
     return { output in
         var disposableExecution: Disposable? = nil
         var playingDetails: PlayingDetails?
-        var currentLine = 0
-        var crownAccumulation: Double = 0
         let lastLine = subtitle.lastSequence
+        var currentLine = -1 {
+            didSet {
+                guard currentLine != oldValue else { return }
+                output.progress(progress(currentLine, lastLine))
+            }
+        }
+        var crownAccumulation: Double = 0
 
         return (
             awakeWithContext: { _ in output.subtitle("") },
             didAppear: {
+                currentLine = 0
                 setPlaying(playingDetails != nil, output: output)
-                output.progress(progress(currentLine, lastLine))
             },
             willDisappear: { },
             didDeactivate: {
@@ -67,7 +72,6 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
                     .subscribe(onNext: { lines in
                         DispatchQueue.main.async {
                             currentLine = lines.last?.sequence ?? currentLine
-                            output.progress(progress(currentLine, lastLine))
                             let text = lines.map(^\.text).joined(separator: "\n")
                             output.subtitle(text)
                         }
@@ -76,7 +80,6 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
             rewindButtonTap: {
                 currentLine = max(currentLine - 1, 0)
                 output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
-                output.progress(progress(currentLine, lastLine))
                 output.hapticClick()
             },
             playToggleButtonTap: {
@@ -84,7 +87,6 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
                 currentLine = currentLine > lastLine ? 0 : currentLine
                 playingDetails = playingDetails != nil ? nil : PlayingDetails(triggerStart: now, offset: .lines(currentLine))
                 setPlaying(playingDetails != nil, output: output)
-                output.progress(progress(currentLine, lastLine))
 
                 if let playingDetails = playingDetails {
                     disposableExecution = SubtitlePlayer
@@ -95,7 +97,6 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
                         .subscribe(onNext: { lines in
                             DispatchQueue.main.async {
                                 currentLine = lines.last?.sequence ?? currentLine
-                                output.progress(progress(currentLine, lastLine))
                                 let text = lines.map(^\.text).joined(separator: "\n")
                                 output.subtitle(text)
                             }
@@ -109,7 +110,6 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
             },
             forwardButtonTap: {
                 currentLine = min(currentLine + 1, lastLine)
-                output.progress(progress(currentLine, lastLine))
                 output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
                 output.hapticClick()
             },
@@ -126,7 +126,6 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
                 crownAccumulation = 0
                 guard newLine != currentLine else { return }
                 currentLine = newLine
-                output.progress(progress(currentLine, lastLine))
                 output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
                 output.hapticClick()
             },
