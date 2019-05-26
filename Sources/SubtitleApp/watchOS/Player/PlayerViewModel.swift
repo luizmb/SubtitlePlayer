@@ -103,21 +103,16 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
                 output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
                 output.hapticClick()
             },
-            crownRotate: { delta in
-                guard playingDetails == nil else { return }
-                let threshold = 0.1
-                crownAccumulation += delta
-                guard abs(crownAccumulation) > threshold else { return }
-
-                let newLine = crownAccumulation > 0
-                    ? min(currentLine + 1, lastLine)
-                    : max(currentLine - 1, 0)
-
-                crownAccumulation = 0
-                guard newLine != currentLine else { return }
-                currentLine = newLine
-                output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
-                output.hapticClick()
+            crownRotate: {
+                crownRotate(isPlaying: playingDetails != nil,
+                            delta: $0,
+                            accumulation: &crownAccumulation,
+                            currentLine: currentLine,
+                            lastLine: lastLine) {
+                                currentLine = $0
+                                output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
+                                output.hapticClick()
+                            }
             },
             crownRotationEnded: {
                 crownAccumulation = 0
@@ -156,4 +151,25 @@ private func play(_ subtitle: Subtitle, started: Date, line: Int, now: Date, nex
                 }
             }
         )
+}
+
+private func crownRotate(
+    isPlaying: Bool,
+    delta: Double,
+    accumulation: inout Double,
+    currentLine: Int,
+    lastLine: Int,
+    updateCurrentLine: @escaping (Int) -> Void) {
+    guard !isPlaying else { return }
+    let threshold = 0.1
+    accumulation += delta
+    guard abs(accumulation) > threshold else { return }
+
+    let newLine = accumulation > 0
+        ? min(currentLine + 1, lastLine)
+        : max(currentLine - 1, 0)
+
+    accumulation = 0
+    guard newLine != currentLine else { return }
+    updateCurrentLine(newLine)
 }
