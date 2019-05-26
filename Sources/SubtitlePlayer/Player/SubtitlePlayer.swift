@@ -152,7 +152,7 @@ private func getEvents(triggerTime: DispatchWallTime,
     // ------------------------------
     // line not included:  "00:34:55"
     //     line included:  "00:35:01"
-    let movieZeroMark = triggerTime - offset // 21:30:00 - 00:05:00 = 21:25:00
+    let movieZeroMark = triggerTime + offset // 21:30:00 - 00:05:00 = 21:25:00
     let currentTimeInMilli = Double(now.rawValue - movieZeroMark.rawValue) * 1e-6 // 22:00:00 - 21:25:00 = 00:35:00
 
     return ([.init(sequence: 0, start: .zero, end: .zero, text: "")] + lines)
