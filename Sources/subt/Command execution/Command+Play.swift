@@ -16,14 +16,14 @@ extension Command {
     static func play(path: String, encoding: String.Encoding, from sequence: Int = 0, debug: Bool = false) -> Reader<FileManagerProtocol, Completable> {
         let start = Date()
         return SubtitlePlayer
-            .play(filePath: path, encoding: encoding, triggerTime: .now(), startingLine: sequence, now: .now())
+            .play(filePath: path, encoding: encoding, triggerTime: start, startingLine: sequence, now: start)
             .map { $0.do(onNext: printLine(start: start, debug: debug)).ignoreElements() }
     }
 
     static func play(data: Data, encoding: String.Encoding, from sequence: Int = 0, debug: Bool = false) -> Completable {
         let start = Date()
         return SubtitlePlayer
-            .play(data: data, encoding: encoding, triggerTime: .now(), startingLine: sequence, now: .now())
+            .play(data: data, encoding: encoding, triggerTime: start, startingLine: sequence, now: start)
             .do(onNext: printLine(start: start, debug: debug))
             .ignoreElements()
     }
@@ -31,7 +31,7 @@ extension Command {
     static func play(subtitle: Subtitle, from sequence: Int = 0, debug: Bool = false) -> Completable {
         let start = Date()
         return SubtitlePlayer
-            .play(subtitle: subtitle, triggerTime: .now(), startingLine: sequence, now: .now())
+            .play(subtitle: subtitle, triggerTime: start, startingLine: sequence, now: start)
             .do(onNext: printLine(start: start, debug: debug))
             .ignoreElements()
     }

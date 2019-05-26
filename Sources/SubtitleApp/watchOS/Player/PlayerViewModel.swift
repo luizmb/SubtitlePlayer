@@ -26,7 +26,7 @@ public typealias PlayerViewModelOutput = (
 )
 
 private struct PlayingDetails {
-    let triggerStart: DispatchWallTime
+    let triggerStart: Date
     let offset: OffsetType
 
     enum OffsetType {
@@ -55,17 +55,21 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
                 disposableExecution = nil
             },
             willActivate: {
-                let now = DispatchWallTime.now()
+                let now = Date()
                 setPlaying(playingDetails != nil, output: output)
                 output.subtitle("")
                 guard let playingDetails = playingDetails, case let .lines(startingLine) = playingDetails.offset else { return }
                 disposableExecution = SubtitlePlayer
-                    .play(subtitle: subtitle, triggerTime: playingDetails.triggerStart, startingLine: startingLine, now: now)
+                    .play(subtitle: subtitle,
+                          triggerTime: playingDetails.triggerStart,
+                          startingLine: startingLine,
+                          now: now)
                     .subscribe(onNext: { lines in
                         DispatchQueue.main.async {
                             currentLine = lines.last?.sequence ?? currentLine
                             output.progress(Double(currentLine) / Double(max(lastLine, 1)))
-                            output.subtitle(lines.map(^\.text).joined(separator: "\n"))
+                            let text = lines.map(^\.text).joined(separator: "\n")
+                            output.subtitle(text)
                         }
                     })
             },
@@ -76,20 +80,24 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
                 output.hapticClick()
             },
             playToggleButtonTap: {
-                let now = DispatchWallTime.now()
+                let now = Date()
+                currentLine = currentLine > lastLine ? 0 : currentLine
                 playingDetails = playingDetails != nil ? nil : PlayingDetails(triggerStart: now, offset: .lines(currentLine))
                 setPlaying(playingDetails != nil, output: output)
+                output.progress(Double(currentLine) / Double(max(lastLine, 1)))
 
-                if playingDetails != nil {
-                    currentLine = currentLine > lastLine ? 0 : currentLine
-                    output.progress(Double(currentLine) / Double(max(lastLine, 1)))
+                if let playingDetails = playingDetails {
                     disposableExecution = SubtitlePlayer
-                        .play(subtitle: subtitle, triggerTime: now, startingLine: currentLine, now: now)
+                        .play(subtitle: subtitle,
+                              triggerTime: playingDetails.triggerStart,
+                              startingLine: currentLine,
+                              now: now)
                         .subscribe(onNext: { lines in
                             DispatchQueue.main.async {
                                 currentLine = lines.last?.sequence ?? currentLine
                                 output.progress(Double(currentLine) / Double(max(lastLine, 1)))
-                                output.subtitle(lines.map(^\.text).joined(separator: "\n"))
+                                let text = lines.map(^\.text).joined(separator: "\n")
+                                output.subtitle(text)
                             }
                         })
                 } else {
