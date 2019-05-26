@@ -38,6 +38,10 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> Reader<() -> 
                 didSet {
                     guard playingDetails != oldValue else { return }
                     setPlaying(playingDetails != nil, output: output)
+
+                    guard playingDetails == nil else { return }
+                    disposableExecution?.dispose()
+                    disposableExecution = nil
                 }
             }
             let lastLine = subtitle.lastSequence
@@ -53,17 +57,19 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> Reader<() -> 
             var crownAccumulation: Double = 0
 
             return (
-                awakeWithContext: { _ in output.subtitle("") },
-                didAppear: {
+                awakeWithContext: { _ in
+                    output.subtitle("")
                     currentLine = 0
-                    playingDetails = nil
                 },
+                didAppear: { },
                 willDisappear: { },
                 didDeactivate: {
                     disposableExecution?.dispose()
                     disposableExecution = nil
                 },
                 willActivate: {
+                    disposableExecution?.dispose()
+                    disposableExecution = nil
                     output.subtitle("")
                     guard let playingDetails = playingDetails else { return }
                     disposableExecution = play(subtitle, playingDetails: playingDetails, now: now()) {
@@ -72,31 +78,30 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> Reader<() -> 
                     }
                 },
                 rewindButtonTap: {
+                    output.hapticClick()
                     currentLine = max(currentLine - 1, 0)
                     output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
-                    output.hapticClick()
                 },
                 playToggleButtonTap: {
+                    let start = now()
+                    output.hapticClick()
                     currentLine = currentLine > lastLine ? 0 : currentLine
 
                     if playingDetails == nil {
-                        playingDetails = PlayingDetails(triggerStart: now(), startingLine: currentLine)
+                        playingDetails = PlayingDetails(triggerStart: start, startingLine: currentLine)
                         disposableExecution = play(subtitle, playingDetails: playingDetails!, now: now()){
                             currentLine = $0 ?? currentLine
                             output.subtitle($1)
                         }
                     } else {
                         playingDetails = nil
-                        disposableExecution?.dispose()
-                        disposableExecution = nil
                         output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
                     }
-                    output.hapticClick()
                 },
                 forwardButtonTap: {
+                    output.hapticClick()
                     currentLine = min(currentLine + 1, lastLine)
                     output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
-                    output.hapticClick()
                 },
                 crownRotate: {
                     crownRotate(isPlaying: playingDetails != nil,
@@ -104,9 +109,9 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> Reader<() -> 
                                 accumulation: &crownAccumulation,
                                 currentLine: currentLine,
                                 lastLine: lastLine) {
+                                    output.hapticClick()
                                     currentLine = $0
                                     output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
-                                    output.hapticClick()
                                 }
                 },
                 crownRotationEnded: {
