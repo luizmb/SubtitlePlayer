@@ -27,12 +27,7 @@ public typealias PlayerViewModelOutput = (
 
 private struct PlayingDetails: Equatable {
     let triggerStart: Date
-    let offset: OffsetType
-
-    enum OffsetType: Equatable {
-        // case time(DispatchTimeInterval)
-        case lines(Int)
-    }
+    let startingLine: Int
 }
 
 public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewModelOutput) -> PlayerViewModelInput {
@@ -70,9 +65,9 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
             willActivate: {
                 let now = Date()
                 output.subtitle("")
-                guard let started = playingDetails?.triggerStart, case let .lines(startingLine)? = playingDetails?.offset else { return }
-                disposableExecution = play(subtitle, started: started, line: startingLine, now: now) {
-                    currentLine = $0
+                guard let playingDetails = playingDetails else { return }
+                disposableExecution = play(subtitle, playingDetails: playingDetails, now: now) {
+                    currentLine = $0 ?? currentLine
                     output.subtitle($1)
                 }
             },
@@ -84,14 +79,15 @@ public func playerViewModel(router: Router, subtitle: Subtitle) -> (PlayerViewMo
             playToggleButtonTap: {
                 let now = Date()
                 currentLine = currentLine > lastLine ? 0 : currentLine
-                playingDetails = playingDetails != nil ? nil : PlayingDetails(triggerStart: now, offset: .lines(currentLine))
 
-                if let started = playingDetails?.triggerStart {
-                    disposableExecution = play(subtitle, started: started, line: currentLine, now: now){
-                        currentLine = $0
+                if playingDetails == nil {
+                    playingDetails = PlayingDetails(triggerStart: now, startingLine: currentLine)
+                    disposableExecution = play(subtitle, playingDetails: playingDetails!, now: now){
+                        currentLine = $0 ?? currentLine
                         output.subtitle($1)
                     }
                 } else {
+                    playingDetails = nil
                     disposableExecution?.dispose()
                     disposableExecution = nil
                     output.subtitle(subtitle.line(sequence: currentLine)?.text ?? "")
@@ -131,18 +127,17 @@ private func progress(_ current: Int, _ total: Int) -> Double {
     return Double(max(current, 0)) / Double(max(total, 1))
 }
 
-private func play(_ subtitle: Subtitle, started: Date, line: Int, now: Date, next: @escaping (Int, String) -> Void) -> Disposable {
+private func play(_ subtitle: Subtitle, playingDetails: PlayingDetails, now: Date, next: @escaping (Int?, String) -> Void) -> Disposable {
     return SubtitlePlayer
         .play(subtitle: subtitle,
-              triggerTime: started,
-              startingLine: line,
+              triggerTime: playingDetails.triggerStart,
+              startingLine: playingDetails.startingLine,
               now: now)
         .subscribe(
             onNext: { lines in
                 DispatchQueue.main.async {
-                    let currentLine = lines.last?.sequence ?? line
                     let text = lines.map(^\.text).joined(separator: "\n")
-                    next(currentLine, text)
+                    next(lines.last?.sequence, text)
                 }
             },
             onCompleted: {
