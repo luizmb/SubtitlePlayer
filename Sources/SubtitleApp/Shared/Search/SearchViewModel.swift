@@ -10,6 +10,7 @@ public typealias SearchViewModelOutput = (
     searchButtonEnabled: (Bool) -> Void
 )
 
+#if os(watchOS)
 public typealias SearchViewModelInput = (
     awakeWithContext: (Any?) -> Void,
     didAppear: () -> Void,
@@ -20,6 +21,20 @@ public typealias SearchViewModelInput = (
     episodeButtonTap: (Controller) -> Void,
     languageButtonTap: (Controller) -> Void
 )
+#endif
+
+#if os(iOS)
+public typealias SearchViewModelInput = (
+    awakeWithContext: (Any?) -> Void,
+    didAppear: () -> Void,
+    willDisappear: () -> Void,
+    searchButtonTap: (Controller) -> Void,
+    queryTextChanged: (Controller, String?) -> Void,
+    seasonButtonTap: (Controller) -> Void,
+    episodeButtonTap: (Controller) -> Void,
+    languageButtonTap: (Controller) -> Void
+)
+#endif
 
 private let emptyString = "<empty>"
 private let numberPickerSuggestions = [emptyString] + (1...99).map(String.init)
@@ -42,6 +57,7 @@ public func searchViewModel(router: Router) -> Reader<Persistence, (SearchViewMo
                 output.searchButtonEnabled(queryFilter.isSome)
             }
 
+            #if os(watchOS)
             return (
                 awakeWithContext: { _ in },
                 didAppear: updateView,
@@ -69,6 +85,35 @@ public func searchViewModel(router: Router) -> Reader<Persistence, (SearchViewMo
                                                      updateLanguageFilter: { languageFilter = $0 ?? languageFilter },
                                                      updateView: updateView)
             )
+            #endif
+
+            #if os(iOS)
+            return (
+                awakeWithContext: { _ in },
+                didAppear: updateView,
+                willDisappear: { },
+                searchButtonTap: searchButtonTap(router: router,
+                                                 queryFilter: { queryFilter },
+                                                 seasonFilter: { seasonFilter },
+                                                 episodeFilter: { episodeFilter },
+                                                 languageFilter: { languageFilter }),
+                queryTextChanged: queryTextChanged(updateQueryFilter: { queryFilter = $0 ?? queryFilter },
+                                                   updateView: updateView),
+                seasonButtonTap: seasonButtonTap(router: router,
+                                                 seasonFilter: { seasonFilter },
+                                                 updateSeasonFilter: { seasonFilter = $0 ?? seasonFilter },
+                                                 updateView: updateView),
+                episodeButtonTap: episodeButtonTap(router: router,
+                                                   episodeFilter: { episodeFilter },
+                                                   updateEpisodeFilter: { episodeFilter = $0 ?? episodeFilter },
+                                                   updateView: updateView),
+                languageButtonTap: languageButtonTap(router: router,
+                                                     persistence: persistence,
+                                                     languageFilter: { languageFilter },
+                                                     updateLanguageFilter: { languageFilter = $0 ?? languageFilter },
+                                                     updateView: updateView)
+            )
+            #endif
         }
     }
 }
@@ -88,6 +133,7 @@ private func searchButtonTap(router: Router,
     }
 }
 
+#if os(watchOS)
 private func queryButtonTap(router: Router,
                             persistence: Persistence,
                             updateQueryFilter: @escaping (Filter<String>?) -> Void,
@@ -109,6 +155,18 @@ private func queryButtonTap(router: Router,
         }))
     }
 }
+#endif
+
+#if os(iOS)
+private func queryTextChanged(updateQueryFilter: @escaping (Filter<String>?) -> Void,
+                              updateView: @escaping () -> Void) -> (Controller, String?) -> Void {
+    return { _, newText in
+        let filter: Filter<String> = newText.map { $0.isEmpty ? .empty : .some($0) } ?? .empty
+        updateQueryFilter(filter)
+        updateView()
+    }
+}
+#endif
 
 private func seasonButtonTap(router: Router,
                              seasonFilter: @escaping () -> Filter<Int>,

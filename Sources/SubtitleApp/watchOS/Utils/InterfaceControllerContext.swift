@@ -11,3 +11,9 @@ public class InterfaceControllerContext: NSObject {
         return (context as? InterfaceControllerContext)?.wrapped as? ContextType
     }
 }
+
+extension ViewModel {
+    public var asContext: InterfaceControllerContext {
+        return InterfaceControllerContext(self)
+    }
+}

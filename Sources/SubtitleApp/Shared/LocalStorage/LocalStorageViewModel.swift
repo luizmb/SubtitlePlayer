@@ -12,7 +12,7 @@ public typealias LocalStorageViewModelOutput = (
 )
 
 public typealias LocalStorageViewModelInput = (
-    awakeWithContext: (Any?) -> Void,
+    awakeWithContext: AwakeWithContentClosure,
     didAppear: () -> Void,
     willDisappear: () -> Void,
     plusTap: () -> Void,
@@ -42,8 +42,16 @@ public func localStorageViewModel(router: Router)
                 )
             }
 
+            let awakeWithContext: AwakeWithContentClosure
+
+            #if os(iOS)
+            awakeWithContext = { }
+            #elseif os(watchOS)
+            awakeWithContext = { _ in }
+            #endif
+
             return (
-                awakeWithContext: { _ in },
+                awakeWithContext: awakeWithContext,
                 didAppear: {
                     setDownloadedSubtitles(persistence.readDownloadedSubtitles())
                 },
