@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:AppModuleDownload">
+   </FileRef>
+   <FileRef
+      location = "group:AppModuleSettings">
+   </FileRef>
+   <FileRef
+      location = "group:FunctionalParser">
+   </FileRef>
+   <FileRef
+      location = "group:TerminalSubtitlePlayer">
+   </FileRef>
+   <FileRef
+      location = "group:SubtitlePublisher">
+   </FileRef>
+   <FileRef
+      location = "group:SubtitleModel">
+   </FileRef>
+   <FileRef
+      location = "group:SubtitleDownloader">
+   </FileRef>
+   <FileRef
+      location = "container:SubtitlePlayer.xcodeproj">
+   </FileRef>
+</Workspace>

@@ -1,6 +1,0 @@
-framework module Gzip {
-  umbrella header "GzipSwift-tvOS-umbrella.h"
-
-  export *
-  module * { export * }
-}

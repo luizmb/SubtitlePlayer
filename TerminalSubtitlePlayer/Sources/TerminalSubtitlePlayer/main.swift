@@ -1,0 +1,1 @@
+TerminalSubtitlePlayer.main()

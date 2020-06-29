@@ -1,6 +1,0 @@
-framework module Pods_OpenSubtitlesDownloader_watchOS {
-  umbrella header "Pods-OpenSubtitlesDownloader watchOS-umbrella.h"
-
-  export *
-  module * { export * }
-}
