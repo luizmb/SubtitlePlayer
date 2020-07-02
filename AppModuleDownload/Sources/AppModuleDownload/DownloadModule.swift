@@ -210,11 +210,9 @@ public enum DownloadModule {
                     tag: nil
                 )
             )
-            .map(Action.gotSearchResults)
-            .catch { error in
-                Just(Action.gotSearchError(error))
-            }
-            .prepend(Action.searchHasStarted)
+            .map { EffectOutput<Action>.dispatch(.gotSearchResults($0)) }
+            .catch { Just(EffectOutput.dispatch(.gotSearchError($0))) }
+            .prepend(EffectOutput.dispatch(.searchHasStarted))
             .handleEvents(receiveSubscription: { _ in context.dependencies.saveSearchHistory(state.queryHistory) })
             .asEffect
 
@@ -258,9 +256,9 @@ public enum DownloadModule {
         return context
             .dependencies
             .downloadFile(item)
-            .map { Action.downloadHasCompleted(id: $0.id) }
-            .catch { error in Just(Action.downloadHasFailed(id: id, error: error)) }
-            .prepend(Action.downloadHasStarted(item: item))
+            .map { EffectOutput<Action>.dispatch(.downloadHasCompleted(id: $0.id)) }
+            .catch { Just(.dispatch(.downloadHasFailed(id: id, error: $0))) }
+            .prepend(.dispatch(.downloadHasStarted(item: item)))
             .asEffect
     }
 }

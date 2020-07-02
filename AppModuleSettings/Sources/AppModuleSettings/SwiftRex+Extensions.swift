@@ -37,11 +37,14 @@ extension ObservableViewModel {
 }
 
 extension Effect {
-    static func fireAndForget(_ effect: @escaping () -> Void) -> Effect {
-        Empty()
+    static func fireAndForget(_ effect: @escaping () -> Void, cancellationToken: AnyHashable? = nil) -> Effect {
+        let empty = Empty<OutputAction, Never>()
             .handleEvents(receiveSubscription: { _ in
                 effect()
             })
-            .asEffect
+
+        return cancellationToken.map {
+            empty.asEffect(dispatcher: .here(), cancellationToken: $0)
+        } ?? empty.asEffect(dispatcher: .here())
     }
 }

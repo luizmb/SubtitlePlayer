@@ -82,17 +82,13 @@ let sceneMiddleware = EffectMiddleware<SceneAction, AppAction, Bool, Void>.onAct
 enum AppModule {
     static let middleware: MiddlewareReader<World, ComposedMiddleware<AppAction, AppAction, AppState>> = [
         .pure(
-            LoggerMiddleware()
-                .lift(outputActionMap: absurd)
-                .eraseToAnyMiddleware()
-        ),
-
-        .pure(
             sceneMiddleware
-            .lift(
-                inputActionMap: \AppAction.scene,
-                stateMap: \AppState.isLoaded
-            ).eraseToAnyMiddleware()
+                .lift(
+                    inputActionMap: \AppAction.scene,
+                    stateMap: \AppState.isLoaded
+                )
+                .logger()
+                .eraseToAnyMiddleware()
         ),
 
         SettingsModule.middleware

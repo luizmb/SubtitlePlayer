@@ -23,9 +23,9 @@
         "package": "LoggerMiddleware",
         "repositoryURL": "https://github.com/SwiftRex/LoggerMiddleware.git",
         "state": {
-          "branch": "master",
-          "revision": "8b8a9e30a5fc39f320a5d42becfc987c29e961c2",
-          "version": null
+          "branch": null,
+          "revision": "6fdad87c18e7feec06272f53cfb856c1b44f04bb",
+          "version": "0.1.2"
         }
       },
       {
@@ -60,7 +60,7 @@
         "repositoryURL": "https://github.com/SwiftRex/SwiftRex.git",
         "state": {
           "branch": "develop",
-          "revision": "78b5318635a68aff9f992c7e3b2a337d95394798",
+          "revision": "6b22aa4af246c3cee25b42a58c04f0ccee60bae6",
           "version": null
         }
       }
